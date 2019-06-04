@@ -25,7 +25,12 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/bot.js",
+              "src/assets/rive/briathraneamhrialtaChaite.rive",
+              "src/assets/rive/briathraneamhrialtaLaithreach.rive",
+              "src/assets/rive/start.rive",
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

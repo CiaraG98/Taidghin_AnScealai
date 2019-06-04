@@ -1,0 +1,34 @@
+<body>
+  <button id="chat-button" onclick="showBot()"><span>Chatbot</span></button>
+  <div class="bot-contents">
+    <div class="close-contents" onclick="hideContents()">x</div>
+    <span id="contents">Contents:</span>
+    <div class="contents">
+      <ul class="contents-list">
+        <br>
+        <li><a href="javascript:void(0)" id="bc" onclick="load('bc')">Briathra Neamhrialta: Aimsir Chaite</a></li>
+        <li><a href="javascript:void(0)" id="bl" onclick="load('bl')">Briathra Neamhrialta: Aimsir Laithreach</a></li>
+        <li><a href="javascript:void(0)" id="bf" onclick="load('bf')">Briathra Neamhrialta: Aimsir Fháistineach</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bg-modal">
+    <div class="chatbox">
+      <div class="bot-close" onclick="hideBot()">+</div>
+      <div class="contents-button" onclick="showContents()">...</div>
+      <div class="chatlogs">
+        <div class="messages"></div>
+      </div>
+      <form class="chatform">
+        <input id="user_input" type="text" autocomplete="off">
+        <button type="submit" id="message-button" onclick="chat()">></button>
+      </form>
+      </div>
+    </div>
+
+  <!--  <div class="test">
+      <span id="typ1"></span>
+      <span id="typ2"></span>
+      <span id="typ3"></span>
+    </div>-->
+</body>
