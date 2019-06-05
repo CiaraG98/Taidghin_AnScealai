@@ -1,7 +1,11 @@
 ! array replies = Go-Maith An-Mhaith Ceart Iontach
 
 + start
-- Dia Dhuit! Conas atá tú? Feicim go bhfuil deacracht éigin agat leis\s
+- Dia Dhuit! Conas atá tú? Cad is ainm duit?
+
++ * is ainm dom
+- Ah! <set name=<formal>> <get name>, a chara!\s
+^ Feicim go bhfuil deacracht éigin agat leis\s
 ^ na briathra neamhrialta ... go maith nach bhfuil na laethanta seo? An raibh\s
 ^ a fhios agat nach bhfuil ach 11 bhriathar neamhrialta ann? Is beag rud é sin!\s
 ^ Le chéile is féidir linn na briathra seo a mháistir i roinnt cleachtaí gearra.\s
@@ -15,7 +19,7 @@
 
   > topic dean
     + rinne
-    - (@replies)! Agus san iolra? {topic=abair} {topic=slan}
+    - (@replies) <get name>! Agus san iolra? {topic=abair} {topic=slan}
 
     + rinneamar
     - (@replies)! Ansin, conas a chuirfeá ceist le 'déan' san aimsir chaite?

@@ -60,7 +60,6 @@ function load(fileId){
       });
     }
   }
-  console.log("invalid id");
 }
 
 //begins the chat
