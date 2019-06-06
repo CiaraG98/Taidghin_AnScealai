@@ -1,11 +1,22 @@
 ! array replies = Go-Maith An-Mhaith Ceart Iontach
 
+> object searchNames javascript
+  return searchNames(args[0]);
+< object
+
+> object getName javascript
+  var name = localStorage.getItem("name");
+  if(name) return name;
+< object
+
 + start
 - Dia Dhuit! Conas atá tú? Cad is ainm duit?
 
 + * is ainm dom
-- Ah! <set name=<formal>> <get name>, a chara!\s
-^ Feicim go bhfuil deacracht éigin agat leis\s
+- Ah! <set name=<formal>> Deas bualadh leat :)\s
+^ <br>
+^ A <call>searchNames <get name> </call>, \s
+^ feicim go bhfuil deacracht éigin agat leis\s
 ^ na briathra neamhrialta ... go maith nach bhfuil na laethanta seo? An raibh\s
 ^ a fhios agat nach bhfuil ach 11 bhriathar neamhrialta ann? Is beag rud é sin!\s
 ^ Le chéile is féidir linn na briathra seo a mháistir i roinnt cleachtaí gearra.\s
@@ -14,12 +25,15 @@
 ^ Tosóimid anois leis an aimsir chaite....beidh tú breá. \s
 ^ Cad é an aimsir chaite le 'déan'? {topic=dean} {topic=slan}
 
++ tá
+- (@replies)
+
 + *
 - Tá brón orm nach féidir liom tú a thuiscint.
 
   > topic dean
     + rinne
-    - (@replies) <get name>! Agus san iolra? {topic=abair} {topic=slan}
+    - (@replies) a <call>getName</call>! Agus san iolra? {topic=abair} {topic=slan}
 
     + rinneamar
     - (@replies)! Ansin, conas a chuirfeá ceist le 'déan' san aimsir chaite?

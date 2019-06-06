@@ -27,9 +27,14 @@
             ],
             "scripts": [
               "src/assets/js/bot.js",
+              "src/assets/rive/start.rive",
               "src/assets/rive/briathraneamhrialtaChaite.rive",
               "src/assets/rive/briathraneamhrialtaLaithreach.rive",
-              "src/assets/rive/start.rive",
+              "src/assets/rive/BriathraNeamhrialta.rive",
+              "src/assets/rive/BriathraNeamhrialtaInfo.rive",
+              "src/assets/rive/BQuiz.rive",
+              "src/assets/rive/dean.rive",
+              "src/assets/rive/beir.rive",
             ],
             "es5BrowserSupport": true
           },

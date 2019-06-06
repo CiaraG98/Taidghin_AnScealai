@@ -1,7 +1,25 @@
+window.onload = init;
+var botNames = [];
+var userName;
+
+//Read Google Sheet with slenderised names...
+function init(){
+  var names = "https://docs.google.com/spreadsheets/d/1vvA9n123EJ0hmuQcnwE88JpsOVgxvUgDonPSaoULP3k/edit?usp=sharing";
+  Tabletop.init({key: names, callback: loadData, simpleSheet: true } );
+}
+
+function loadData(data, tabletop){
+  for(i = 0; i < data.length; i++){
+    botNames[i] = data[i];
+  }
+  setup();
+}
+
 function setup(){
-  chatbot = new RiveScript({utf8: true});
-  chatbot.loadFile("assets/rive/start.rive").then( () => {
-    chatbot.sortReplies();
+  //console.log(botNames[0]);
+  bot = new RiveScript({utf8: true});
+  bot.loadFile("assets/rive/start.rive").then( () => {
+    bot.sortReplies();
     console.log("Bot Ready");
     chatSetup();
   });
@@ -13,6 +31,21 @@ function setup(){
     button.addEventListener("click", function(){
       $(".messages").empty();
       load("start");
+    });
+  }
+
+  var coll = document.getElementsByClassName("collapsable");
+  var i;
+  for(i = 0; i < coll.length; i++){
+    coll[i].addEventListener("click", function(){
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if(content.style.maxHeight){
+        content.style.maxHeight = null;
+      }
+      else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
     });
   }
 }
@@ -51,20 +84,22 @@ function load(fileId){
   for(i = 0; i < files.length; i++){
     if(fileId == files[i].id){
       console.log(files[i].id + " " + files[i].file);
-      chatbot = new RiveScript({utf8: true});
-      chatbot.loadFile(files[i].file).then( () => {
-        chatbot.sortReplies();
+      bot = new RiveScript({utf8: true});
+      bot.loadFile(files[i].file).then( () => {
+        bot.sortReplies();
         console.log("Bot File Ready");
-        hideContents();
+        //hideContents();
         chatSetup();
       });
     }
   }
 }
 
+
+
 //begins the chat
 function chatSetup(){
-  chatbot.reply("local-user", "start").then( (reply) => {
+  bot.reply("local-user", "start").then( (reply) => {
     console.log(reply);
     $(".messages").append($("<div class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
     + "</span></p></div></div>"));
@@ -84,7 +119,7 @@ function chat(){
     + "</span></p></div></div>"));
     console.log(input);
   }
-  chatbot.reply("local-user", input).then( (reply) => {
+  bot.reply("local-user", input).then( (reply) => {
     console.log(reply);
     $(".messages").append($("<div class=\"typing-indicator\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><div class=\"dots\"><p class=\"chat-message\"><span id=\"typ1\"></span><span id=\"typ2\"></span><span id=\"typ3\"></span></p></div></div></div>"));
     $(".typing-indicator").delay(1000).fadeOut("fast");
@@ -98,7 +133,33 @@ function chat(){
   });
 }
 
-window.onload = setup;
+//rivescript functions...
+function searchNames(name){
+  var slenderName;
+  for(i = 0; i < botNames.length; i++){
+    if(name == botNames[i].ainm){
+      slenderName = botNames[i].slender;
+      localStorage.setItem("name", slenderName);
+    }
+  }
+  return slenderName;
+}
+
+function storeName(name){
+  userName = name;
+  var slName = searchNames(name);
+  if(slName) localStorage.setItem("name", slName);
+  else localStorage.setItem("name", name);
+  return "";
+}
+
+function getName(){
+  var name = localStorage.getItem("name");
+  if(name) return name;
+  else return userName;
+}
+
+
 
 //if the x is clicked
 /*var close_button = document.querySelector(".bot-close");

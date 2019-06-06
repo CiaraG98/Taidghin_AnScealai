@@ -1,0 +1,13 @@
+> object storeName javascript
+  return storeName(args[0]);
+< object
+
+> object getName javascript
+  return getName();
+< object
+
++ start
+- Dia Dhuit! Conas atá tú? Cad is ainm duit?
+
++ * is ainm dom
+- Deas bualadh leat a <call>storeName <formal></call><call>getName</call> :)\s

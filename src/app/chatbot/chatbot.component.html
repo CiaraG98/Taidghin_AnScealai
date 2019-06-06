@@ -1,14 +1,29 @@
 <body>
   <button id="chat-button" onclick="showBot()"><span>Chatbot</span></button>
   <div class="bot-contents">
-    <div class="close-contents" onclick="hideContents()">x</div>
-    <span id="contents">Contents:</span>
-    <ul class="contents-list">
-      <br>
-      <li><a href="javascript:void(0)" id="bc" onclick="load('bc')">Briathra Neamhrialta: Aimsir Chaite</a></li>
-      <li><a href="javascript:void(0)" id="bl" onclick="load('bl')">Briathra Neamhrialta: Aimsir Laithreach</a></li>
-      <li><a href="javascript:void(0)" id="bf" onclick="load('bf')">Briathra Neamhrialta: Aimsir Fháistineach</a></li>
-    </ul>
+    <!--<div class="close-contents" onclick="hideContents()">x</div>
+    <!--<span id="contents">Contents:</span>-->
+    <button class="collapsable" id="BriathraNeamhrialta" onclick="load('BriathraNeamhrialta')">Briathra Neamhrialta</button>
+    <div class="content">
+      <ul>
+        <li id="BriathraNeamhrialtaInfo" onclick="load('BriathraNeamhrialtaInfo')">Info & Questions</li>
+        <li id="BQuiz" onclick="load('BQuiz')">Quiz</li>
+      </ul>
+    </div>
+    <button class="collapsable">Extra Option 1</button>
+    <div class="content">
+      <ul>
+        <li>Option 1</li>
+        <li>Option 2</li>
+      </ul>
+    </div>
+    <button class="collapsable">Extra Option 2</button>
+    <div class="content">
+      <ul>
+        <li>Option 1</li>
+        <li>Option 2</li>
+      </ul>
+    </div>
   </div>
   <div class="bg-modal">
     <div class="bot-close" onclick="hideBot()">+</div>
@@ -26,5 +41,8 @@
       <span id="typ1"></span>
       <span id="typ2"></span>
       <span id="typ3"></span>
-    </div>-->
+    </div>
+    <li><a href="javascript:void(0)" id="bc" onclick="load('bc')">Briathra Neamhrialta: Aimsir Chaite</a></li>
+    <li><a href="javascript:void(0)" id="bl" onclick="load('bl')">Briathra Neamhrialta: Aimsir Laithreach</a></li>
+    <li><a href="javascript:void(0)" id="bf" onclick="load('bf')">Briathra Neamhrialta: Aimsir Fháistineach</a></li>-->
 </body>

@@ -1,0 +1,7 @@
+> object getName javascript
+  return getName();
+< object
++ start
+- Dia dhuit a <call>getName</call>!
+^ <br>
+^ Welcome to Info and Questions
