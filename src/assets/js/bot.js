@@ -1,7 +1,8 @@
 window.onload = init;
 var botNames = [];
 var userName;
-
+var botName = "taigin";
+//var fs = require('fs');
 //Read Google Sheet with slenderised names...
 function init(){
   var names = "https://docs.google.com/spreadsheets/d/1vvA9n123EJ0hmuQcnwE88JpsOVgxvUgDonPSaoULP3k/edit?usp=sharing";
@@ -17,6 +18,7 @@ function loadData(data, tabletop){
 
 function setup(){
   //console.log(botNames[0]);
+  clearName();
   bot = new RiveScript({utf8: true});
   bot.loadFile("assets/rive/start.rive").then( () => {
     bot.sortReplies();
@@ -34,6 +36,7 @@ function setup(){
     });
   }
 
+  //collapsable menu for the contents
   var coll = document.getElementsByClassName("collapsable");
   var i;
   for(i = 0; i < coll.length; i++){
@@ -64,6 +67,7 @@ function hideBot(){
   console.log(bot);
   bot.style.right = "-500px";
   menu.style.right = "-500px";
+  clearName();
 }
 
 function showContents(){
@@ -87,15 +91,13 @@ function load(fileId){
       bot = new RiveScript({utf8: true});
       bot.loadFile(files[i].file).then( () => {
         bot.sortReplies();
-        console.log("Bot File Ready");
+        console.log(fileId + " loaded");
         //hideContents();
         chatSetup();
       });
     }
   }
 }
-
-
 
 //begins the chat
 function chatSetup(){
@@ -130,8 +132,20 @@ function chat(){
     }, 1200);
     //document.getElementById("output").innerHTML = reply;
     $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
+    //log(input, reply, userName);
   });
 }
+
+/*function log(input, reply, userName){
+  var log = userName + ": " + input + "\n";
+  log += "Bot: " + reply + "\n";
+  console.log(log);
+
+  fs.appendFile("logs.txt", log, function(err){
+    if(err) throw err;
+    else console.log("Data appended");
+  });
+}*/
 
 //rivescript functions...
 function searchNames(name){
@@ -159,6 +173,18 @@ function getName(){
   else return userName;
 }
 
+function getBotName(){
+  if(botName) return botName;
+}
+
+function clearName(){
+  localStorage.removeItem("name");
+}
+
+function isNameStored(){
+  if(localStorage.getItem("name")) return true;
+  else return false;
+}
 
 
 //if the x is clicked

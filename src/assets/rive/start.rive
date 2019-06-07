@@ -1,7 +1,19 @@
+> object getBotName javascript
+  return getBotName();
+< object
+
+> object storeName javascript
+  return storeName(args[0]);
+< object
+
+
 + start
 //- Roghnaigh ábhar gramadaí ar mhaith leat a chleachtadh le do thoil :)
 - Welcome to your very own personal grammar assistant!\s
-^ Please choose a topic to practice and we'll get started :)
+^ My name is <call>getBotName</call>.\s What's yours?
 
-+ *
-- Oops! You're supposed to choose a grammar topic in the menu over there....
++ _
+- Nice to meet you <formal><call>storeName <formal></call>\s
+^ Please choose a topic to practice by clicking the menu icon or one of the buttons below and we'll get started :).\s
+^ Once you choose, our conversation will be as Gaeilge.\s <br>
+^ <button class="rive-button" onclick="load('BriathraNeamhrialta')">Briathra Neamhrialta </button>

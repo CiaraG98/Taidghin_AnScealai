@@ -6,8 +6,23 @@
   return getName();
 < object
 
-+ start
-- Dia Dhuit! Conas atá tú? Cad is ainm duit?
+> object isNameStored javascript
+  if(isNameStored()) return true;
+  else return false;
+< object
 
-+ * is ainm dom
++ start
+* <call>isNameStored</call> == true => Dia Dhuit! Feicim go bhfuil <call>getName</call> an t-ainm atá agat. Deas bualadh leat!\s
+^ Baineann an chuid seo leis na briathra neamhrialta. \s
+^ Tá dhá chuid ann ar féidir leat a roghnú, Foghlaim nó Quiz. Cad ba mhaith leat a dhéanamh?\s <br>
+^ <button class="rive-button" onclick="load('BriathraNeamhrialtaInfo')">Foghlaim</button>
+^ <button class="rive-button" onclick="load('BQuiz')">Quiz</button>
+
+* <call>isNameStored</call> == false => Dia Dhuit! Níl a fhios agam d’ainm. Cad is ainm duit?
+
++ (_|_ is ainm dom)
 - Deas bualadh leat a <call>storeName <formal></call><call>getName</call> :)\s
+^ Baineann an chuid seo leis na briathra neamhrialta. \s
+^ Tá dhá chuid ann ar féidir leat a roghnú, Foghlaim nó Quiz. Cad ba mhaith leat a dhéanamh?\s <br>
+^ <button class="rive-button" onclick="load('BriathraNeamhrialtaInfo')">Foghlaim</button>
+^ <button class="rive-button" onclick="load('BQuiz')">Quiz</button>

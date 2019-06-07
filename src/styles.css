@@ -187,7 +187,7 @@ box-shadow: -1px 5px 32px 10px rgba(0,0,0,0.2);
   height: 300px;
   width: 200px;
   bottom: 170px;
-  right: 300px;
+  right: -500px;
   transition: 0.4s;
   opacity: 1;
   z-index: 1;
@@ -320,4 +320,19 @@ a:hover{
   100% {
     transform: translateY(0px);
   }
+}
+
+/* RiveScript buttons */
+.rive-button{
+  border-radius: 15px;
+  background-color: #E74C3C;
+  padding: 5px;
+  border-style: none;
+  color: white;
+  margin: 5px;
+  padding: 10px;
+}
+
+.rive-button:hover{
+  background-color: #F1C40F;
 }
