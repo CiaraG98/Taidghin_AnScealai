@@ -13,7 +13,7 @@
 
 + start
 * <call>isNameStored</call> == false => Dia Dhuit! Níl a fhios agam d’ainm. Cad is ainm duit?
-* <call>isNameStored</call> == true => Welcome to Info and Questions.\s
+* <call>isNameStored</call> == true => Dia Dhuit a <call>getName</call>. Welcome to Info and Questions.\s
 ^ Please choose the verb you would like to learn. <br>
 ^ <button class="rive-button" onclick="load('dean')">Deán</button>
 ^ <button class="rive-button" onclick="load('beir')">Beir</button>
@@ -27,7 +27,7 @@
 ^ <button class="rive-button" onclick="load('bi')">Bí</button>
 ^ <button class="rive-button" onclick="load('feic')">Feic</button>
 
-+ (_|_ is ainm dom)
++ (_ is ainm dom)
 - Deas bualadh leat a <call>storeName <formal></call><call>getName</call> :)\s
 ^ <br>
 ^ Welcome to Info and Questions.\s
@@ -45,4 +45,4 @@
 ^ <button class="rive-button" onclick="load('feic')">Feic</button>
 
 + *
-- Please Click a button.
+- Sorry, did not understand you. Please remember to reply as Gaeilge

@@ -1,7 +1,5 @@
 window.onload = init;
-var botNames = [];
-var userName;
-var botName = "taigin";
+var ainmneacha = [];
 //var fs = require('fs');
 //Read Google Sheet with slenderised names...
 function init(){
@@ -11,7 +9,7 @@ function init(){
 
 function loadData(data, tabletop){
   for(i = 0; i < data.length; i++){
-    botNames[i] = data[i];
+    ainmneacha[i] = data[i];
   }
   setup();
 }
@@ -49,6 +47,7 @@ function setup(){
       else {
         content.style.maxHeight = content.scrollHeight + "px";
       }
+      $(".bot-contents").animate({ scrollTop: $(".bot-contents")[0].scrollHeight }, 200);
     });
   }
 }
@@ -58,7 +57,7 @@ function showBot(){
   var menu = document.querySelector(".bot-contents");
   console.log(bot);
   bot.style.right = "0px";
-  menu.style.right = "50px"
+  menu.style.right = "200px";
 }
 
 function hideBot(){
@@ -66,14 +65,23 @@ function hideBot(){
   var menu = document.querySelector(".bot-contents");
   console.log(bot);
   bot.style.right = "-500px";
+  menu.style.transition = "0.4s";
   menu.style.right = "-500px";
+  menu.style.opacity = "0";
   clearName();
 }
 
 function showContents(){
   var menu = document.querySelector(".bot-contents");
-  menu.style.right = "300px";
-  menu.style.opacity = "1";
+  if(menu.style.opacity == 0){
+    menu.style.right = "300px";
+    menu.style.opacity = "1";
+  }
+  else if(menu.style.opacity == 1){
+    menu.style.right = "0px";
+    menu.style.opacity = "0";
+  }
+
 }
 
 function hideContents(){
@@ -84,6 +92,7 @@ function hideContents(){
 
 //loads file chosen by the user
 function load(fileId){
+  console.log("To Load: " + fileId);
   $(".messages").empty();
   for(i = 0; i < files.length; i++){
     if(fileId == files[i].id){
@@ -144,54 +153,5 @@ function chat(){
   fs.appendFile("logs.txt", log, function(err){
     if(err) throw err;
     else console.log("Data appended");
-  });
-}*/
-
-//rivescript functions...
-function searchNames(name){
-  var slenderName;
-  for(i = 0; i < botNames.length; i++){
-    if(name == botNames[i].ainm){
-      slenderName = botNames[i].slender;
-      localStorage.setItem("name", slenderName);
-    }
-  }
-  return slenderName;
-}
-
-function storeName(name){
-  userName = name;
-  var slName = searchNames(name);
-  if(slName) localStorage.setItem("name", slName);
-  else localStorage.setItem("name", name);
-  return "";
-}
-
-function getName(){
-  var name = localStorage.getItem("name");
-  if(name) return name;
-  else return userName;
-}
-
-function getBotName(){
-  if(botName) return botName;
-}
-
-function clearName(){
-  localStorage.removeItem("name");
-}
-
-function isNameStored(){
-  if(localStorage.getItem("name")) return true;
-  else return false;
-}
-
-
-//if the x is clicked
-/*var close_button = document.querySelector(".bot-close");
-console.log(close_button);
-if(close_button){
-  close_button.addEventListener("click", function(){
-  //document.querySelector(".bg-modal").style.display = "none";
   });
 }*/

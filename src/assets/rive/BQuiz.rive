@@ -1,8 +1,24 @@
+> object storeName javascript
+  return storeName(args[0]);
+< object
+
 > object getName javascript
   return getName();
 < object
 
+> object isNameStored javascript
+  if(isNameStored()) return true;
+  else return false;
+< object
+
 + start
-- Dia dhuit a <call>getName</call>!
-^ <br>
-^ Welcome to BQuiz
+* <call>isNameStored</call> == false => Dia Dhuit! Níl a fhios agam d’ainm. Cad is ainm duit?
+* <call>isNameStored</call> == true => Dia Dhuit a <call>getName</call>! Welcome to the Big Quiz.
+
+
++ _ is ainm dom
+- <call>storeName <formal></call>Deas bualadh leat a <call>getName</call>!\s
+^ Welcome to the Big Quiz.
+
++ *
+- Sorry, did not understand you. Please remember to reply as Gaeilge

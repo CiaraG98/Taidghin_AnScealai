@@ -6,13 +6,17 @@
   return getName();
 < object
 
+> object getUserName javascript
+  return getUserName();
+< object
+
 > object isNameStored javascript
   if(isNameStored()) return true;
   else return false;
 < object
 
 + start
-* <call>isNameStored</call> == true => Dia Dhuit! Feicim go bhfuil <call>getName</call> an t-ainm atá agat. Deas bualadh leat!\s
+* <call>isNameStored</call> == true => Dia Dhuit! Feicim go bhfuil '<call>getUserName</call>' an t-ainm atá agat. Deas bualadh leat!\s
 ^ Baineann an chuid seo leis na briathra neamhrialta. \s
 ^ Tá dhá chuid ann ar féidir leat a roghnú, Foghlaim nó Quiz. Cad ba mhaith leat a dhéanamh?\s <br>
 ^ <button class="rive-button" onclick="load('BriathraNeamhrialtaInfo')">Foghlaim</button>
