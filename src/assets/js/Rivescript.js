@@ -9,7 +9,10 @@ var files = [
   {id: "beir", file: "assets/rive/beir.rive"},
   {id: "faigh", file: "assets/rive/faigh.rive"},
   {id: "feic", file: "assets/rive/feic.rive"},
-  {id: "abair", file: "assets/rive/abair.rive"},
+  {id: "abairAC", file: "assets/rive/abairAC.rive"},
+  {id: "abairAL", file: "assets/rive/abairAL.rive"},
+  {id: "abairAF", file: "assets/rive/abairAF.rive"},
+  {id: "abairMC", file: "assets/rive/abairMC.rive"},
   {id: "tabhair", file: "assets/rive/tabhair.rive"},
   {id: "tar", file: "assets/rive/tar.rive"},
   {id: "bi", file: "assets/rive/bi.rive"},
@@ -25,6 +28,7 @@ var currentQuestion;
 var prevQuestion = -1;
 var wrongCount = 0;
 var answer2;
+var answeringQuestions = false;
 
 function searchNames(name){
   var slenderName;
@@ -125,7 +129,7 @@ var abairBriatharSaorCeisteach = [
   {question: "___________ mé leat é míle is céad uair cheana?", answer: "", answer2: "nach ndúirt"},
   {question: "____ ___________ é sin i gcónaí? (Briathar Saor)", answer: "", answer2: "nach ndúradh"},
   {question: "____ ___________ (sinn) go mbeimis ag dul ann amárach?", answer: "an ndúirt", answer2: "nach ndúirt"},
-  {question: "____ ___________ sé aon rud leat?", answer: "An ndúirt", answer2: "nach ndúirt"},
+  {question: "____ ___________ sé aon rud leat?", answer: "an ndúirt", answer2: "nach ndúirt"},
   {question: "____ ___________ siad aon rud leat faoi na fadhbanna a bhí acu?", answer: "an ndúirt", answer2: "nach ndúirt"}
 ];
 
@@ -146,8 +150,8 @@ function getRandomQuestion(questions){
   var index = getRandomIntInclusive(0, questions.length - 1);
   //console.log("array: " + questions);
   //console.log("size: " + questions.length);
-  //console.log("index: " +  index);
-  if(index == prevQuestion) index++;
+  console.log("index: " +  index);
+  if(index == prevQuestion) index = getRandomIntInclusive(0, questions.length - 1);
   prevQuestion = index;
   currentQuestion = questions[index];
   if("answer2" in currentQuestion){

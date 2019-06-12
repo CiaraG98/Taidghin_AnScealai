@@ -1,0 +1,45 @@
+> topic coinniollach
+  + tosóimid
+  - Tosóimid leis an modh coinniollach mar sin, a <call>getName</call>.\s
+
+  + (chaite|aimsir chaite)
+  - {topic=level1}<call>chatSetup chaite</call>
+
+  + (laithreach|aimsir laithreach)
+  - {topic=laithreach}<call>chatSetup tosóimid</call>
+
+  + (fháistineach|fhaistineach|aimsir fháistineach)
+  - {topic=fhaistineach}<call>chatSetup tosóimid</call>
+
+  + (céim 2|ceim 2)
+  - {topic=level2}<call>startLevel 2</call>
+
+  + (céim 3|ceim 3)
+  - {topic=level3}<call>startLevel 3</call>
+
+  + _
+  - Tá brón orm cad a dúirt tú?
+< topic
+
+> topic coinniollach-d
+  + tosóimid
+  - Tosóimid leis an modh coinniollach, ar an taobh diúltach mar sin, a <call>getName</call>.\s
+
+  + (chaite-d|aimsir chaite|chaite)
+  - {topic=level2}<call>chatSetup chaite</call>
+
+  + (laithreach-d|aimsir laithreach|laithreach)
+  - {topic=laithreach-d}<call>chatSetup tosóimid</call>
+
+  + (fháistineach-d|fhaistineach|aimsir fháistineach)
+  - {topic=fhaistineach-d}<call>chatSetup tosóimid</call>
+
+  + (céim 2|ceim 2)
+  - {topic=level2}<call>startLevel 2</call>
+
+  + (céim 3|ceim 3)
+  - {topic=level3}<call>startLevel 3</call>
+
+  //+ _
+  //- Tá brón orm cad a dúirt tú?
+< topic

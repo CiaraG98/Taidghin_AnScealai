@@ -18,7 +18,7 @@ function setup(){
   //console.log(botNames[0]);
   clearName();
   bot = new RiveScript({utf8: true});
-  bot.loadFile("assets/rive/abair.rive").then( () => {
+  bot.loadFile("assets/rive/abairAC.rive").then( () => {
     bot.sortReplies();
     console.log("Bot Ready");
     chatSetup("start");

@@ -314,3 +314,16 @@ box-shadow: -1px 5px 32px 10px rgba(0,0,0,0.2);
 .rive-button:hover{
   background-color: #F1C40F;
 }
+
+.rive-button2{
+  border-radius: 15px;
+  padding: 10px;
+  border-style: none;
+  color: white;
+  margin: 5px;
+  background-color: #8E44AD;
+}
+
+.rive-button2:hover{
+  background-color: #1ABC9C;
+}

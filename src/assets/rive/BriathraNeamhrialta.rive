@@ -24,11 +24,12 @@
 * <call>isNameStored</call> == true => Ceart go leor, a <call>getName</call>.\s
 ^ Anois, feicim go bhfuil spéis agat sna briathra neamhrialta. An bhfuil an ceart agam?
 
-* <call>isNameStored</call> == false => Dia Dhuit! Níl a fhios agam d’ainm. Cad is ainm duit?
+/** <call>isNameStored</call> == false => Dia Dhuit! Níl a fhios agam d’ainm. Cad is ainm duit?
 
 + (_|_ is ainm dom)
+% dia dhuit níl a fhios agam d’ainm cad is ainm duit
 - Deas bualadh leat, a <call>storeName <formal></call><call>getName</call> :)\s
-^ Anois, feicim go bhfuil spéis agat sna briathra neamhrialta. An bhfuil an ceart agam?
+^ Anois, feicim go bhfuil spéis agat sna briathra neamhrialta. An bhfuil an ceart agam?*/
 
 + (ta|tá)
 - Ceart go leor, a <call>getName</call>. Tá dhá chuid ann ar féidir leat a roghnú, Foghlaim nó Quiz. Cad ba mhaith leat a dhéanamh?\s <br>
@@ -44,7 +45,7 @@
 ^ Tá do rogha féin agat:<br>
 ^ <button class="rive-button" onclick="load('dean')">Déan</button>
 ^ <button class="rive-button" onclick="load('beir')">Beir</button>
-^ <button class="rive-button" onclick="load('abair')">Abair</button>
+^ <button class="rive-button" onclick="load('abairAC')">Abair</button>
 ^ <button class="rive-button" onclick="load('faigh')">Faigh</button>
 ^ <button class="rive-button" onclick="load('ith')">Ith</button>
 ^ <button class="rive-button" onclick="load('teigh')">Téigh</button>
@@ -58,7 +59,7 @@
 - <call>loadFromChat dean</call>
 
 + abair
-- <call>loadFromChat abair</call>
+- <call>loadFromChat abairAC</call>
 
 + beir
 - <call>loadFromChat beir</call>

@@ -1,0 +1,6 @@
++ start
+- Inniu táimid ag foghlaim abairAL.\s
+^ Cén aimsir ar mhaith leat a dhéanamh, a <call>getName</call>? <br>
+^ <button class="rive-button" onclick="chatSetup('ceim 1')">Céim 1</button>
+^ <button class="rive-button" onclick="chatSetup('ceim 2')">Céim 2</button>
+^ <button class="rive-button" onclick="chatSetup('ceim 3')">Céim 3</button>

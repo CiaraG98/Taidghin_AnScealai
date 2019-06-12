@@ -23,7 +23,7 @@
 ^ Tá do rogha féin agat:<br>
 ^ <button class="rive-button" onclick="load('dean')">Deán</button>
 ^ <button class="rive-button" onclick="load('beir')">Beir</button>
-^ <button class="rive-button" onclick="load('abair')">Abair</button>
+^ <button class="rive-button" onclick="load('abairAC')">Abair</button>
 ^ <button class="rive-button" onclick="load('faigh')">Faigh</button>
 ^ <button class="rive-button" onclick="load('ith')">Ith</button>
 ^ <button class="rive-button" onclick="load('teigh')">Téigh</button>
@@ -40,7 +40,7 @@
 ^ Please choose the verb you would like to learn. <br>
 ^ <button class="rive-button" onclick="load('dean')">Deán</button>
 ^ <button class="rive-button" onclick="load('beir')">Beir</button>
-^ <button class="rive-button" onclick="load('abair')">Abair</button>
+^ <button class="rive-button" onclick="load('abairAC')">Abair</button>
 ^ <button class="rive-button" onclick="load('faigh')">Faigh</button>
 ^ <button class="rive-button" onclick="load('ith')">Ith</button>
 ^ <button class="rive-button" onclick="load('teigh')">Téigh</button>
@@ -54,7 +54,7 @@
 - <call>loadFromChat dean</call>
 
 + abair
-- <call>loadFromChat abair</call>
+- <call>loadFromChat abairAC</call>
 
 + beir
 - <call>loadFromChat beir</call>
