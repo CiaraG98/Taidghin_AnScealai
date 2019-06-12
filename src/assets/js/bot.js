@@ -1,5 +1,6 @@
 window.onload = init;
 var ainmneacha = [];
+var keepMessages = false;
 //var fs = require('fs');
 //Read Google Sheet with slenderised names...
 function init(){
@@ -18,7 +19,7 @@ function setup(){
   //console.log(botNames[0]);
   clearName();
   bot = new RiveScript({utf8: true});
-  bot.loadFile("assets/rive/abairAC.rive").then( () => {
+  bot.loadFile("assets/rive/start.rive").then( () => {
     bot.sortReplies();
     console.log("Bot Ready");
     chatSetup("start");
@@ -93,7 +94,9 @@ function hideContents(){
 //loads file chosen by the user
 function load(fileId){
   console.log("To Load: " + fileId);
-  $(".messages").empty();
+  if(keepMessages == false){
+    $(".messages").empty();
+  }
   for(i = 0; i < files.length; i++){
     if(fileId == files[i].id){
       console.log(files[i].id + " " + files[i].file);
@@ -106,6 +109,7 @@ function load(fileId){
       });
     }
   }
+  keepMessages = false;
 }
 
 function loadFromChat(fileId){
