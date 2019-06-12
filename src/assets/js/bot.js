@@ -18,10 +18,10 @@ function setup(){
   //console.log(botNames[0]);
   clearName();
   bot = new RiveScript({utf8: true});
-  bot.loadFile("assets/rive/start.rive").then( () => {
+  bot.loadFile("assets/rive/abair.rive").then( () => {
     bot.sortReplies();
     console.log("Bot Ready");
-    chatSetup();
+    chatSetup("start");
   });
 
   //if the 'chatbot' button is clicked
@@ -102,20 +102,38 @@ function load(fileId){
         bot.sortReplies();
         console.log(fileId + " loaded");
         //hideContents();
-        chatSetup();
+        chatSetup("start");
       });
     }
   }
 }
 
+function loadFromChat(fileId){
+  console.log(fileId);
+  load(fileId);
+}
+
+function appendTypingIndicator(){
+  $(".messages").append($("<div class=\"typing-indicator\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><div class=\"dots\"><p class=\"chat-message\"><span id=\"typ1\"></span><span id=\"typ2\"></span><span id=\"typ3\"></span></p></div></div></div>"));
+  $(".typing-indicator").delay(1000).fadeOut("fast");
+  $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
+}
+
 //begins the chat
-function chatSetup(){
-  bot.reply("local-user", "start").then( (reply) => {
+function chatSetup(text){
+  bot.reply("local-user", text).then( (reply) => {
     console.log(reply);
-    $(".messages").append($("<div class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
-    + "</span></p></div></div>"));
-    //document.getElementById("output").innerHTML = reply;
+    if(reply != ""){
+      appendTypingIndicator();
+      setTimeout(function(){
+        $(".messages").append($("<div class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
+        + "</span></p></div></div>"));
+        //document.getElementById("output").innerHTML = reply;
+        $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
+      }, 1200);
+    }
   });
+  return "";
 }
 
 //conversation takes place
@@ -129,19 +147,21 @@ function chat(){
     $(".messages").append($("<div class=\"chat user\"><div class=\"user-photo\"><img src=\"assets/education.png\" id=\"user-img\"></div><p class=\"chat-message\"><span class=\"input\">" + input
     + "</span></p></div></div>"));
     console.log(input);
+    $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
   }
   bot.reply("local-user", input).then( (reply) => {
     console.log(reply);
-    $(".messages").append($("<div class=\"typing-indicator\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><div class=\"dots\"><p class=\"chat-message\"><span id=\"typ1\"></span><span id=\"typ2\"></span><span id=\"typ3\"></span></p></div></div></div>"));
-    $(".typing-indicator").delay(1000).fadeOut("fast");
-    setTimeout(function(){
-      $(".messages").append($("<div class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
-      + "</span></p></div></div>"));
+    if(reply != ""){
+      appendTypingIndicator();
+      setTimeout(function(){
+        $(".messages").append($("<div class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
+        + "</span></p></div></div>"));
+        $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
+      }, 1200);
+      //document.getElementById("output").innerHTML = reply;
       $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
-    }, 1200);
-    //document.getElementById("output").innerHTML = reply;
-    $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
-    //log(input, reply, userName);
+      //log(input, reply, userName);
+    }
   });
 }
 

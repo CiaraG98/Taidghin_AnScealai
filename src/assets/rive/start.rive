@@ -6,15 +6,32 @@
   return storeName(args[0]);
 < object
 
+> object getName javascript
+  return getName();
+< object
+
+> object loadFromChat javascript
+  loadFromChat(args[0]);
+  return "";
+< object 
+
 + start
 //- Roghnaigh ábhar gramadaí ar mhaith leat a chleachtadh le do thoil :)
-- Welcome to your very own personal grammar assistant!\s
-^ My name is <call>getBotName</call>.\s What's yours?
+//- Welcome to your very own personal grammar assistant!\s
+//^ My name is <call>getBotName</call>.\s What's yours?
+- Dia Dhuit. Is mise <call>getBotName</call>. Cén t-ainm atá ort?
+- Dia Dhuit. Is mise <call>getBotName</call>. Cad is ainm duit?
+- Dia Dhuit. Is mise <call>getBotName</call>. Cé thú féin?
+- Dia Dhuit. Is mise <call>getBotName</call>. Cad a thabharfaidh mé ort?
 
-+ (_|my name is _)
-- Nice to meet you <formal><call>storeName <formal></call>\s
++ (_|_ is ainm dom)
+- Fáilte romhat isteach, a <call>storeName <formal></call><call>getName</call>.\s
+^ Táim anseo chun cabhrú leat le roinnt pointí gramadaí.\s
 ^ Please choose a topic to practice by clicking the menu icon or one of the buttons below and we'll get started :).\s
-^ Once you choose, our conversation will be as Gaeilge.\s <br>
+^ <br>\s
 ^ <button class="rive-button" onclick="load('BriathraNeamhrialta')">Briathra Neamhrialta </button>
 ^ <button class="rive-button">Grammar Topic </button>
 ^ <button class="rive-button">Grammar Topic </button>
+
++ briathra neamhrialta
+- <call>loadFromChat BriathraNeamhrialta</call>

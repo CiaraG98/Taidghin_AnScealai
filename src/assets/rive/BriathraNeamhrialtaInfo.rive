@@ -11,10 +11,16 @@
   else return false;
 < object
 
+> object loadFromChat javascript
+  loadFromChat(args[0]);
+  return "";
+< object
+
 + start
 * <call>isNameStored</call> == false => Dia Dhuit! Níl a fhios agam d’ainm. Cad is ainm duit?
-* <call>isNameStored</call> == true => Dia Dhuit a <call>getName</call>. Welcome to Info and Questions.\s
-^ Please choose the verb you would like to learn. <br>
+* <call>isNameStored</call> == true => A, <call>getName</call>. Níl ach aon cheann déag de bhriathra neamhrialta sa Ghaeilge Sin an méid. \s
+^ Níl sé seo ródheacair. Is féidir leat tosnú le haon cheann is mian leat. Abair liom cad é an chéan cheann ar mhaith leat tosnú leis. \s
+^ Tá do rogha féin agat:<br>
 ^ <button class="rive-button" onclick="load('dean')">Deán</button>
 ^ <button class="rive-button" onclick="load('beir')">Beir</button>
 ^ <button class="rive-button" onclick="load('abair')">Abair</button>
@@ -43,6 +49,39 @@
 ^ <button class="rive-button" onclick="load('clois')">Clois</button>
 ^ <button class="rive-button" onclick="load('bi')">Bí</button>
 ^ <button class="rive-button" onclick="load('feic')">Feic</button>
+
++ (dean|déan)
+- <call>loadFromChat dean</call>
+
++ abair
+- <call>loadFromChat abair</call>
+
++ beir
+- <call>loadFromChat beir</call>
+
++ faigh
+- <call>loadFromChat faigh</call>
+
++ ith
+- <call>loadFromChat ith</call>
+
++ (teigh|téigh)
+- <call>loadFromChat teigh</call>
+
++ tar
+- <call>loadFromChat tar</call>
+
++ tabhair
+- <call>loadFromChat tar</call>
+
++ clois
+- <call>loadFromChat clois</call>
+
++ (bi|bí)
+- <call>loadFromChat bi</call>
+
++ feic
+- <call>loadFromChat feic</call>
 
 + *
 - Sorry, did not understand you. Please remember to reply as Gaeilge
