@@ -74,3 +74,16 @@ var abairAimsirLaithreachQuestions = [
   {question: "___________ leat go bhfuil siad sásta (mé).", answer: "deirim"},
   {question: "___________ an rud ceart i gcónaí (sinn).", answer: "deirimid"}
 ];
+
+var abairAimsirLaithreachNi = [
+  {question: "____ ___________ mo chara rudaí mar sin riamh.", answer: "ní deir"},
+  {question: "____ ___________ aon rud faoi riamh.", answer: "ní deirim"},
+  {question: "____ ___________ siad go mbíonn siad míshásta.", answer: "ní deir"},
+  {question: "____ ___________ na rudaí sin riamh (sinn).", answer: "ní deirimid"},
+  {question: "____ ___________ aon rud ag an tús (sinn).", answer: "ní deirimid"},
+  {question: "____ ___________ aon phaidreacha ar maidin (mé).", answer: "ní deirim"},
+  {question: "____ ___________ Séamas aon rud faoin timpiste a tharla dó riamh.", answer: "ní deir"},
+  {question: "____ ___________ siad aon rud má bhíonn siad faoi bhrú.", answer: "ní deir"},
+  {question: "____ ___________ aon rud faoin eachtra le Deirdre riamh (sinn).", answer: "ní deirimid"},
+  {question: "____ ___________ aon rud faoi le Daithí riamh (mé).", answer: "ní deirim"}
+];
