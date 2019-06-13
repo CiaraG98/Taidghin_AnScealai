@@ -26,7 +26,7 @@
 < object
 
 > object getProgress javascript
-  return progress;
+  return getProgress();
 < object
 
 > object getWrongCount javascript
@@ -80,6 +80,15 @@
   return "";
 < object
 
+> object levelComplete javascript
+  if(args[0] == "false") isLevelComplete = false;
+  if(isLevelComplete == true){
+    chatSetup("levelcomplete")
+  }
+  console.log("isLevelComplete: " + isLevelComplete);
+  return "";
+< object
+
 + start
 - Inniu táimid ag foghlaim <b><i>abair</i></b>.\s
 ^ Cén aimsir ar mhaith leat a dhéanamh, a <call>getName</call>? <br>
@@ -107,13 +116,13 @@
 - Tá brón orm cad a dúirt tú?
 
 + (laithreach|aimsir laithreach)
-- <call>loadFromChat abairAL</call>
+- <call>setKeepMessages true</call><call>loadFromChat abairAL</call>
 
 + (fháistineach|fhaistineach|aimsir fháistineach)
-- <call>loadFromChat abairAF</call>
+- <call>setKeepMessages true</call><call>loadFromChat abairAF</call>
 
 + (coinniollach|modh coinniollach)
-- <call>loadFromChat abairMC</call>
+- <call>setKeepMessages true</call><call>loadFromChat abairMC</call>
 
 + (céim 1|ceim 1|1)
 - {topic=level1}<call>startLevel 1</call>
@@ -137,22 +146,29 @@
   ^ - Dúramar <br>
   ^ - Ansin ar ais go: <br>
   ^ - Dúirt sibh, agus <br>
-  ^ - Dúirt siad <br><br>
-  ^ Bain triail as an gcleachtadh beag seo: \s <br><call>chatSetup ceist</call>
+  ^ - Dúirt siad <br><call>chatSetup bain</call>
+
+  + bain
+  - Bain triail as an gcleachtadh beag seo: \s <br><call>chatSetup ceist</call>
 
   + ceist
-  - Ceist: <call>getRandomQuestion 1</call><br><call>setAnsweringQuestions true</call><call>resetProgress</call>\s
+  - <call>getRandomQuestion 1</call><br><call>setAnsweringQuestions true</call><call>resetProgress</call><call>levelComplete false</call>\s
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
-  * <call>getProgress</call> == 3 => Ceart! Scór: <call>getProgress</call> <br><br> Tá triúr ceart agat i ndiaidh a chéile. Tá céim 1 críochnaithe agat.\s
+  //* <call>levelComplete</call> == true => <call>chatSetup levelcomplete</call>
+  //* <call>getProgress</call> == 3 => Ceart! Scór: <call>changeProgress +</call><call>getProgress</call> <br><br> Tá triúr ceart agat i ndiaidh a chéile. Tá céim 1 críochnaithe agat.\s
+  //^ I gCéim a Dó féachfaimid ar an bhfoirm dhiúltach den bhriathar. Beimid ag séanadh go ndúramar rudaí!\s
+  //^ An bhfuil tú ag iarraidh leanúint ar aghaidh go Céim a Dó?  Ní thógfaidh sé seo i bhfad.<call>setAnsweringQuestions false</call>
+  //* <call>getWrongCount</call> == 2 => <button class="rive-button" onclick="window.location.href = 'https://www.abair.tcd.ie/ceacht/index.html';">Need Help?</button>
+  * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call><call>getRandomQuestion 1</call>
+  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call> Déan iarracht arís.<br>
+  ^ <call>getProgress</call>
+
+  + levelcomplete
+  - <call>getProgress</call> Tá triúr ceart agat i ndiaidh a chéile. Tá céim 1 críochnaithe agat.\s
   ^ I gCéim a Dó féachfaimid ar an bhfoirm dhiúltach den bhriathar. Beimid ag séanadh go ndúramar rudaí!\s
   ^ An bhfuil tú ag iarraidh leanúint ar aghaidh go Céim a Dó?  Ní thógfaidh sé seo i bhfad.<call>setAnsweringQuestions false</call>
-  //* <call>getWrongCount</call> == 2 => <button class="rive-button" onclick="window.location.href = 'https://www.abair.tcd.ie/ceacht/index.html';">Need Help?</button>
-  * <call>checkAnswer <star></call> == true => <call>getRandomReply</call>. <call>changeProgress +</call><br> Scór: <call>getProgress</call><br><br>
-  ^ Ceist: <call>getRandomQuestion 1</call><br>\s
-  * <call>checkAnswer <star></call> == false => Mícheart <call>changeProgress -</call> Déan iarracht arís.<br>
-  ^ Scór: <call>getProgress</call>
 
   + (ta|tá)
   - {topic=level2}<call>startLevel 2</call>
@@ -167,13 +183,13 @@
   - {topic=level3}<call>startLevel 3</call>
 
   + (laithreach|aimsir laithreach)
-  - <call>loadFromChat abairAL</call>
+  - <call>setKeepMessages true</call><call>loadFromChat abairAL</call>
 
   + (fháistineach|fhaistineach|aimsir fháistineach)
-  - <call>loadFromChat abairAF</call>
+  - <call>setKeepMessages true</call><call>loadFromChat abairAF</call>
 
   + (coinniollach|modh coinniollach)
-  - <call>loadFromChat abairMC</call>
+  - <call>setKeepMessages true</call><call>loadFromChat abairMC</call>
 < topic
 
 > topic level2
@@ -194,18 +210,22 @@
     ^ An bhfuil tú ag iarraidh an cleachtadh beag seo a dhéanamh?<br>
 
     + (ta|tá)
-    - Ceist: <call>getRandomQuestion 2</call><call>setAnsweringQuestions true</call><call>resetProgress</call>
+    - <call>levelComplete false</call><call>getRandomQuestion 2</call><call>setAnsweringQuestions true</call><call>resetProgress</call>
 
     + (nil|níl)
     - An bhfuil tú ag iarraidh dul go Céim 3 ina áit sin?
 
     + *
     * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
-    * <call>getProgress</call> == 3 => Tá triúr ceart agat i ndiaidh a chéile. Tá céim 2 críochnaithe agat. <call>getRandomReply</call> <call>chatSetup ceist</call>
-    ^ <call>setAnsweringQuestions false</call>
-    * <call>checkAnswer <star></call> == true => <call>getRandomReply</call><call>changeProgress +</call><br>Scór: <call>getProgress</call><br><br>
-    ^ Ceist: <call>getRandomQuestion 2</call>
-    * <call>checkAnswer <star></call> == false => Mícheart. Déan iarracht arís. <call>changeProgress -</call><br>Scór: <call>getProgress</call>
+    //* <call>getProgress</call> == 3 => Tá triúr ceart agat i ndiaidh a chéile. Tá céim 2 críochnaithe agat. <call>getRandomReply</call> <call>chatSetup ceist</call>
+    //^ <call>setAnsweringQuestions false</call>
+    * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call><call>getRandomQuestion 2</call>
+    * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call> Déan iarracht arís.<br>
+    ^ <call>getProgress</call>
+
+    + levelcomplete
+    - <call>getProgress</call> Tá triúr ceart agat i ndiaidh a chéile. Tá céim 2 críochnaithe agat.\s <call>setAnsweringQuestions false</call>
+    ^ <call>chatSetup ceist</call>
 
     + ceist
     - An bhfuil tú ag iarraidh dul go Céim 3 ina áit sin?
@@ -225,13 +245,13 @@
     - {topic=level3}<call>startLevel 3</call>
 
     + (laithreach|aimsir laithreach)
-    - <call>loadFromChat abairAL</call>
+    - <call>setKeepMessages true</call><call>loadFromChat abairAL</call>
 
     + (fháistineach|fhaistineach|aimsir fháistineach)
-    - <call>loadFromChat abairAF</call>
+    - <call>setKeepMessages true</call><call>loadFromChat abairAF</call>
 
     + (coinniollach|modh coinniollach)
-    - <call>loadFromChat abairMC</call>
+    - <call>setKeepMessages true</call><call>loadFromChat abairMC</call>
 < topic
 
 > topic level3
@@ -248,8 +268,8 @@
   ^ An bhfuil tú réidh chun cleachtadh beag a dhéanamh air seo?
 
   + (ta|tá)
-  - <call>resetProgress</call>Scór: <call>getProgress</call>
-  ^ <br><br>Ceist: <call>getRandomQuestion 3</call><call>setAnsweringQuestions true</call>
+  - <call>resetProgress</call><call>levelComplete false</call><call>getProgress</call>
+  ^ <call>levelComplete false</call><call>getRandomQuestion 3</call><call>setAnsweringQuestions true</call>
 
   + (nil|níl)
   - Go breá. Is féidir leat briathar eile a phiocadh nó teacht ar ais uair éigin eile.
@@ -262,11 +282,15 @@
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
-  * <call>getProgress</call> == 3 => Scór: <call>getProgress</call> <br><br> Tá triúr ceart agat i ndiaidh a chéile. <call>getRandomReply</call>. <call>chatSetup ceisteach</call>
-  ^ <call>setAnsweringQuestions false</call>
-  * <call>checkAnswer <star></call> == true => <call>getRandomReply</call><call>changeProgress +</call><br>Scór: <call>getProgress</call><br><br>
-  ^ Ceist: <call>getRandomQuestion 3</call>
-  * <call>checkAnswer <star> == false => Mícheart. Déan iarracht arís. <call>changeProgress -</call><br>Scór: <call>getProgress</call>
+  //* <call>getProgress</call> == 3 => Scór: <call>getProgress</call> <br><br> Tá triúr ceart agat i ndiaidh a chéile. <call>getRandomReply</call>. <call>chatSetup ceisteach</call>
+  //^ <call>setAnsweringQuestions false</call>
+  * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call><call>getRandomQuestion 3</call>
+  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call> Déan iarracht arís.<br>
+  ^ <call>getProgress</call>
+
+  + levelcomplete
+  - <call>getProgress</call> Tá triúr ceart agat i ndiaidh a chéile. <call>getRandomReply</call>\s<call>setAnsweringQuestions false</call>
+  ^ <call>chatSetup ceisteach</call>
 
   + (céim 1|ceim 1)
   - {topic=level1}<call>startLevel 1</call>
@@ -275,13 +299,13 @@
   - {topic=level2}<call>startLevel 2</call>
 
   + (laithreach|aimsir laithreach)
-  - <call>loadFromChat abairAL</call>
+  - <call>setKeepMessages true</call><call>loadFromChat abairAL</call>
 
   + (fháistineach|fhaistineach|aimsir fháistineach)
-  - <call>loadFromChat abairAF</call>
+  - <call>setKeepMessages true</call><call>loadFromChat abairAF</call>
 
   + (coinniollach|modh coinniollach)
-  - <call>loadFromChat abairMC</call>
+  - <call>setKeepMessages true</call><call>loadFromChat abairMC</call>
 < topic
 
 //Level 3 topics
@@ -306,15 +330,19 @@
 
   + (ta|tá)
   % an bhfuil tú ag iarraidh an cleachtadh beag seo a dhéanamh
-  - Ceist: <call>getRandomQuestion 4</call><call>setAnsweringQuestions true</call><call>resetProgress</call>
+  - <call>levelComplete false</call><call>getRandomQuestion 4</call><call>setAnsweringQuestions true</call><call>resetProgress</call>
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
-  * <call>getProgress</call> == 3 => Scór: <call>getProgress</call> <br><br> Tá triúr ceart agat i ndiaidh a chéile. <call>getRandomReply</call>.
+  //* <call>getProgress</call> == 3 => Scór: <call>getProgress</call> <br><br> Tá triúr ceart agat i ndiaidh a chéile. <call>getRandomReply</call>.
+  //^ <call>chatSetup coibhneasta</call><call>setAnsweringQuestions false</call>
+  * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call><call>getRandomQuestion 4</call>
+  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call> Déan iarracht arís.<br>
+  ^ <call>getProgress</call>
+
+  + levelcomplete
+  - <call>getProgress</call> Tá triúr ceart agat i ndiaidh a chéile. <call>getRandomReply</call>
   ^ <call>chatSetup coibhneasta</call><call>setAnsweringQuestions false</call>
-  * <call>checkAnswer <star></call> == true => <call>getRandomReply</call><call>changeProgress +</call><br>Scór: <call>getProgress</call><br><br>
-  ^ Ceist: <call>getRandomQuestion 4</call>
-  * <call>checkAnswer <star> == false => Mícheart. Déan iarracht arís. <call>changeProgress -</call><br>Scór: <call>getProgress</call>
 
   + coibhneasta
   - Féachaimid anois ar an fhoirm cheisteach. An bhfuil tú réidh?{topic=coibhneasta}
@@ -329,13 +357,13 @@
   - {topic=level2}<call>startLevel 2</call>
 
   + (laithreach|aimsir laithreach)
-  - <call>loadFromChat abairAL</call>
+  - <call>setKeepMessages true</call><call>loadFromChat abairAL</call>
 
   + (fháistineach|fhaistineach|aimsir fháistineach)
-  - <call>loadFromChat abairAF</call>
+  - <call>setKeepMessages true</call><call>loadFromChat abairAF</call>
 
   + (coinniollach|modh coinniollach)
-  - <call>loadFromChat abairMC</call>
+  - <call>setKeepMessages true</call><call>loadFromChat abairMC</call>
 < topic
 
 > topic coibhneasta
@@ -368,15 +396,19 @@
 
   + (ta|tá)
   % an bhfuil tú ag iarraidh cleachtadh a dhéanamh ar a bhfuil déanta sa chuid seo den gceacht
-  - <call>resetProgress</call>Ceist: <call>getRandomQuestion 5</call><call>setAnsweringQuestions true</call>
+  - <call>resetProgress</call><call>levelComplete false</call><call>getRandomQuestion 5</call><call>setAnsweringQuestions true</call>
 
   + *
   * <call>answeringQuestions</call> == false => Tá brón orm cad a dúirt tú?
-  * <call>getProgress</call> == 3 => Scór: <call>getProgress</call> <br><br> Tá triúr ceart agat i ndiaidh a chéile. <call>getRandomReply</call>.<br>
+  //* <call>getProgress</call> == 3 => Scór: <call>getProgress</call> <br><br> Tá triúr ceart agat i ndiaidh a chéile. <call>getRandomReply</call>.<br>
+  //^ Sin a bhfuil mar sin. Slán go fóill agus bain triail as gné eile den ghramadach uair éigin eile. Slán!<call>setAnsweringQuestions false</call>
+  * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call><call>getRandomQuestion 5</call>
+  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call> Déan iarracht arís.<br>
+  ^ <call>getProgress</call>
+
+  + levelcomplete
+  - <call>getProgress</call> Tá triúr ceart agat i ndiaidh a chéile. <call>getRandomReply</call>
   ^ Sin a bhfuil mar sin. Slán go fóill agus bain triail as gné eile den ghramadach uair éigin eile. Slán!<call>setAnsweringQuestions false</call>
-  * <call>checkAnswer <star></call> == true => <call>getRandomReply</call><call>changeProgress +</call><br>Scór: <call>getProgress</call><br><br>
-  ^ Ceist: <call>getRandomQuestion 5</call>
-  * <call>checkAnswer <star> == false => Mícheart. Déan iarracht arís. <call>changeProgress -</call><br>Scór: <call>getProgress</call>
 
   + briathar saor
   - {topic=level3}<call>chatSetup briathar</call>
@@ -391,11 +423,11 @@
   - {topic=level2}<call>startLevel 2</call>
 
   + (laithreach|aimsir laithreach)
-  - <call>loadFromChat abairAL</call>
+  - <call>setKeepMessages true</call><call>loadFromChat abairAL</call>
 
   + (fháistineach|fhaistineach|aimsir fháistineach)
-  - <call>loadFromChat abairAF</call>
+  - <call>setKeepMessages true</call><call>loadFromChat abairAF</call>
 
   + (coinniollach|modh coinniollach)
-  - <call>loadFromChat abairMC</call>
+  - <call>setKeepMessages true</call><call>loadFromChat abairMC</call>
 < topic

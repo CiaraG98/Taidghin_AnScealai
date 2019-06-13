@@ -19,7 +19,7 @@ function setup(){
   //console.log(botNames[0]);
   clearName();
   bot = new RiveScript({utf8: true});
-  bot.loadFile("assets/rive/start.rive").then( () => {
+  bot.loadFile("assets/rive/abairAC.rive").then( () => {
     bot.sortReplies();
     console.log("Bot Ready");
     chatSetup("start");
@@ -168,14 +168,3 @@ function chat(){
     }
   });
 }
-
-/*function log(input, reply, userName){
-  var log = userName + ": " + input + "\n";
-  log += "Bot: " + reply + "\n";
-  console.log(log);
-
-  fs.appendFile("logs.txt", log, function(err){
-    if(err) throw err;
-    else console.log("Data appended");
-  });
-}*/
