@@ -117,6 +117,7 @@ box-shadow: -1px 5px 32px 10px rgba(0,0,0,0.2);
   border-radius: 8px;
   padding: 5px;
   width: 300px;
+  border: none;
 }
 
 /* Chat Button */

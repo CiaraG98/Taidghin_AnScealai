@@ -24,7 +24,7 @@ var abairAimsirChaiteNi = [
   {question: "____  ___________ tú é sin linn ag an am.", answer: "ní dúirt"}
 ];
 
-var abairBriatharSaor = [
+var abairACBriatharSaor = [
   {question: "___________ gur fear láidir a bhí ann ach níl a fhios ag éinne.", answer: "dúradh"},
   {question: "___________ gur ghoid sí é ach ní chreidim é sin.", answer: "dúradh"},
   {question: "____ ___________ aon rud mar sin sa chúirt.", answer: "ní dúradh"},
@@ -37,7 +37,7 @@ var abairBriatharSaor = [
   {question: "___________ go raibh sí ar buile nuair a chuala sí é.", answer: "dúradh"}
 ];
 
-var abairBriatharSaorCeisteach = [
+var abairACCeisteach = [
   {question: "____ ___________ tú leis go raibh tú tinn?", answer: "an ndúirt", answer2:"nach ndúirt"},
   {question: "____ ___________ (sinn) leat go rabhamar ag dul ar laethanta saoire?", answer: "an ndúramar", answer2: "nach ndúramar"},
   {question: "____ ___________ mé é sin leat cheana?", answer: "an ndúirt", answer2: "nach ndúirt"},
@@ -86,4 +86,30 @@ var abairAimsirLaithreachNi = [
   {question: "____ ___________ siad aon rud má bhíonn siad faoi bhrú.", answer: "ní deir"},
   {question: "____ ___________ aon rud faoin eachtra le Deirdre riamh (sinn).", answer: "ní deirimid"},
   {question: "____ ___________ aon rud faoi le Daithí riamh (mé).", answer: "ní deirim"}
+];
+
+var abairALBriathorSaor = [
+  {question: "___________ go bhfuil sé go maith ach níl a fhios agam faoi.", answer: "deirtear"},
+  {question: "____ ___________ mar sin é i nGaeilge Uladh.", answer: "ní deirtear"},
+  {question: "___________ go mbeidh samhradh maith againn ach níl a fhios ag éinne.", answer: "deirtear"},
+  {question: "___________ go bhfuil gach rud an-daor sa siopa sin.", answer: "deirtear"},
+  {question: "___________ go bhfuil Nóra an-mhaith ag Mata.", answer: "deirtear"},
+  {question: "___________ go bhfuil seans maith ag Loch Garman Craobh na hÉireann a bhuachan i mbliana.", answer: "deirtear"},
+  {question: "____ ___________ aon rud faoin mBreatimeacht níos mó.", answer: "ní deirtear"},
+  {question: "____ ___________ go mbeidh stoirm againn ag an deireadh seachtaine.", answer: "deirtear"},
+  {question: "____ ___________ aon rud faoi sin níos mó.", answer: "ní deirtear"},
+  {question: "____ ___________ mórán faoin easpa fostaíochta atá sa cheantar sin níos mó.", answer: "ní deirtear"}
+];
+
+var abairALCeisteach = [
+  {question: "___________ é sin i mBéarla Shasana (dearfach, briathar saor).", answer: "an ndeirtear"},
+  {question: "____ ___________ go bhfuil na taibléidí sin go dona don gcroí? (diúltach, briathar saor)", answer: "nach ndeirtear"},
+  {question: "___________ go bhfuil sé sin as a mheabhar ar fad? (diúltach, briathar saor)", answer: "nach ndeirtear"},
+  {question: "___________ aon rud faoin aighneas a bhí acu níos mó? (dearfach, briathar saor).", answer: "an ndeirtear"},
+  {question: "___________ é sin rómhinic leat? (dearfach, mé).", answer: "an ndeirim"},
+  {question: "___________ aon rud mícheart riamh (dearfach, mé).", answer: "an ndeirim"},
+  {question: "____ ___________ sí é sin go minic? (diúltach).", answer: "nach ndeir"},
+  {question: "____ ___________ é sin leo gach aon uair? (diúltach, sinn)", answer: "nach ndeirimid"},
+  {question: "____ ___________ Seán go bhfuil siad an-sona san áit ina bhfuil siad? (diúltach).", answer: "nach ndeir"},
+  {question: "____ ___________ gach duine go bhfuil mí-ádh ag dul leis an teach sin? (diúltach).", answer: "nach ndeir"}
 ];

@@ -19,7 +19,7 @@ function setup(){
   //console.log(botNames[0]);
   clearName();
   bot = new RiveScript({utf8: true});
-  bot.loadFile("assets/rive/abairAC.rive").then( () => {
+  bot.loadFile("assets/rive/abairAV.rive").then( () => {
     bot.sortReplies();
     console.log("Bot Ready");
     chatSetup("start");
@@ -142,11 +142,11 @@ function chatSetup(text){
 
 //conversation takes place
 function chat(){
-  $("form").on("submit", (event) => {
-    event.preventDefault();
-  });
   var input = document.getElementById("user_input").value;
   if(input != ""){
+    $("form").on("submit", (event) => {
+      event.preventDefault();
+    });
     document.getElementById("user_input").value = "";
     $(".messages").append($("<div class=\"chat user\"><div class=\"user-photo\"><img src=\"assets/education.png\" id=\"user-img\"></div><p class=\"chat-message\"><span class=\"input\">" + input
     + "</span></p></div></div>"));

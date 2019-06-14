@@ -12,8 +12,8 @@
 > object getRandomQuestion javascript
   if(args[0] == 1) return getRandomQuestion(abairAimsirChaiteQuestions);
   if(args[0] == 2) return getRandomQuestion(abairAimsirChaiteNi);
-  if(args[0] == 3) return getRandomQuestion(abairBriatharSaor);
-  if(args[0] == 4) return getRandomQuestion(abairBriatharSaorCeisteach);
+  if(args[0] == 3) return getRandomQuestion(abairACBriatharSaor);
+  if(args[0] == 4) return getRandomQuestion(abairACCeisteach);
   if(args[0] == 5) return getRandomQuestion(abairCoibhneasta);
 < object
 
