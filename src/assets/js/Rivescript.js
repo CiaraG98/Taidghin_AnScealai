@@ -30,6 +30,8 @@ var wrongCount = 0;
 var answer2;
 var answeringQuestions = false;
 var isLevelComplete = false;
+var isQuizComplete = false;
+var quiz = false;
 
 function searchNames(name){
   var slenderName;
@@ -74,7 +76,8 @@ function isNameStored(){
 }
 
 function getProgress(){
-  if(isLevelComplete == true) return "";
+  if(isLevelComplete == true && quiz == false) return "";
+  if(isQuizComplete == true) return "";
   else return "<br>Scór: " + progress + "<br>";
 }
 
@@ -85,9 +88,11 @@ function resetProgress(){
 }
 
 function getRandomQuestion(questions){
-  if(isLevelComplete == true){
+  if(isLevelComplete == true && quiz == false){
+    console.log(quiz + isLevelComplete);
     return "";
   }
+  if(isQuizComplete == true) return "";
   var index = getRandomIntInclusive(0, questions.length - 1);
   //console.log("array: " + questions);
   //console.log("size: " + questions.length);
@@ -109,9 +114,8 @@ function getCurrentAnswer(){
 }
 
 function getRandomReply(){
-  if(isLevelComplete == true){
-    return "";
-  }
+  if(isLevelComplete == true && quiz == false) return "";
+  if(isQuizComplete == true) return "";
   var reply = "Maith thú, a " + getName() + ". ";
   var reply2 = "An ceart ar fad agat, a " + getName() + ". ";
   var reply3 = "Sin agat é, a " + getName() + ". ";
@@ -135,6 +139,10 @@ function changeProgress(sign){
     if(progress == 3){
       isLevelComplete = true;
       console.log("level complete")
+    }
+    if(progress == 10){
+      isQuizComplete = true;
+      console.log("quiz complete");
     }
   }
   if(sign == "-"){

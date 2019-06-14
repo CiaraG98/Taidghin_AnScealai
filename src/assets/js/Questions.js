@@ -1,3 +1,10 @@
+var BQuizQuestions = [
+  {question: "Test Question", answer: "3"},
+  {question: "Test Question", answer: "3"},
+  {question: "Test Question", answer: "3"},
+  {question: "Test Question", answer: "3"},
+];
+
 var abairAimsirChaiteQuestions = [
   {question: "___________ sí go raibh sé ar fheabhas.", answer: "dúirt"},
   {question: "___________ Liam go raibh sé tinn.", answer: "dúirt"},

@@ -19,7 +19,7 @@ function setup(){
   //console.log(botNames[0]);
   clearName();
   bot = new RiveScript({utf8: true});
-  bot.loadFile("assets/rive/abairAV.rive").then( () => {
+  bot.loadFile("assets/rive/BQuiz.rive").then( () => {
     bot.sortReplies();
     console.log("Bot Ready");
     chatSetup("start");
@@ -92,7 +92,7 @@ function hideContents(){
 }
 
 //loads file chosen by the user
-function load(fileId){
+function load(fileId, start){
   console.log("To Load: " + fileId);
   if(keepMessages == false){
     $(".messages").empty();
@@ -105,16 +105,18 @@ function load(fileId){
         bot.sortReplies();
         console.log(fileId + " loaded");
         //hideContents();
-        chatSetup("start");
+        console.log(start);
+        if(start != null) chatSetup(start);
+        else chatSetup("start");
       });
     }
   }
   keepMessages = false;
 }
 
-function loadFromChat(fileId){
+function loadFromChat(fileId, start){
   console.log(fileId);
-  load(fileId);
+  load(fileId, start);
 }
 
 function appendTypingIndicator(){
