@@ -10,7 +10,13 @@
 < object
 
 > object getRandomQuestion javascript
-
+  if(args[0] == 13) return getRandomQuestion(abairAFQuestions);
+  if(args[0] == 14) return getRandomQuestion(abairAFNi);
+  if(args[0] == 15) return getRandomQuestion(abairAFBriatharSaor);
+  if(args[0] == 16) return getRandomQuestion(abairAFCeisteach);
+  if(args[0] == 17) return getRandomQuestion(abairAFSpleach);
+  if(args[0] == 18) return getRandomQuestion(abairAFCoibhneasta);
+  if(args[0] == 19) return getRandomQuestion(abairAFExtraQuestions);
 < object
 
 > object getRandomReply javascript
@@ -99,7 +105,7 @@
 < object
 
 + start
-- Creidim, a <call>getName</call> go bhfuil tú ag iarraidh féachaint ar an mbriathar ‘abair’ san aimsir fháistineach.\s
+- Creidim, a <call>getName</call> go bhfuil tú ag iarraidh féachaint ar an mbriathar ‘abair’ san <b><i>aimsir fháistineach</i></b>.\s
 ^ An bhfuil an ceart agam?
 
 + (ta|tá)
@@ -383,7 +389,7 @@
 
   + liom
   - “An ndéarfaidh tú liom é?”<br>
-  - “Nach ndéarfaidh sí leat é?”
+  ^ “Nach ndéarfaidh sí leat é?”
   ^ <call>chatSetup an-simpli</call>
 
   + an-simpli
@@ -551,7 +557,7 @@
   - “Éist go cúramach lena ndéarfaidh mé leat.” <call>chatSetup bain</call>
 
   + bain
-  - Bain triail as na samplaí seo a leanas, a XX_AINM_XX, agus rachaidh tú i dtaithí orthu. <call>chatSetup reidh</call>
+  - Bain triail as na samplaí seo a leanas, a <call>getName</call>, agus rachaidh tú i dtaithí orthu. <call>chatSetup reidh</call>
 
   + reidh
   - An bhfuil tú réidh?

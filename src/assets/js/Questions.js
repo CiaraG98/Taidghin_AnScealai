@@ -155,3 +155,94 @@ var abairALExtraQuestions = [
   {question: "____ ___________ aon rud sa leabhar faoi? (briathar saor)", answer: "an ndeirtear"},
   {question: "Cad a ___________ i gcónaí. (sinn) ", answer: "deirimid", answer2: "deir muid"}
 ];
+
+var abairAFQuestions = [
+  {question: "___________ mé leat é níos déanaí.", answer: "déarfaidh"},
+  {question: "___________ siad linn é nuair a thiocfaidh siad isteach.", answer: "déarfaidh"},
+  {question: "___________ Seán glan amach é, táim cinnte.", answer: "déarfaidh"},
+  {question: "___________ leo é níos déanaí. (sinn)", answer: "déarfaimid"},
+  {question: "Éist anois agus ___________ Brian beag an dán atá aige.", answer: "déarfaidh"},
+  {question: "___________ mo mháthair liom é gan dabht.", answer: "déarfaidh"},
+  {question: "___________ siad go bhfuil tú as do mheabhair má dhéanann tú é sin.", answer: "déarfaidh"},
+  {question: "___________ siad rud éigin deas faoi, is dócha.", answer: "déarfaidh"},
+  {question: "___________ Seán leat nach bhfuil aon fhadhb aige.", answer: "déarfaidh"},
+  {question: "___________ na cailíní nach bhfuil siad sásta leis an áit.", answer: "déarfaidh"}
+];
+
+var abairAFNi = [
+  {question: "____ ___________ mé é sin le héinne.", answer: "ní déarfaidh"},
+  {question: "____ ___________ Micheál é sin le Nóra, tá mé cinnte.", answer: "ní déarfaidh"},
+  {question: "____ ___________ faic leis go dtí go mbeidh sé críochnaithe ar fad. (sinn)", answer: "ní déarfaimid"},
+  {question: "____ ___________ mé faic le Brídín go fóill.", answer: "ní déarfaidh"},
+  {question: "____ ___________ leis é go fóill. (sinn)", answer: "ní déarfaimid"},
+  {question: "____ ___________ mise faic faoi má choimeádann tusa do bhéal dúnta.", answer: "ní déarfaidh"},
+  {question: "____ ___________ siadsan aon rud leat.", answer: "ní déarfaidh"},
+  {question: "____ ___________ éinne é sin leat.", answer: "ní déarfaidh"},
+  {question: "____ ___________ mé a thuilleadh faoi. Tá mo dhóthain ráite agam.", answer: "ní déarfaidh"},
+  {question: "____ ___________ é sin leis go brách. (sinn)", answer: "ní déarfaimid"},
+];
+
+var abairAFBriatharSaor = [
+  {question: "___________ go bhfuil tú leisciúil muna gcríochnaíonn tú é.", answer: "déarfar"},
+  {question: "____ ___________ an Coróin Mhuire ar a shon ar a hocht anocht.", answer: "déarfar"},
+  {question: "____ ___________ é sin os ard go brách. (diúltach)", answer: "ní déarfar"},
+  {question: "___________ go leor faoi ach ní dhéanfar faic mar gheall air.", answer: "déarfar"},
+  {question: "___________ gur cur amú airgid atá ann muna n-éiríonn leis.", answer: "déarfar"},
+  {question: "____ ___________ aon rud faoin ar tharla. (diúltach)", answer: "ní déarfar"},
+  {question: "____ ___________ go brách gur air féin a bhí an locht. (diúltach)", answer: "ní déarfar"},
+  {question: "___________ gur as do mheabhar atá tú má dhéanann tú é sin.", answer: "déarfar"},
+  {question: "Sin é an scéal a cuireadh amach agus ____ ___________ a mhalairt go brách. (diúltach)", answer: "ní déarfar"},
+  {question: "___________ go bhfuil an fhírinne searbh.", answer: "déarfar"}
+];
+
+var abairAFCeisteach = [
+  {question: "___ ___________ tú liom é chomh luath is a chloiseann tú faoi? (diúltach)", answer: "nach ndéarfaidh"},
+  {question: "____ ___________ tú rud éigin faoi ag an díospóireacht anocht? (dearfach)", answer: "an ndéarfaidh"},
+  {question: "___________ nach fiú tráithnín é i gceann cúpla bliain eile? (dearfach)", answer: "an ndéarfaidh"},
+  {question: "___________ sé é sin, dar leat? (dearfach).", answer: "an ndéarfaidh"},
+  {question: "___________ tú rud éigin leis faoin eachtra? (diúltach).", answer: "nach ndéarfaidh"},
+  {question: "___________ leis é anocht? (sinn).", answer: "an ndéarfaimid"},
+  {question: "____ ___________ go raibh dul amú air? (diúltach, briathar saor).", answer: "nach ndéarfar"},
+  {question: "____ ___________ siad nach raibh an t-am acu é a dhéanamh? (dearfach)", answer: "an ndéarfaidh"},
+  {question: "____ ___________ amach anseo gur imríodh cos ar bolg air? (diúltach, briathar saor).", answer: "nach ndéarfar"},
+  {question: "____ ___________ tú leis go bhfuil mé á lorg? (dearfach).", answer: "an ndéarfaidh"}
+];
+
+var abairAFSpleach = [
+  {question: "Ceapaim ____ ___________ mé leis é anocht. (dearfach)", answer: "nach ndéarfaidh"},
+  {question: "Ní dóigh liom ____ ___________ sé aon rud. (dearfach)", answer: "go ndéarfaidh"},
+  {question: "Ceapaim ____ ___________ a thuilleadh faoi? (diúltach, briathar saor) ", answer: "nach ndéarfar"},
+  {question: "Tá a fhios agam go maith ____ ___________ Marc aon rud faoi? (diúltach)", answer: "nach ndéarfaidh"},
+  {question: "Tá gach éinne a rá ____ ___________ Seán anocht é. (dearfach)", answer: "go ndéarfaidh"},
+  {question: "Fan  ____ ___________ mé leat é. (dearfach) ", answer: "go ndéarfaidh"},
+  {question: "Táim ag fanacht ____ ___________ sí liom é. (dearfach))", answer: "go ndéarfaidh"},
+  {question: "Táim den tuairim ____ ___________ aon rud faoi anocht. (diúltach, briathar saor)", answer: "nach ndéarfar"},
+  {question: "Tá mé á rá leat ____ ___________sí aon rud leat go brách. (briathar saor, diúltach)", answer: "nach ndéarfaidh"},
+  {question: "Ní dóigh liom ____ ___________mé aon rud. (dearfach)", answer: "go ndéarfaidh"},
+];
+
+var abairAFCoibhneasta = [
+  {question: "Beidh gach _____ _______ sí leat thar a bheith tábhachtach.  ", answer: "a ndéarfaidh"},
+  {question: "Éist lena ___________ siad leat.", answer: "ndéarfaidh"},
+  {question: "Beidh gach ____ ___________ sí lán le féin-mholadh. ", answer: "a ndéarfaidh"},
+  {question: "Ná creid ____ ___________ siad leat. (sinn)", answer: "a ndéarfaimid"},
+  {question: "Scríobhfar síos gach  ____ ___________ tú leo. ", answer: "a ndéarfaidh"},
+  {question: "Éist go cúramach lena  ___________ gach duine acu. ", answer: "ndéarfaidh"},
+  {question: "Beidh gach  ____ ___________ sí spéisiúil. ", answer: "a ndéarfaidh"},
+  {question: "Sin a ___________ mé don uair seo.", answer: "ndéarfaidh"},
+  {question: "Cuirfidh ____ ___________ siad leat déistin ort. ", answer: "a ndéarfaidh"},
+  {question: "Caithfimid a bheith cúramach faoi gach ______ ___________ leo. (sinn) ", answer: "a ndéarfaimid"},
+];
+
+var abairAFExtraQuestions = [
+  {question: "____ ___________ mé aon rud leis. (diúltach)", answer: "ní déarfaidh"},
+  {question: "___________ Máire liom é níos déanaí ar aon nós. (dearfach)", answer: "déarfaidh"},
+  {question: "____ ___________ mé a thuilleadh faoi go dtí anocht. (diúltach)", answer: "ní déarfaidh"},
+  {question: "____ ___________ tú le Seán go bhfuil gach duine tuirseach de? (dearfach)", answer: "an ndéarfaidh"},
+  {question: "Tá súil agam ____ ___________ Róisín aon rud faoi. ", answer: "nach ndéarfaidh"},
+  {question: "Déan nóta de gach ______ ___________ siad leat. ", answer: "a déarfaidh"},
+  {question: "___________ nach bhfuil maith na muice leat muna gcríochnaíonn tú é. (briathar saor)", answer: "déarfar"},
+  {question: "____ ___________ mé faic go fóill. (diúltach)", answer: "ní déarfaidh"},
+  {question: "____ ___________ tú leis é nó an bhfágfaidh tú marbh é? (dearfach)", answer: "an ndéarfaidh"},
+  {question: "____ ___________ go bhfuilimid sásta go leor leis?  ", answer: "an ndéarfaimid", answer2: "nach ndéarfaimid"},
+];
