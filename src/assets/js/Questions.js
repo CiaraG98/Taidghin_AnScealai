@@ -1,8 +1,5 @@
 var BQuizQuestions = [
-  {question: "Test Question", answer: "3"},
-  {question: "Test Question", answer: "3"},
-  {question: "Test Question", answer: "3"},
-  {question: "Test Question", answer: "3"},
+  
 ];
 
 var abairAimsirChaiteQuestions = [
@@ -119,4 +116,42 @@ var abairALCeisteach = [
   {question: "____ ___________ é sin leo gach aon uair? (diúltach, sinn)", answer: "nach ndeirimid"},
   {question: "____ ___________ Seán go bhfuil siad an-sona san áit ina bhfuil siad? (diúltach).", answer: "nach ndeir"},
   {question: "____ ___________ gach duine go bhfuil mí-ádh ag dul leis an teach sin? (diúltach).", answer: "nach ndeir"}
+];
+
+var abairALSpleach = [
+  {question: "Ceapaim ____ ___________ é sin. (briathar saor)", answer: "go ndeirtear", answer2: "nach ndeirtear"},
+  {question: "Is dóigh liom ____ ___________ siad é sin go minic.", answer: "go ndeir", answer2: "nach ndeir"},
+  {question: "Deir Síle ____ ___________ Máire an rud céanna? ", answer: "go ndeir", answer2: "nach ndeir"},
+  {question: "An bhful sé fíor ____ ___________ Rónán go bhfuil sé chun éirí as? (dearfach)", answer: "go ndeir"},
+  {question: "Tá mé cinnte ____ ___________ é sin riamh. (briathar saor, diúltach)", answer: "nach ndeirtear"},
+  {question: "Deir sí ____ ___________ sí rudaí mar sin riamh. (diúltach)", answer: "nach ndeir"},
+  {question: "Tá sé ag séanadh ____ ___________ sé a leithéid lena rang go rialta.", answer: "go ndeir"},
+  {question: "Is é an trua ____ ___________é sin níos minicí. (briathar saor, diúltach)", answer: "nach ndeirtear"},
+  {question: "An bhfuil tú ag rá liom ____ ___________rudaí mar sin riamh? (briathar saor)", answer: "go ndeirtear"}
+];
+
+var abairALCoibhneasta = [
+  {question: "Scríobh síos go beacht gach _____ _______ ____ leat. (mé) ", answer: "a ndeir mé"},
+  {question: "Ní bhíonn gach ____ ___________ an fear sin fíor i gcónaí.", answer: "a ndeir"},
+  {question: "Níl ach plámas i ngach ____ ___________ sé siúd. ", answer: "a ndeir"},
+  {question: "Tá gach ____ ______ _____ leat fíor (lom na fírinne atá ann). (sinn)", answer: "a ndeir muid"},
+  {question: "Creid uaimse é. Tá gach  ____ ___________ sí fíor. ", answer: "a ndeir"},
+  {question: "Cheapfá ón méid  ____ ___________ faoi go bhfuil sé ar an bhfadhb is mó riamh. (briathar saor)", answer: "a ndeirtear"},
+  {question: "Cé go mbíonn siad ag ligean orthu féin go mbíonn siad ag éisteacht imíonn gach  ____ ___________ tú le gaoth. ", answer: "a ndeir"},
+  {question: "An fíor ____ ___________ faoi Sheán? (briathar saor)", answer: "a ndeirtear"},
+  {question: "Éist go cúramach le gach ____ ___________ leat. (briathar saor)", answer: "a ndeirtear"},
+  {question: "Tá gach ______ ___________ faoi fíor. (briathar saor) ", answer: "a ndeirtear"},
+];
+
+var abairALExtraQuestions = [
+  {question: "_____ Bríd é sin liom go minic. ", answer: "deir"},
+  {question: "____ ___________ a leithéid sin faoi riamh (briathar saor, diúltach).", answer: "ní deirtear"},
+  {question: "Creidim gach ____ ___________ tú liom. ", answer: "a deir"},
+  {question: "____ ___________ siad rudaí mar sin rómhinic. (diúltach)", answer: "a ndeir muid"},
+  {question: "____ ___________ Mairéad go bhfuil sé go maith? ", answer: "an ndeir"},
+  {question: "___________ paidreacha gach lá. (mé)", answer: "deirim"},
+  {question: "___________ gach duine gur bhain siad taitneamh as. ", answer: "deir"},
+  {question: "Tá a fhios agam ____ ___________ é sin ach ní chreidim focal de. (briathar saor)", answer: "go ndeirtear"},
+  {question: "____ ___________ aon rud sa leabhar faoi? (briathar saor)", answer: "an ndeirtear"},
+  {question: "Cad a ___________ i gcónaí. (sinn) ", answer: "deirimid", answer2: "deir muid"}
 ];

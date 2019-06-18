@@ -28,7 +28,9 @@
             "scripts": [
               "src/assets/js/bot.js",
               "src/assets/js/Rivescript.js",
+              "src/assets/js/app.js",
               "src/assets/js/Questions.js",
+              "src/assets/js/bundle.js",
               "src/assets/rive/start.rive",
               "src/assets/rive/briathraneamhrialtaChaite.rive",
               "src/assets/rive/briathraneamhrialtaLaithreach.rive",

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Express } from 'express';
+import { Mongoose } from 'mongoose';
+import { BodyParser } from 'body-parser';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'backup-chatbot';
+  port = 4200;
 }
