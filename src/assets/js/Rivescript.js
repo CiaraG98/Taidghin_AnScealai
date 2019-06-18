@@ -75,6 +75,13 @@ function isNameStored(){
   else return false;
 }
 
+function askName(){
+  var greeting = "Dia Dhuit! Is mise " + getBotName() + ". ";
+  var askNames = ["Cén t-ainm atá ort?", "Cad is ainm duit?", "Cé thú féin?", "Cad a thabharfaidh mé ort?"];
+  var ran = getRandomIntInclusive(0, askNames.length - 1);
+  return greeting + askNames[ran];
+}
+
 function getProgress(){
   if(isLevelComplete == true && quiz == false) return "";
   if(isQuizComplete == true) return "";
@@ -83,8 +90,20 @@ function getProgress(){
 
 function resetProgress(){
   progress = 0;
-  wrongCount = 0;
   return "";
+}
+
+function getLink(){
+  var links = ["An bhfuil aon fhocail nár thuig tú? Féach sa bhfoclóir ag www.teanglann.ie", 
+    "Úsáid www.tearma.ie chun cabhrú leat munar thuig tú téarma ar leith."];
+  var ran = getRandomIntInclusive(0, links.length - 1);
+  return links[ran];
+}
+
+function triailAris(){
+  var rep = ["Féach ar an gceann seo arís, a ", "Beagnach ceart ach féach arís air, a "];
+  var ran = getRandomIntInclusive(0, rep.length - 1);
+  return rep[ran] + getName() + "."
 }
 
 function getRandomQuestion(questions){
@@ -119,7 +138,8 @@ function getRandomReply(){
   var reply = "Maith thú, a " + getName() + ". ";
   var reply2 = "An ceart ar fad agat, a " + getName() + ". ";
   var reply3 = "Sin agat é, a " + getName() + ". ";
-  var replies = [reply, reply2, reply3];
+  var reply4 = "An mhaith ar fad!"
+  var replies = [reply, reply2, reply3, reply4];
   var i = getRandomIntInclusive(0, replies.length-1);
   //console.log(i);
   return replies[i];
@@ -145,11 +165,6 @@ function changeProgress(sign){
       console.log("quiz complete");
     }
   }
-  if(sign == "-"){
-    progress--;
-    wrongCount++;
-  }
   console.log("progress " +  progress);
-
   return "";
 }

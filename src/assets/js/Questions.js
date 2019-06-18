@@ -1,5 +1,5 @@
 var BQuizQuestions = [
-  
+
 ];
 
 var abairAimsirChaiteQuestions = [
@@ -100,7 +100,7 @@ var abairALBriathorSaor = [
   {question: "___________ go bhfuil Nóra an-mhaith ag Mata.", answer: "deirtear"},
   {question: "___________ go bhfuil seans maith ag Loch Garman Craobh na hÉireann a bhuachan i mbliana.", answer: "deirtear"},
   {question: "____ ___________ aon rud faoin mBreatimeacht níos mó.", answer: "ní deirtear"},
-  {question: "____ ___________ go mbeidh stoirm againn ag an deireadh seachtaine.", answer: "deirtear"},
+  {question: "___________ go mbeidh stoirm againn ag an deireadh seachtaine.", answer: "deirtear"},
   {question: "____ ___________ aon rud faoi sin níos mó.", answer: "ní deirtear"},
   {question: "____ ___________ mórán faoin easpa fostaíochta atá sa cheantar sin níos mó.", answer: "ní deirtear"}
 ];

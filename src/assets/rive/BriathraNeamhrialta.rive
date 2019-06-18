@@ -24,12 +24,6 @@
 * <call>isNameStored</call> == true => Ceart go leor, a <call>getName</call>.\s
 ^ Anois, feicim go bhfuil spéis agat sna briathra neamhrialta. An bhfuil an ceart agam?
 
-/** <call>isNameStored</call> == false => Dia Dhuit! Níl a fhios agam d’ainm. Cad is ainm duit?
-
-+ (_|_ is ainm dom)
-% dia dhuit níl a fhios agam d’ainm cad is ainm duit
-- Deas bualadh leat, a <call>storeName <formal></call><call>getName</call> :)\s
-^ Anois, feicim go bhfuil spéis agat sna briathra neamhrialta. An bhfuil an ceart agam?*/
 
 + (ta|tá)
 - Ceart go leor, a <call>getName</call>. Tá dhá chuid ann ar féidir leat a roghnú, Foghlaim nó Quiz. Cad ba mhaith leat a dhéanamh?\s <br>

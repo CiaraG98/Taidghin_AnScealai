@@ -59,7 +59,11 @@
     console.log("true");
     return true;
   }
-  else return false;
+  else {
+    wrongCount++;
+    console.log("wrongCount: " + wrongCount);
+    return false;
+  }
 < object
 
 > object answeringQuestions javascript
@@ -69,6 +73,7 @@
 
 > object setAnsweringQuestions javascript
   answeringQuestions = args[0];
+  if(args[0] == true) wrongCount = 0;
   return "";
 < object
 
@@ -85,10 +90,18 @@
 > object levelComplete javascript
   if(args[0] == "false") isLevelComplete = false;
   if(isLevelComplete == true){
-    chatSetup("levelcomplete")
+    chatSetup("levelcomplete");
   }
   console.log("isLevelComplete: " + isLevelComplete);
   return "";
+< object
+
+> object getLink javascript
+  return getLink();
+< object
+
+> object triailAris javascript
+  return triailAris();
 < object
 
 + start
@@ -124,7 +137,7 @@
 + (aimsir chaite|chaite)
 - <call>setKeepMessages true</call><call>loadFromChat abairAC chaite</call>
 
-+ (aimsir fháistineach| aimsir fhaistineach|fháistineach)
++ (aimsir fháistineach|aimsir fhaistineach|fháistineach)
 - <call>setKeepMessages true</call><call>loadFromChat abairAF</call>
 
 + (modh coinniollach|coinniollach)
@@ -157,24 +170,36 @@
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
+  * <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue</call>
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 6</call>
-  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call> Déan iarracht arís.<br>
+  * <call>checkAnswer <star></call> == false => Mícheart. <call>resetProgress</call><call>triailAris</call><br>
   ^ <call>getProgress</call>
 
   + levelcomplete
-  - Tá triúr ceart agat i ndiaidh a chéile. Tá céim 1 críochnaithe agat. <call>getRandomReply</call> <call>chatSetup ceim-2</call>
+  - Tá triúr ceart agat i ndiaidh a chéile. Tá céim 1 críochnaithe agat. Maith thú, a <call>getName</call>! <call>chatSetup ceim-2</call>
   ^ <call>setAnsweringQuestions false</call>
 
-  + ceim-2
-  - Anois an bhfuil tú réidh chun dul ar aghaidh go Céim a Dó, a <call>getName</call>?
+  + continue
+  - Ar mhaith leat leanúint ar aghaidh?
 
   + (ta|tá)
-  % anois an bhfuil tú réidh chun dul ar aghaidh go céim a dó a
+  % ar mhaith leat leanúint ar aghaidh
+  - <call>chatSetup ceist</call>
+
+  + (nil|níl)
+  % ar mhaith leat leanúint ar aghaidh
+  - <call>chatSetup ceim-2</call>
+
+  + ceim-2
+  - Anois an bhfuil tú réidh chun dul ar aghaidh go Céim a Dó?
+
+  + (ta|tá)
+  % anois an bhfuil tú réidh chun dul ar aghaidh go céim a dó
   - {topic=level2}<call>chatSetup startl2</call>
 
   + (nil|níl)
-  % anois an bhfuil tú réidh chun dul ar aghaidh go céim a dó a
+  % anois an bhfuil tú réidh chun dul ar aghaidh go céim a dó
   - Ar mhaith leat dul ar ais ar Chéim a hAon arís?
 
   + (ta|tá|ba mhaith)
@@ -241,7 +266,7 @@
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 7</call>
-  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call> Déan iarracht arís.<br>
+  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call><call>triailAris</call><br>
   ^ <call>getProgress</call>
 
   + levelcomplete
@@ -306,7 +331,7 @@
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 8</call>
-  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call> Déan iarracht arís.<br>
+  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call><call>triailAris</call><br>
   ^ <call>getProgress</call>
 
   + levelcomplete
@@ -378,7 +403,7 @@
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 9</call>
-  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call> Déan iarracht arís.<br>
+  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call><call>triailAris</call><br>
   ^ <call>getProgress</call>
 
   + levelcomplete
@@ -439,14 +464,14 @@
   - “Táim go láidir den tuairim nach ndeirtear é sin riamh.” <br><call>chatSetup trial</call>
 
   + trial
-  - Bain triail as tú féin:
+  - Bain triail as tú féin:<br>
   ^ <call>levelComplete false</call><call>getRandomQuestion 10</call><call>setAnsweringQuestions true</call><call>resetProgress</call>
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 10</call>
-  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call> Déan iarracht arís.<br>
+  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call><call>triailAris</call><br>
   ^ <call>getProgress</call>
 
   + levelcomplete
@@ -518,7 +543,7 @@
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 11</call>
-  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call> Déan iarracht arís.<br>
+  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call><call>triailAris</call><br>
   ^ <call>getProgress</call>
 
   + levelcomplete
@@ -568,7 +593,7 @@
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 12</call>
-  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call> Déan iarracht arís.<br>
+  * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call><call>triailAris</call><br>
   ^ <call>getProgress</call>
 
   + levelcomplete
