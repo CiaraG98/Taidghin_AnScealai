@@ -53,7 +53,20 @@ var abairACCeisteach = [
   {question: "____ ___________ siad aon rud leat faoi na fadhbanna a bhí acu?", answer: "an ndúirt", answer2: "nach ndúirt"}
 ];
 
-var abairCoibhneasta = [
+var abairACSpleach = [
+  {question: "Tá mé cinnte ____ ___________ siad é. (dearfach)", answer: "go ndúirt"},
+  {question: "Tá mé cinnte ____ ___________ siad é. (diúltach)", answer: "nach ndúirt"},
+  {question: "An é ____ ___________ tú aon rud leo? (diúltach)", answer: "nach ndúirt"},
+  {question: "D’admhaigh sí ____ ___________ sí é. (dearfach)", answer: "go ndúirt"},
+  {question: "Ní dóigh liom ____ ___________ siad a leithéid. (dearfach)", answer: "go ndúirt"},
+  {question: "Tá mé lánchinnte ____ ___________(sinn) é sin riamh. (diúltach)", answer: "nach ndúramar"},
+  {question: "Tá a fhios ag Dia ____ ___________ sí é glan amach. (dearfach)", answer: "go ndúirt"},
+  {question: "Dúirt bean liom ____ ___________ bean léi (dearfach)", answer: "go ndúirt"},
+  {question: "Shéan siad ____ ___________siad aon rud mar sin (dearfach)", answer: "go ndúradar"},
+  {question: "Is cuimhin liom ____ ___________sí aon rud faoi ag an am (diúltach)", answer: "nach ndúirt"},
+];
+
+var abairACCoibhneasta = [
   {question: "___________ Seán liom go raibh an-lá acu.", answer: "dúirt"},
   {question: "____ ___________ mé a leithéid riamh i mo shaol.", answer: "ní dúirt"},
   {question: "____ ___________ tú é sin le héinne eile?", answer: "an ndúirt", answer2: "nach ndúirt"},
@@ -244,5 +257,83 @@ var abairAFExtraQuestions = [
   {question: "___________ nach bhfuil maith na muice leat muna gcríochnaíonn tú é. (briathar saor)", answer: "déarfar"},
   {question: "____ ___________ mé faic go fóill. (diúltach)", answer: "ní déarfaidh"},
   {question: "____ ___________ tú leis é nó an bhfágfaidh tú marbh é? (dearfach)", answer: "an ndéarfaidh"},
-  {question: "____ ___________ go bhfuilimid sásta go leor leis?  ", answer: "an ndéarfaimid", answer2: "nach ndéarfaimid"},
+  {question: "____ ___________ go bhfuilimid sásta go leor leis?  ", answer: "an ndéarfaimid", answer2: "nach ndéarfaimid"}
+];
+
+var abairMCQuestions = [
+  {question: "___________ go bhfuil sé imithe. (mé)", answer: "déarfainn"},
+  {question: "___________ Séamas rud ar bith chun fáil amach as.", answer: "déarfadh"},
+  {question: "Ní raibh sí istigh léi féin, mar a ___________. (tú)", answer: "déarfá"},
+  {question: "___________ leat é dá mbeadh sé ar eolas againn. (sinn)", answer: "déarfaimis"},
+  {question: "Cad a ___________ faoi sin, dar leat? (siad)", answer: "déarfaidís", answer2: "déarfadh siad"},
+  {question: "Sin é a ___________ Síle dá mbeadh sí anseo.", answer: "déarfadh"},
+  {question: "___________ go bhfuil gach duine críochnaithe anois. (mé)", answer: "déarfainn"},
+  {question: "___________ go bhfuil sé sin ceart go leor anois. (mé)", answer: "déarfainn"},
+  {question: "Ná bac leo sin. ___________ aon rud chun éalú amach as an trioblóid.", answer: "déarfaidís"},
+  {question: "Cad a ___________ sibhse faoin bplean sin.", answer: "déarfadh"}
+];
+
+var abairMCNi = [
+  {question: "____ ___________ go raibh an freagra sin ceart. (mé)", answer: "ní déarfainn"},
+  {question: "____ ___________ an múinteoir rud mar sin.", answer: "ní déarfadh"},
+  {question: "____ ___________ rud mar sin dá mbeadh an scéal ar fad agat. (tú)", answer: "ní déarfá"},
+  {question: "____ ___________ mo chara is fearr rud mar sin liom.", answer: "ní déarfadh"},
+  {question: "____ ___________ rud mar sin dá mbeidís glic. ", answer: "ní déarfaidís"},
+  {question: "____ ___________ Nóra a leithéid riamh.", answer: "ní déarfadh"},
+  {question: "____ ___________ go raibh sé caillte murach go bhfuil. (sinn)", answer: "ní déarfaimis", answer2: "ní déarfadh muid"},
+  {question: "____ ___________ linn é ar ór ná ar airgead. (siad)", answer: "ní déarfaidís"},
+  {question: "____ ___________ go raibh pingin ina phóca aige. (mé)", answer: "ní déarfainn"},
+  {question: "____ ___________ Mairéad aon rud amach ós ard ag an gcruinniú. ", answer: "ní déarfadh"},
+];
+
+var abairMCBriatharSaor = [
+  {question: "_____ ___________ é sin murach go bhfuil sé go han-dona. (diúltach)", answer: "ní déarfaí"},
+  {question: "____ ___________ é sin dá mbeadh an aimsir go han-dona. (dearfach)", answer: "déarfaí"},
+  {question: "____ ___________ é sin murach go bhfuil sé cinnte. (diúltach)", answer: "ní déarfaí"},
+  {question: "___________ é dá mba ghá é a rá. (dearfach)", answer: "déarfaí"},
+  {question: "____ ___________ é sin gan chúis. (diúltach)", answer: "ní déarfaí"},
+  {question: "___________ glan amach é dá mbeadh sé fíor. ", answer: "déarfaí"},
+  {question: "____ ___________ rud mar sin ag cruinniú foirmeálta. (diúltach)", answer: "ní déarfaí"},
+  {question: "____ ___________ é dá mbeadh aon slí eile timpeall air. (diúltach)", answer: "ní déarfaí"},
+  {question: "____ ___________ rud mar sin ón altóir riamh ná coíche. ", answer: "ní déarfaí"},
+  {question: "____ ___________ é sin dá mbeadh aon dul as.", answer: "ní déarfaí"},
+];
+
+var abairMCCeisteach = [
+  {question: "___ ___________ go bhfuil sé sin fíor? (tú, diúltach)", answer: "nach ndéarfá"},
+  {question: "____ ___________ éinne sin leat? (diúltach)", answer: "nach ndéarfadh"},
+  {question: "____ ___________ Seán leat é dá mbeadh a fhios aige faoi? (diúltach)", answer: "nach ndéarfadh"},
+  {question: "____ ___________ é sin dá mbeadh gach rud sásúil san áit? (dearfach, briathar saor).", answer: "an ndéarfaí"},
+  {question: "____ ___________  madraí an bhaile é sin leat? (diúltach).", answer: "nach ndéarfadh"},
+  {question: "____ ___________  go bhfuil Caitlín sásta lena post nua? (tú).", answer: "an ndéarfá", answer2: "nach ndéarfá"},
+  {question: "____ ___________ é dá mbeadh sé fíor? (diúltach, siad).", answer: "nach ndéarfaidís"},
+  {question: "____ ___________ Tomás é dá mbeadh aon dabht air? (diúltach)", answer: "nach ndéarfadh"},
+  {question: "____ ___________ é dá mbeidís faoi bhrú? (dearfach).", answer: "an ndéarfaidís"},
+  {question: "____ ___________ go bhfuil seans maith acu? (dearfach, tú).", answer: "an ndéarfá"},
+];
+
+var abairMCSpleach = [
+  {question: "Ní dóigh liom ____ ___________ mo chara rud mar sin fúm. ", answer: "go ndéarfadh"},
+  {question: "Tá mé cinnte ____ ___________ aon duine le ciall aon rud mar sin. (diúltach)", answer: "nach ndéarfadh"},
+  {question: "Tá mé cinnte ____ ___________ aon rud mar sin? (mé, diúltach) ", answer: "nach ndéarfainn"},
+  {question: "Dá ___________ éinne eile é sin déarfaí go raibh sé as a mheabhair? ", answer: "ndéarfadh"},
+  {question: "Tá mé cinnte ____ ___________ sé é sin dá gcaithfeadh sé. (dearfach)", answer: "go ndéarfadh"},
+  {question: "An gceapann tusa  ____ ___________ Bríd é sin. (dearfach) ", answer: "go ndéarfadh"},
+  {question: "Bhí a fhios agam go maith ____ ___________ sibhse é sin. (dearfach)", answer: "go ndéarfadh"},
+  {question: "Dá ___________ é sin leat chaithfinn an tír a fhágáil. (mé)", answer: "ndéarfainn"},
+  {question: "Dá ___________glan amach é bheadh deireadh leis. (siad)", answer: "ndéarfaidís"},
+  {question: "Ní dóigh liom ____ ___________Aoife é sin riamh. (dearfach)", answer: "go ndéarfadh"},
+];
+
+var abairMCExtraQuestions = [
+  {question: "", answer: "déarfainn"},
+  {question: "", answer: "déarfaidh"},
+  {question: "", answer: "déarfaidís"},
+  {question: "", answer: "déarfadh"},
+  {question: "", answer: "an ndéarfá", answer2: "nach ndéarfá"},
+  {question: "", answer: "ní déarfadh"},
+  {question: "", answer: "an déarfadh"},
+  {question: "", answer: "déarfaidís"},
+  {question: "", answer: "go ndéarfadh"},
+  {question: "", answer: "an ndéarfaí", answer2: "nach ndéarfaí"},
 ];
