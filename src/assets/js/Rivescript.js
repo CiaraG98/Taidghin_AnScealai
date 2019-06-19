@@ -136,6 +136,20 @@ function triailAris(){
   return rep[ran] + getName() + "."
 }
 
+function nilToCeim(){
+  var nils = ["Tóg briseadh beag mar sin", "Fág é go dtí an chéad lá eile", "Ar aghaidh go briathar eile", "Ar ais go dtí an leathanach baile mar sin",
+  "Go breá. Is féidir leat topaic eile a phiocadh nó teacht ar ais uair éigin eile. (exit back to main menu?)"];
+  var ran = getRandomIntInclusive(0, nil.length - 1);
+  return nils[ran];
+}
+
+function getCrioch(){
+  var crioch = ["Maith thú, a " + getName() + ", sin deireadh leis an gcleachtadh anois!", "Fágfaidh mé slán anseo agat! Bhí sé go deas bheith ag caint leat, a " +
+  getName(), "Slán go fóill, a " + getName() + ". Beimid ag caint arís tá súil agam."];
+  var ran = getRandomIntInclusive(0, crioch.length - 1);
+  return crioch[ran];
+}
+
 function getRandomQuestion(questions){
   if(isLevelComplete == true && quiz == false){
     console.log(quiz + isLevelComplete);

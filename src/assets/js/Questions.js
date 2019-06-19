@@ -326,14 +326,14 @@ var abairMCSpleach = [
 ];
 
 var abairMCExtraQuestions = [
-  {question: "", answer: "déarfainn"},
-  {question: "", answer: "déarfaidh"},
-  {question: "", answer: "déarfaidís"},
-  {question: "", answer: "déarfadh"},
-  {question: "", answer: "an ndéarfá", answer2: "nach ndéarfá"},
-  {question: "", answer: "ní déarfadh"},
-  {question: "", answer: "an déarfadh"},
-  {question: "", answer: "déarfaidís"},
-  {question: "", answer: "go ndéarfadh"},
-  {question: "", answer: "an ndéarfaí", answer2: "nach ndéarfaí"},
+  {question: "___________ go bhfuil an ceann sin go maith. (mé)", answer: "déarfainn"},
+  {question: "____ ___________ go bhfuil siad críochnaithe go fóill. (mé, diúltach)", answer: "déarfaidh"},
+  {question: "Cad a ___________ dá gcloisfidís an scéal sin? (siad)", answer: "déarfaidís"},
+  {question: "Cad a ___________ Máirtín faoi sin, dar leat? ", answer: "déarfadh"},
+  {question: "____ ___________ go bhfuil sé sin ceart anois? (tú)", answer: "an ndéarfá", answer2: "nach ndéarfá"},
+  {question: "______ ___________ éinne é sin. (diúltach) ", answer: "ní déarfadh"},
+  {question: "______ ___________ sibhse é sin?", answer: "an déarfadh"},
+  {question: "Cad eile a ___________? (siad)", answer: "déarfaidís"},
+  {question: "Ní dóigh liom ____ ___________ muintir na háite é sin faoi? (dearfach)", answer: "go ndéarfadh"},
+  {question: "____ ___________ é sin faoi dá mbeadh sé saibhir? (briathar saor)", answer: "an ndéarfaí", answer2: "nach ndéarfaí"},
 ];

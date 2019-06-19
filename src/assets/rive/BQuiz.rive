@@ -42,6 +42,7 @@
 < object
 
 > object chatSetup javascript
+  if(args[1] == "nowait") return chatSetup(args[0]);
   setTimeout(function(){
     return chatSetup(args[0]);
   }, 2500);
@@ -111,13 +112,13 @@
 
 + start
 * <call>isNameStored</call> == false => Dia Dhuit! Níl a fhios agam d’ainm. Cad is ainm duit?
-* <call>isNameStored</call> == true => Dia Dhuit a <call>getName</call>! Welcome to the Big Quiz.
+* <call>isNameStored</call> == true => Dia Dhuit a <call>getName</call>! Welcome to the Big Quiz.\s
 ^ An bhfuil tú réidh?<br>
 ^ <button class="rive-button2" onclick="chatSetup('ta')">Tá</button>
 ^ <button class="rive-button" onclick="chatSetup('nil')">Níl</button>
 
 + (ta|tá)
-- {topic=quiz}<call>chatSetup tosu</call>
+- {topic=quiz}<call>chatSetup tosu nowait</call>
 
 + (nil|níl)
 - Ceart go leor. Cuir ceist orm le foghlaim, le do thoil.
