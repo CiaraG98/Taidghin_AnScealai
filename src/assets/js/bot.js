@@ -1,6 +1,8 @@
 window.onload = init;
 var ainmneacha = [];
 var keepMessages = false;
+var contentsClicked = false;
+var holdInput = false;
 //var fs = require('fs');
 //Read Google Sheet with slenderised names...
 function init(){
@@ -19,7 +21,7 @@ function setup(){
   //console.log(botNames[0]);
   clearName();
   bot = new RiveScript({utf8: true});
-  bot.loadFile("assets/rive/abairMC.rive").then( () => {
+  bot.loadFile("assets/rive/abairAC.rive").then( () => {
     bot.sortReplies();
     console.log("Bot Ready");
     chatSetup("start");
@@ -73,6 +75,7 @@ function hideBot(){
 }
 
 function showContents(){
+  contentsClicked = true;
   var menu = document.querySelector(".bot-contents");
   if(menu.style.opacity == 0){
     menu.style.right = "300px";
@@ -120,6 +123,7 @@ function loadFromChat(fileId, start){
 }
 
 function appendTypingIndicator(){
+  //holdInput = true;
   $(".messages").append($("<div class=\"typing-indicator\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><div class=\"dots\"><p class=\"chat-message\"><span id=\"typ1\"></span><span id=\"typ2\"></span><span id=\"typ3\"></span></p></div></div></div>"));
   $(".typing-indicator").delay(1000).fadeOut("fast");
   $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
@@ -144,6 +148,7 @@ function chatSetup(text){
 
 //conversation takes place
 function chat(){
+  //if(holdInput) setTimeout(function(){}, 1200);
   var input = document.getElementById("user_input").value;
   if(input != ""){
     $("form").on("submit", (event) => {

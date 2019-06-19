@@ -49,6 +49,7 @@ var files = [
   {id: "cloisAL", file: "assets/rive/cloisAL.rive"},
   {id: "cloisAF", file: "assets/rive/cloisAF.rive"},
   {id: "cloisMC", file: "assets/rive/cloisMC.rive"},
+  {id: "abairQuiz", file: "assets/rive/abairQuiz.rive"},
 ];
 
 var userName;
@@ -62,6 +63,8 @@ var answeringQuestions = false;
 var isLevelComplete = false;
 var isQuizComplete = false;
 var quiz = false;
+var quizScore = 0;
+var quizProgress = 1;
 
 function searchNames(name){
   var slenderName;
@@ -152,10 +155,12 @@ function getCrioch(){
 
 function getRandomQuestion(questions){
   if(isLevelComplete == true && quiz == false){
-    console.log(quiz + isLevelComplete);
+    console.log("quizd");
     return "";
   }
   if(isQuizComplete == true) return "";
+  if(quiz) quizProgress++;
+  console.log(quizProgress);
   var index = getRandomIntInclusive(0, questions.length - 1);
   //console.log("array: " + questions);
   //console.log("size: " + questions.length);
@@ -198,17 +203,24 @@ function getRandomIntInclusive(min, max) {
 
 function changeProgress(sign){
   if(sign == "+"){
-    //console.log(sign);
     progress++;
     if(progress == 3){
       isLevelComplete = true;
       console.log("level complete")
     }
-    if(progress == 10){
+    /*if(progress == 10){
       isQuizComplete = true;
       console.log("quiz complete");
-    }
+    }*/
+    if(quiz) quizScore++;
   }
-  console.log("progress " +  progress);
+  if(quiz) {
+    if(quizProgress == abairQuiz.length - 1){
+      isQuizComplete = true;
+      chatSetup("quizcomplete");
+    }
+    console.log("quiz: " + quizScore);
+  }
+  //console.log("progress " +  progress);
   return "";
 }

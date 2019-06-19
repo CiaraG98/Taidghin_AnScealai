@@ -79,6 +79,7 @@
               "src/assets/rive/biAL.rive",
               "src/assets/rive/biAF.rive",
               "src/assets/rive/biMC.rive",
+              "src/assets/rive/abairQuiz.rive",
             ],
             "es5BrowserSupport": true
           },

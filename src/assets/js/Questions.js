@@ -1,5 +1,24 @@
-var BQuizQuestions = [
-
+var abairQuiz = [
+  {question: "____ ___________ mé é sin ná é. (aimsir chaite, diúltach)", answer: "ní dúirt"},
+  {question: "____ ___________ éinne é sin. (aimsir chaite, diúltach)", answer: "ní dúirt"},
+  {question: "Bhí a fhios agam go maith _____ ___________ Deirdre é sin? (aimsir chaite, diúltach)", answer: "nach ndúirt"},
+  {question: "____ ___________ mé é sin leat na blianta ó sin? (aimsir chaite, diúltach)", answer: "nach ndúirt"},
+  {question: "Cad eile ____ ___________ sé? (modh coinníollach)", answer: "a déarfadh"},
+  {question: "___________ gur siúinéir iontach í. (aimsir láithreach, briathar saor) ", answer: "deirtear"},
+  {question: "___________ mé leat é anocht. (aimsir fháistineach)", answer: "déarfaidh"},
+  {question: "_____ ___________Máiréad aon rud faoi go dtí go mbeidh sí lán-chinnte. (aimsir fháistineach, diúltach)", answer: "ní déarfaidh"},
+  {question: "____ ___________ go bhfuil fios a ghnó aige? (tú, modh coinníollach, dearfach)", answer: "an ndéarfá"},
+  {question: "Nach é sin a ___________ leat? (mé, aimsir láithreach)", answer: "deirim"},
+  {question: "___________ madraí an bhaile é sin leat. (modh coinníollach)", answer: "déarfadh"},
+  {question: "___________ go bhfuil sé glan as a mheabhair má thagann an scéal sin amach faoi. (aimsir fháistineach, briathar saor)", answer: "déarfar"},
+  {question: "____ ___________ faic faoi sin go fóill? (sinn, aimsir fháistineach)", answer: "ní déarfaimid"},
+  {question: "____ ___________ go bhfuil tuairim faoin spéir acu faoi cad atá i ndán dóibh. (mé, modh coinníollach, diúltach)", answer: "ní déarfainn"},
+  {question: "____ ___________ aon rud faoin mí-ádh a bhain dó níos mó. (briathar saor, aimsir láithreach, diúltach)", answer: "ní deirtear"},
+  {question: "____ ___________ aon rud go dtí go mbeidh deireadh ráite acu sin. (sinn, aimsir fháistineach, diúltach) ", answer: "ní déarfaimid"},
+  {question: "Cad a ___________ siad nuair a chuala siad an méid sin? ", answer: "dúirt"},
+  {question: "Ní féidir le hAntoin a bhéal a choimeád dúnta. ___________ sé amach aon rud a thiocfadh isteach ina cheann. (modh coinníollach)", answer: "déarfadh"},
+  {question: "Dúirt bean liom ____ ___________ bean léi. (aimsir chaite, an fhoirm spleách)", answer: "go ndúirt"},
+  {question: "“Bíonn súil le muir, ach ní bhíonn súil le huaigh”, a ___________. (briathar saor, aimsir láithreach)", answer: "deirtear"},
 ];
 
 var abairAimsirChaiteQuestions = [
@@ -336,4 +355,95 @@ var abairMCExtraQuestions = [
   {question: "Cad eile a ___________? (siad)", answer: "déarfaidís"},
   {question: "Ní dóigh liom ____ ___________ muintir na háite é sin faoi? (dearfach)", answer: "go ndéarfadh"},
   {question: "____ ___________ é sin faoi dá mbeadh sé saibhir? (briathar saor)", answer: "an ndéarfaí", answer2: "nach ndéarfaí"},
+];
+
+var faighACQuestions = [
+  {question: "___________ mé bronntanas deas do mo bhreithlá.", answer: "fuair"},
+  {question: "___________ siad an ceann is fearr orainn.", answer: "fuair"},
+  {question: "___________ tú an rud a bhí ag dul duit.", answer: "fuair"},
+  {question: "___________ freagra ar ais ar deireadh. (sinn)", answer: "fuaireamar"},
+  {question: "___________ tusa an dara duais.", answer: "fuair"},
+  {question: "___________ torthaí na scrúduithe inné. (sinn)", answer: "fuaireamar"},
+  {question: "___________ siad bróga nua sa siopa.", answer: "fuair"},
+  {question: "___________ sé gach a raibh ag dul dó.", answer: "fuair"},
+  {question: "___________ sí luach a saothair.", answer: "fuair"},
+  {question: "___________ amach ar deireadh cé a bhí taobh thiar de. (sinn)", answer: "fuaireamar"},
+];
+
+var faighACNi = [
+  {question: "____ ___________ mé amach riamh cé a rinne é.", answer: "ní bhfuair"},
+  {question: "____ ___________ sí aon fhreagra ar a hiarratas.", answer: "ní bhfuair"},
+  {question: "____ ___________ aon sásamh uaidh. (sinn)", answer: "ní bhfuaireamar"},
+  {question: "____ ___________ siad aon áit cheart le fanacht i mBaile Átha Cliath.", answer: "ní bhfuair"},
+  {question: "____ ___________ sí aon scéal faoin madra a chaill sí.", answer: "ní bhfuair"},
+  {question: "____ ___________ aon fhreagra go fóill. (sinn)", answer: "ní bhfuaireamar"},
+  {question: "____ ___________ siad aon rud ceart le n-ithe.", answer: "ní bhfuair"},
+  {question: "____ ___________ mé aon rud a bhí uaim sa siopa sin.", answer: "ní bhfuair"},
+  {question: "____ ___________ siad a gcearta riamh san áit sin.", answer: "ní bhfuair"},
+  {question: "____  ___________ aon duais an uair seo. (sinn)", answer: "ní bhfuaireamar"},
+];
+
+var faighACBriathorSaor = [
+  {question: "___________ tásc ná tuairisc air ón lá a d’imigh sé. (diúltach)", answer: "ní bhfuarthas"},
+  {question: "___________ an t-airgear a chaill mé san ionad siopadóireachta. (dearfach)", answer: "fuarthas"},
+  {question: "Bhí sé os comhair na cúirte agus ___________ ciontach é.", answer: "fuarthas"},
+  {question: "Cuardaíodh an teach ó bhun go barr ach ____ ___________ aon rud ann. (diúltach)", answer: "ní bhfuarthas"},
+  {question: "___________ piscín beag sa pháirc agus níl a fhios ag éinne cé leis é.", answer: "fuarthas"},
+  {question: "Tar éis an lá a chaitheamh ag cuardach ___________ é ar deireadh.", answer: "fuarthas"},
+  {question: "____ ___________ amach riamh cé a rinne an slad sa halla.", answer: "ní bhfuarthas"},
+  {question: "Cailleadh é agus ____ ___________ ar ais é riamh ó shin.", answer: "ní bhfuarthas"},
+  {question: "____ ___________ amach riamh cár chuir sí na fáinní cluaise i bhfolach.", answer: "ní bhfuarthas"},
+  {question: "___________ sionnach marbh ar thaobh an bhóthair.", answer: "fuarthas"},
+];
+
+var faighACCeisteach = [
+  {question: "____ ___________ tú amach aon rud faoin timpiste? (dearfach)", answer: "an bhfuair"},
+  {question: "____ ___________ tú aon scéal ó Chathal? (dearfach)", answer: "an bhfuair"},
+  {question: "____ ___________ Síle a leabhar ar ais fós? (dearfach)", answer: "an bhfuair"},
+  {question: "____ ___________ siad an méid a bhí uatha? (diúltach)", answer: "nach bhfuair"},
+  {question: "Cuardaíodh an áit ach ____ ___________ faic na ngrást ann.", answer: "an bhfuair"},
+  {question: "____ ___________ beirt fhear ciontach as bean óg a mharú inniu? (briathar saor, dearfach)", answer: "an bhfuarthas"},
+  {question: "____ ___________ aon rud sa seomra? (siad, dearfach)", answer: "an bhfuaireadar"},
+  {question: "____ ___________ tú do dhóthain fós? (diúltach)", answer: "nach bhfuair"},
+  {question: "____ ___________ corp an fhir a thit le faill fós? (briathar saor, dearfach)", answer: "an bhfuarthas"},
+  {question: "____ ___________ amach cad ba chúis leis an tinneas a bhí orthu (siad, dearfach)", answer: "an bhfuaireadar"},
+];
+
+var faighACSpleach = [
+  {question: "Tá súil agam ____ ___________ tú é. (dearfach)", answer: "go bhfuair"},
+  {question: "Tá súil agam ____ ___________ tú an fliú. (diúltach)", answer: "nach bhfuair"},
+  {question: "An fíor ____ ___________ Breandán post nua? (dearfach)", answer: "go bhfuair"},
+  {question: "Ceapaim ____ ___________ tú an rud céanna is a fuair mise. (dearfach)", answer: "go bhfuair"},
+  {question: "An dóigh leat ____ ___________ sí gach a raibh uaithi? (dearfach)", answer: "go bhfuair"},
+  {question: "Tá súil agam ____ ___________tú aon drochscéal. (diúltach)", answer: "nach bhfuair"},
+  {question: "Tá a fhios agam ____ ___________ tásc ná tuairisc orthu ó shin. (diúltach, briathar saor)", answer: "nach bhfuarthas"},
+  {question: "An dóigh leat ____ ___________ sí mórán airgid as an leabhar a scríobh sí? (dearfach)", answer: "go bhfuair"},
+  {question: "An gceapann tú ____ ___________sí an scoláireacht? (dearfach)", answer: "go bhfuair"},
+  {question: "Deirtear ____ ___________siad bás den ocras (dearfach)", answer: "go bhfuair"},
+];
+
+var faighACCoibhneasta = [
+  {question: "B’shin ____ ___________ sa chófra. (briathar saor)", answer: "a bhfuarthas"},
+  {question: "B’shin  ____ ___________ sí sa teach sin. ", answer: "a bhfuair"},
+  {question: "Chaill siad gach ____ ___________ siad sa chasaíne. ", answer: "a bhfuair"},
+  {question: "Tá gach ____ ___________ siad ar maidin imithe anois. ", answer: "a bhfuair"},
+  {question: "Tá gach  ____ ___________ sí riamh fós aici. ", answer: "a bhfuair"},
+  {question: "Tá gach ____ ___________ an madra ite aige. ", answer: "a bhfuair"},
+  {question: "Tá gach ____ ___________ siad ite acu. ", answer: "a bhfuair"},
+  {question: "B’shin ____ ___________ tar éis na hiarrachta ar fad. (briathar saor)", answer: "a bhfuarthas"},
+  {question: "B’shin  ____ ___________ an gadaí sa teach.", answer: "a bhfuair"},
+  {question: "Tá gach ____ ___________ caillte arís.", answer: "a bhfuair"},
+];
+
+var faighACExtraQuestions = [
+  {question: "", answer: "fuair"},
+  {question: "", answer: "an bhfuair", answer2: "nach bhfuair"},
+  {question: "", answer: "ní bhfuair"},
+  {question: "", answer: "ní bhfuaireamar"},
+  {question: "", answer: "nach bhfuair"},
+  {question: "", answer: "go bhfuair"},
+  {question: "", answer: "nach bhfuair"},
+  {question: "", answer: "fuaireamar"},
+  {question: "", answer: "a bhfuair"},
+  {question: "", answer: "nach bhfuaireamar"},
 ];

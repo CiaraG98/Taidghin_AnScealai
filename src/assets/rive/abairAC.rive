@@ -104,6 +104,7 @@
 ^ <button class="rive-button" onclick="chatSetup('abair-al')">Aimsir Laithreach</button>
 ^ <button class="rive-button" onclick="chatSetup('abair-af')">Aimsir Fháistineach</button>
 ^ <button class="rive-button" onclick="chatSetup('abair-mc')">Modh Coinniollach</button>
+^ <button class="rive-button2" onclick="chatSetup('abairquiz')">Abair Quiz</button>
 
 + (chaite|aimsir chaite)
 - Cén céim ar mhaith leat a dhéanamh san aimsir chaite?<br>
@@ -131,6 +132,9 @@
 
 + (coinniollach|modh coinniollach)
 - <call>setKeepMessages true</call><call>loadFromChat abairMC</call>
+
++ abairquiz
+- <call>setKeepMessages true</call><call>loadFromChat abairQuiz</call>
 
 + (céim 1|ceim 1|1)
 - {topic=level1}<call>startLevel 1</call>
