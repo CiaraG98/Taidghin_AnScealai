@@ -436,14 +436,14 @@ var faighACCoibhneasta = [
 ];
 
 var faighACExtraQuestions = [
-  {question: "", answer: "fuair"},
-  {question: "", answer: "an bhfuair", answer2: "nach bhfuair"},
-  {question: "", answer: "ní bhfuair"},
-  {question: "", answer: "ní bhfuaireamar"},
-  {question: "", answer: "nach bhfuair"},
-  {question: "", answer: "go bhfuair"},
-  {question: "", answer: "nach bhfuair"},
-  {question: "", answer: "fuaireamar"},
-  {question: "", answer: "a bhfuair"},
-  {question: "", answer: "nach bhfuaireamar"},
+  {question: "___________ mé litir sa phost ar maidir. ", answer: "fuair"},
+  {question: "____ ___________ tú aon scéal ó do chara fós?", answer: "an bhfuair", answer2: "nach bhfuair"},
+  {question: "____ ___________ mé néal codlata aréir. (diúltach) ", answer: "ní bhfuair"},
+  {question: "____ ___________ aon chuireadh don phósadh sin. (sinn, diúltach) ", answer: "ní bhfuaireamar"},
+  {question: "____ ___________ tú do charr ar ais fós? (diúltach)", answer: "nach bhfuair"},
+  {question: "Tá súil agam  ____ ___________ tú d’fhón ar ais. (dearfach)", answer: "go bhfuair"},
+  {question: "Tá a fhios agam ____ ___________ siad oiread is iasc amháin ón loch i mbliana. (diúltach) ", answer: "nach bhfuair"},
+  {question: "____ ___________ bosca mór seacláide nuair a bhíomar críochnaithe. (dearfach)", answer: "fuaireamar"},
+  {question: "Tá ____ ___________ siad de mhilseáin ite acu.", answer: "a bhfuair"},
+  {question: "Ní fiú a bheith ag caint faoi na rudaí ____ ___________ . (sinn, diúltach)", answer: "nach bhfuaireamar"},
 ];

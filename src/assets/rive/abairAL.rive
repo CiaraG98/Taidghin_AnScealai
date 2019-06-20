@@ -631,5 +631,5 @@
 
   + (spleách|spleach)
   - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
-  ^ <call>chatSetup tosu nowait</call>
+  ^ <call>chatSetup tosu</call>
 < topic

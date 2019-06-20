@@ -584,7 +584,7 @@
 
   + (spleách|spleach)
   - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
-  ^ <call>chatSetup tosu nowait</call>
+  ^ <call>chatSetup tosu</call>
 
   + (ceim 2|céim 2)
   - {topic=level2}<call>startLevel 2</call>
