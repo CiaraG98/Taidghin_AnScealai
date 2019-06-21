@@ -98,6 +98,19 @@ var abairACCoibhneasta = [
   {question: "___________ i gcónaí gur tháinit an bhean sídhe nuair a bhí duine i mbéal a bháis.", answer: "dúradh"}
 ];
 
+var abairACExtraQuestions = [
+  {question: "___________ Seán liom go raibh an-lá acu. ", answer: "dúirt"},
+  {question: "____ ___________ mé a leithéid riamh i mo shaol.", answer: "ní dúirt"},
+  {question: "____ ___________ tú é sin le héinne eile? ", answer: "an ndúirt", answer2: "nach ndúirt"},
+  {question: "____ ___________ mé leat gan é sin a rá go brách arís! ", answer: "nach ndúirt"},
+  {question: "Tá súil agam  ____ ___________ tú leis é. (dearfach)", answer: "go ndúirt"},
+  {question: "Tá súil agam  ____ ___________ tú a leithéid sin léi siúd (diúltach)", answer: "nach ndúirt"},
+  {question: "Tá gach ____ ___________ siad fíor is cosúil. ", answer: "a dúirt"},
+  {question: "____ ___________ tú inné nach raibh spéis dá laghad agat ann? (diúltach)", answer: "nach ndúirt"},
+  {question: "Ní dóigh liom ____ ___________ mé é sin.", answer: "go ndúirt"},
+  {question: "___________ i gcónaí gur tháinit an bhean sídhe nuair a bhí duine i mbéal a bháis.", answer: "dúradh"}
+];
+
 var abairAimsirLaithreachQuestions = [
   {question: "___________ é sin i gcónaí (mé).", answer: "deirim"},
   {question: "___________ siad go bhfuil siad tuirseach de.", answer: "deir"},

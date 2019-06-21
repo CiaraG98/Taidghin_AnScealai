@@ -109,6 +109,10 @@
   return getCrioch();
 < object
 
+> object nilToQuiz javascript
+  return nilToQuiz();
+< object
+
 + start
 - Anois, a <call>getName</call>, táimid chun dul ag féachaint ar an mbriathar ‘abair’ agus an fhoirm atá aige san <b><i>Aimsir Láithreach</i></b>.<call>chatSetup tosu</call>
 
@@ -560,7 +564,7 @@
 
   + (níl|nil)
   - Tá sé sin go breá.\s
-  ^ <call>getCrioch</call>
+  ^ <call>nilToQuiz</call>
 
   + (tá|ta)
   - {topic=extraquestions}<call>chatSetup tosu nowait</call>

@@ -64,7 +64,7 @@ var isLevelComplete = false;
 var isQuizComplete = false;
 var quiz = false;
 var quizScore = 0;
-var quizProgress = 1;
+var quizProgress = 0;
 
 function searchNames(name){
   var slenderName;
@@ -146,9 +146,15 @@ function nilToCeim(){
   return nils[ran];
 }
 
+function nilToQuiz(){
+  var nilToQuiz = ["Tá sé sin go breá. Pioc topaic éigin eile", "Sin a bhfuil mar sin. Slán go fóill agus bain triail as gné eile den ghramadach uair éigin eile. Slán!"];
+  var ran = getRandomIntInclusive(0, nilToQuiz.length - 1);
+  return nilToQuiz[ran];
+}
+
 function getCrioch(){
   var crioch = ["Maith thú, a " + getName() + ", sin deireadh leis an gcleachtadh anois!", "Fágfaidh mé slán anseo agat! Bhí sé go deas bheith ag caint leat, a " +
-  getName(), "Slán go fóill, a " + getName() + ". Beimid ag caint arís tá súil agam."];
+  getName(), "Slán go fóill, a " + getName() + ". Beimid ag caint arís tá súil agam.", "Bhí sé go deas bheith ag caint leat. Más maith leat cleachtadh eile a dhéanamh téigh go dtí an leathanach baile."];
   var ran = getRandomIntInclusive(0, crioch.length - 1);
   return crioch[ran];
 }
@@ -160,7 +166,7 @@ function getRandomQuestion(questions){
   }
   if(isQuizComplete == true) return "";
   if(quiz) quizProgress++;
-  console.log(quizProgress);
+  //console.log(quizProgress);
   var index = getRandomIntInclusive(0, questions.length - 1);
   //console.log("array: " + questions);
   //console.log("size: " + questions.length);

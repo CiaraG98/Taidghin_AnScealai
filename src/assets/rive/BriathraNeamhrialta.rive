@@ -37,50 +37,50 @@
 - A, <call>getName</call>. Níl ach aon cheann déag de bhriathra neamhrialta sa Ghaeilge Sin an méid. \s
 ^ Níl sé seo ródheacair. Is féidir leat tosnú le haon cheann is mian leat. Abair liom cad é an chéan cheann ar mhaith leat tosnú leis. \s
 ^ Tá do rogha féin agat:<br>
-^ <button class="rive-button" onclick="load('dean')">Déan</button>
-^ <button class="rive-button" onclick="load('beir')">Beir</button>
+^ <button class="rive-button" onclick="load('deanAC')">Déan</button>
+^ <button class="rive-button" onclick="load('beirAC')">Beir</button>
 ^ <button class="rive-button" onclick="load('abairAC')">Abair</button>
-^ <button class="rive-button" onclick="load('faigh')">Faigh</button>
-^ <button class="rive-button" onclick="load('ith')">Ith</button>
-^ <button class="rive-button" onclick="load('teigh')">Téigh</button>
-^ <button class="rive-button" onclick="load('tar')">Tar</button>
-^ <button class="rive-button" onclick="load('tabhair')">Tabhair</button>
-^ <button class="rive-button" onclick="load('clois')">Clois</button>
-^ <button class="rive-button" onclick="load('bi')">Bí</button>
-^ <button class="rive-button" onclick="load('feic')">Feic</button>
+^ <button class="rive-button" onclick="load('faighAC')">Faigh</button>
+^ <button class="rive-button" onclick="load('ithAC')">Ith</button>
+^ <button class="rive-button" onclick="load('teighAC')">Téigh</button>
+^ <button class="rive-button" onclick="load('tarAC')">Tar</button>
+^ <button class="rive-button" onclick="load('tabhairAC')">Tabhair</button>
+^ <button class="rive-button" onclick="load('cloisAC')">Clois</button>
+^ <button class="rive-button" onclick="load('biAC')">Bí</button>
+^ <button class="rive-button" onclick="load('feicAC')">Feic</button>
 
 + (dean|déan)
-- <call>loadFromChat dean</call>
+- <call>loadFromChat deanAC</call>
 
 + abair
 - <call>loadFromChat abairAC</call>
 
 + beir
-- <call>loadFromChat beir</call>
+- <call>loadFromChat beirAC</call>
 
 + faigh
-- <call>loadFromChat faigh</call>
+- <call>loadFromChat faighAC</call>
 
 + ith
-- <call>loadFromChat ith</call>
+- <call>loadFromChat ithAC</call>
 
 + (teigh|téigh)
-- <call>loadFromChat teigh</call>
+- <call>loadFromChat teighAC</call>
 
 + tar
-- <call>loadFromChat tar</call>
+- <call>loadFromChat tarAC</call>
 
 + tabhair
-- <call>loadFromChat tar</call>
+- <call>loadFromChat tabhairAC</call>
 
 + clois
-- <call>loadFromChat clois</call>
+- <call>loadFromChat cloisAC</call>
 
 + (bi|bí)
-- <call>loadFromChat bi</call>
+- <call>loadFromChat biAC</call>
 
 + feic
-- <call>loadFromChat feic</call>
+- <call>loadFromChat feicAC</call>
 
 + quiz
 - <call>loadFromChat BQuiz</call>

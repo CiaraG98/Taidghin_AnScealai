@@ -113,6 +113,10 @@
   return nilToCeim();
 < object
 
+> object nilToQuiz javascript
+  return nilToQuiz();
+< object
+
 + start
 - Inniu táimid ag foghlaim <b><i>faigh</i></b>.\s
 ^ Cén aimsir ar mhaith leat a dhéanamh, a <call>getName</call>? <br>
@@ -175,7 +179,7 @@
 
   + (ta|tá)
   % an bhfuil ceart agam
-  - Ar aghaidh linn mar sin. </call>chatSetup ceannde</call>
+  - Ar aghaidh linn mar sin. <call>chatSetup ceannde</call>
 
   + ceannde
   - Ceann de na briathra neamhrialta is ea ‘faigh’. An fhréamh atá aige san aimsir chaite ná ‘fuair’ (f-u-a-i-r). \s
@@ -203,7 +207,7 @@
 
   + (ta|tá)
   % an bhfuil tú ag iarraidh cleachtadh a dhéanamh air sin
-  - <call>chatSetup cleachtadh</call>
+  - <call>chatSetup cleachtadh nowait</call>
 
   + cleachtadh
   - Go maith. Líon isteach an fhoirm cheart den bhriathar ‘faigh’ san aimsir chaite:<br>
@@ -292,6 +296,7 @@
   ^ Ní bhfuaireamar<br>
   ^ Ní bhfuair sibh<br>
   ^ Ní bhfuair siad<br>
+  ^ <call>chatSetup ceist</call>
 
   + ceist
   - An bhfuil tú ag iarraidh cleachtadh beag a dhéanamh ar an bhfoirm dhiúltach mar sin?
@@ -405,7 +410,7 @@
   ^ <call>getProgress</call>
 
   + levelcomplete
-  - Tá triúr ceart agat i ndiaidh a chéile. Tá céim an mbriathar saor críochnaithe agat. Maith thú, a <call>getName</call>! <call>chatSetup ceisteach</call>
+  - Tá triúr ceart agat i ndiaidh a chéile. Tá an mbriathar saor críochnaithe agat. Maith thú, a <call>getName</call>! <call>chatSetup ceisteach</call>
   ^ <call>setAnsweringQuestions false</call>
 
   + continue
@@ -666,8 +671,7 @@
   - {topic=extraquestions}<call>chatSetup tosu nowait</call>
 
   + (nil|níl)
-  - Tá sé sin go breá. Ar ais go dtí an leathanach baile mar sin.\s
-  ^ <call>getCrioch</call>
+  - <call>nilToQuiz</call>
 
   + briathar saor
   - {topic=level3}<call>chatSetup briathar saor nowait</call>

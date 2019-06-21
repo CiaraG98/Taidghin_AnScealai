@@ -109,6 +109,10 @@
   return getCrioch();
 < object
 
+> object nilToQuiz javascript
+  return nilToQuiz();
+< object
+
 + start
 - Creidim, a <call>getName</call> go bhfuil tú ag iarraidh féachaint ar an mbriathar ‘abair’ san <b><i>aimsir fháistineach</i></b>.\s
 ^ An bhfuil an ceart agam?
@@ -611,8 +615,7 @@
   - {topic=extraquestions}<call>chatSetup tosu nowait</call>
 
   + (nil|níl)
-  - Tá sé sin go breá. Ar ais go dtí an leathanach baile mar sin.\s
-  ^ <call>getCrioch</call>
+  - <call>nilToQuiz</call>
 
   + briathar saor
   - {topic=level3}<call>chatSetup briathar saor nowait</call>

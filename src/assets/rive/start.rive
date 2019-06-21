@@ -28,6 +28,11 @@
   return askName();
 < object
 
+> object setKeepMessages javascript
+  keepMessages = args[0];
+  return "";
+< object
+
 + start
 * <call>isNameStored</call> == true => <call>chatSetup failte</call>
 * <call>isNameStored</call> == false => <call>askName</call>
@@ -40,9 +45,9 @@
 ^ Táim anseo chun cabhrú leat le roinnt pointí gramadaí.\s
 ^ Please choose a topic to practice by clicking the menu icon or one of the buttons below and we'll get started :).\s
 ^ <br>\s
-^ <button class="rive-button" onclick="load('BriathraNeamhrialta')">Briathra Neamhrialta </button>
+^ <button class="rive-button" onclick="chatSetup('briathra neamhrialta')">Briathra Neamhrialta </button>
 ^ <button class="rive-button">Grammar Topic </button>
 ^ <button class="rive-button">Grammar Topic </button>
 
 + briathra neamhrialta
-- <call>loadFromChat BriathraNeamhrialta</call>
+- <call>setKeepMessages true</call><call>loadFromChat BriathraNeamhrialta</call>

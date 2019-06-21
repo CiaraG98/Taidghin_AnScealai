@@ -119,7 +119,7 @@
 < object
 
 > object getQuizScore javascript
-  return "Quiz Score: " + quizScore;
+  return quizScore;
 < object
 
 > object getQuizProgress javascript
@@ -164,9 +164,15 @@
 * <call>checkAnswer <star></call> == false => Mícheart. <call>quizComplete</call><call>triailAris</call><br><call>changeProgress</call>
 ^ <call>getQuizScore</call><br><call>getRandomQuestion abairQuiz</call>
 
++ (quit|scor)
+* <call>getQuizScore</call> <= 5 => omg you only lasted <call>getQuizProgress</call> questions. <call>chatSetup crioch</call>
+* <call>getQuizScore</call> <= 10 => well done for lasting <call>getQuizProgress</call> questions. <call>chatSetup crioch</call>
+* <call>getQuizScore</call> <= 20 => you are amazing for doing <call>getQuizProgress</call> questions. <call>chatSetup crioch</call>
+
 + quizcomplete
 - Tá an cleachtadh críochnaithe agat. Maith thú, a <call>getName</call>! <call>chatSetup crioch</call>
 ^ <call>setAnsweringQuestions false</call>
+^ <call>quiz false</call>
 
 + continue
 - Ar mhaith leat leanúint ar aghaidh?
@@ -179,10 +185,5 @@
 % ar mhaith leat leanúint ar aghaidh
 - <call>chatSetup crioch nowait</call>
 
-+ (quit|scor)
-* <call>getQuizScore</call> <= 5 => omg you only lasted <call>getQuizProgress</call> questions. <call>chatSetup crioch</call>
-* <call>getQuizScore</call> <= 10 => well done for lasting <call>getQuizProgress</call> questions. <call>chatSetup crioch</call>
-* <call>getQuizScore</call> <= 20 => you are amazing for doing <call>getQuizProgress</call> questions. <call>chatSetup crioch</call>
-
 + crioch
-- <call>getCrioch</call>
+- <call>getCrioch</call><call>quiz false</call>
