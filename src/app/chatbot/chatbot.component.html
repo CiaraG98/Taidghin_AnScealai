@@ -1,8 +1,6 @@
 <body>
   <button id="chat-button" onclick="showBot()"><span>Chatbot</span></button>
   <div class="bot-contents">
-    <!--<div class="close-contents" onclick="hideContents()">x</div>
-    <!--<span id="contents">Contents:</span>-->
     <button class="collapsable" id="BriathraNeamhrialta" onclick="">Briathra Neamhrialta</button>
     <div class="content">
       <ul>
@@ -32,9 +30,13 @@
       </ul>
     </div>
   </div>
+  <div class="test"></div>
+  <div class="bot-audio"><audio controls></audio></div>
+  <div class="tri"></div>
   <div class="bg-modal">
     <div class="bot-close" onclick="hideBot()">+</div>
     <div><img src="assets/menuIcon.png" class="contents-button" onclick="showContents()"></div>
+    <div><img src="assets/play-png.png" id="play-audio" onclick="showAudio()"></div>
     <div class="chatlogs">
       <div class="messages"></div>
     </div>

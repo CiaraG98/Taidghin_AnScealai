@@ -1,8 +1,6 @@
 window.onload = init;
 var ainmneacha = [];
 var keepMessages = false;
-var contentsClicked = false;
-var holdInput = false;
 //var fs = require('fs');
 //Read Google Sheet with slenderised names...
 function init(){
@@ -21,7 +19,7 @@ function setup(){
   //console.log(botNames[0]);
   clearName();
   bot = new RiveScript({utf8: true});
-  bot.loadFile("assets/rive/faighAC.rive").then( () => {
+  bot.loadFile("assets/rive/start.rive").then( () => {
     bot.sortReplies();
     console.log("Bot Ready");
     chatSetup("start");
@@ -53,6 +51,7 @@ function setup(){
       $(".bot-contents").animate({ scrollTop: $(".bot-contents")[0].scrollHeight }, 200);
     });
   }
+
 }
 
 function showBot(){
@@ -94,6 +93,7 @@ function hideContents(){
   menu.style.opacity = "0";
 }
 
+
 //loads file chosen by the user
 function load(fileId, start){
   console.log("To Load: " + fileId);
@@ -133,6 +133,7 @@ function appendTypingIndicator(){
 function chatSetup(text){
   bot.reply("local-user", text).then( (reply) => {
     console.log(reply);
+    audio(reply);
     if(reply != ""){
       appendTypingIndicator();
       setTimeout(function(){
@@ -162,6 +163,7 @@ function chat(){
   }
   bot.reply("local-user", input).then( (reply) => {
     console.log(reply);
+    audio(reply);
     if(reply != ""){
       appendTypingIndicator();
       setTimeout(function(){

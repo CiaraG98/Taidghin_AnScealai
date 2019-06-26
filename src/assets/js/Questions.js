@@ -1,3 +1,16 @@
+var irregularVerbsQuiz = [
+  {question: "Cad eile ____ ___________ sé? (modh coinníollach)", answer: "a déarfadh"},
+  {question: "Ní féidir le hAntoin a bhéal a choimeád dúnta. ___________ sé amach aon rud a thiocfadh isteach ina cheann. (modh coinníollach)", answer: "déarfadh"},
+  {question: "____ ___________ aon rud faoin mí-ádh a bhain dó níos mó. (briathar saor, aimsir láithreach, diúltach)", answer: "ní deirtear"},
+  {question: "Cad a ___________ siad nuair a chuala siad an méid sin? ", answer: "dúirt"},
+  {question: "___________ gur siúinéir iontach í. (aimsir láithreach, briathar saor) ", answer: "deirtear"},
+  {question: "", answer: ""},
+  {question: "", answer: ""},
+  {question: "", answer: ""},
+  {question: "", answer: ""},
+  {question: "", answer: ""},
+  {question: "", answer: ""},
+];
 var abairQuiz = [
   {question: "____ ___________ mé é sin ná é. (aimsir chaite, diúltach)", answer: "ní dúirt"},
   {question: "____ ___________ éinne é sin. (aimsir chaite, diúltach)", answer: "ní dúirt"},

@@ -27,6 +27,8 @@
             ],
             "scripts": [
               "src/assets/js/bot.js",
+              "src/assets/js/chatbotAudio.js",
+              "src/assets/js/chatbotDb.js",
               "src/assets/js/Rivescript.js",
               "src/assets/js/Questions.js",
               "src/assets/rive/start.rive",

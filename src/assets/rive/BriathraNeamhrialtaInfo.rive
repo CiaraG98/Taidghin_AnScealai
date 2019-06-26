@@ -16,8 +16,12 @@
   return "";
 < object
 
+> object askName javascript
+  return askName();
+< object
+
 + start
-* <call>isNameStored</call> == false => Dia Dhuit! Níl a fhios agam d’ainm. Cad is ainm duit?
+* <call>isNameStored</call> == false => <call>askName</call>
 * <call>isNameStored</call> == true => A, <call>getName</call>. Níl ach aon cheann déag de bhriathra neamhrialta sa Ghaeilge Sin an méid. \s
 ^ Níl sé seo ródheacair. Is féidir leat tosnú le haon cheann is mian leat. Abair liom cad é an chéan cheann ar mhaith leat tosnú leis. \s
 ^ Tá do rogha féin agat:<br>
@@ -35,10 +39,9 @@
 
 
 + (_ is ainm dom)
-- Deas bualadh leat a <call>storeName <formal></call><call>getName</call> :)\s
+- Deas bualadh leat a <call>storeName <formal></call><call>getName</call>\s
 ^ <br>
-^ Welcome to Info and Questions.\s
-^ Please choose the verb you would like to learn. <br>
+^ Anois, roghnaigh ábhar le do thoil:<br>
 ^ <button class="rive-button" onclick="load('deanAC')">Déan</button>
 ^ <button class="rive-button" onclick="load('beirAC')">Beir</button>
 ^ <button class="rive-button" onclick="load('abairAC')">Abair</button>

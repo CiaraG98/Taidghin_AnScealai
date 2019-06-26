@@ -2,12 +2,8 @@ body{
   background: url("assets/paperBg.png") no-repeat center center fixed;
 }
 
-button:focus{
+button:focus, input:focus, .bot-audio:focus{
   outline: 0;
-}
-
-input:focus{
-  outline:0;
 }
 
 .bg-modal{
@@ -299,6 +295,54 @@ box-shadow: -1px 5px 32px 10px rgba(0,0,0,0.2);
   100% {
     transform: translateY(0px);
   }
+}
+
+/*Audio*/
+#play-audio{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 3px;
+  left: 7px;
+}
+
+#play-audio:hover{
+  cursor: pointer;
+}
+
+.bot-audio{
+  display: none;
+  width: 150px;
+  background: #F9E79F;
+  position: fixed;
+  padding: 10px;
+  border-radius: 10px;
+  right: 318px;
+  top: 60px;
+  //box-shadow: 1px 1px 2px rgba(0,0,0, 0.25);
+}
+
+audio{
+  width: 150px;
+}
+
+.tri{
+  display: none;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 20px solid #F9E79F;
+	border-bottom: 10px solid transparent;
+  position: fixed;
+  right: 299px;
+  top: 70px;
+}
+
+.test{
+  border-style: dashed;
+  padding: 10px;
+  width: 300px;
+  height: 200px;
 }
 
 /* RiveScript buttons */

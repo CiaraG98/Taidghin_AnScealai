@@ -26,7 +26,7 @@
 
 
 + (ta|tá)
-- Ceart go leor, a <call>getName</call>. Tá dhá chuid ann ar féidir leat a roghnú, Foghlaim nó Quiz. Cad ba mhaith leat a dhéanamh?\s <br>
+- Ceart go leor, a <call>getName</call>. Tá dhá chuid ann ar féidir leat a roghnú, Foghlaim nó Quiz. Cad ba mhaith leat a dhéanamh:\s <br>
 ^ <button class="rive-button" onclick="chatSetup('foghlaim')">Foghlaim</button>
 ^ <button class="rive-button" onclick="load('BQuiz')">Quiz</button>
 

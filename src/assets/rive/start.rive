@@ -41,11 +41,11 @@
 - <call>storeName <formal></call><call>chatSetup failte</call>
 
 + failte
-- Fáilte romhat isteach, a </call><call>getName</call>.\s
+- Fáilte romhat isteach, a <call>getName</call>.\s
 ^ Táim anseo chun cabhrú leat le roinnt pointí gramadaí.\s
-^ Please choose a topic to practice by clicking the menu icon or one of the buttons below and we'll get started :).\s
+^ Anois, roghnaigh ábhar le do thoil:
 ^ <br>\s
-^ <button class="rive-button" onclick="chatSetup('briathra neamhrialta')">Briathra Neamhrialta </button>
+^ <button class="rive-button" onclick="chatSetup('briathra neamhrialta')">Briathra Neamhrialta</button>
 ^ <button class="rive-button">Grammar Topic </button>
 ^ <button class="rive-button">Grammar Topic </button>
 

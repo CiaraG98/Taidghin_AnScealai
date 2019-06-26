@@ -64,6 +64,9 @@
 
 > object setAnsweringQuestions javascript
   answeringQuestions = args[0];
+  if(answeringQuestions == true){
+    wrongCount = 0;
+  }
   return "";
 < object
 
@@ -129,11 +132,11 @@
 + start
 - An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar an mbriathar <b><i>‘abair’</i></b>, a <call>getName</call>? Tá gach foirm den bhriathar anseo.
 
-+ (ta|tá)
++ (ta|tá|ba mhaith|sea)
 - <call>chatSetup cleachtadh nowait</call>
 
-+ (nil|níl)
-- Ar mhaith leat an briathar ‘abair’ a dhéanamh, <br>
++ (nil|níl|níor mhaith)
+- Ar mhaith leat an briathar ‘abair’ a dhéanamh: <br>
 ^ <button class="rive-button2" onclick="chatSetup('chaite')">Aimsir Chaite</button><br>
 ^ <button class="rive-button2" onclick="chatSetup('laithreach')">Aimsir Laithreach</button><br>
 ^ <button class="rive-button2" onclick="chatSetup('fhaistineach')">Aimsir Fháistineach</button><br>
@@ -177,11 +180,11 @@
 + continue
 - Ar mhaith leat leanúint ar aghaidh?
 
-+ (ta|tá)
++ (ta|tá|ba mhaith|sea)
 % ar mhaith leat leanúint ar aghaidh
 - <call>chatSetup cleachtadh</call>
 
-+ (nil|níl)
++ (nil|níl|níor mhaith)
 % ar mhaith leat leanúint ar aghaidh
 - <call>chatSetup crioch nowait</call>
 

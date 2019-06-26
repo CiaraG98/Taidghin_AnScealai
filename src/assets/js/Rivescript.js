@@ -65,6 +65,7 @@ var isQuizComplete = false;
 var quiz = false;
 var quizScore = 0;
 var quizProgress = 0;
+var currentTopic = "";
 
 function searchNames(name){
   var slenderName;
@@ -89,6 +90,10 @@ function getName(){
   var name = localStorage.getItem("name");
   if(name) return name;
   else return userName;
+}
+
+function getCurrentTopic(){
+  return currentTopic;
 }
 
 function getUserName(){
@@ -127,8 +132,10 @@ function resetProgress(){
 }
 
 function getLink(){
-  var links = ["An bhfuil aon fhocail nár thuig tú? Féach sa bhfoclóir ag www.teanglann.ie",
-    "Úsáid www.tearma.ie chun cabhrú leat munar thuig tú téarma ar leith."];
+  var buttons = ["<a href=\"https://www.tearma.ie\" target=\"_blank\"><button class='rive-button'>www.tearma.ie</button></a>",
+  "<a href=\"https://www.teanglann.ie\" target=\"_blank\"><button class='rive-button'>www.teanglann.ie</button></a>"]
+  var links = ["An bhfuil aon fhocail nár thuig tú? Féach sa bhfoclóir ag: <br>" + buttons[1],
+    "Úsáid " + buttons[0] + " chun cabhrú leat munar thuig tú téarma ar leith."];
   var ran = getRandomIntInclusive(0, links.length - 1);
   return links[ran];
 }
@@ -150,6 +157,10 @@ function nilToQuiz(){
   var nilToQuiz = ["Tá sé sin go breá. Pioc topaic éigin eile", "Sin a bhfuil mar sin. Slán go fóill agus bain triail as gné eile den ghramadach uair éigin eile. Slán!"];
   var ran = getRandomIntInclusive(0, nilToQuiz.length - 1);
   return nilToQuiz[ran];
+}
+
+function nilToCleachtadh(){
+  return "";
 }
 
 function getCrioch(){

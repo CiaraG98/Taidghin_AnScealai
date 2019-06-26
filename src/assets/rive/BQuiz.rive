@@ -113,7 +113,7 @@
 + start
 * <call>isNameStored</call> == false => Dia Dhuit! Níl a fhios agam d’ainm. Cad is ainm duit?
 * <call>isNameStored</call> == true => Dia Dhuit a <call>getName</call>! Welcome to the Big Quiz.\s
-^ An bhfuil tú réidh?<br>
+^ An bhfuil tú réidh:<br>
 ^ <button class="rive-button2" onclick="chatSetup('ta')">Tá</button>
 ^ <button class="rive-button" onclick="chatSetup('nil')">Níl</button>
 
@@ -126,7 +126,7 @@
 + _ is ainm dom
 - <call>storeName <formal></call>Deas bualadh leat a <call>getName</call>!\s
 ^ Welcome to the Big Quiz.\s
-^ An bhfuil tú réidh?<br>
+^ An bhfuil tú réidh:<br>
 ^ <button class="rive-button2" onclick="chatSetup('ta')">Tá</button>
 ^ <button class="rive-button" onclick="chatSetup('nil')">Níl</button>
 
