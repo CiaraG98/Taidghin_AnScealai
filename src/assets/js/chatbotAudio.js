@@ -2,6 +2,8 @@ var audio_reply = "";
 var audio_array = [];
 var hideAudio = false;
 var request = new XMLHttpRequest();
+request.withCredentials = true;
+
 
 function showAudio(){
   var triangle = document.querySelector(".tri");
@@ -29,12 +31,14 @@ function audio(reply){
     audio_reply = audio_reply.substr(0, index);
     print.innerHTML = audio_reply;
   }
+  //callAudio();
 }
 
-/*request.open('GET', 'https://www.abair.tcd.ie/api/?input=Dia dhuit, cad e mar ata tu&format=mp3&synth=ga_UL_anb_nnmnkwii', true);
-request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-request.send();
-request.onload = function(){
-  var data = this.response;
-  console.log(data);
-}*/
+function callAudio(){
+  request.open('GET', 'https://www.abair.tcd.ie/api/?input=dia%20dhuit&format=mp3&synth=ga_UL_anb_nnmnkwii', true);
+  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  request.send();
+  request.onload = function(resp){
+    console.log(resp);
+  }
+}
