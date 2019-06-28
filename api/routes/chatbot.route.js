@@ -20,19 +20,47 @@ chatbotRoute.route('/addUser').post(function(req, res){
 
 //Add to logs by id/name
 chatbotRoute.route('/addLog/:name').post(function(req, res){
-  //console.log(req.body);
   let log = new Models.Log(req.body);
-  //console.log(log);
-  Models.Chatbot.findOne({"username": req.params.name}, function(req, bot){
-    console.log(bot.username);
-    console.log(JSON.stringify(bot.logs));
+  let date = log.date;
+  fs.appendFileSync('./logs.txt', "\n" + "Date: " + date + "\n", function(err){
+    if(err) console.log(err);
+    else console.log("fs logged");
+  });
+  for(i = 0; i < log.conversation.length; i++){
+    console.log(log.conversation[i].text);
+    var from = "";
+    if(log.conversation[i].sentByBot == true) from = "Bot: ";
+    else from = "User: ";
+
+    fs.appendFileSync('./logs.txt', from + log.conversation[i].text + "\n", function(err){
+      if(err) console.log(err);
+      else console.log("fs logged");
+    });
+  }
+  Models.Chatbot.findOne({"username": req.params.name}, function(err, bot){
+    //console.log(bot.username);
+    //console.log(JSON.stringify(bot.logs));
     bot.logs.push(log);
     bot.save().then(bot =>{
       res.json('Update complete');
     }).catch(err => {
       res.status(400).send("Unable to update");
     });
-    console.log(JSON.stringify(bot.logs));
+    //console.log(JSON.stringify(bot.logs));
+  });
+});
+
+//clear logs by username
+chatbotRoute.route('/clearLogs/:name').get(function(req, res){
+  Models.Chatbot.findOne({"username": req.params.name}, function(err, bot){
+    if(err) res.status(400).send("Unable to update");
+    else{
+      bot.logs = [];
+      bot.save().then(bot => {
+        res.json('logs removed');
+      })
+      res.status(200).send("Logs Removed");
+    }
   });
 });
 

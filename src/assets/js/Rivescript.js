@@ -53,6 +53,7 @@ var files = [
 ];
 
 var userName;
+var name;
 var botName = "Taidhgín";
 var progress = 0;
 var currentQuestion;
@@ -65,7 +66,6 @@ var isQuizComplete = false;
 var quiz = false;
 var quizScore = 0;
 var quizProgress = 0;
-var currentTopic = "";
 
 function searchNames(name){
   var slenderName;
@@ -80,6 +80,7 @@ function searchNames(name){
 
 function storeName(name){
   userName = name;
+  botObj.username = userName;
   var slName = searchNames(name);
   if(slName) localStorage.setItem("name", slName);
   else localStorage.setItem("name", name);
@@ -87,7 +88,7 @@ function storeName(name){
 }
 
 function getName(){
-  var name = localStorage.getItem("name");
+  name = localStorage.getItem("name");
   if(name) return name;
   else return userName;
 }
@@ -177,10 +178,7 @@ function getRandomQuestion(questions){
   }
   if(isQuizComplete == true) return "";
   if(quiz) quizProgress++;
-  //console.log(quizProgress);
   var index = getRandomIntInclusive(0, questions.length - 1);
-  //console.log("array: " + questions);
-  //console.log("size: " + questions.length);
   console.log("index: " +  index);
   if(index == prevQuestion) index = getRandomIntInclusive(0, questions.length - 1);
   prevQuestion = index;
@@ -194,7 +192,6 @@ function getRandomQuestion(questions){
 }
 
 function getCurrentAnswer(){
-  console.log(currentQuestion.answer);
   return currentQuestion.answer;
 }
 
@@ -207,12 +204,10 @@ function getRandomReply(){
   var reply4 = "An mhaith ar fad!"
   var replies = [reply, reply2, reply3, reply4];
   var i = getRandomIntInclusive(0, replies.length-1);
-  //console.log(i);
   return replies[i];
 }
 
 function getRandomIntInclusive(min, max) {
-  //console.log(min + " " + max);
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
@@ -225,10 +220,6 @@ function changeProgress(sign){
       isLevelComplete = true;
       console.log("level complete")
     }
-    /*if(progress == 10){
-      isQuizComplete = true;
-      console.log("quiz complete");
-    }*/
     if(quiz) quizScore++;
   }
   if(quiz) {
@@ -238,6 +229,5 @@ function changeProgress(sign){
     }
     console.log("quiz: " + quizScore);
   }
-  //console.log("progress " +  progress);
   return "";
 }

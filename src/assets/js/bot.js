@@ -1,7 +1,14 @@
 window.onload = init;
 var ainmneacha = [];
 var keepMessages = false;
-//var fs = require('fs');
+
+//for database....
+var currentTopic = "";
+var complete = false;
+var messageforDb = "";
+var switchTopic = false;
+var date = new Date();
+
 //Read Google Sheet with slenderised names...
 function init(){
   var names = "https://docs.google.com/spreadsheets/d/1vvA9n123EJ0hmuQcnwE88JpsOVgxvUgDonPSaoULP3k/edit?usp=sharing";
@@ -16,14 +23,8 @@ function loadData(data, tabletop){
 }
 
 function setup(){
-  //console.log(botNames[0]);
   clearName();
-  bot = new RiveScript({utf8: true});
-  bot.loadFile("assets/rive/start.rive").then( () => {
-    bot.sortReplies();
-    console.log("Bot Ready");
-    chatSetup("start");
-  });
+  load("start", "start");
 
   //if the 'chatbot' button is clicked
   var button = document.getElementById("chat-button");
@@ -84,18 +85,19 @@ function showContents(){
     menu.style.right = "0px";
     menu.style.opacity = "0";
   }
-
 }
-
-function hideContents(){
-  var menu = document.querySelector(".bot-contents");
-  menu.style.right = "0px";
-  menu.style.opacity = "0";
-}
-
 
 //loads file chosen by the user
 function load(fileId, start){
+  if(fileId == "start"){
+    switchTopic = false;
+    currentTopic = fileId;
+  }
+  else{
+    currentTopic = fileId;
+    switchTopic = true;
+  }
+
   console.log("To Load: " + fileId);
   if(keepMessages == false){
     $(".messages").empty();
@@ -107,8 +109,6 @@ function load(fileId, start){
       bot.loadFile(files[i].file).then( () => {
         bot.sortReplies();
         console.log(fileId + " loaded");
-        //hideContents();
-        console.log(start);
         if(start != null) chatSetup(start);
         else chatSetup("start");
       });
@@ -117,24 +117,21 @@ function load(fileId, start){
   keepMessages = false;
 }
 
-function loadFromChat(fileId, start){
-  console.log(fileId);
-  load(fileId, start);
-}
+function loadFromChat(fileId, start){ load(fileId, start); }
 
 function appendTypingIndicator(){
-  //holdInput = true;
   $(".messages").append($("<div class=\"typing-indicator\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><div class=\"dots\"><p class=\"chat-message\"><span id=\"typ1\"></span><span id=\"typ2\"></span><span id=\"typ3\"></span></p></div></div></div>"));
   $(".typing-indicator").delay(1000).fadeOut("fast");
   $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
 }
 
-//begins the chat
+//CHAT REPLIES AND INPUTS
 function chatSetup(text){
   bot.reply("local-user", text).then( (reply) => {
     console.log(reply);
     audio(reply);
     if(reply != ""){
+      makeMessageObj(true, reply);
       appendTypingIndicator();
       setTimeout(function(){
         $(".messages").append($("<div class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
@@ -147,7 +144,6 @@ function chatSetup(text){
   return "";
 }
 
-//conversation takes place
 function chat(){
   //if(holdInput) setTimeout(function(){}, 1200);
   var input = document.getElementById("user_input").value;
@@ -156,6 +152,7 @@ function chat(){
       event.preventDefault();
     });
     document.getElementById("user_input").value = "";
+    makeMessageObj(false, input);
     $(".messages").append($("<div class=\"chat user\"><div class=\"user-photo\"><img src=\"assets/education.png\" id=\"user-img\"></div><p class=\"chat-message\"><span class=\"input\">" + input
     + "</span></p></div></div>"));
     console.log(input);
@@ -165,6 +162,7 @@ function chat(){
     console.log(reply);
     audio(reply);
     if(reply != ""){
+      makeMessageObj(true, reply);
       appendTypingIndicator();
       setTimeout(function(){
         $(".messages").append($("<div class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
@@ -173,7 +171,6 @@ function chat(){
       }, 1200);
       //document.getElementById("output").innerHTML = reply;
       $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
-      //log(input, reply, userName);
     }
   });
 }

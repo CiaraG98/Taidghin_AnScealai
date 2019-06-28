@@ -1,0 +1,41 @@
+
+Date: Fri Jun 28 2019 14:40:51 GMT+0100 (Irish Standard Time)
+Bot: Dia Dhuit! Is mise Taidhgín. Cad is ainm duit?
+
+Date: Fri Jun 28 2019 14:41:04 GMT+0100 (Irish Standard Time)
+User: Ciara is ainm dom
+Bot: Deas bualadh leat a Chiara <br>Anois, roghnaigh ábhar le do thoil:<br><button class="rive-button" onclick="load('deanAC')">Déan</button><button class="rive-button" onclick="load('beirAC')">Beir</button><button class="rive-button" onclick="load('abairAC')">Abair</button><button class="rive-button" onclick="load('faighAC')">Faigh</button><button class="rive-button" onclick="load('ithAC')">Ith</button><button class="rive-button" onclick="load('teighAC')">Téigh</button><button class="rive-button" onclick="load('tarAC')">Tar</button><button class="rive-button" onclick="load('tabhairAC')">Tabhair</button><button class="rive-button" onclick="load('cloisAC')">Clois</button><button class="rive-button" onclick="load('biAC')">Bí</button><button class="rive-button" onclick="load('feicAC')">Feic</button>
+User: abair
+
+Date: Fri Jun 28 2019 14:43:11 GMT+0100 (Irish Standard Time)
+User: aimsir chaite
+Bot: Cén céim ar mhaith leat a dhéanamh san aimsir chaite:<br><button class="rive-button2" onclick="chatSetup('ceim 1')">Céim 1</button><button class="rive-button2" onclick="chatSetup('ceim 2')">Céim 2</button><button class="rive-button2" onclick="chatSetup('ceim 3')">Céim 3</button>
+User: ceim 1
+Bot: Tosóimid leis an aimsir chaite mar sin, a Chiara.  
+Bot: Tá sé seo an-simplí ar fad. An bhunfhoirm ná ‘dúirt’. <br>- Dúirt mé <br>- Dúirt tú <br>- Dúirt sé nó sí <br>Ansin athraíonn sé beagáinín den gcéad phearsa iolra: <br>- Dúramar <br>- Ansin ar ais go: <br>- Dúirt sibh, agus <br>- Dúirt siad <br>
+Bot: Bain triail as an gcleachtadh beag seo:   <br>
+Bot: Ceist: ___________ Síle go raibh an scéal sin fíor.<br> 
+User: dúirt
+Bot: Sin agat é, a Chiara. <br>Scór: 1<br>Ceist: ___________ Liam go raibh sé tinn.
+User: dúirt
+Bot: An ceart ar fad agat, a Chiara. <br>Scór: 2<br>Ceist: ___________ na buachaillí nach raibh éinne eile ann.
+User: dúirt
+Bot:  Tá triúr ceart agat i ndiaidh a chéile. Tá céim 1 críochnaithe agat. I gCéim a Dó féachfaimid ar an bhfoirm dhiúltach den bhriathar. Beimid ag séanadh go ndúramar rudaí! An bhfuil tú ag iarraidh leanúint ar aghaidh go Céim a Dó?  Ní thógfaidh sé seo i bhfad.
+User: ta
+Bot: Ceart go leor mar sin. Féachfaimid ar an taobh diúltach. 
+Bot: Níl ann ach ní (N, Í) a chur roimh an mbriathar. <br>- Ní dúirt mé<br>- Ní dúirt tú<br>- Ní dúirt sé nó sí<br>- Ní dúramar<br>- Ní dúirt sibh<br>- Ní dúirt siad<br> 
+Bot: De ghnáth leanann séimhiú ‘ní’ ach ní dhéanann sa chás seo. An bhfuil tú ag iarraidh an cleachtadh beag seo a dhéanamh?<br>
+User: ta
+Bot: Ceist: ____ ___________ (sinn) go rabhamar bréan bailithe de.
+User: ní dúramar 
+Bot: An mhaith ar fad!<br>Scór: 1<br>Ceist: ____ ___________ sí faic.
+User: ní dúirt
+Bot: An mhaith ar fad!<br>Scór: 2<br>Ceist: ____ ___________ (sinn) go rabhamar bréan bailithe de.
+User: ní dúramar
+Bot:  Tá triúr ceart agat i ndiaidh a chéile. Tá céim 2 críochnaithe agat.  
+Bot: An bhfuil tú ag iarraidh dul go Céim 3 ina áit sin?
+User: ta
+Bot: Inis dom an ábhar atá le déanamh ar dtús. Is féidir leat topaic a athrú ag am ar bith: <br><button class="rive-button2" onclick="chatSetup('briathar saor')">Briathar Saor</button><button class="rive-button2" onclick="chatSetup('ceisteach')">An Fhoirm Cheisteach</button><button class="rive-button2" onclick="chatSetup('spleách')">An Fhoirm Spleách/Neamhspleách</button><button class="rive-button2" onclick="chatSetup('coibhneasta')">Forainm Coibhneasta</button>
+Bot: Ceart go leor, a Chiara Tosóimid leis an mbriathar saor mar sin. Úsáidimid an briathar saor nuair nach bhfuilimid ábalta a rá nó sásta a rá cé a dúirt é – pé rud é. Úsáidtear ‘dúradh’ (D, Ú, R, A, D, H) nó ‘ní dúradh’ chun é seo a chur in iúl. Níl a fhios againn cé a dúirt é nó cé nach ndúirt é. An bhfuil tú réidh chun cleachtadh beag a dhéanamh air seo?
+User: ta
+Bot: <br>Scór: 0<br>Ceist: ___________ nach raibh maith na muice lena deartháir riamh.

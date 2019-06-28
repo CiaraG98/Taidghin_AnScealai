@@ -1,36 +1,60 @@
-var date = new Date();
 var request = new XMLHttpRequest();
-var id = 0234;
-var messages = [
-  {date: date, sentByBot: true, text: "Dia Dhuit! Is mise Taidhgín. Cad a thabharfaidh mé ort?"},
-  {date: date, sentByBot: false, text: "Ciara is ainm dom"}
-];
-
-logs = [];
+var date = null;
+var topic = "";
+var messages = [];
+var logToAdd = {date: null, topic: "", complete: false, conversation: []};
 var botObj = {
-  username: "Ciara",
-  user_id: id,
-  logs: logs
-};
+  username: "",
+  user_id: "001",
+  logs: []
+}
+clearLogs("Ciara");
+//addUserToDb(botObj);
+//postLogToDb(logToAdd);
 
-console.log(botObj);
-var logToAdd = {date: date, topic: "AbairAC", complete: false, conversation: messages};
-postLogToDb(logToAdd);
-//postToDb(botObj);
+//build conversation with array of message objects, then add to logs in db when a new topic is started
+function makeMessageObj(sentByBot, text){
+  if(switchTopic){
+    logToAdd.date = new Date();
+    logToAdd.complete = false;
+    logToAdd.conversation = messages;
+    console.log(logToAdd);
+    postLogToDb(logToAdd, "Ciara");
+    messages = [];
+    switchTopic = false;
+  }
+  else{
+    logToAdd.topic = currentTopic;
+    date = new Date();
+    var newMessage = {date: date, sentByBot: sentByBot, text: text};
+    messages.push(newMessage);
+  }
+}
 
-function postToDb(chatbotObj){
+//adding user to db
+function addUserToDb(chatbotObj){
   request.open('POST', 'http://localhost:4000/Chatbot/addUser', true);
   request.setRequestHeader("Content-type", "application/json");
   request.send(JSON.stringify(chatbotObj));
   request.onload = function() {
-
+    console.log(this.response);
   }
 }
 
-function postLogToDb(logObj){
-  request.open('POST', 'http://localhost:4000/Chatbot/addLog/'+ "Ciara", true);
+//add log to db
+function postLogToDb(logObj, name){
+  request.open('POST', 'http://localhost:4000/Chatbot/addLog/'+ name, true);
   request.setRequestHeader("Content-type", "application/json");
   request.send(JSON.stringify(logObj));
+  request.onload = function(){
+    console.log(this.response);
+  }
+}
+
+//clear logs of user
+function clearLogs(name){
+  request.open('GET', 'http://localhost:4000/Chatbot/clearLogs/' + name, true);
+  request.send();
   request.onload = function(){
     console.log(this.response);
   }
