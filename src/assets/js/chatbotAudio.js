@@ -2,8 +2,10 @@ var audio_reply = "";
 var audio_array = [];
 var hideAudio = false;
 var request = new XMLHttpRequest();
-request.withCredentials = true;
-
+var audioPlayer = document.querySelector("#bot_audio");
+var audioTest = new Audio();
+console.log(audioTest);
+//console.log(audioPlayer);
 
 function showAudio(){
   var triangle = document.querySelector(".tri");
@@ -31,14 +33,46 @@ function audio(reply){
     audio_reply = audio_reply.substr(0, index);
     print.innerHTML = audio_reply;
   }
-  //callAudio();
+  var end = false;
+/*  while(!end){
+    var index = audio_reply.indexOf(".");
+    var to_send = audio_reply.substr(0, index);
+    console.log(to_send);
+    callAudio(to_send);
+  }*/
 }
 
-function callAudio(){
-  request.open('GET', 'https://www.abair.tcd.ie/api/?input=dia%20dhuit&format=mp3&synth=ga_UL_anb_nnmnkwii', true);
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+var inp = "Fáilte romhat isteach, a Chiara.";
+var inp2 = "Dia Dhuit, Is mise Taidhgín.";
+var inp3 = "Cé thú féin?";
+callAudio(inp);
+
+function callAudio(inp){
+  request.open('GET', 'http://localhost:4001/getAudio/' + inp, true);
   request.send();
-  request.onload = function(resp){
-    console.log(resp);
+  request.onload = function(){
+    console.log(this.response.toString());
+    audioTest.src = this.response;
+    console.log("Audio Source: " + audio.src);
+    //var newReq = new XMLHttpRequest();
+    //newReq.open('GET', 'http://localhost:4001/appendAudio/' + this.response, true);
+    //newReq.send();
   }
 }
+
+/*var https = require('https');
+function getAudio(){
+  https.createServer(function(req, res){
+    https.get('https://www.abair.tcd.ie/api/?input=' + inp + '&format=mp3&synth=ga_MU_nnc_nnmnkwii', (resp) => {
+      resp.pipe(file);
+      console.log("file piped")
+    }).on("error", (err) => {
+      console.log(err);
+    });
+  });
+}
+/*request.open('GET', 'https://www.abair.tcd.ie/api/?input=' + inp + '&format=mp3&synth=ga_MU_nnc_nnmnkwii', true);
+request.send();
+request.onload = function(){
+  console.log(this.response);
+}*/

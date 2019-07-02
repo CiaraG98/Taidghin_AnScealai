@@ -8,7 +8,7 @@ var botObj = {
   user_id: "001",
   logs: []
 }
-clearLogs("Ciara");
+//clearLogs("Ciara");
 //addUserToDb(botObj);
 //postLogToDb(logToAdd);
 

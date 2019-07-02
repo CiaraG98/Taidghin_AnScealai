@@ -2,7 +2,7 @@ body{
   background: url("assets/paperBg.png") no-repeat center center fixed;
 }
 
-button:focus, input:focus, .bot-audio:focus{
+button:focus, input:focus, audio:focus{
   outline: 0;
 }
 
