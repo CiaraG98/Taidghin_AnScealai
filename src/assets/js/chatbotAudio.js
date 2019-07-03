@@ -4,7 +4,7 @@ var hideAudio = false;
 var request = new XMLHttpRequest();
 var audioPlayer = document.querySelector("#bot_audio");
 var audioTest = new Audio();
-console.log(audioTest);
+//console.log(audioTest);
 //console.log(audioPlayer);
 
 function showAudio(){
