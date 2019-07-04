@@ -129,14 +129,50 @@
   return quizProgress;
 < object
 
+> object quizVerb javascript
+  return quizVerb;
+< object
+
+> object getQuizVerbTense javascript
+  if(args[0] == "AC"){
+    return quizVerb + quizVerbAC;
+  }
+  else if(args[0] == "AL"){
+    return quizVerb + quizVerbAL;
+  }
+  else if(args[0] == "AF"){
+    return quizVerb + quizVerbAF;
+  }
+  else if(args[0] == "MC"){
+    return quizVerb + quizVerbMC;
+  }
+< object
+
+> object loadFromQuiz javascript
+  console.log(quizVerb);
+  if(args[0] == "AC"){
+    loadFromChat(quizVerb + "AC", "chaite");
+  }
+  else if(args[0] == "AL"){
+    loadFromChat(quizVerb + "AL");
+  }
+  else if(args[0] == "AF"){
+    loadFromChat(quizVerb + "AF");
+  }
+  else if(args[0] == "MC"){
+    loadFromChat(quizVerb + "MC");
+  }
+  return "";
+< object
+
 + start
-- An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar an mbriathar <b><i>‘abair’</i></b>, a <call>getName</call>? Tá gach foirm den bhriathar anseo.
+- An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar an mbriathar <b><i><call>quizVerb</call></i></b>, a <call>getName</call>? Tá gach foirm den bhriathar anseo.
 
 + (ta|tá|ba mhaith|sea)
 - <call>chatSetup cleachtadh nowait</call>
 
 + (nil|níl|níor mhaith)
-- Ar mhaith leat an briathar ‘abair’ a dhéanamh: <br>
+- Ar mhaith leat an briathar '<call>quizVerb</call>' a dhéanamh: <br>
 ^ <button class="rive-button2" onclick="chatSetup('chaite')">Aimsir Chaite</button><br>
 ^ <button class="rive-button2" onclick="chatSetup('laithreach')">Aimsir Laithreach</button><br>
 ^ <button class="rive-button2" onclick="chatSetup('fhaistineach')">Aimsir Fháistineach</button><br>
@@ -144,16 +180,16 @@
 ^ Mura bhfuil ansin téann tú ar ais go dtí an leathanach baile mar sin.
 
 + (aimsir chaite|chaite)
-- <call>setKeepMessages true</call><call>loadFromChat abairAC chaite</call>
+- <call>setKeepMessages true</call><call>loadFromQuiz AC</call>
 
 + (aimsir laithreach|laithreach)
-- <call>setKeepMessages true</call><call>loadFromChat abairAL</call>
+- <call>setKeepMessages true</call><call>loadFromQuiz AL</call>
 
 + (fháistineach|fhaistineach|aimsir fháistineach)
-- <call>setKeepMessages true</call><call>loadFromChat abairAF</call>
+- <call>setKeepMessages true</call><call>loadFromQuiz AF</call>
 
 + (modh coinniollach|coinniollach)
-- <call>setKeepMessages true</call><call>loadFromChat abairMC</call>
+- <call>setKeepMessages true</call><call>loadFromQuiz MC</call>
 
 + cleachtadh
 - Clóscríobh “scor” má theastaíonn uait riamh stop a chur leis an tráth na gceist.<br><br>

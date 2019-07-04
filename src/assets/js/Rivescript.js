@@ -49,7 +49,7 @@ var files = [
   {id: "cloisAL", file: "assets/rive/cloisAL.rive"},
   {id: "cloisAF", file: "assets/rive/cloisAF.rive"},
   {id: "cloisMC", file: "assets/rive/cloisMC.rive"},
-  {id: "abairQuiz", file: "assets/rive/abairQuiz.rive"},
+  {id: "IrrQuiz", file: "assets/rive/BriathraNQuiz.rive"},
 ];
 
 var userName;

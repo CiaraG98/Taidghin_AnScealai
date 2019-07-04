@@ -24,7 +24,7 @@ function loadData(data, tabletop){
 
 function setup(){
   clearName();
-  load("faighMC", "start");
+  load("faighAC", "start");
 
   //if the 'chatbot' button is clicked
   var button = document.getElementById("chat-button");
