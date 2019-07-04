@@ -119,9 +119,30 @@
   return nilToCeim();
 < object
 
+> object setCompletedLevel javascript
+  if(complete == false){
+    if(args[0] == 1){
+      level1Complete = true;
+    }
+    else if(args[0] == 2){
+      level2Complete = true;
+    }
+    else if(args[0] == 3){
+      level3Complete = true;
+    }
+    else{
+      level1Complete = false;
+      level2Complete = false;
+      level2Complete = false;
+    }
+  }
+  return "";
+< object
+
 + start
 - Creidim, a <call>getName</call> go bhfuil tú ag iarraidh féachaint ar an mbriathar ‘faigh’ san <b><i>aimsir fháistineach</i></b>.\s
 ^ An bhfuil an ceart agam?
+^ <call>setCompletedLevel</call>
 
 + (ta|tá|ba mhaith|sea)
 - Cén céim ar mhaith leat a dhéanamh: <br>
@@ -201,7 +222,7 @@
 
   + levelcomplete
   - Tá triúr ceart agat i ndiaidh a chéile. Tá céim 1 críochnaithe agat. Maith thú, a <call>getName</call>! <call>chatSetup ceim-2</call>
-  ^ <call>setAnsweringQuestions false</call>
+  ^ <call>setAnsweringQuestions false</call><call>setCompletedLevel 1</call>
 
   + continue
   - Ar mhaith leat leanúint ar aghaidh?
@@ -301,7 +322,7 @@
 
   + levelcomplete
   - Tá triúr ceart agat i ndiaidh a chéile. Tá céim 2 críochnaithe agat. Maith thú, a <call>getName</call>! <call>chatSetup ceim-3</call>
-  ^ <call>setAnsweringQuestions false</call>
+  ^ <call>setAnsweringQuestions false</call><call>setCompletedLevel 2</call>
 
   + continue
   - Ar mhaith leat leanúint ar aghaidh?
@@ -623,7 +644,7 @@
 
   + levelcomplete
   - Tá triúr ceart agat i ndiaidh a chéile. Tá céim an fhorainm coibhneasta críochnaithe agat. Maith thú, a <call>getName</call>! <call>chatSetup master</call>
-  ^ <call>setAnsweringQuestions false</call>
+  ^ <call>setAnsweringQuestions false</call><call>setCompletedLevel 3</call>
 
   + continue
   - Ar mhaith leat leanúint ar aghaidh?

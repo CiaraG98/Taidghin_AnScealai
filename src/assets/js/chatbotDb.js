@@ -15,13 +15,17 @@ var botObj = {
 //build conversation with array of message objects, then add to logs in db when a new topic is started
 function makeMessageObj(sentByBot, text){
   if(switchTopic){
+    if(level1Complete == true && level2Complete == true && level3Complete == true) complete = true;
     logToAdd.date = new Date();
-    logToAdd.complete = false;
+    logToAdd.complete = complete;
     logToAdd.conversation = messages;
-    console.log(logToAdd);
-    postLogToDb(logToAdd, "Ciara");
-    messages = [];
-    switchTopic = false;
+    if(logToAdd.topic != ""){
+      console.log(logToAdd);
+      postLogToDb(logToAdd, "Ciara");
+      messages = [];
+      switchTopic = false;
+      complete = false;
+    }
   }
   else{
     logToAdd.topic = currentTopic;

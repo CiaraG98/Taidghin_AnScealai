@@ -204,7 +204,7 @@
 ^ <call>getQuizScore</call><br><call>getRandomQuestion abairQuiz</call>
 
 + (quit|scor)
-* <call>getQuizScore</call> <= 5 => omg you only lasted <call>getQuizProgress</call> questions. <call>chatSetup crioch</call>
+* <call>getQuizScore</call> <= 5 => omg you only lasted <call>getQuizProgress</call> of the questions. <call>chatSetup crioch</call>
 * <call>getQuizScore</call> <= 10 => well done for lasting <call>getQuizProgress</call> questions. <call>chatSetup crioch</call>
 * <call>getQuizScore</call> <= 20 => you are amazing for doing <call>getQuizProgress</call> questions. <call>chatSetup crioch</call>
 

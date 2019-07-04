@@ -1,4 +1,3 @@
-
 Date: Fri Jun 28 2019 14:40:51 GMT+0100 (Irish Standard Time)
 Bot: Dia Dhuit! Is mise Taidhgín. Cad is ainm duit?
 
@@ -11,10 +10,10 @@ Date: Fri Jun 28 2019 14:43:11 GMT+0100 (Irish Standard Time)
 User: aimsir chaite
 Bot: Cén céim ar mhaith leat a dhéanamh san aimsir chaite:<br><button class="rive-button2" onclick="chatSetup('ceim 1')">Céim 1</button><button class="rive-button2" onclick="chatSetup('ceim 2')">Céim 2</button><button class="rive-button2" onclick="chatSetup('ceim 3')">Céim 3</button>
 User: ceim 1
-Bot: Tosóimid leis an aimsir chaite mar sin, a Chiara.  
+Bot: Tosóimid leis an aimsir chaite mar sin, a Chiara.
 Bot: Tá sé seo an-simplí ar fad. An bhunfhoirm ná ‘dúirt’. <br>- Dúirt mé <br>- Dúirt tú <br>- Dúirt sé nó sí <br>Ansin athraíonn sé beagáinín den gcéad phearsa iolra: <br>- Dúramar <br>- Ansin ar ais go: <br>- Dúirt sibh, agus <br>- Dúirt siad <br>
 Bot: Bain triail as an gcleachtadh beag seo:   <br>
-Bot: Ceist: ___________ Síle go raibh an scéal sin fíor.<br> 
+Bot: Ceist: ___________ Síle go raibh an scéal sin fíor.<br>
 User: dúirt
 Bot: Sin agat é, a Chiara. <br>Scór: 1<br>Ceist: ___________ Liam go raibh sé tinn.
 User: dúirt
@@ -22,20 +21,120 @@ Bot: An ceart ar fad agat, a Chiara. <br>Scór: 2<br>Ceist: ___________ na buach
 User: dúirt
 Bot:  Tá triúr ceart agat i ndiaidh a chéile. Tá céim 1 críochnaithe agat. I gCéim a Dó féachfaimid ar an bhfoirm dhiúltach den bhriathar. Beimid ag séanadh go ndúramar rudaí! An bhfuil tú ag iarraidh leanúint ar aghaidh go Céim a Dó?  Ní thógfaidh sé seo i bhfad.
 User: ta
-Bot: Ceart go leor mar sin. Féachfaimid ar an taobh diúltach. 
-Bot: Níl ann ach ní (N, Í) a chur roimh an mbriathar. <br>- Ní dúirt mé<br>- Ní dúirt tú<br>- Ní dúirt sé nó sí<br>- Ní dúramar<br>- Ní dúirt sibh<br>- Ní dúirt siad<br> 
+Bot: Ceart go leor mar sin. Féachfaimid ar an taobh diúltach.
+Bot: Níl ann ach ní (N, Í) a chur roimh an mbriathar. <br>- Ní dúirt mé<br>- Ní dúirt tú<br>- Ní dúirt sé nó sí<br>- Ní dúramar<br>- Ní dúirt sibh<br>- Ní dúirt siad<br>
 Bot: De ghnáth leanann séimhiú ‘ní’ ach ní dhéanann sa chás seo. An bhfuil tú ag iarraidh an cleachtadh beag seo a dhéanamh?<br>
 User: ta
 Bot: Ceist: ____ ___________ (sinn) go rabhamar bréan bailithe de.
-User: ní dúramar 
+User: ní dúramar
 Bot: An mhaith ar fad!<br>Scór: 1<br>Ceist: ____ ___________ sí faic.
 User: ní dúirt
 Bot: An mhaith ar fad!<br>Scór: 2<br>Ceist: ____ ___________ (sinn) go rabhamar bréan bailithe de.
 User: ní dúramar
-Bot:  Tá triúr ceart agat i ndiaidh a chéile. Tá céim 2 críochnaithe agat.  
+Bot:  Tá triúr ceart agat i ndiaidh a chéile. Tá céim 2 críochnaithe agat.
 Bot: An bhfuil tú ag iarraidh dul go Céim 3 ina áit sin?
 User: ta
 Bot: Inis dom an ábhar atá le déanamh ar dtús. Is féidir leat topaic a athrú ag am ar bith: <br><button class="rive-button2" onclick="chatSetup('briathar saor')">Briathar Saor</button><button class="rive-button2" onclick="chatSetup('ceisteach')">An Fhoirm Cheisteach</button><button class="rive-button2" onclick="chatSetup('spleách')">An Fhoirm Spleách/Neamhspleách</button><button class="rive-button2" onclick="chatSetup('coibhneasta')">Forainm Coibhneasta</button>
 Bot: Ceart go leor, a Chiara Tosóimid leis an mbriathar saor mar sin. Úsáidimid an briathar saor nuair nach bhfuilimid ábalta a rá nó sásta a rá cé a dúirt é – pé rud é. Úsáidtear ‘dúradh’ (D, Ú, R, A, D, H) nó ‘ní dúradh’ chun é seo a chur in iúl. Níl a fhios againn cé a dúirt é nó cé nach ndúirt é. An bhfuil tú réidh chun cleachtadh beag a dhéanamh air seo?
 User: ta
 Bot: <br>Scór: 0<br>Ceist: ___________ nach raibh maith na muice lena deartháir riamh.
+
+Date: Thu Jul 04 2019 16:15:59 GMT+0100 (Irish Standard Time)
+
+Date: Thu Jul 04 2019 16:26:58 GMT+0100 (Irish Standard Time)
+
+Date: Thu Jul 04 2019 16:27:48 GMT+0100 (Irish Standard Time)
+
+Date: Thu Jul 04 2019 16:33:59 GMT+0100 (Irish Standard Time)
+Bot: Cén céim ar mhaith leat a dhéanamh san aimsir chaite?<br><button class="rive-button2" onclick="chatSetup('ceim 1')">Céim 1</button><button class="rive-button2" onclick="chatSetup('ceim 2')">Céim 2</button><button class="rive-button2" onclick="chatSetup('ceim 3')">Céim 3</button>
+Bot: Anois, a null, creidim go bhfuil tú ag iarraidh féachaint ar an mbriathar faigh san <b><i>aimsir chaite</i></b>.
+Bot: An bhfuil ceart agam?
+User: ta
+Bot: Ar aghaidh linn mar sin.
+Bot: Ceann de na briathra neamhrialta is ea ‘faigh’. An fhréamh atá aige san aimsir chaite ná ‘fuair’ (f-u-a-i-r).  Ní chuirtear séimhiú air san aimsir chaite, rud atá neamhchoitianta do bhiathra san aimsir chaite.
+Bot: Fuair mé <br>Fuair tú<br>Fuair sé nó sí<br>Fuaireamar<br>Fuair sibh, agus<br>Fuair siad<br>
+Bot: Tabhair faoi deara gur ‘fuaireamar’ a úsáidtear don chéad phearsa iolra.
+Bot: An bhfuil tú ag iarraidh cleachtadh a dhéanamh air sin?
+User: sea
+Bot: Go maith. Líon isteach an fhoirm cheart den bhriathar ‘faigh’ san aimsir chaite:<br><br>Ceist: ___________ siad an ceann is fearr orainn.
+User: fuair
+Bot: Maith thú, a null. <br>Scór: 1<br>Ceist: ___________ siad bróga nua sa siopa.
+User: fuair
+Bot: Maith thú, a null. <br>Scór: 2<br>Ceist: ___________ mé bronntanas deas do mo bhreithlá.
+User: fuair
+Bot: Tá triúr ceart agat i ndiaidh a chéile. Tá céim 1 críochnaithe agat. Maith thú, a null!
+Bot: Anois an bhfuil tú réidh chun dul ar aghaidh go Céim a Dó?
+User: ta
+Bot: A null, i gCéim a Dó féachfaimid ar an bhfoirm dhiúltach den bhriathar.
+Bot: An bhfuil tú ag iarraidh leanúint ar aghaidh go Céim a Dó?
+User: sea
+Bot: Ceart go leor mar sin. Tá dhá rud le déanamh anseo. <br>1. Cuireann tú ‘ní’ (N, Í) roimh an mbriathar agus ansin <br>2. cuirtear urú ar an mbriathar féin
+Bot: Ní bhfuair mé<br>Ní bhfuair tú<br>Ní bhfuair sé nó sí<br>Ní bhfuaireamar<br>Ní bhfuair sibh<br>Ní bhfuair siad<br>
+Bot: An bhfuil tú ag iarraidh cleachtadh beag a dhéanamh ar an bhfoirm dhiúltach mar sin?
+User: sea
+Bot: Líon isteach an fhoirm cheart den bhriathar:<br>Ceist: ____  ___________ aon duais an uair seo. (sinn)
+User: ní bhfuaireamar
+Bot: Sin agat é, a null. <br>Scór: 1<br>Ceist: ____ ___________ mé amach riamh cé a rinne é.
+User: ní bhfuair
+Bot: An ceart ar fad agat, a null. <br>Scór: 2<br>Ceist: ____ ___________ sí aon fhreagra ar a hiarratas.
+User: ní bhfuair
+Bot: Tá triúr ceart agat i ndiaidh a chéile. Tá céim 2 críochnaithe agat. Iontach, a null!
+Bot: An bhfuil tú réidh, a null chun dul ar aghaidh go Céim a Trí?
+User: ta
+Bot: Inis dom an ábhar atá le déanamh ar dtús. Is féidir leat topaic a athrú ag am ar bith. <br><button class="rive-button2" onclick="chatSetup('briathar saor')">Briathar Saor</button><button class="rive-button2" onclick="chatSetup('ceisteach')">An Fhoirm Cheisteach</button><button class="rive-button2" onclick="chatSetup('spleách')">An Fhoirm Spleách/Neamhspleách</button><button class="rive-button2" onclick="chatSetup('coibhneasta')">Forainm Coibhneasta</button>
+Bot: Tosóimid leis an mbriathar saor. Úsáidimid an briathar saor nuair nach bhfuilimid ábalta nó sásta pearsa a chur leis an mbriathar.
+Bot: Úsáidtear ‘fuarthas’ (F, U, A, R, T, H, A, S) don bhriathar saor san aimsir chaite agus ‘ní bhfuarthas’ don fhoirm dhiúltach.
+Bot: An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar an mbriathar saor aimsir chaite den bhriathar ‘faigh’?
+User: sea
+Bot: Iontach a null! Líon isteach an fhoirm cheart den bhriathar mar sin:
+Bot: Ceist: ___________ piscín beag sa pháirc agus níl a fhios ag éinne cé leis é.
+User: fuarthas
+Bot: Maith thú, a null. <br>Scór: 1<br>Ceist: ___________ an t-airgead a chaill mé san ionad siopadóireachta. (dearfach)
+User: fuarthas
+Bot: An mhaith ar fad!<br>Scór: 2<br>Ceist: Cuardaíodh an teach ó bhun go barr ach ____ ___________ aon rud ann. (diúltach)
+User: ní bhfuarthas
+Bot: Tá triúr ceart agat i ndiaidh a chéile. Tá an mbriathar saor críochnaithe agat. Maith thú, a null!
+Bot: Ceart go leor, a null
+Bot: An bhfuil tú ag iarraidh dul ar aghaidh anois go dtí an fhoirm cheisteach, a null?
+User: sea
+Bot: Chun ceist a chur cuirtear ‘an’ nó ‘nach’ roimh an mbriathar agus cuirtear urú ar an gconsan.
+Bot: “An bhfuair tú aon rud sa siopa?”<br><br>“Nach bhfuair tú do sheans ansin?”
+Bot: An bhfuil tú réidh chun cleachtadh a dhéanamh ar cheisteanna a chur?
+User: sea
+Bot: Anois déan cleachtadh ar cheisteanna a chur san aimsir chaite:<br>Ceist: ____ ___________ tú do dhóthain fós? (diúltach)
+User: nach bhfuair
+Bot: An mhaith ar fad!<br>Scór: 1<br>Ceist: ____ ___________ corp an fhir a thit le faill fós? (briathar saor, dearfach)
+User: an bhfuarthas
+Bot: An mhaith ar fad!<br>Scór: 2<br>Ceist: ____ ___________ Síle a leabhar ar ais fós? (dearfach)
+User: an bhfuair
+Bot: Tá triúr ceart agat i ndiaidh a chéile. Tá céim an fhoirm ceisteach críochnaithe agat. Maith thú, a null!
+Bot: An bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm neamhspleách/spleách?
+User: sea
+Bot: Seo é an chuid is deacra, ach níl sé ródheacair má dhíríonn tú air ar feadh píosa.
+Bot: An bhfuil tú réidh?
+User: sea
+Bot: Deirtear go bhfuil briathar neamhspleách má sheasann sé leis féin agus muna bhfuil sé ag brath ar aon fhrása ná ar aon mhír eile.
+Bot: “Fuair sí na heochracha a chaill sí.”<br>Tá ‘fuair’ anseo ag seasamh leis féin go neamhspleách.
+Bot: Ar an taobh eile:<br>“Tá mé nach mór cinnte go bhfuair sí na heochracha a chaill sí”<br>Tá an ‘fuair’ anseo ag brath ar an bhfrása a chuaigh roimhe agus deirtear go bhfuil sé ‘spleách’.
+Bot: Úsáidtear ‘go’ nó ‘nach’ roimh an mbriathar agus cuirtear urú air.<br>“Tá súil agam go bhfuair sí é.”<br>“Táimid buíoch nach bhfuair éinne bás.”<br>
+Bot: Bain triail as tú féin:<br><br>Ceist: An dóigh leat ____ ___________ sí mórán airgid as an leabhar a scríobh sí? (dearfach)
+User: go bhfuair
+Bot: An mhaith ar fad!<br>Scór: 1<br>Ceist: Ceapaim ____ ___________ tú an rud céanna is a fuair mise. (dearfach)
+User: go bhfuair
+Bot: An ceart ar fad agat, a null. <br>Scór: 2<br>Ceist: Tá súil agam ____ ___________tú aon drochscéal. (diúltach)
+User: nach bhfuair
+Bot: Tá triúr ceart agat i ndiaidh a chéile. Tá céim an fhoirm spleách críochnaithe agat. Iontach, a null!
+Bot: An bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhorainm coibhneasta?
+User: sea
+Bot: Ar aghaidh linn mar sin go forainm coibhneasta an mhéid.  Ciallaíonn “chaill siad a bhfuair siad” gur chaill siad gach aon rud a fuair siad.
+Bot: Samplaí eile ná: <br>“Chaith sé gach a bhfuair sé óna thuismitheoirí.”<br>“Tá gach a bhfuarthas go bog imithe anois.”
+Bot: Bain triail as na samplaí seo a leanas, a null, agus rachaidh tú i dtaithí orthu:<br>Ceist: Tá gach ____ ___________ siad ar maidin imithe anois.
+User: a bhfuair
+Bot: Maith thú, a null. <br>Scór: 1<br>Ceist: B’shin ____ ___________ sa chófra. (briathar saor)
+User: a bhfuarthas
+Bot: Sin agat é, a null. <br>Scór: 2<br>Ceist: Chaill siad gach ____ ___________ siad sa chasaíne.
+User:  a bhfuair
+Bot: Tá triúr ceart agat i ndiaidh a chéile. Tá céim an fhorainm coibhneasta críochnaithe agat. Maith thú, a null!
+Bot: Tá máistreacht agat anois ar an mbriathar “faigh” san aimsir chaite, a null.  An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar gach a bhfuil déanta agat leis an mbriathar ‘faigh’ san aimsir chaite?
+
+Date: Thu Jul 04 2019 16:35:15 GMT+0100 (Irish Standard Time)

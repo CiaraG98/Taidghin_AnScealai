@@ -120,6 +120,26 @@
   return triailAris();
 < object
 
+> object setCompletedLevel javascript
+  if(complete == false){
+    if(args[0] == 1){
+      level1Complete = true;
+    }
+    else if(args[0] == 2){
+      level2Complete = true;
+    }
+    else if(args[0] == 3){
+      level3Complete = true;
+    }
+    else{
+      level1Complete = false;
+      level2Complete = false;
+      level2Complete = false;
+    }
+  }
+  return "";
+< object
+
 + start
 - Inniu táimid ag foghlaim <b><i>abair</i></b>.\s
 ^ Cén aimsir ar mhaith leat a dhéanamh, a <call>getName</call>:<br>
@@ -128,6 +148,7 @@
 ^ <button class="rive-button" onclick="chatSetup('abair-af')">Aimsir Fháistineach</button>
 ^ <button class="rive-button" onclick="chatSetup('abair-mc')">Modh Coinniollach</button>
 ^ <button class="rive-button2" onclick="chatSetupQuiz('abair')">Abair Quiz</button>
+^ <call>setCompletedLevel</call>
 
 + (chaite|aimsir chaite)
 - Cén céim ar mhaith leat a dhéanamh san aimsir chaite:<br>
@@ -198,6 +219,7 @@
   - <call>getProgress</call> Tá triúr ceart agat i ndiaidh a chéile. Tá céim 1 críochnaithe agat.\s
   ^ I gCéim a Dó féachfaimid ar an bhfoirm dhiúltach den bhriathar. Beimid ag séanadh go ndúramar rudaí!\s
   ^ An bhfuil tú ag iarraidh leanúint ar aghaidh go Céim a Dó?  Ní thógfaidh sé seo i bhfad.<call>setAnsweringQuestions false</call>
+  ^ <call>setCompletedLevel 1</call>
 
   + continue
   - Ar mhaith leat leanúint ar aghaidh?
@@ -264,7 +286,7 @@
 
     + levelcomplete
     - <call>getProgress</call> Tá triúr ceart agat i ndiaidh a chéile. Tá céim 2 críochnaithe agat.\s <call>setAnsweringQuestions false</call>
-    ^ <call>chatSetup ceist</call>
+    ^ <call>chatSetup ceist</call><call>setCompletedLevel 2</call>
 
     + continue
     - Ar mhaith leat leanúint ar aghaidh?
@@ -584,6 +606,7 @@
   + levelcomplete
   - <call>getProgress</call> Tá triúr ceart agat i ndiaidh a chéile. <call>getRandomReply</call>
   ^ <call>chatSetup extra</call><call>setAnsweringQuestions false</call>
+  ^ <call>setCompletedLevel 3</call>
 
   + continue
   - Ar mhaith leat leanúint ar aghaidh?

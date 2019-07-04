@@ -123,7 +123,7 @@ function askName(){
 
 function getProgress(){
   if(isLevelComplete == true && quiz == false) return "";
-  if(isQuizComplete == true) return "";
+  else if(isQuizComplete == true) return "";
   else return "<br>Scór: " + progress + "<br>";
 }
 

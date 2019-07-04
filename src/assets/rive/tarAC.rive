@@ -121,6 +121,26 @@
   return nilToQuiz();
 < object
 
+> object setCompletedLevel javascript
+  if(complete == false){
+    if(args[0] == 1){
+      level1Complete = true;
+    }
+    else if(args[0] == 2){
+      level2Complete = true;
+    }
+    else if(args[0] == 3){
+      level3Complete = true;
+    }
+    else{
+      level1Complete = false;
+      level2Complete = false;
+      level2Complete = false;
+    }
+  }
+  return "";
+< object
+
 + start
 - Inniu táimid ag foghlaim <b><i>faigh</i></b>.\s
 ^ Cén aimsir ar mhaith leat a dhéanamh, a <call>getName</call>? <br>
@@ -129,6 +149,7 @@
 ^ <button class="rive-button" onclick="chatSetup('tar-af')">Aimsir Fháistineach</button>
 ^ <button class="rive-button" onclick="chatSetup('tar-mc')">Modh Coinniollach</button>
 ^ <button class="rive-button2" onclick="chatSetupQuiz('tar')">Faigh Quiz</button>
+^ <call>setCompletedLevel</call>
 
 + (chaite|aimsir chaite)
 - Cén céim ar mhaith leat a dhéanamh san aimsir chaite?<br>
@@ -224,7 +245,7 @@
 
   + levelcomplete
   - Tá triúr ceart agat i ndiaidh a chéile. Tá céim 1 críochnaithe agat. Maith thú, a <call>getName</call>! <call>chatSetup ceim-2</call>
-  ^ <call>setAnsweringQuestions false</call>
+  ^ <call>setAnsweringQuestions false</call><call>setCompletedLevel 1</call>
 
   + continue
   - Ar mhaith leat leanúint ar aghaidh?
@@ -333,7 +354,7 @@
 
   + levelcomplete
   - Tá triúr ceart agat i ndiaidh a chéile. Tá céim 2 críochnaithe agat. Iontach, a <call>getName</call>! <call>chatSetup ceim-3</call>
-  ^ <call>setAnsweringQuestions false</call>
+  ^ <call>setAnsweringQuestions false</call><call>setCompletedLevel 2</call>
 
   + continue
   - Ar mhaith leat leanúint ar aghaidh?
@@ -639,7 +660,7 @@
 
   + levelcomplete
   - Tá triúr ceart agat i ndiaidh a chéile. Tá céim an fhorainm coibhneasta críochnaithe agat. Maith thú, a <call>getName</call>! <call>chatSetup master</call>
-  ^ <call>setAnsweringQuestions false</call>
+  ^ <call>setAnsweringQuestions false</call><call>setCompletedLevel 3</call>
 
   + continue
   - Ar mhaith leat leanúint ar aghaidh?

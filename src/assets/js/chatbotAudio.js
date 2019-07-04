@@ -45,7 +45,7 @@ function audio(reply){
 var inp = "Fáilte romhat isteach, a Chiara.";
 var inp2 = "Dia Dhuit, Is mise Taidhgín.";
 var inp3 = "Cé thú féin?";
-callAudio(inp);
+//callAudio(inp);
 
 function callAudio(inp){
   request.open('GET', 'http://localhost:4001/getAudio/' + inp, true);

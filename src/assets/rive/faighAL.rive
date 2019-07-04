@@ -119,8 +119,29 @@
   return nilToCeim();
 < object
 
+> object setCompletedLevel javascript
+  if(complete == false){
+    if(args[0] == 1){
+      level1Complete = true;
+    }
+    else if(args[0] == 2){
+      level2Complete = true;
+    }
+    else if(args[0] == 3){
+      level3Complete = true;
+    }
+    else{
+      level1Complete = false;
+      level2Complete = false;
+      level2Complete = false;
+    }
+  }
+  return "";
+< object
+
 + start
 - Anois, a <call>getName</call>, táimid chun dul ag féachaint ar an mbriathar ‘faigh’ agus an fhoirm atá aige san <b><i>Aimsir Láithreach</i></b>.<call>chatSetup tosu</call>
+^ <call>setCompletedLevel</call>
 
 + tosu
 - An bhfuil tú réidh le tosú?
@@ -201,6 +222,7 @@
   + levelcomplete
   - Tá triúr ceart agat i ndiaidh a chéile. Tá céim 1 críochnaithe agat. Maith thú, a <call>getName</call>! <call>chatSetup ceim-2</call>
   ^ <call>setAnsweringQuestions false</call>
+  ^ <call>setCompletedLevel 1</call>
 
   + continue
   - Ar mhaith leat leanúint ar aghaidh?
@@ -300,6 +322,7 @@
   + levelcomplete
   - Tá triúr ceart agat i ndiaidh a chéile. Tá céim 2 críochnaithe agat. Maith thú! <call>getRandomReply</call> <call>chatSetup ceim-3</call>
   ^ <call>setAnsweringQuestions false</call>
+  ^ <call>setCompletedLevel 2</call>
 
   + ceim-3
   - An bhfuil tú ag iarraidh dul go Céim 3 ina áit sin?
@@ -544,7 +567,7 @@
 
 > topic coibhneasta
   + tosu
-  - NEED TO FILL IN 
+  - NEED TO FILL IN
 
   + reidh
   - An bhfuil tú réidh?
@@ -569,6 +592,7 @@
   ^ Tá máistreacht agat anois a <call>getName</call> ar an mbriathar "faigh" san aimsir láithreach. \s
   ^ An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar a bhfuil déanta sa chuid seo den cheacht?
   ^ <call>setAnsweringQuestions false</call>
+  ^ <call>setCompletedLevel 3</call>
 
   + (nil|níl|níor mhaith)
   - Tá sé sin go breá.\s

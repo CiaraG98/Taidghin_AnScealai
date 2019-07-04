@@ -1,5 +1,5 @@
 var quizVerb = "";
-var quiz = "Quiz";
+var quizStr = "Quiz";
 var quizVerbAC = "AC";
 var quizVerbAL = "AL";
 var quizVerbAF = "AF";
