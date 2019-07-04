@@ -730,17 +730,83 @@ var faighMCSpleach = [
 ];
 
 var tarACQuestions = [
-
+  {question: "___________ sé isteach. Dúirt sé a chuid agus d’imigh sé.", answer: "tháinig"},
+  {question: "___________ an bháisteach roimh dheireadh an chluiche.", answer: "tháinig"},
+  {question: "___________ biseach uirthi laistigh de sheachtain san ospidéal.", answer: "tháinig"},
+  {question: "D’imigh sin is___________ seo. ", answer: "tháinig"},
+  {question: "___________ olc orthu nuair a dúradh é sin.", answer: "tháinig"},
+  {question: "___________ tuirse ar na bpáiste agus thit sí ina codladh.", answer: "tháinig"},
+  {question: "___________ abhaile go luath an tráthnóna áirithe sin. (sinn)", answer: "thángamar", answer2: "tháinign muid"},
+  {question: "___________ siad chomh fada leis an líne agus stop siad.", answer: "tháinig"},
+  {question: "___________ an dubh ar na prátaí in Éirinn in 1845.", answer: "tháinig"},
+  {question: "___________ feabhas mór uirthi le bliain anuas.", answer: "tháinig"},
 ];
 
 var tarACNi = [
-
+  {question: "____ ___________ éinne amach roimh dheireadh an chluiche.", answer: "níor tháinig"},
+  {question: "____ ___________ aon athrú ar an scéal ó shin i leith.", answer: "níor tháinig"},
+  {question: "____ ___________ ar fheagra na ceist sin fós. (sinn)", answer: "níor thángamar"},
+  {question: "____ ___________ aon cheathanna inniu sa taobh seo tíre.", answer: "níor tháinig"},
+  {question: "____ ___________ mé abhaile an oíche sin.", answer: "níor tháinig"},
+  {question: "____ ___________ na Gardaí ar an té a bhí freagrach as fós.", answer: "níor tháinig"},
+  {question: "____ ___________ deireadh leis an aighneas a bhí eatarthu fós.", answer: "níor tháinig"},
+  {question: "____ ___________ éinne amach inár gcoinne.", answer: "níor tháinig"},
+  {question: "____ ___________ duine ná deoraí amach le fáiltiú rompu abhaile.", answer: "níor tháinig"},
+  {question: "____  ___________ abhaile go dtí go rabih sé anon go maith san oíche. (sinn)", answer: "níor thángamar"},
 ];
 
 var tarACBriathorSaor = [
-
+  {question: "___________ ar chorp fhir i dteach tréigthe aréir. (dearfach)", answer: "thángthas"},
+  {question: "Lorgaíodh é an lá ar fad agus ___________ air déanach tráthnóna. (dearfach)", answer: "thángthas"},
+  {question: "___________ ar an airgead a goideadh i gcúinne na páirce. (dearfach)", answer: "thángthas"},
+  {question: "___________ ar dhéagóir a bhí ar iarraidh le seachtain inniu. (dearfach)", answer: "thángthas"},
+  {question: "Cuardaíodh an áit ar fad ach ____ ___________ ar aon rud. (diúltach)", answer: "níor thángthas"},
+  {question: "___________ ar an mbád a chuaigh go tóin poill aréir. (dearfach)", answer: "thángthas"},
+  {question: "Tá an thaighneas ag dul ar aghaidh agus ____ ___________ ar aon réiteach. (diúltach)", answer: "níor thángthas"},
+  {question: "Chuaigh na cainteanna ar aghaidh ar feadh seachtaine ach ___________ ar chomhaontú ar deireadh. (dearfach)", answer: "thángthas"},
+  {question: "___________ ar chnámha i bpoll portaigh gar don teach. (dearfach)", answer: "thángthas"},
+  {question: "____ ___________ ar réiteach na faidhbe sin go fóill.", answer: "níor thángthas"},
 ];
 
 var tarACCeisteach = [
+  {question: "____ ___________ na cailíní abhaile fós? (dearfach)", answer: "ar tháinig"},
+  {question: "____ ___________ tú ar an bpeann a chaill tú fós? (dearfach)", answer: "ar tháinig"},
+  {question: "____ ___________ an t-otharcharr go han-tapaidh? (diúltach)", answer: "nár tháinig"},
+  {question: "____ ___________ an bháisteach san áit ina raibh sibhse? (dearfach)", answer: "ar tháinig"},
+  {question: "____ ___________ athrú ar bith ar an áit ón uair a d’imigh mise. (dearfach)", answer: "ar tháinig"},
+  {question: "____ ___________ Liam abhaile fós? (diúltach)", answer: "ar tháinig"},
+  {question: "____ ___________ siad ar ais óna laethanta saoire go fóill? (dearfach)", answer: "ar tháinig"},
+  {question: "____ ___________ ar na coirp a bádh sa bhfarraige fós? (briathar saor, dearfach)", answer: "ar thángthas"},
+  {question: "____ ___________ sí abhaile riamh ón am a d’fhág sí? (dearfach)", answer: "ar tháinig"},
+  {question: "Is cuma ____ ___________ amach as slán ag deireadh an lae? (sinn, diúltach)", answer: "ar thángamar"},
+];
 
+var tarACSpleach = [
+  {question: "Dúirt do dheartháir liom ____ ___________ tú abhaile don deireadh seachtaine. (dearfach)", answer: "gur tháinig"},
+  {question: "Ní dóigh liom ____ ___________ feabhas ar bith ar an scéal ó shin. (dearfach)", answer: "gur tháinig"},
+  {question: "Táim beagnach cinnte ____ ___________ aon duine slán ón timpiste? (diúltach)", answer: "nár tháinig"},
+  {question: "Ar chuala tú ____ ___________ siad ar ais arís tar éis seachtaine? (dearfach)", answer: "gur tháinig"},
+  {question: "____ ___________ éinne in éineacht leat? (diúltach)", answer: "nár tháinig"},
+  {question: "Chuala mé ____ ___________ar an leabhar sin a bhí ar iarraidh ón leabharlann fós. (briathar saor, diúltach)", answer: "nár thángthas"},
+  {question: "Chuala mé ____ ___________ slua mór cairde isteach sa chúirt leo. (dearfach)", answer: "gur tháinig"},
+  {question: "Dúirt sí ____ ___________ ach slua an-bheag go dtí an ceolchoirm? (diúltach)", answer: "nár tháinig"},
+  {question: "Ba léir ____ ___________an ghomh air nuair a chonaic sé iad ag déanamh air? (dearfach)", answer: "gur tháinig"},
+  {question: "An bhfuil tú cinnte ____ ___________aon duine isteach tríd an doras sin? (diúltach)", answer: "nár tháinig"},
+];
+
+var tarACCoibhneasta = [
+
+];
+
+var tarACExtraQuestions = [
+  {question: "___________ sí isteach déanach agus chuaigh sí suas go barr an ranga.", answer: "tháinig"},
+  {question: "____ ___________ aon athrú air le dhá lá anois. (diúltach)", answer: "níor tháinig"},
+  {question: "____ ___________ aon bhriseadh ar an aimsir an tseachtain ar fad. (diúltach) ", answer: "níor tháinig"},
+  {question: "____ ___________ aon duien slán as an timpiste traenach. (diúltach) ", answer: "níor tháinig"},
+  {question: "____ ___________ ar eochracha a cailleadh ar an trá inniu? (briathar saor, dearfach)", answer: "ar thángthas"},
+  {question: "____ ___________ do dheirfiúr abhaile i mbliana fós? (dearfach)", answer: "ar tháinig"},
+  {question: "____ ___________ ar an madra a d’imigh ar strae fós? (briathar saor, diúltach) ", answer: "ar thángthas"},
+  {question: "____ ___________ ach slua beag go dtí an cluiche sin. (diúltach)", answer: "níor tháinig"},
+  {question: "___________ sé slán ar éigean. (dearfach)", answer: "tháinig"},
+  {question: "___________ dath an bháis uirthi nuair a chuala sí an scéal. (dearfach)", answer: "tháinig"},
 ];
