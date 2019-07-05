@@ -12,7 +12,7 @@
 > object getRandomQuestion javascript
   if(args[0] == 1) return getRandomQuestion(faighAFQuestions);
   if(args[0] == 2) return getRandomQuestion(faighAFNi);
-  if(args[0] == 3) return getRandomQuestion(faighAFBriathorSaoi);
+  if(args[0] == 3) return getRandomQuestion(faighAFBriathorSaor);
   if(args[0] == 4) return getRandomQuestion(faighAFCeisteach);
   if(args[0] == 5) return getRandomQuestion(faighAFSpleach);
   if(args[0] == 6) return getRandomQuestion(faighAFCoibhneasta);
@@ -151,7 +151,7 @@
 ^ <button class="rive-button2" onclick="chatSetup('ceim 3')">Céim 3</button>
 
 + (nil|níl|níor mhaith)
-- Ar mhaith leat an briathar ‘abair’ a dhéanamh: <br>
+- Ar mhaith leat an briathar ‘faigh’ a dhéanamh: <br>
 ^ <button class="rive-button2" onclick="chatSetup('chaite')">Aimsir Chaite</button><br>
 ^ <button class="rive-button2" onclick="chatSetup('laithreach')">Aimsir Laithreach</button><br>
 ^ <button class="rive-button2" onclick="chatSetup('coinniollach')">Modh Coinniollach</button><br>

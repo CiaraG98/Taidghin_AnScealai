@@ -237,7 +237,7 @@
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
-  * <call>getWrongCount</call> > 2 => <call>getLink</call><call>chatSetup continue</call>
+  * <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue</call>
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 1</call>
   * <call>checkAnswer <star></call> == false => Mícheart. <call>resetProgress</call><call>triailAris</call><br>
@@ -365,7 +365,7 @@
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup ceim-3</call>
+  - <call>chatSetup ceim-3 nowait</call>
 
   + ceim-3
   - An bhfuil tú réidh, a <call>getName</call> chun dul ar aghaidh go Céim a Trí?
@@ -522,7 +522,7 @@
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup spleach</call>
+  - <call>chatSetup spleach nowait</call>
 
   + (spleách|spleach)
   - An bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm neamhspleách/spleách?
