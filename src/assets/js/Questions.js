@@ -617,7 +617,7 @@ var faighAFNi = [
   {question: "____ ___________ an bus sin. Beidh sé róluath dúinn. (sinn)", answer: "ní bhfaighimid"},
 ];
 
-var faighAFBriathorSaoi = [
+var faighAFBriathorSaor = [
   {question: "___________ é luath nó mall. (dearfach)", answer: "gheofar"},
   {question: "____ ___________ amach mar gheall air sin riamh ná choíche. (diúltach)", answer: "ní bhfaighfear"},
   {question: "___________ é má leanann siad orthu den chuardach. (dearfach)", answer: "gheofar"},
@@ -736,7 +736,7 @@ var tarACQuestions = [
   {question: "D’imigh sin is___________ seo. ", answer: "tháinig"},
   {question: "___________ olc orthu nuair a dúradh é sin.", answer: "tháinig"},
   {question: "___________ tuirse ar na bpáiste agus thit sí ina codladh.", answer: "tháinig"},
-  {question: "___________ abhaile go luath an tráthnóna áirithe sin. (sinn)", answer: "thángamar", answer2: "tháinign muid"},
+  {question: "___________ abhaile go luath an tráthnóna áirithe sin. (sinn)", answer: "thángamar", answer2: "tháinig muid"},
   {question: "___________ siad chomh fada leis an líne agus stop siad.", answer: "tháinig"},
   {question: "___________ an dubh ar na prátaí in Éirinn in 1845.", answer: "tháinig"},
   {question: "___________ feabhas mór uirthi le bliain anuas.", answer: "tháinig"},
@@ -826,16 +826,16 @@ var tarALQuestions = [
 ];
 
 var tarALNi = [
-  {quesion: "____ ___________ Deirdre isteach chugainn ach anois is arís.", answer: "ní thagann"},
-  {quesion: "____ ___________ sí isteach in am riamh.", answer: "ní thagann"},
-  {quesion: "____ ___________ na héin bheaga isteach sa ghairdín níos mó. ", answer: "ní thagann"},
-  {quesion: "____ ___________ an bus anuas an bother seo níos mó.", answer: "ní thagann"},
-  {quesion: "____ ___________ aon athrú ar an scéal ó bhliain go bliain. ", answer: "ní thagann"},
-  {quesion: "____ ___________ isteach ach daoine a bhfuil fíor-spéis acu san ealaín.", answer: "ní thagann"},
-  {quesion: "____ ___________ siad isteach anseo rómhinic.", answer: "ní thagann"},
-  {quesion: "____ ___________ an traein sin go dtí cearthrú chun a seacht.", answer: "ní thagann"},
-  {quesion: "____ ___________ aon sneachta go dtí tar éis na Nollag de ghnáth.", answer: "ní thagann"},
-  {quesion: "____ ___________ ráflaí amach ón Rialtas ach anois is arís.", answer: "ní thagann"},
+  {question: "____ ___________ Deirdre isteach chugainn ach anois is arís.", answer: "ní thagann"},
+  {question: "____ ___________ sí isteach in am riamh.", answer: "ní thagann"},
+  {question: "____ ___________ na héin bheaga isteach sa ghairdín níos mó. ", answer: "ní thagann"},
+  {question: "____ ___________ an bus anuas an bother seo níos mó.", answer: "ní thagann"},
+  {question: "____ ___________ aon athrú ar an scéal ó bhliain go bliain. ", answer: "ní thagann"},
+  {question: "____ ___________ isteach ach daoine a bhfuil fíor-spéis acu san ealaín.", answer: "ní thagann"},
+  {question: "____ ___________ siad isteach anseo rómhinic.", answer: "ní thagann"},
+  {question: "____ ___________ an traein sin go dtí cearthrú chun a seacht.", answer: "ní thagann"},
+  {question: "____ ___________ aon sneachta go dtí tar éis na Nollag de ghnáth.", answer: "ní thagann"},
+  {question: "____ ___________ ráflaí amach ón Rialtas ach anois is arís.", answer: "ní thagann"},
 ];
 
 var tarALCeisteach = [

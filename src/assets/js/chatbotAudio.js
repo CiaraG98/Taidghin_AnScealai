@@ -2,10 +2,12 @@ var audio_reply = "";
 var audio_array = [];
 var hideAudio = false;
 var request = new XMLHttpRequest();
-var audioPlayer = document.querySelector("#bot_audio");
-var audioTest = new Audio();
-//console.log(audioTest);
-//console.log(audioPlayer);
+var audioPlayer;
+
+var inp = "Fáilte romhat isteach, a Chiara.";
+var inp2 = "Dia Dhuit, Is mise Taidhgín.";
+var inp3 = "Cé thú féin?";
+var source = "http://localhost:4001/"
 
 function showAudio(){
   var triangle = document.querySelector(".tri");
@@ -23,9 +25,11 @@ function showAudio(){
 }
 
 function audio(reply){
+  audioPlayer = document.getElementById("botaudio");
+  //console.log(audioPlayer)
   var print = document.querySelector(".test");
   audio_reply = reply;
-  var index = audio_reply.indexOf(":");
+  var index = audio_reply.indexOf("<");
   if(index == -1){
     print.innerHTML = audio_reply;
   }
@@ -34,45 +38,17 @@ function audio(reply){
     print.innerHTML = audio_reply;
   }
   var end = false;
-/*  while(!end){
-    var index = audio_reply.indexOf(".");
-    var to_send = audio_reply.substr(0, index);
-    console.log(to_send);
-    callAudio(to_send);
-  }*/
+  //callAudio();
 }
-
-var inp = "Fáilte romhat isteach, a Chiara.";
-var inp2 = "Dia Dhuit, Is mise Taidhgín.";
-var inp3 = "Cé thú féin?";
-//callAudio(inp);
 
 function callAudio(inp){
-  request.open('GET', 'http://localhost:4001/getAudio/' + inp, true);
+  request.open('GET', 'http://localhost:4001/getAudio/' + inp2, true);
+  request.setRequestHeader("Content-type", "audio/mpeg");
   request.send();
   request.onload = function(){
-    console.log(this.response.toString());
-    audioTest.src = this.response;
-    console.log("Audio Source: " + audio.src);
-    //var newReq = new XMLHttpRequest();
-    //newReq.open('GET', 'http://localhost:4001/appendAudio/' + this.response, true);
-    //newReq.send();
+    console.log(this.response);
+    console.log(audioPlayer);
+    audioPlayer.src = this.response;
+    console.log("Audio Source: " + audioPlayer.src);
   }
 }
-
-/*var https = require('https');
-function getAudio(){
-  https.createServer(function(req, res){
-    https.get('https://www.abair.tcd.ie/api/?input=' + inp + '&format=mp3&synth=ga_MU_nnc_nnmnkwii', (resp) => {
-      resp.pipe(file);
-      console.log("file piped")
-    }).on("error", (err) => {
-      console.log(err);
-    });
-  });
-}
-/*request.open('GET', 'https://www.abair.tcd.ie/api/?input=' + inp + '&format=mp3&synth=ga_MU_nnc_nnmnkwii', true);
-request.send();
-request.onload = function(){
-  console.log(this.response);
-}*/

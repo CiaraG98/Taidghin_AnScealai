@@ -172,6 +172,7 @@ function getCrioch(){
 }
 
 function getRandomQuestion(questions){
+  answer2 = "";
   if(isLevelComplete == true && quiz == false){
     console.log("quizd");
     return "";

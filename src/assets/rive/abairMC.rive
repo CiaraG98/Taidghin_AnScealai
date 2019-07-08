@@ -73,9 +73,7 @@
 
 > object setAnsweringQuestions javascript
   answeringQuestions = args[0];
-  if(answeringQuestions == true){
-    wrongCount = 0;
-  }
+  wrongCount = 0;
   return "";
 < object
 
@@ -218,11 +216,11 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup cleachtadh nowait</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup cleachtadh nowait</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup ceim-2</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceim-2</call>
 
   + ceim-2
   - Anois an bhfuil tú réidh chun dul ar aghaidh go Céim a Dó?
@@ -308,11 +306,11 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup cleachtadh nowait</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup cleachtadh nowait</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup ceim-3</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceim-3</call>
 
   + ceim-3
   - An bhfuil tú réidh, a <call>getName</call> chun dul ar aghaidh go Céim a Trí?
@@ -362,7 +360,7 @@
   + (ta|tá|ba mhaith|sea)
   % an bhfuil tú réidh chun an ceacht seo a thosú
   - Úsáidtear ‘faí’ (F, A, Í) mar iarmhír nó mar chríoch ar an mbriathar chun an briathar saor a chur in iúl.
-  ^ <call>chatSetup eg1 nowait</call>
+  ^ <call>chatSetup eg1</call>
 
   + eg1
   - “Ní déarfaí mar sin é sa chomhthéacs seo.”<call>chatSetup eg2</call>
@@ -390,12 +388,10 @@
   - Ar mhaith leat leanúint ar aghaidh?
 
   + (ta|tá|ba mhaith|sea)
-  % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup cleachtadh nowait</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup cleachtadh nowait</call>
 
   + (nil|níl|níor mhaith)
-  % ar mhaith leat leanúint ar aghaidh
-  - {topic=ceisteach}<call>chatSetup ta nowait</call>
+  - <call>setAnsweringQuestions false</call>{topic=ceisteach}<call>chatSetup tosu nowait</call>
 
   + ceisteach
   - Ceart go leor, a <call>getName</call>\s
@@ -423,7 +419,7 @@
 
 > topic ceisteach
   + tosu
-  - An bhfuil tú ag iarraidh leanúint ar aghaidh, a <call>getName</call>?
+  - An bhfuil tú ag iarraidh leanúint ar aghaidh leis an fhoirm ceisteach, a <call>getName</call>?
 
   + (nil|níl|níor mhaith)
   - <call>nilToCeim</call>
@@ -458,11 +454,11 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup cleachtadh nowait</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup cleachtadh nowait</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup spleach</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup spleach</call>
 
   + (spleách|spleach)
   - An bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm neamhspleách/spleách?
@@ -537,22 +533,14 @@
   - Ar mhaith leat leanúint ar aghaidh?
 
   + (ta|tá|ba mhaith|sea)
-  % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup trial nowait</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup cleachtadh nowait</call>
 
   + (nil|níl|níor mhaith)
-  % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup coibhneasta nowait</call>
+  - <call>setAnsweringQuestions false</call>{topic=extraquestions}<call>chatSetup tosu nowait</call>
 
   + maistreacht
   - Tá máistreacht agat anois ar an mbriathar “abair” sa mhodh coinníollach. \s
   ^ An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar gach a bhfuil déanta agat leis an mbriathar ‘abair’ sa mhodh coinníollach?
-
-  + (ta|tá|ba mhaith|sea)
-  - {topic=extraquestions}<call>chatSetup tosu nowait</call>
-
-  + (nil|níl|níor mhaith)
-  - <call>nilToQuiz</call>
 
   + briathar saor
   - {topic=level3}<call>chatSetup briathar saor nowait</call>
@@ -578,8 +566,14 @@
 
 > topic extraquestions
   + tosu
+  - An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar gach a bhfuil déanta agat leis an mbriathar ‘abair’ sa mhodh coinníollach?
+
+  + (ta|tá|ba mhaith|sea)
   - Seo cleachtadh ar an mbriathar ‘abair’ sa mhodh coinníollach mar sin, a <call>getName</call>:<br><br>
   ^ <call>levelComplete false</call><call>getRandomQuestion 26</call><call>resetProgress</call><call>setAnsweringQuestions true</call>
+
+  + (nil|níl|níor mhaith)
+  - <call>nilToQuiz</call>
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?

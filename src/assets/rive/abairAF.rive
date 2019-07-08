@@ -74,9 +74,7 @@
 
 > object setAnsweringQuestions javascript
   answeringQuestions = args[0];
-  if(answeringQuestions == true) {
-    wrongCount = 0;
-  }
+  wrongCount = 0;
   return "";
 < object
 
@@ -216,11 +214,11 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup cleachtadh</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup cleachtadh</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup ceim-2</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceim-2</call>
 
   + ceim-2
   - Anois an bhfuil tú réidh chun dul ar aghaidh go Céim a Dó?
@@ -306,11 +304,11 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup cleachtadh nowait</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup cleachtadh nowait</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup ceim-3</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceim-3</call>
 
   + ceim-3
   - An bhfuil tú réidh, a <call>getName</call> chun dul ar aghaidh go Céim a Trí?
@@ -362,6 +360,9 @@
 
   + (ta|tá|ba mhaith|sea)
   % an bhfuil tú réidh chun an ceacht seo a thosú
+  - <call>chatSetup cleachtadh nowait</call>
+
+  + cleachtadh
   - <call>levelComplete false</call><call>getRandomQuestion 15</call><call>resetProgress</call><call>setAnsweringQuestions true</call>
 
   + *
@@ -380,19 +381,17 @@
   - Ar mhaith leat leanúint ar aghaidh?
 
   + (ta|tá|ba mhaith|sea)
-  % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup cleachtadh nowait</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup cleachtadh nowait</call>
 
   + (nil|níl|níor mhaith)
-  % ar mhaith leat leanúint ar aghaidh
-  - {topic=ceisteach}<call>chatSetup ta nowait</call>
+  - <call>setAnsweringQuestions false</call>{topic=ceisteach}<call>chatSetup tosu nowait</call>
 
   + ceisteach
   - Ceart go leor, a <call>getName</call>\s
-  ^ {topic=ceisteach}<call>chatSetup tosu nowait</call>
+  ^ {topic=ceisteach}<call>chatSetup tosu</call>
 
   + (spleách|spleach)
-  - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
+  - {topic=spleach}
   ^ <call>chatSetup tosu</call>
 
   + coibhneasta
@@ -417,7 +416,7 @@
 
 > topic ceisteach
   + tosu
-  - An bhfuil tú ag iarraidh leanúint ar aghaidh, a <call>getName</call>?
+  - An bhfuil tú ag iarraidh leanúint ar aghaidh leis an fhoirm ceisteach, a <call>getName</call>?
 
   + (nil|níl|níor mhaith)
   - <call>nilToCeim</call>
@@ -466,11 +465,11 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup cleachtadh nowait</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup cleachtadh nowait</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup spleach</call>
+  - <call>setAnsweringQuestions false</call>{topic=spleach}<call>chatSetup tosu nowait</call>
 
   + (spleách|spleach)
   - An bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm neamhspleách/spleách?
@@ -507,9 +506,16 @@
 
 > topic spleach
   + tosu
+  - An bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm neamhspleách/spleách?
+
+  + (ta|tá|ba mhaith|sea)
+  % an bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm neamhspleách/spleách
   - Anois féachaimis ar an difríocht idir an fhoirm spleách agus an fhoirm neamhspleách den bhriathar.<br><br>
   ^ Deirtear go bhfuil an briathar neamhspleách má sheasann sé leis féin agus muna bhfuil sé ag brath ar aon fhrása ná ar aon mhír eile:
   ^ <call>chatSetup seasann</call>
+
+  + (nil|níl|níor mhaith)
+  - <call>nilToCeim</call>
 
   + seasann
   - “Déarfaidh mé leat é.”<br>
@@ -549,11 +555,11 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup trial nowait</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup trial nowait</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup coibhneasta</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup coibhneasta</call>
 
   + coibhneasta
   - An bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhorainm coibhneasta?
@@ -630,11 +636,11 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup cleachtadh nowait</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup cleachtadh nowait</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup master</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup master</call>
 
   + master
   - Tá máistreacht agat anois ar an mbriathar “abair” san aimsir fháistineach. \s
@@ -696,12 +702,12 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup tosu nowait</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup tosu nowait</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
   - Tá sé sin go breá. Ar ais go dtí an leathanach baile mar sin.\s
-  ^ <call>getCrioch</call>
+  ^ <call>setAnsweringQuestions false</call><call>getCrioch</call>
 
   + briathar saor
   - {topic=level3}<call>chatSetup briathar saor nowait</call>

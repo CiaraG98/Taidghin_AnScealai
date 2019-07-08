@@ -73,9 +73,7 @@
 
 > object setAnsweringQuestions javascript
   answeringQuestions = args[0];
-  if(answeringQuestions == true){
-    wrongCount = 0;
-  }
+  wrongCount = 0;
   return "";
 < object
 
@@ -205,7 +203,7 @@
   ^ <call>chatSetup cleachtadh</call>
 
   + cleachtadh
-  - Bain triail as an gcleachtadh seo anois, a <call>getName<call>: <call>chatSetup ceist</call>
+  - Bain triail as an gcleachtadh seo anois, a <call>getName</call>: <call>chatSetup ceist</call>
 
   + ceist
   - <call>levelComplete false</call><call>getRandomQuestion 1</call><call>resetProgress</call><call>setAnsweringQuestions true</call>
@@ -228,11 +226,11 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup ceist</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceist</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup ceim-2</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceim-2 nowait</call>
 
   + ceim-2
   - Anois an bhfuil tú réidh chun dul ar aghaidh go Céim a Dó?
@@ -329,11 +327,11 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup ceist</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceist</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup ceim-3</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceim-3 nil</call>
 
   + ceim-3
   - An bhfuil tú ag iarraidh dul go Céim 3 ina áit sin?
@@ -384,8 +382,8 @@
   - An bhfuil tú ag iarraidh leanúint ar aghaidh, a <call>getName</call>? {topic=ceisteach}
 
   + (spleách|spleach)
-  - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
-  ^ <call>chatSetup tosu</call>
+  - {topic=spleach}
+  ^ <call>chatSetup tosu nowait</call>
 
   + coibhneasta
   - Ceart go leor, a <call>getName</call>\s
@@ -446,11 +444,11 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup ceist</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceist</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup spleach</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup spleach nowait</call>
 
   + (ceim 2|céim 2)
   - {topic=level2}<call>chatSetup startl2 nowait</call>
@@ -462,14 +460,12 @@
   - {topic=level3}<call>chatSetup briathar saor nowait</call>
 
   + (spleách|spleach)
-  - An bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm neamhspleách/spleách?
+  - {topic=spleach}<call>chatSetup tosu nowait</call>
 
   + (ta|tá|ba mhaith|sea)
-  % an bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm neamhspleách/spleách
   - {topic=spleach}<call>chatSetup tosu nowait</call>
 
   + (nil|níl|níor mhaith)
-  % an bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm neamhspleách/spleách
   - <call>nilToCeim</call>
 
   + coibhneasta
@@ -487,9 +483,15 @@
 
 > topic spleach
   + tosu
+  - An bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm neamhspleách/spleách?
+
+  + (ta|tá|ba mhaith|sea)
   - Féachaimis anois ar chlaoninsint agus an fhoirm spleách agus an fhoirm neamhspleách den bhriathar. \s
   ^ Deirtear go bhfuil an briathar neamhspleách má sheasann sé leis féin agus muna bhfuil sé ag brath ar aon fhrása ná ar aon mhír eile:
   ^ <call>chatSetup seasann</call>
+
+  + (nil|níl|níor mhaith)
+  - <call>nilToCeim</call>
 
   + seasann
   - “Tagann sí ar cuairt chugainn go minic.”<br>
@@ -526,22 +528,11 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup ceist</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceist</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup piosacoibhneasta</call>
-
-  + piosacoibhneasta
-  - An bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an píosa deireanach?
-
-  + (ta|tá|ba mhaith|sea)
-  % an bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an píosa deireanach
-  - {topic=coibhneasta}<call>chatSetup tosu nowait</call>
-
-  + (nil|níl|níor mhaith)
-  % an bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an píosa deireanach
-  - <call>nilToCeim</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup coibhneasta nowait</call>
 
   + coibhneasta
   - {topic=coibhneasta}<call>chatSetup tosu nowait</call>
@@ -570,7 +561,13 @@
 
 > topic coibhneasta
   + tosu
+  - An bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an píosa deireanach?
+
+  + (ta|tá|ba mhaith|sea)
   - NEED TO FILL IN
+
+  + (nil|níl|níor mhaith)
+  - <call>nilToCeim</call>
 
   + reidh
   - An bhfuil tú réidh?
@@ -594,27 +591,21 @@
   + levelcomplete
   - Tá triúr ceart agat i ndiaidh a chéile. \s
   ^ Tá máistreacht agat anois a <call>getName</call> ar an mbriathar "faigh" san aimsir láithreach. \s
-  ^ An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar a bhfuil déanta sa chuid seo den cheacht?
-  ^ <call>setAnsweringQuestions false</call>
-  ^ <call>setCompletedLevel 3</call>
+  ^ <call>setAnsweringQuestions false</call><call>setCompletedLevel 3</call>
+  ^ {topic=extraquestions}<call>chatSetup tosu</call>
+
 
   + continue
   - Ar mhaith leat leanúint ar aghaidh?
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup ceist</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceist</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar a bhfuil déanta sa chuid seo den cheacht?<call>setAnsweringQuestions false</call>
-
-  + (nil|níl|níor mhaith)
-  - Tá sé sin go breá.\s
-  ^ <call>nilToQuiz</call>
-
-  + (ta|tá|ba mhaith|sea)
-  - {topic=extraquestions}<call>chatSetup tosu nowait</call>
+  - <call>setAnsweringQuestions false</call>
+  ^ {topic=extraquestions}<call>chatSetup tosu nowait</call>
 
   + (aimsir chaite|chaite)
   - <call>setKeepMessages true</call><call>loadFromChat tarAC chaite</call>
@@ -644,6 +635,12 @@
 
 > topic extraquestions
   + tosu
+  - An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar a bhfuil déanta sa chuid seo den cheacht?
+
+  + (nil|níl|níor mhaith)
+  - <call>nilToQuiz</call>
+
+  + (ta|tá|ba mhaith|sea)
   - Bain triail astu seo:<br>
   ^ <call>levelComplete false</call><call>getRandomQuestion 7</call><call>setAnsweringQuestions true</call><call>resetProgress</call>
 
@@ -665,12 +662,12 @@
 
   + (ta|tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>chatSetup tosu nowait</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup tosu nowait</call>
 
   + (nil|níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
   - Tá sé sin go breá. Ar ais go dtí an leathanach baile mar sin.\s
-  ^ <call>getCrioch</call>
+  ^ <call>setAnsweringQuestions false</call><call>getCrioch</call>
 
   + (aimsir chaite|chaite)
   - <call>setKeepMessages true</call><call>loadFromChat tarAC chaite</call>
