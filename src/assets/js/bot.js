@@ -27,7 +27,7 @@ function loadData(data, tabletop){
 
 function setup(){
   clearName();
-  load("tarAL", "start");
+  load("start", "start");
 
   //if the 'chatbot' button is clicked
   var button = document.getElementById("chat-button");

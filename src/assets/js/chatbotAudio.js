@@ -3,11 +3,12 @@ var audio_array = [];
 var hideAudio = false;
 var request = new XMLHttpRequest();
 var audioPlayer;
+var link
 
-var inp = "Fáilte romhat isteach, a Chiara.";
-var inp2 = "Dia Dhuit, Is mise Taidhgín.";
-var inp3 = "Cé thú féin?";
-var source = "http://localhost:4001/"
+var inp = "Fáilte romhat isteach, a Chiara";
+var inp2 = "Dia Dhuit, Is mise Taidhgín";
+var inp3 = "Cad a thabharfaidh mé ort?";
+
 
 function showAudio(){
   var triangle = document.querySelector(".tri");
@@ -26,6 +27,10 @@ function showAudio(){
 
 function audio(reply){
   audioPlayer = document.getElementById("botaudio");
+  callAudio(inp2);
+  setTimeout(function(){
+    callAudio(inp3);
+  }, 6000);
   //console.log(audioPlayer)
   var print = document.querySelector(".test");
   audio_reply = reply;
@@ -38,17 +43,18 @@ function audio(reply){
     print.innerHTML = audio_reply;
   }
   var end = false;
-  //callAudio();
+
 }
 
 function callAudio(inp){
-  request.open('GET', 'http://localhost:4001/getAudio/' + inp2, true);
-  request.setRequestHeader("Content-type", "audio/mpeg");
+  //console.log(inp);
+  request.open('GET', 'http://localhost:4001/getAudio/' + inp, true);
   request.send();
   request.onload = function(){
-    console.log(this.response);
-    console.log(audioPlayer);
-    audioPlayer.src = this.response;
+    //console.log(JSON.stringify(this.response));
+    //console.log(audioPlayer);
+    audioPlayer.src = "https://www.abair.tcd.ie" + this.response;
     console.log("Audio Source: " + audioPlayer.src);
+    audioPlayer.play();
   }
 }
