@@ -43,9 +43,10 @@
   <div class="bg-modal">
     <div class="bot-close" onclick="hideBot()">+</div>
     <div><img src="assets/menuIcon.png" class="contents-button" onclick="showContents()"></div>
-    <div><img src="assets/play-png.png" id="play-audio" onclick="showAudio()"></div>
+    <div><img src="assets/play-png.png" id="play-audio" onclick="playAudio(0)"></div>
     <div class="chatlogs">
-      <div class="messages"></div>
+      <div class="messages">
+      </div>
     </div>
     <form class="chatform">
       <input id="user_input" type="text" autocomplete="off">

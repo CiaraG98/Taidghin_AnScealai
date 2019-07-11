@@ -16,14 +16,13 @@ app.use(bodyParser.json());
 /*http.createServer(function(req, res){}).listen(4000);*/
 
 app.get('/getAudio/:audio', function(req, res){
-  //console.log("getAudio");
   let url = req.params.audio;
-  for(i = 0; i < url.length; i++){
-    url = url.replace(" ", "%20");
-  }
-  //console.log(url);
+  console.log(url);
   https.get('https://www.abair.tcd.ie/api/?input=' + url + '&format=mp3&synth=ga_MU_nnc_nnmnkwii', (resp) => {
-    //console.log(resp.req.path);
+    resp.on("error", function(err){
+      console.log(err);
+    });
+    console.log(resp.req.path);
     res.send(resp.req.path);
   });
 });

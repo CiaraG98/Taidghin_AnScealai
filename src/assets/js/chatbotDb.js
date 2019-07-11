@@ -20,8 +20,8 @@ function makeMessageObj(sentByBot, text){
     logToAdd.complete = complete;
     logToAdd.conversation = messages;
     if(logToAdd.topic != ""){
-      console.log(logToAdd);
-      postLogToDb(logToAdd, "Ciara");
+      //console.log(logToAdd);
+      //postLogToDb(logToAdd, "Ciara");
       messages = [];
       switchTopic = false;
       complete = false;

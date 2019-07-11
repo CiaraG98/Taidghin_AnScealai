@@ -21,8 +21,7 @@
 < object
 
 + start
-* <call>isNameStored</call> == true => Ceart go leor, a <call>getName</call>.\s
-^ Anois, feicim go bhfuil spéis agat sna briathra neamhrialta. An bhfuil an ceart agam?
+* <call>isNameStored</call> == true => Ceart go leor, a <call>getName</call>. Anois, feicim go bhfuil spéis agat sna briathra neamhrialta. An bhfuil an ceart agam?
 
 
 + (ta|tá)

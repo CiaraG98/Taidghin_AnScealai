@@ -115,7 +115,7 @@ function isNameStored(){
 }
 
 function askName(){
-  var greeting = "Dia Dhuit! Is mise " + getBotName() + ". ";
+  var greeting = "Dia Dhuit, Is mise " + getBotName() + ". ";
   var askNames = ["Cén t-ainm atá ort?", "Cad is ainm duit?", "Cé thú féin?", "Cad a thabharfaidh mé ort?"];
   var ran = getRandomIntInclusive(0, askNames.length - 1);
   return greeting + askNames[ran];

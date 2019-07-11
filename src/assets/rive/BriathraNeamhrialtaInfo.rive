@@ -39,8 +39,7 @@
 
 
 + (_ is ainm dom)
-- Deas bualadh leat a <call>storeName <formal></call><call>getName</call>\s
-^ <br>
+- Deas bualadh leat a <call>storeName <formal></call><call>getName</call>.\s
 ^ Anois, roghnaigh ábhar le do thoil:<br>
 ^ <button class="rive-button" onclick="load('deanAC')">Déan</button>
 ^ <button class="rive-button" onclick="load('beirAC')">Beir</button>

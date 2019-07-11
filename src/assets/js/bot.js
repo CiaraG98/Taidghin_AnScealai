@@ -1,6 +1,9 @@
 window.onload = init;
 var ainmneacha = [];
 var keepMessages = false;
+var idForBubble = 0;
+var thisId = 0;
+var thisMessage = 0;
 
 //for database....
 var currentTopic = "";
@@ -31,7 +34,7 @@ function setup(){
 
   //if the 'chatbot' button is clicked
   var button = document.getElementById("chat-button");
-  console.log(button);
+  //console.log(button);
   if(button){
     button.addEventListener("click", function(){
       $(".messages").empty();
@@ -131,14 +134,13 @@ function appendTypingIndicator(){
 //CHAT REPLIES AND INPUTS
 function chatSetup(text){
   bot.reply("local-user", text).then( (reply) => {
-    console.log(reply);
     audio(reply);
     if(reply != ""){
       makeMessageObj(true, reply);
       appendTypingIndicator();
       setTimeout(function(){
         $(".messages").append($("<div class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
-        + "</span></p></div></div>"));
+        + "</span><img src=\"assets/speaker.png\" id=\"speaker\" onclick=\"getAudioUrl(0)\"></p></div></div>"));
         //document.getElementById("output").innerHTML = reply;
         $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
       }, 1200);
@@ -162,14 +164,15 @@ function chat(){
     $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
   }
   bot.reply("local-user", input).then( (reply) => {
-    console.log(reply);
+    thisMessage = { message: reply, id: idForBubble };
+    console.log(thisMessage);
     audio(reply);
     if(reply != ""){
       makeMessageObj(true, reply);
       appendTypingIndicator();
       setTimeout(function(){
         $(".messages").append($("<div class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
-        + "</span></p></div></div>"));
+        + "</span><img src=\"assets/speaker.png\" id=\"speaker\" onclick=\"getAudioUrl(0)\"></p></div></div>"));
         $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
       }, 1200);
       //document.getElementById("output").innerHTML = reply;
