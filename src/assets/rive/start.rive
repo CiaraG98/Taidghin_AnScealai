@@ -49,5 +49,8 @@
 ^ <button class="rive-button">Grammar Topic </button>
 ^ <button class="rive-button">Grammar Topic </button>
 
++ *
+- Tá brón orm cad a dúirt tú?
+
 + briathra neamhrialta
 - <call>setKeepMessages true</call><call>loadFromChat BriathraNeamhrialta</call>

@@ -3,7 +3,9 @@ var ainmneacha = [];
 var keepMessages = false;
 var idForBubble = 0;
 var thisId = 0;
+var speakerId = 0;
 var thisMessage = 0;
+var stillChatting = false;
 
 //for database....
 var currentTopic = "";
@@ -126,6 +128,7 @@ function load(fileId, start){
 function loadFromChat(fileId, start){ load(fileId, start); }
 
 function appendTypingIndicator(){
+  stillChatting = true;
   $(".messages").append($("<div class=\"typing-indicator\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><div class=\"dots\"><p class=\"chat-message\"><span id=\"typ1\"></span><span id=\"typ2\"></span><span id=\"typ3\"></span></p></div></div></div>"));
   $(".typing-indicator").delay(1000).fadeOut("fast");
   $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
@@ -133,15 +136,50 @@ function appendTypingIndicator(){
 
 //CHAT REPLIES AND INPUTS
 function chatSetup(text){
+  var messages = document.querySelector(".messages");
   bot.reply("local-user", text).then( (reply) => {
     audio(reply);
+    thisId++;
+    speakerId++;
     if(reply != ""){
       makeMessageObj(true, reply);
       appendTypingIndicator();
       setTimeout(function(){
-        $(".messages").append($("<div class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
-        + "</span><img src=\"assets/speaker.png\" id=\"speaker\" onclick=\"getAudioUrl(0)\"></p></div></div>"));
-        //document.getElementById("output").innerHTML = reply;
+        var newMessage = document.createElement("div");
+        newMessage.setAttribute("class", "chat bot");
+        newMessage.setAttribute("id", thisId);
+        var userphotoDiv = document.createElement("div");
+        userphotoDiv.setAttribute("class", "user-photo");
+        var photo = document.createElement("img");
+        photo.src = "assets/logo-S.png";
+        photo.setAttribute("id", "bot-img");
+        userphotoDiv.appendChild(photo)
+        newMessage.appendChild(userphotoDiv);
+
+        var newP = document.createElement("p");
+        newP.setAttribute("class", "chat-message");
+        var newSpan = document.createElement("span");
+        newSpan.setAttribute("class", "output");
+        newSpan.innerHTML = reply;
+        newP.appendChild(newSpan);
+
+        var speakerImg = document.createElement("img");
+        speakerImg.setAttribute("class", "speaker");
+        speakerImg.setAttribute("id", speakerId);
+        speakerImg.src = "assets/speaker.png";
+        speakerImg.onclick = function(){
+          testFunction(speakerImg.id);
+        }
+        newP.appendChild(speakerImg);
+
+        newMessage.appendChild(newP);
+        $(".messages").append(newMessage);
+        messageDivs.push(newMessage);
+        //$(".messages").append($("<div name=\"bubble\" class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
+        //+ "</span></p></div></div>"));
+        //$(".bubble").attr("id", thisId);
+        //var bubbleTest = document.querySelector(".bubble");
+        //console.log(bubbleTest);
         $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
       }, 1200);
     }
@@ -164,19 +202,48 @@ function chat(){
     $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
   }
   bot.reply("local-user", input).then( (reply) => {
-    thisMessage = { message: reply, id: idForBubble };
-    console.log(thisMessage);
     audio(reply);
     if(reply != ""){
       makeMessageObj(true, reply);
       appendTypingIndicator();
       setTimeout(function(){
-        $(".messages").append($("<div class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
-        + "</span><img src=\"assets/speaker.png\" id=\"speaker\" onclick=\"getAudioUrl(0)\"></p></div></div>"));
+        var newMessage = document.createElement("div");
+        newMessage.setAttribute("class", "chat bot");
+        newMessage.setAttribute("id", thisId);
+        var userphotoDiv = document.createElement("div");
+        userphotoDiv.setAttribute("class", "user-photo");
+        var photo = document.createElement("img");
+        photo.src = "assets/logo-S.png";
+        photo.setAttribute("id", "bot-img");
+        userphotoDiv.appendChild(photo)
+        newMessage.appendChild(userphotoDiv);
+
+        var newP = document.createElement("p");
+        newP.setAttribute("class", "chat-message");
+        var newSpan = document.createElement("span");
+        newSpan.setAttribute("class", "output");
+        newSpan.innerHTML = reply;
+        newP.appendChild(newSpan);
+
+        var speakerImg = document.createElement("img");
+        speakerImg.setAttribute("class", "speaker");
+        speakerImg.setAttribute("id", speakerId);
+        speakerImg.src = "assets/speaker.png";
+        speakerImg.onclick = function(){
+          testFunction(speakerImg.id);
+        }
+        newP.appendChild(speakerImg);
+
+        newMessage.appendChild(newP);
+        $(".messages").append(newMessage);
+        messageDivs.push(newMessage);
+        //$(".messages").append($("<div name=\"bubble\" class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
+        //+ "</span></p></div></div>"));
         $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
       }, 1200);
-      //document.getElementById("output").innerHTML = reply;
       $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
     }
   });
 }
+
+//<img src=\"assets/speaker.png\" id=\"speaker\" onclick=\"getAudioUrl(0)\">

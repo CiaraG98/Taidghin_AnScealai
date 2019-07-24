@@ -86,7 +86,8 @@ box-shadow: -1px 5px 32px 10px rgba(0,0,0,0.2);
   box-shadow: 1px 1px 1px 0px #ccc;
 }
 
-#speaker{
+.speaker{
+  display: flex;
   width: 15px;
   height: 15px;
   position: relative;
@@ -94,7 +95,7 @@ box-shadow: -1px 5px 32px 10px rgba(0,0,0,0.2);
   left: 5px;
 }
 
-#speaker:hover{
+.speaker:hover{
   cursor:pointer;
 }
 
@@ -322,6 +323,26 @@ box-shadow: -1px 5px 32px 10px rgba(0,0,0,0.2);
   cursor: pointer;
 }
 
+#buffering{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 5px;
+  left: 35px;
+  display: none;
+}
+
+.click{
+  font-size: 12px;
+  position: absolute;
+  top: 3px;
+  left: 35px;
+  border-radius: 5px;
+  background: #F7DC6F;
+  padding: 3px;
+  display: none;
+}
+
 .bot-audio{
   display: none;
   width: 250px;
@@ -369,6 +390,7 @@ audio{
 }
 
 .test{
+  display: none;
   border-style: dashed;
   padding: 10px;
   width: 300px;

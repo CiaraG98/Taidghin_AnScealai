@@ -14,20 +14,32 @@ app.use(bodyParser.json());
 //const filePath = "/mp3/...";
 
 /*http.createServer(function(req, res){}).listen(4000);*/
-
+var toSend = [];
 app.get('/getAudio/:audio', function(req, res){
   let url = req.params.audio;
   console.log(url);
-  https.get('https://www.abair.tcd.ie/api/?input=' + url + '&format=mp3&synth=ga_MU_nnc_nnmnkwii', (resp) => {
+  https.get('https://www.abair.tcd.ie/api/?input=' + url + '&format=mp3&synth=ga_MU_cmg_nnmnkwii', (resp) => {
     resp.on("error", function(err){
       console.log(err);
     });
-    console.log(resp.req.path);
-    res.send(resp.req.path);
+    var thisUrl = "https://www.abair.tcd.ie" + resp.req.path;
+    toSend.push(thisUrl);
+    console.log(toSend);
+    res.send(toSend);
   });
 });
 
+app.post('/clearToSend', function(req, res){
+  toSend = [];
+  console.log(toSend);
+  res.send("toSendCleared");
+});
+
 /*
+
+ga_MU_nnc_nnmnkwii
+ga_MU_cmg_nnmnkwii
+ga_CO_pmg_nnmnkwii
 
 
 console.log("Requested Audio: " + url);

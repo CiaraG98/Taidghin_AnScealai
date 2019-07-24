@@ -190,15 +190,15 @@
   - Tosóimid leis an aimsir chaite mar sin, a <call>getName</call>.\s <call>chatSetup simpli</call><call>setAnsweringQuestions false</call>
 
   + simpli
-  - Tá sé seo an-simplí ar fad. An bhunfhoirm ná ‘dúirt’. <br>
-  ^ - Dúirt mé <br>
-  ^ - Dúirt tú <br>
-  ^ - Dúirt sé nó sí <br>
+  - Tá sé seo an-simplí ar fad. An bhunfhoirm ná dúirt. <br>
+  ^ - Dúirt mé, <br>
+  ^ - Dúirt tú, <br>
+  ^ - Dúirt sé, nó sí, <br>
   ^ Ansin athraíonn sé beagáinín den gcéad phearsa iolra: <br>
-  ^ - Dúramar <br>
+  ^ - Dúramar, <br>
   ^ - Ansin ar ais go: <br>
   ^ - Dúirt sibh, agus <br>
-  ^ - Dúirt siad <br><call>chatSetup bain</call>
+  ^ - Dúirt siad. <br><call>chatSetup bain</call>
 
   + bain
   - Bain triail as an gcleachtadh beag seo: \s <br><call>chatSetup ceist</call>

@@ -189,11 +189,11 @@
 
   + verbcon
   - Deirim an chéad phearsa. Ní úsáidtear ‘deir mé’.<br>
-  ^ Deir tú<br>
-  ^ Deir sé nó sí<br>
-  ^ Deirimid a úsáidtear don gcéad phearsa iolra<br>
-  ^ Deir sibh<br>
-  ^ Deir siad<br><call>chatSetup cleachtadh</call>
+  ^ - Deir tú<br>
+  ^ - Deir sé nó sí<br>
+  ^ - Deirimid a úsáidtear don gcéad phearsa iolra<br>
+  ^ - Deir sibh<br>
+  ^ - Deir siad.<br><call>chatSetup cleachtadh</call>
 
   + cleachtadh
   - Bain triail as an gcleachtadh beag seo: <call>chatSetup ceist</call>
