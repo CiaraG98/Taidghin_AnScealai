@@ -9,6 +9,15 @@
   return "";
 < object
 
+> object wait javascript
+  for(i = 0; i < 100000000; i++){
+    if(holdMessages == false){
+      break;
+    }
+  }
+  return "";
+< object
+
 > object getRandomQuestion javascript
   if(args[0] == 1) return getRandomQuestion(abairAimsirChaiteQuestions);
   if(args[0] == 2) return getRandomQuestion(abairAimsirChaiteNi);
@@ -42,7 +51,7 @@
 > object chatSetup javascript
   if(args[1] == "nowait") return chatSetup(args[0]);
   setTimeout(function(){
-    return chatSetup(args[0]);
+    return chatSetup(args[0], args[1]);
   }, 2500);
   return "";
 < object
@@ -138,6 +147,10 @@
   return "";
 < object
 
+> object holdMessages javascript
+  return holdMessages;
+< object
+
 + start
 - Inniu táimid ag foghlaim <b><i>abair</i></b>.\s
 ^ Cén aimsir ar mhaith leat a dhéanamh, a <call>getName</call>:<br>
@@ -187,7 +200,7 @@
 
 > topic level1
   + startl1
-  - Tosóimid leis an aimsir chaite mar sin, a <call>getName</call>.\s <call>chatSetup simpli</call><call>setAnsweringQuestions false</call>
+  - Tosóimid leis an aimsir chaite mar sin, a <call>getName</call>.\s <call>chatSetup simpli true</call><call>setAnsweringQuestions false</call>
 
   + simpli
   - Tá sé seo an-simplí ar fad. An bhunfhoirm ná dúirt. <br>
@@ -198,10 +211,10 @@
   ^ - Dúramar, <br>
   ^ - Ansin ar ais go: <br>
   ^ - Dúirt sibh, agus <br>
-  ^ - Dúirt siad. <br><call>chatSetup bain</call>
+  ^ - Dúirt siad. <br><call>chatSetup bain true</call>
 
   + bain
-  - Bain triail as an gcleachtadh beag seo: \s <br><call>chatSetup ceist</call>
+  - Bain triail as an gcleachtadh beag seo: \s <br><call>chatSetup ceist true</call>
 
   + ceist
   - <call>levelComplete false</call><call>getRandomQuestion 1</call><br><call>setAnsweringQuestions true</call><call>resetProgress</call>\s

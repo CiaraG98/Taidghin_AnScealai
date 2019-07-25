@@ -1,7 +1,7 @@
+var request = new XMLHttpRequest();
 var audio_reply = "";
 var audio_array = [];
 var hideAudio = false;
-var request = new XMLHttpRequest();
 var audioPlayer;
 var inp = [];
 var i = 0;
@@ -9,45 +9,22 @@ var bubbleObjArr = [];
 var speaker;
 var buffer;
 var click;
-var messageDivs = [];
 var testArray = [];
 var isPlaying = false;
 
-//shows audio element
-function showAudioElement(){
-  var triangle = document.querySelector(".tri");
-  var audio = document.querySelector(".bot-audio");
-  if(hideAudio == false){
-    audio.style.display = "flex";
-    triangle.style.display = "flex";
-    hideAudio = true;
-  }
-  else if(hideAudio){
-    audio.style.display = "none";
-    triangle.style.display = "none";
-    hideAudio = false;
-  }
-}
-
 //sets up for messages to be edited and urls to be called
 function audio(reply){
-  buffer = document.getElementById("buffering");
-  click = document.querySelector(".click");
   audio_array = [];
-  audioPlayer = document.getElementById("botaudio");
-  //console.log(speaker);
   audio_reply = reply;
   editMessageForAudio();
-  //console.log(inp);
+  //Create Bubble Objects
   if(inp != ""){
-    idForBubble++;
-    var bubbleObj = { bubble: [], id: idForBubble, played: false};
+    var bubbleObj = { bubble: [], id: thisId };
     for(i = 0; i < inp.length; i++){
       var newSentence = {message: inp[i], url: ""};
       bubbleObj.bubble.push(newSentence);
     }
     bubbleObjArr.push(bubbleObj);
-    //console.log(bubbleObjArr);
     loopAudio(0, 0);
   }
 }
@@ -64,7 +41,7 @@ function editMessageForAudio(){
       length = i - j;
       var newString = inputString.substr(j, length);
       //console.log(newString);
-      j = i + 1;
+      j = i + 2;
       if(newString != "ERR" || newString != " ")
         inp.push(newString);
     }
@@ -100,20 +77,8 @@ function editMessageForAudio(){
   }
 }
 
-//loop-like function calls request for audio every 3 seconds
+//Could be moved to audio function
 function loopAudio(i){
-  click.style.display = "none";
-  buffer.style.display = "flex";
-  /*callAudio(inp[i]);
-  i++;
-  setTimeout(function(){
-    if(i < inp.length){
-      loopAudio(i);
-    }
-    else{
-      buffer.style.display = "none";
-    }
-  }, 300);*/
   for(i = 0; i < inp.length; i++){
     callAudio(inp[i]);
   }
@@ -131,18 +96,21 @@ function callAudio(inp){
       //console.log(this.response);
       console.log(JSON.parse(this.response));
       testArray = JSON.parse(this.response);
-      buffer.style.display = "none";
-      click.style.display = "block";
       clearToSendArray();
-      /*
-      for(i = 0; i < bubbleObjArr.length; i++){
-        var bubbleMessages = bubbleObjArr[i];
-        for(j = 0; j < bubbleMessages.bubble.length; j++){
-          var bubble = bubbleMessages.bubble;
-          var message = bubbleMessages.bubble[j].message;
-          if(message == inp){
-            bubble[j].url = "https://www.abair.tcd.ie" + this.response;
-            console.log("got url");
+      getAudioUrl();
+      //sortMessages(testArray);
+      //console.log(bubbleObjArr);
+      /*for(i = 0; i < bubbleObjArr.length; i++){
+        var thisBubbleObj = bubbleObjArr[i];
+        for(j = 0; j < thisBubbleObj.bubble.length; j++){
+          var bubble = thisBubbleObj.bubble[j];
+          if(bubble != ""){
+            var bubbleMessage = thisBubbleObj.bubble[j].message;
+            for(k = 0; k < testArray.length; k++){
+              if(bubbleMessage == testArray[k].message){
+                bubble.url = testArray[k].url;
+              }
+            }
           }
         }
       }*/
@@ -161,12 +129,7 @@ function clearToSendArray(){
 var currentBubble;
 
 //sets up which array to be played when speaker button is clicked, right now it plays most recent
-function getAudioUrl(i){
-  if(isPlaying == true){
-    audioPlayer.pause();
-    isPlaying = false;
-    return;
-  }
+function getAudioUrl(){
   var length = bubbleObjArr.length;
   currentBubble = bubbleObjArr[length - 1];
   currentMessages = currentBubble.bubble;
@@ -175,10 +138,18 @@ function getAudioUrl(i){
 }
 
 //plays audio
+var prevSource = "";
 function playAudio(array, i){
   isPlaying = true;
+  bubblePlayed = false;
   if(array[i] != ""){
-    audioPlayer.src = array[i];
+    if(array[i] == prevSource){
+      audioPlayer.src = array[i+1];
+    }
+    else{
+      audioPlayer.src = array[i];
+    }
+    prevSource = audioPlayer.src;
     audioPlayer.play();
     audioPlayer.addEventListener("ended", function(){
       i++;
@@ -187,11 +158,12 @@ function playAudio(array, i){
       }
       else{
         isPlaying = false;
+        bubblePlayed = true;
       }
     });
   }
 }
 
-function testFunction(id){
-  console.log(id);
+function manualPlay(id){
+
 }

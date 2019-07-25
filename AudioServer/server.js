@@ -16,13 +16,16 @@ app.use(bodyParser.json());
 /*http.createServer(function(req, res){}).listen(4000);*/
 var toSend = [];
 app.get('/getAudio/:audio', function(req, res){
+  var messageObj = {message: "", url: ""};
   let url = req.params.audio;
+  messageObj.message = url;
   console.log(url);
   https.get('https://www.abair.tcd.ie/api/?input=' + url + '&format=mp3&synth=ga_MU_cmg_nnmnkwii', (resp) => {
     resp.on("error", function(err){
       console.log(err);
     });
     var thisUrl = "https://www.abair.tcd.ie" + resp.req.path;
+    messageObj.url = thisUrl;
     toSend.push(thisUrl);
     console.log(toSend);
     res.send(toSend);
