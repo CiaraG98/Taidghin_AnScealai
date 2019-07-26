@@ -1,13 +1,15 @@
 window.onload = init;
 var ainmneacha = [];
 var keepMessages = false;
-var thisId = 0;
+var botId = 0;
+var userId = 0;
 var speakerId = 0;
 var thisMessage = 0;
 var holdMessages = false;
 var bubblePlayed = false;
 var played = false;
 var messageDivs = [];
+var testButton;
 
 
 //for database....
@@ -34,6 +36,9 @@ function loadData(data, tabletop){
 }
 
 function setup(){
+  testButton = document.createElement("button");
+  testButton.style.display = "none";
+  testButton.setAttribute("id", "testButton");
   clearName();
   load("abairAC", "start");
   audioPlayer = document.getElementById("botaudio");
@@ -141,108 +146,68 @@ function appendTypingIndicator(){
   $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
 }
 
+function appendMessage(isBot, isUser, text){
+  speakerId++;
+  var newMessage = document.createElement("div");
+  var photoSrc = "";
+  var photoId = "";
+  if(isBot == true){
+    botId++;
+    newMessage.setAttribute("class", "chat bot");
+    newMessage.setAttribute("id", botId);
+    photoSrc = "assets/logo-S.png";
+    photoId = "bot-img";
+  }
+  else if(isUser == true){
+    userId++;
+    newMessage.setAttribute("class", "chat user");
+    newMessage.setAttribute("id", userId);
+    photoSrc = "assets/education.png";
+    photoId = "user-img";
+  }
+  var userphotoDiv = document.createElement("div");
+  userphotoDiv.setAttribute("class", "user-photo");
+  var photo = document.createElement("img");
+  photo.src = photoSrc;
+  photo.setAttribute("id", photoId);
+  userphotoDiv.appendChild(photo)
+  newMessage.appendChild(userphotoDiv);
+
+  var newP = document.createElement("p");
+  newP.setAttribute("class", "chat-message");
+  var newSpan = document.createElement("span");
+  newSpan.setAttribute("class", "output");
+  newSpan.innerHTML = text;
+  newP.appendChild(newSpan);
+
+  var speakerImg = document.createElement("img");
+  speakerImg.setAttribute("class", "speaker");
+  speakerImg.setAttribute("id", speakerId);
+  speakerImg.src = "assets/speaker.png";
+  speakerImg.onclick = function(){
+    manualPlay(speakerImg.id, newMessage.id);
+  }
+  newP.appendChild(speakerImg);
+  newMessage.appendChild(newP);
+  $(".messages").append(newMessage);
+  messageDivs.push(newMessage);
+}
+
 //CHAT REPLIES AND INPUTS
 function chatSetup(text, boolean){
-  if(boolean == "true"){
-    holdMessages = true;
-  }
-  else holdMessages = boolean;
-  if(holdMessages == true){
-    audioPlayer.addEventListener("ended", function(){
-      var messages = document.querySelector(".messages");
-      bot.reply("local-user", text).then( (reply) => {
-        thisId++;
-        speakerId++;
-        audio(reply);
-        if(reply != ""){
-          makeMessageObj(true, reply);
-          appendTypingIndicator();
-          setTimeout(function(){
-            var newMessage = document.createElement("div");
-            newMessage.setAttribute("class", "chat bot");
-            newMessage.setAttribute("id", thisId);
-            var userphotoDiv = document.createElement("div");
-            userphotoDiv.setAttribute("class", "user-photo");
-            var photo = document.createElement("img");
-            photo.src = "assets/logo-S.png";
-            photo.setAttribute("id", "bot-img");
-            userphotoDiv.appendChild(photo)
-            newMessage.appendChild(userphotoDiv);
-
-            var newP = document.createElement("p");
-            newP.setAttribute("class", "chat-message");
-            var newSpan = document.createElement("span");
-            newSpan.setAttribute("class", "output");
-            newSpan.innerHTML = reply;
-            newP.appendChild(newSpan);
-
-            var speakerImg = document.createElement("img");
-            speakerImg.setAttribute("class", "speaker");
-            speakerImg.setAttribute("id", speakerId);
-            speakerImg.src = "assets/speaker.png";
-            speakerImg.onclick = function(){
-              manualPlay(speakerImg.id, newMessage.id);
-            }
-            newP.appendChild(speakerImg);
-
-            newMessage.appendChild(newP);
-            $(".messages").append(newMessage);
-            messageDivs.push(newMessage);
-            $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
-          }, 1200);
-        }
-      });
-    });
-  }
-  else{
-    bot.reply("local-user", text).then( (reply) => {
-      thisId++;
-      speakerId++;
-      audio(reply);
-      if(reply != ""){
-        makeMessageObj(true, reply);
-        appendTypingIndicator();
-        setTimeout(function(){
-          var newMessage = document.createElement("div");
-          newMessage.setAttribute("class", "chat bot");
-          newMessage.setAttribute("id", thisId);
-          var userphotoDiv = document.createElement("div");
-          userphotoDiv.setAttribute("class", "user-photo");
-          var photo = document.createElement("img");
-          photo.src = "assets/logo-S.png";
-          photo.setAttribute("id", "bot-img");
-          userphotoDiv.appendChild(photo)
-          newMessage.appendChild(userphotoDiv);
-
-          var newP = document.createElement("p");
-          newP.setAttribute("class", "chat-message");
-          var newSpan = document.createElement("span");
-          newSpan.setAttribute("class", "output");
-          newSpan.innerHTML = reply;
-          newP.appendChild(newSpan);
-
-          var speakerImg = document.createElement("img");
-          speakerImg.setAttribute("class", "speaker");
-          speakerImg.setAttribute("id", speakerId);
-          speakerImg.src = "assets/speaker.png";
-          speakerImg.onclick = function(){
-            manualPlay(speakerImg.id, newMessage.id);
-          }
-          newP.appendChild(speakerImg);
-
-          newMessage.appendChild(newP);
-          $(".messages").append(newMessage);
-          messageDivs.push(newMessage);
-          //$(".messages").append($("<div name=\"bubble\" class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
-          //+ "</span></p></div></div>"));
-          //$(".bubble").attr("id", thisId);
-          //var bubbleTest = document.querySelector(".bubble");
-          //console.log(bubbleTest);
-          $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
-        }, 1200);
-      }
-    });
-  }
+  var messages = document.querySelector(".messages");
+  bot.reply("local-user", text).then( (reply) => {
+    //audio(reply);
+    if(reply != ""){
+      console.log(reply);
+      makeMessageObj(true, reply);
+      appendTypingIndicator();
+      setTimeout(function(){
+        appendMessage(true, false, reply);
+        $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
+      }, 1200);
+    }
+  });
 }
 
 function chat(){
@@ -254,51 +219,16 @@ function chat(){
     });
     document.getElementById("user_input").value = "";
     makeMessageObj(false, input);
-    $(".messages").append($("<div class=\"chat user\"><div class=\"user-photo\"><img src=\"assets/education.png\" id=\"user-img\"></div><p class=\"chat-message\"><span class=\"input\">" + input
-    + "</span></p></div></div>"));
-    console.log(input);
+    appendMessage(false, true, input);
     $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
   }
   bot.reply("local-user", input).then( (reply) => {
-    thisId++;
-    speakerId++;
-    audio(reply);
+    //audio(reply);
     if(reply != ""){
       makeMessageObj(true, reply);
       appendTypingIndicator();
       setTimeout(function(){
-        var newMessage = document.createElement("div");
-        newMessage.setAttribute("class", "chat bot");
-        newMessage.setAttribute("id", thisId);
-        var userphotoDiv = document.createElement("div");
-        userphotoDiv.setAttribute("class", "user-photo");
-        var photo = document.createElement("img");
-        photo.src = "assets/logo-S.png";
-        photo.setAttribute("id", "bot-img");
-        userphotoDiv.appendChild(photo)
-        newMessage.appendChild(userphotoDiv);
-
-        var newP = document.createElement("p");
-        newP.setAttribute("class", "chat-message");
-        var newSpan = document.createElement("span");
-        newSpan.setAttribute("class", "output");
-        newSpan.innerHTML = reply;
-        newP.appendChild(newSpan);
-
-        var speakerImg = document.createElement("img");
-        speakerImg.setAttribute("class", "speaker");
-        speakerImg.setAttribute("id", speakerId);
-        speakerImg.src = "assets/speaker.png";
-        speakerImg.onclick = function(){
-          manualPlay(speakerImg.id);
-        }
-        newP.appendChild(speakerImg);
-
-        newMessage.appendChild(newP);
-        $(".messages").append(newMessage);
-        messageDivs.push(newMessage);
-        //$(".messages").append($("<div name=\"bubble\" class=\"chat bot\"><div class=\"user-photo\"><img src=\"assets/logo-S.png\" id=\"bot-img\"></div><p class=\"chat-message\"><span class=\"output\">" + reply
-        //+ "</span></p></div></div>"));
+        appendMessage(true, false, reply);
         $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
       }, 1200);
       $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);

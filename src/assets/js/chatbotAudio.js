@@ -19,13 +19,13 @@ function audio(reply){
   editMessageForAudio();
   //Create Bubble Objects
   if(inp != ""){
-    var bubbleObj = { bubble: [], id: thisId };
+    var bubbleObj = { bubble: [], id: botId };
     for(i = 0; i < inp.length; i++){
       var newSentence = {message: inp[i], url: ""};
       bubbleObj.bubble.push(newSentence);
     }
     bubbleObjArr.push(bubbleObj);
-    loopAudio(0, 0);
+    for(i = 0; i < inp.length; i++) callAudio(inp[i]);
   }
 }
 
@@ -77,44 +77,33 @@ function editMessageForAudio(){
   }
 }
 
-//Could be moved to audio function
-function loopAudio(i){
-  for(i = 0; i < inp.length; i++){
-    callAudio(inp[i]);
-  }
-}
-
 //gets audio from server and adds urls to their objects to be played when called upon
 function callAudio(inp){
-  let index = inp.indexOf("Ceist:");
-  let index2 = inp.indexOf("_____");
-  if(index == -1 && index2 == -1){
-    console.log(inp);
-    request.open('GET', 'http://localhost:4001/getAudio/' + inp, true);
-    request.send();
-    request.onload = function(){
-      //console.log(this.response);
-      console.log(JSON.parse(this.response));
-      testArray = JSON.parse(this.response);
-      clearToSendArray();
-      getAudioUrl();
-      //sortMessages(testArray);
-      //console.log(bubbleObjArr);
-      /*for(i = 0; i < bubbleObjArr.length; i++){
-        var thisBubbleObj = bubbleObjArr[i];
-        for(j = 0; j < thisBubbleObj.bubble.length; j++){
-          var bubble = thisBubbleObj.bubble[j];
-          if(bubble != ""){
-            var bubbleMessage = thisBubbleObj.bubble[j].message;
-            for(k = 0; k < testArray.length; k++){
-              if(bubbleMessage == testArray[k].message){
-                bubble.url = testArray[k].url;
-              }
+  console.log(inp);
+  request.open('GET', 'http://localhost:4001/getAudio/' + inp, true);
+  request.send();
+  request.onload = function(){
+    //console.log(this.response);
+    console.log(JSON.parse(this.response));
+    testArray = JSON.parse(this.response);
+    clearToSendArray();
+    getAudioUrl();
+    //sortMessages(testArray);
+    //console.log(bubbleObjArr);
+    /*for(i = 0; i < bubbleObjArr.length; i++){
+      var thisBubbleObj = bubbleObjArr[i];
+      for(j = 0; j < thisBubbleObj.bubble.length; j++){
+        var bubble = thisBubbleObj.bubble[j];
+        if(bubble != ""){
+          var bubbleMessage = thisBubbleObj.bubble[j].message;
+          for(k = 0; k < testArray.length; k++){
+            if(bubbleMessage == testArray[k].message){
+              bubble.url = testArray[k].url;
             }
           }
         }
-      }*/
-    }
+      }
+    }*/
   }
 }
 

@@ -20,7 +20,7 @@ app.get('/getAudio/:audio', function(req, res){
   let url = req.params.audio;
   messageObj.message = url;
   console.log(url);
-  https.get('https://www.abair.tcd.ie/api/?input=' + url + '&format=mp3&synth=ga_MU_cmg_nnmnkwii', (resp) => {
+  https.get('https://www.abair.tcd.ie/api/?input=' + url + '&format=mp3&synth=ga_MU_nnc_nnmnkwii', (resp) => {
     resp.on("error", function(err){
       console.log(err);
     });
