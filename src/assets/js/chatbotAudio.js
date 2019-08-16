@@ -5,6 +5,7 @@ var audioCheckbox;
 var bubbleObjArr = [];
 var thisId = 0;
 var duration;
+var isPlaying = false;
 
 //sets up for messages to be edited and urls to be called
 function audio(newReply, id, isUser){
@@ -12,20 +13,31 @@ function audio(newReply, id, isUser){
   thisId = id;
   if(isUser == false){
     editMessageForAudio();
-
+    var bubbleText = "";
     //Create Bubble Objects
-    if(inp != ""){
-      var bubbleText = "";
+    if(inp[2] == "//www"){
+      bubbleText = "Úsáid tearma.ie chun cabhrú leat munar thuig tú téarma ar leith.";
+      var newBubble = { text: bubbleText, id: thisId, url: null, isUser: isUser };
+      bubbleObjArr.push(newBubble);
+      testCallAudio(bubbleText, thisId);
+    }
+    else if(inp[3] == "//www"){
+      bubbleText = "An bhfuil aon fhocail nár thuig tú? Féach sa bhfoclóir ag teanglann.ie.";
+      var newBubble = { text: bubbleText, id: thisId, url: null, isUser: isUser };
+      bubbleObjArr.push(newBubble);
+      testCallAudio(bubbleText, thisId);
+    }
+    else if(inp != ""){
       for(i = 0; i < inp.length; i++){
         bubbleText = bubbleText.concat(inp[i], ".");
       }
-      var newBubble = { text: bubbleText , id: thisId, url: null, isUser: isUser};
+      var newBubble = { text: bubbleText , id: thisId, url: null, isUser: isUser };
       bubbleObjArr.push(newBubble);
       testCallAudio(bubbleText, thisId);
     }
   }
   else{
-    var newBubble = { text: audio_reply , id: thisId, url: null, isUser: isUser};
+    var newBubble = { text: audio_reply , id: thisId, url: null, isUser: isUser };
     bubbleObjArr.push(newBubble);
     testCallAudio(audio_reply, thisId);
   }
@@ -51,7 +63,6 @@ function editMessageForAudio(){
       inputString[i] == inputString[i].replace("'", "");
     }
   }
-  //console.log(inp);
   var currentSentence;
   for(i = 0; i < inp.length; i++){
     currentSentence = inp[i];
@@ -81,7 +92,7 @@ function editMessageForAudio(){
 
 function testCallAudio(testString, id){
   console.log(testString);
-  request.open('POST', 'http://localhost:4001/testGetAudio/' + testString, true);
+  request.open('POST', 'http://localhost:4000/getAudio/' + testString, true);
   request.send();
   request.onload = function(){
     //console.log(JSON.parse(this.response).html[0][0]);

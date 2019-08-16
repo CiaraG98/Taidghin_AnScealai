@@ -86,16 +86,23 @@ box-shadow: -1px 5px 32px 10px rgba(0,0,0,0.2);
   box-shadow: 1px 1px 1px 0px #ccc;
 }
 
-.speaker{
+.speaker, .pauseButton{
   display: flex;
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
   position: relative;
-  top: 4px;
-  left: 5px;
+  top: 22px;
+  left: 170px;
 }
 
-.speaker:hover{
+.pauseButton{
+  left: 145px;
+  top: 4px;
+  width: 19px;
+  height: 19px;
+}
+
+.speaker:hover, .pauseButton:hover{
   cursor:pointer;
 }
 

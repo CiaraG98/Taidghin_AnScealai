@@ -136,7 +136,7 @@ function getLink(){
   var buttons = ["<a href=\"https://www.tearma.ie\" target=\"_blank\"><button class='rive-button'>www.tearma.ie</button></a>",
   "<a href=\"https://www.teanglann.ie\" target=\"_blank\"><button class='rive-button'>www.teanglann.ie</button></a>"]
   var links = ["An bhfuil aon fhocail nár thuig tú? Féach sa bhfoclóir ag: <br>" + buttons[1],
-    "Úsáid " + buttons[0] + " chun cabhrú leat munar thuig tú téarma ar leith."];
+    "Úsáid: " + buttons[0] + " chun cabhrú leat munar thuig tú téarma ar leith."];
   var ran = getRandomIntInclusive(0, links.length - 1);
   return links[ran];
 }
@@ -150,7 +150,7 @@ function triailAris(){
 function nilToCeim(){
   var nils = ["Tóg briseadh beag mar sin", "Fág é go dtí an chéad lá eile", "Ar aghaidh go briathar eile", "Ar ais go dtí an leathanach baile mar sin",
   "Go breá. Is féidir leat topaic eile a phiocadh nó teacht ar ais uair éigin eile. (exit back to main menu?)"];
-  var ran = getRandomIntInclusive(0, nil.length - 1);
+  var ran = getRandomIntInclusive(0, nils.length - 1);
   return nils[ran];
 }
 

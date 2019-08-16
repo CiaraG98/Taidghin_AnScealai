@@ -74,8 +74,10 @@ app.post('/testGetAudio/:audio', function(req, res){
             }
             paragraphs.push(sentences);
         }
+        console.log("Success!");
         res.json({ html : paragraphs, audio : urls });
       } else {
+        console.log("Fail");
         res.json({status: '404', message: 'No response from synthesiser'});
       }
     });

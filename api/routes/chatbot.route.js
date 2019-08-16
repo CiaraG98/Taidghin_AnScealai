@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const chatbotRoute = express.Router();
 const fs = require('fs');
+const https = require("https");
+const querystring = require('querystring');
+const request = require('request');
+const { parse, stringify } = require('node-html-parser');
 
 // Require Chatbot model in our routes module
 let Models = require('../models/Chatbot');
@@ -62,6 +66,58 @@ chatbotRoute.route('/clearLogs/:name').get(function(req, res){
       res.status(200).send("Logs Removed");
     }
   });
+});
+
+chatbotRoute.route('/getAudio/:audio').post(function(req, res){
+  console.log(req.params.audio);
+  var text = req.params.audio;
+  if(text){
+    var form = {
+      Input: text,
+      Locale: "ga_CM",
+      Format: 'html',
+      Speed: '1',
+    };
+
+    var formData = querystring.stringify(form);
+    var contentLength = formData.lenght;
+
+    request({
+      headers: {
+        'Host' : 'www.abair.tcd.ie',
+        'Content-Length': contentLength,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      uri: 'https://www.abair.tcd.ie/webreader/synthesis',
+      body: formData,
+      method: 'POST'
+    }, function(err, resp, body){
+      if(err) res.send(err);
+      if(body){
+        let audioContainer = parse(body.toString()).querySelectorAll('.audio_paragraph');
+        let paragraphs = [];
+        let urls = [];
+        for(let p of audioContainer) {
+            let sentences = [];
+            for(let s of p.childNodes) {
+                if(s.tagName === 'span') {
+                    sentences.push(s.toString());
+                } else if(s.tagName === 'audio') {
+                    urls.push(s.id);
+                }
+            }
+            paragraphs.push(sentences);
+        }
+        console.log("Success!");
+        res.json({ html : paragraphs, audio : urls });
+      } else {
+        console.log("Fail");
+        res.json({status: '404', message: 'No response from synthesiser'});
+      }
+    });
+  } else {
+    res.json({status: '404', message: 'Text not found'});
+  }
 });
 
 module.exports = chatbotRoute;

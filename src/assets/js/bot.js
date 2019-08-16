@@ -184,6 +184,15 @@ function appendMessage(isBot, isUser, text){
     manualPlay(speakerImg.id, newMessage.id);
   }
   newP.appendChild(speakerImg);
+
+  var pauseImg = document.createElement("img");
+  pauseImg.setAttribute("class", "pauseButton");
+  pauseImg.src = "assets/pause.png"
+  pauseImg.onclick = function(){
+    audioPlayer.pause();
+  }
+  newP.appendChild(pauseImg);
+
   newMessage.appendChild(newP);
   $(".messages").append(newMessage);
   messageDivs.push(newMessage);
@@ -191,6 +200,7 @@ function appendMessage(isBot, isUser, text){
 
 //CHAT REPLIES AND INPUTS
 function chatSetup(text, holdMessages){
+  //console.log(holdMessages);
   var messages = document.querySelector(".messages");
   if(holdMessages == "true" && audioCheckbox.checked == true){
     audioPlayer.addEventListener("ended", function(){
