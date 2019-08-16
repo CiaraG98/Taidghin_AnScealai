@@ -212,15 +212,15 @@
   + next
   - - Dúirt mé, <br>
   ^ - Dúirt tú, <br>
-  ^ - Dúirt sé, nó sí, <br>
+  ^ - Dúirt sé, nó sí. <br>
   ^ Ansin athraíonn sé beagáinín den gcéad phearsa iolra: <br>
   ^ - Dúramar, <br>
   ^ - Ansin ar ais go: <br>
   ^ - Dúirt sibh, agus <br>
-  ^ - Dúirt siad. <br><call>chatSetup bain</call>
+  ^ - Dúirt siad. <br><call>chatSetup bain true</call>
 
   + bain
-  - Bain triail as an gcleachtadh beag seo: \s <br><call>chatSetup ceist</call>
+  - Bain triail as an gcleachtadh beag seo: \s <br><call>chatSetup ceist true</call>
 
   + ceist
   - <call>levelComplete false</call><call>getRandomQuestion 1</call><br><call>setAnsweringQuestions true</call><call>resetProgress</call>\s

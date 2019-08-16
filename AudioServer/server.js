@@ -4,6 +4,9 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const https = require("https");
 const path = require("path");
+const querystring = require('querystring');
+const request = require('request');
+const { parse, stringify } = require('node-html-parser');
 
 var app = express();
 const port = process.env.PORT || 4001;
@@ -26,58 +29,62 @@ app.get('/getAudio/:audio', function(req, res){
     });
     var thisUrl = "https://www.abair.tcd.ie" + resp.req.path;
     messageObj.url = thisUrl;
-    toSend.push(thisUrl);
+    toSend.push(messageObj);
     console.log(toSend);
     res.send(toSend);
   });
 });
 
+app.post('/testGetAudio/:audio', function(req, res){
+  var text = req.params.audio;
+  if(text){
+    var form = {
+      Input: text,
+      Locale: "ga_CM",
+      Format: 'html',
+      Speed: '1',
+    };
+
+    var formData = querystring.stringify(form);
+    var contentLength = formData.lenght;
+
+    request({
+      headers: {
+        'Host' : 'www.abair.tcd.ie',
+        'Content-Length': contentLength,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      uri: 'https://www.abair.tcd.ie/webreader/synthesis',
+      body: formData,
+      method: 'POST'
+    }, function(err, resp, body){
+      if(err) res.send(err);
+      if(body){
+        let audioContainer = parse(body.toString()).querySelectorAll('.audio_paragraph');
+        let paragraphs = [];
+        let urls = [];
+        for(let p of audioContainer) {
+            let sentences = [];
+            for(let s of p.childNodes) {
+                if(s.tagName === 'span') {
+                    sentences.push(s.toString());
+                } else if(s.tagName === 'audio') {
+                    urls.push(s.id);
+                }
+            }
+            paragraphs.push(sentences);
+        }
+        res.json({ html : paragraphs, audio : urls });
+      } else {
+        res.json({status: '404', message: 'No response from synthesiser'});
+      }
+    });
+  } else {
+    res.json({status: '404', message: 'Text not found'});
+  }
+});
+
 app.post('/clearToSend', function(req, res){
   toSend = [];
-  console.log(toSend);
   res.send("toSendCleared");
 });
-
-/*
-
-ga_MU_nnc_nnmnkwii
-ga_MU_cmg_nnmnkwii
-ga_CO_pmg_nnmnkwii
-
-
-console.log("Requested Audio: " + url);
-https.get('https://www.abair.tcd.ie/api/?input=' + url + '&format=mp3&synth=ga_MU_nnc_nnmnkwii', "format=mp3", (resp) => {
-  resp.pipe(file);
-  res.download("../src/assets/mp3", file.path, function(err){
-    if(err){
-      console.log(err);
-    }
-  });
-  //console.log(file);
-  res.send(file.path);
-  console.log("Done");
-}).on("error", (err) => {
-  console.log(err);
-});
-
-let data = "";
-resp.on('data', (chunk) => {
-  data += chunk;
-});
-resp.on("error", (error) => {
-  console.log(error.message);
-});
-resp.on('end', () => {
-  console.log(data);
-});
-
-fs.readFile(__dirname + 'https://www.abair.tcd.ie/api/?input=' + url + '&format=mp3&synth=ga_MU_nnc_nnmnkwii', function(err, data){
-  if(err){
-    res.writeHead(404);
-    res.end(JSON.stringify(err));
-    return;
-  }
-  res.writeHead(200);
-  res.end(data);
-});
-*/

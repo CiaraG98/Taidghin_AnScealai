@@ -1,31 +1,33 @@
 var request = new XMLHttpRequest();
 var audio_reply = "";
-var audio_array = [];
-var hideAudio = false;
 var audioPlayer;
-var inp = [];
-var i = 0;
+var audioCheckbox;
 var bubbleObjArr = [];
-var speaker;
-var buffer;
-var click;
-var testArray = [];
-var isPlaying = false;
+var thisId = 0;
+var duration;
 
 //sets up for messages to be edited and urls to be called
-function audio(reply){
-  audio_array = [];
-  audio_reply = reply;
-  editMessageForAudio();
-  //Create Bubble Objects
-  if(inp != ""){
-    var bubbleObj = { bubble: [], id: botId };
-    for(i = 0; i < inp.length; i++){
-      var newSentence = {message: inp[i], url: ""};
-      bubbleObj.bubble.push(newSentence);
+function audio(newReply, id, isUser){
+  audio_reply = newReply;
+  thisId = id;
+  if(isUser == false){
+    editMessageForAudio();
+
+    //Create Bubble Objects
+    if(inp != ""){
+      var bubbleText = "";
+      for(i = 0; i < inp.length; i++){
+        bubbleText = bubbleText.concat(inp[i], ".");
+      }
+      var newBubble = { text: bubbleText , id: thisId, url: null, isUser: isUser};
+      bubbleObjArr.push(newBubble);
+      testCallAudio(bubbleText, thisId);
     }
-    bubbleObjArr.push(bubbleObj);
-    for(i = 0; i < inp.length; i++) callAudio(inp[i]);
+  }
+  else{
+    var newBubble = { text: audio_reply , id: thisId, url: null, isUser: isUser};
+    bubbleObjArr.push(newBubble);
+    testCallAudio(audio_reply, thisId);
   }
 }
 
@@ -41,7 +43,7 @@ function editMessageForAudio(){
       length = i - j;
       var newString = inputString.substr(j, length);
       //console.log(newString);
-      j = i + 2;
+      j = i + 1;
       if(newString != "ERR" || newString != " ")
         inp.push(newString);
     }
@@ -77,82 +79,36 @@ function editMessageForAudio(){
   }
 }
 
-//gets audio from server and adds urls to their objects to be played when called upon
-function callAudio(inp){
-  console.log(inp);
-  request.open('GET', 'http://localhost:4001/getAudio/' + inp, true);
+function testCallAudio(testString, id){
+  console.log(testString);
+  request.open('POST', 'http://localhost:4001/testGetAudio/' + testString, true);
   request.send();
   request.onload = function(){
-    //console.log(this.response);
-    console.log(JSON.parse(this.response));
-    testArray = JSON.parse(this.response);
-    clearToSendArray();
-    getAudioUrl();
-    //sortMessages(testArray);
-    //console.log(bubbleObjArr);
-    /*for(i = 0; i < bubbleObjArr.length; i++){
-      var thisBubbleObj = bubbleObjArr[i];
-      for(j = 0; j < thisBubbleObj.bubble.length; j++){
-        var bubble = thisBubbleObj.bubble[j];
-        if(bubble != ""){
-          var bubbleMessage = thisBubbleObj.bubble[j].message;
-          for(k = 0; k < testArray.length; k++){
-            if(bubbleMessage == testArray[k].message){
-              bubble.url = testArray[k].url;
-            }
-          }
-        }
+    //console.log(JSON.parse(this.response).html[0][0]);
+    var bubbleUrl =JSON.parse(this.response).audio[0];
+    for(i = 0; i < bubbleObjArr.length; i++){
+      if(id == bubbleObjArr[i].id){
+        bubbleObjArr[i].url = bubbleUrl;
+        if(audioCheckbox.checked == true && bubbleObjArr[i].isUser == false)
+          playAudio(bubbleObjArr[i]);
       }
-    }*/
+    }
   }
-}
-
-function clearToSendArray(){
-  request.open("POST", 'http://localhost:4001/clearToSend/', true);
-  request.send();
-  request.onload = function(){
-    console.log(this.response);
-  }
-}
-
-var currentBubble;
-
-//sets up which array to be played when speaker button is clicked, right now it plays most recent
-function getAudioUrl(){
-  var length = bubbleObjArr.length;
-  currentBubble = bubbleObjArr[length - 1];
-  currentMessages = currentBubble.bubble;
-  playAudio(testArray, 0);
-  //playAudio(currentMessages, 0);
 }
 
 //plays audio
-var prevSource = "";
-function playAudio(array, i){
-  isPlaying = true;
-  bubblePlayed = false;
-  if(array[i] != ""){
-    if(array[i] == prevSource){
-      audioPlayer.src = array[i+1];
-    }
-    else{
-      audioPlayer.src = array[i];
-    }
-    prevSource = audioPlayer.src;
+function playAudio(bubble){
+  if(bubble.url){
+    audioPlayer = new Audio(bubble.url);
     audioPlayer.play();
-    audioPlayer.addEventListener("ended", function(){
-      i++;
-      if(i < array.length){
-        playAudio(array, i);
-      }
-      else{
-        isPlaying = false;
-        bubblePlayed = true;
-      }
-    });
   }
 }
 
 function manualPlay(id){
-
+  console.log(id);
+  for(i = 0; i < bubbleObjArr.length; i++){
+    if(bubbleObjArr[i].id == id){
+      playAudio(bubbleObjArr[i]);
+    }
+  }
 }

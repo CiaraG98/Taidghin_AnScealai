@@ -1,8 +1,7 @@
 window.onload = init;
 var ainmneacha = [];
 var keepMessages = false;
-var botId = 0;
-var userId = 0;
+var bubbleId = 0;
 var speakerId = 0;
 var thisMessage = 0;
 var holdMessages = false;
@@ -42,6 +41,7 @@ function setup(){
   clearName();
   load("abairAC", "start");
   audioPlayer = document.getElementById("botaudio");
+  audioCheckbox = document.querySelector(".audioCheckbox");
 
 
   //if the 'chatbot' button is clicked
@@ -53,8 +53,6 @@ function setup(){
       load("start");
     });
   }
-
-  var checkbox = document.querySelector(".audioCheckbox");
 
   //collapsable menu for the contents
   var coll = document.getElementsByClassName("collapsable");
@@ -148,23 +146,21 @@ function appendTypingIndicator(){
 
 function appendMessage(isBot, isUser, text){
   speakerId++;
+  bubbleId++;
   var newMessage = document.createElement("div");
   var photoSrc = "";
   var photoId = "";
   if(isBot == true){
-    botId++;
     newMessage.setAttribute("class", "chat bot");
-    newMessage.setAttribute("id", botId);
     photoSrc = "assets/logo-S.png";
     photoId = "bot-img";
   }
   else if(isUser == true){
-    userId++;
     newMessage.setAttribute("class", "chat user");
-    newMessage.setAttribute("id", userId);
     photoSrc = "assets/education.png";
     photoId = "user-img";
   }
+  newMessage.setAttribute("id", bubbleId);
   var userphotoDiv = document.createElement("div");
   userphotoDiv.setAttribute("class", "user-photo");
   var photo = document.createElement("img");
@@ -194,20 +190,41 @@ function appendMessage(isBot, isUser, text){
 }
 
 //CHAT REPLIES AND INPUTS
-function chatSetup(text, boolean){
+function chatSetup(text, holdMessages){
   var messages = document.querySelector(".messages");
-  bot.reply("local-user", text).then( (reply) => {
-    //audio(reply);
-    if(reply != ""){
-      console.log(reply);
-      makeMessageObj(true, reply);
-      appendTypingIndicator();
-      setTimeout(function(){
-        appendMessage(true, false, reply);
-        $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
-      }, 1200);
-    }
-  });
+  if(holdMessages == "true" && audioCheckbox.checked == true){
+    audioPlayer.addEventListener("ended", function(){
+      bot.reply("local-user", text).then( (reply) => {
+        if(reply != ""){
+          //console.log(reply);
+          makeMessageObj(true, reply);
+          appendTypingIndicator();
+          setTimeout(function(){
+            appendMessage(true, false, reply);
+            audio(reply, bubbleId, false);
+
+            $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
+          }, 1200);
+        }
+      });
+    });
+  }
+  else{
+    bot.reply("local-user", text).then( (reply) => {
+      if(reply != ""){
+        //console.log(reply);
+        makeMessageObj(true, reply);
+        appendTypingIndicator();
+        setTimeout(function(){
+          appendMessage(true, false, reply);
+          audio(reply, bubbleId, false);
+
+          $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
+        }, 1200);
+      }
+    });
+  }
+  return "";
 }
 
 function chat(){
@@ -220,20 +237,19 @@ function chat(){
     document.getElementById("user_input").value = "";
     makeMessageObj(false, input);
     appendMessage(false, true, input);
+    audio(input, bubbleId, true)
     $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
   }
   bot.reply("local-user", input).then( (reply) => {
-    //audio(reply);
     if(reply != ""){
       makeMessageObj(true, reply);
       appendTypingIndicator();
       setTimeout(function(){
         appendMessage(true, false, reply);
+        audio(reply, bubbleId, false);
         $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
       }, 1200);
       $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
     }
   });
 }
-
-//<img src=\"assets/speaker.png\" id=\"speaker\" onclick=\"getAudioUrl(0)\">
