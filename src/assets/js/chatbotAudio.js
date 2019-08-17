@@ -92,7 +92,7 @@ function editMessageForAudio(){
 
 function testCallAudio(testString, id){
   console.log(testString);
-  request.open('POST', 'http://localhost:4000/getAudio/' + testString, true);
+  request.open('POST', 'http://localhost:4001/testGetAudio/' + testString, true);
   request.send();
   request.onload = function(){
     //console.log(JSON.parse(this.response).html[0][0]);
