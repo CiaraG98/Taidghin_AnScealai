@@ -67,6 +67,20 @@ var quiz = false;
 var quizScore = 0;
 var quizProgress = 0;
 
+function next(){
+  if(thisDialect != "" && thisGender != "" || thisDialect != "" || thisGender != ""){
+    chatSetup("askname");
+    play = true;
+  }
+  else{
+    appendTypingIndicator();
+    setTimeout(function(){
+      appendMessage(true, false, "Please choose a dialect and gender!", false);
+      $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
+    }, 1200);
+  }
+}
+
 function searchNames(name){
   var slenderName;
   for(i = 0; i < ainmneacha.length; i++){
@@ -79,6 +93,7 @@ function searchNames(name){
 }
 
 function storeName(name){
+  play = true;
   userName = name;
   botObj.username = userName;
   var slName = searchNames(name);

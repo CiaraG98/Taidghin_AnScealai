@@ -87,7 +87,7 @@ box-shadow: -1px 5px 32px 10px rgba(0,0,0,0.2);
 }
 
 .speaker, .pauseButton{
-  display: flex;
+  display: block;
   width: 17px;
   height: 17px;
   position: relative;
@@ -440,4 +440,9 @@ audio{
 
 .rive-button2:hover{
   background-color: #1ABC9C;
+}
+
+#rive-checkbox{
+  position: relative;
+  top: 3px;
 }

@@ -2,10 +2,17 @@ var request = new XMLHttpRequest();
 var audio_reply = "";
 var audioPlayer;
 var audioCheckbox;
+var male;
+var female;
+var connemara;
+var kerry;
+var donegal;
 var bubbleObjArr = [];
 var thisId = 0;
 var duration;
 var isPlaying = false;
+var thisDialect = "";
+var thisGender = "";
 
 //sets up for messages to be edited and urls to be called
 function audio(newReply, id, isUser){
@@ -92,7 +99,7 @@ function editMessageForAudio(){
 
 function testCallAudio(testString, id){
   console.log(testString);
-  request.open('POST', 'http://localhost:4001/testGetAudio/' + testString, true);
+  request.open('POST', 'http://localhost:4000/Chatbot/getAudio/' + testString, true);
   request.send();
   request.onload = function(){
     //console.log(JSON.parse(this.response).html[0][0]);
@@ -120,6 +127,39 @@ function manualPlay(id){
   for(i = 0; i < bubbleObjArr.length; i++){
     if(bubbleObjArr[i].id == id){
       playAudio(bubbleObjArr[i]);
+    }
+  }
+}
+
+function checkboxSelect(checkbox, isGender, isDialect){
+  male = document.querySelector(".maleCheckbox");
+  female = document.querySelector(".femaleCheckbox");
+  connemara = document.querySelector(".connemaraCheckbox");
+  kerry = document.querySelector(".kerryCheckbox");
+  donegal = document.querySelector(".donegalCheckbox");
+
+  if(isDialect){
+    thisDialect = checkbox;
+    if(checkbox == "connemara"){
+      kerry.checked = false;
+      donegal.checked = false;
+    }
+    else if(checkbox == "kerry"){
+      connemara.checked = false;
+      donegal.checked = false;
+    }
+    else if(checkbox == "donegal"){
+      connemara.checked = false;
+      kerry.checked = false;
+    }
+  }
+  else if(isGender){
+    thisGender = checkbox;
+    if(checkbox == "male"){
+      female.checked = false;
+    }
+    else if(checkbox == "female"){
+      male.checked = false;
     }
   }
 }

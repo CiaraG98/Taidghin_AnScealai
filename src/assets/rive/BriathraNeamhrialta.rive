@@ -24,12 +24,12 @@
 * <call>isNameStored</call> == true => Ceart go leor, a <call>getName</call>. Anois, feicim go bhfuil spéis agat sna briathra neamhrialta. An bhfuil an ceart agam?
 
 
-+ (ta|tá)
++ (tá|sea)
 - Ceart go leor, a <call>getName</call>. Tá dhá chuid ann ar féidir leat a roghnú, Foghlaim nó Quiz. Cad ba mhaith leat a dhéanamh:\s <br>
 ^ <button class="rive-button" onclick="chatSetup('foghlaim')">Foghlaim</button>
 ^ <button class="rive-button" onclick="load('BQuiz')">Quiz</button>
 
-+ (nil|níl)
++ (níl)
 - Go breá. Is féidir leat topaic eile a phiocadh nó teacht ar ais uair éigin eile.
 
 + foghlaim

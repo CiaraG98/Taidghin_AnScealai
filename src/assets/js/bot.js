@@ -9,7 +9,7 @@ var bubblePlayed = false;
 var played = false;
 var messageDivs = [];
 var testButton;
-
+var play = false;
 
 //for database....
 var currentTopic = "";
@@ -39,7 +39,7 @@ function setup(){
   testButton.style.display = "none";
   testButton.setAttribute("id", "testButton");
   clearName();
-  load("abairAC", "start");
+  load("abairAC", "start", true);
   audioPlayer = document.getElementById("botaudio");
   audioCheckbox = document.querySelector(".audioCheckbox");
 
@@ -106,7 +106,8 @@ function showContents(){
 }
 
 //loads file chosen by the user
-function load(fileId, start){
+function load(fileId, start, toPlay){
+  if(toPlay) play = true;
   if(fileId == "start"){
     switchTopic = false;
     currentTopic = fileId;
@@ -127,7 +128,8 @@ function load(fileId, start){
       bot.loadFile(files[i].file).then( () => {
         bot.sortReplies();
         console.log(fileId + " loaded");
-        if(start != null) chatSetup(start);
+        if(fileId == "start") chatSetup("start", false, false);
+        else if(start != null) chatSetup(start);
         else chatSetup("start");
       });
     }
@@ -144,7 +146,7 @@ function appendTypingIndicator(){
   $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
 }
 
-function appendMessage(isBot, isUser, text){
+function appendMessage(isBot, isUser, text, showButtons){
   speakerId++;
   bubbleId++;
   var newMessage = document.createElement("div");
@@ -193,13 +195,18 @@ function appendMessage(isBot, isUser, text){
   }
   newP.appendChild(pauseImg);
 
+  if(showButtons == false){
+    speakerImg.style.display = "none";
+    pauseImg.style.display = "none";
+}
+
   newMessage.appendChild(newP);
   $(".messages").append(newMessage);
   messageDivs.push(newMessage);
 }
 
 //CHAT REPLIES AND INPUTS
-function chatSetup(text, holdMessages){
+function chatSetup(text, holdMessages, showButtons){
   //console.log(holdMessages);
   var messages = document.querySelector(".messages");
   if(holdMessages == "true" && audioCheckbox.checked == true){
@@ -210,8 +217,8 @@ function chatSetup(text, holdMessages){
           makeMessageObj(true, reply);
           appendTypingIndicator();
           setTimeout(function(){
-            appendMessage(true, false, reply);
-            audio(reply, bubbleId, false);
+            appendMessage(true, false, reply, showButtons);
+            if(play) audio(reply, bubbleId, false);
 
             $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
           }, 1200);
@@ -226,8 +233,8 @@ function chatSetup(text, holdMessages){
         makeMessageObj(true, reply);
         appendTypingIndicator();
         setTimeout(function(){
-          appendMessage(true, false, reply);
-          audio(reply, bubbleId, false);
+          appendMessage(true, false, reply, showButtons);
+          if(play) audio(reply, bubbleId, false);
 
           $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
         }, 1200);
@@ -256,7 +263,7 @@ function chat(){
       appendTypingIndicator();
       setTimeout(function(){
         appendMessage(true, false, reply);
-        audio(reply, bubbleId, false);
+        if(play) audio(reply, bubbleId, false);
         $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);
       }, 1200);
       $(".chatlogs").animate({ scrollTop: $(".chatlogs")[0].scrollHeight }, 200);

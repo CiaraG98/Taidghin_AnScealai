@@ -367,7 +367,7 @@
   - Féachaimid anois ar an fhorainm coibhneasta. An bhfuil tú réidh?{topic=coibhneasta}
 
   + (spleách|spleach)
-  - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
+  - Féachaimid anois ar An Fhoirm Spleách.{topic=spleach}
   ^ <call>chatSetup tosu true</call>
 
   + *
@@ -633,7 +633,7 @@
   - {topic=ceisteach}<call>chatSetup ta nowait</call>
 
   + (spleách|spleach)
-  - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
+  - Féachaimid anois ar An Fhoirm Spleách.{topic=spleach}
   ^ <call>chatSetup tosu true</call>
 
   + (céim 1|ceim 1)
@@ -696,7 +696,7 @@
   - {topic=ceisteach}<call>chatSetup tosu nowait</call>
 
   + (spleách|spleach)
-  - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
+  - Féachaimid anois ar An Fhoirm Spleách.{topic=spleach}
   ^ <call>chatSetup tosu true</call>
 
   + coibhneasta

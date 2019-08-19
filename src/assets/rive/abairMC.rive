@@ -152,7 +152,10 @@
 ^ <button class="rive-button" onclick="chatSetup('chaite')">Aimsir Chaite</button><br>
 ^ <button class="rive-button" onclick="chatSetup('laithreach')">Aimsir Laithreach</button><br>
 ^ <button class="rive-button" onclick="chatSetup('fhaistineach')">Aimsir Fháistineach</button><br>
-^ Mura bhfuil ansin téann tú ar ais go dtí an leathanach baile mar sin.
+^ <call>chatSetup mura true</call>
+
++ mura
+- Mura bhfuil ansin téann tú ar ais go dtí an leathanach baile mar sin.
 
 + (ceim 1|céim 1)
 - {topic=level1}<call>startLevel 1</call>
@@ -182,12 +185,12 @@
   ^ <call>chatSetup verbcon true</call>
 
   + verbcon
-  - Déarfainn<br>
-  ^ Déarfá <br>
-  ^ Déarfadh sé nó sí<br>
-  ^ Déarfaimis <br>
+  - Déarfainn,<br>
+  ^ Déarfá, <br>
+  ^ Déarfadh sé nó sí,<br>
+  ^ Déarfaimis, <br>
   ^ Déarfadh sibh, agus<br>
-  ^ Déarfaidís<br>
+  ^ Déarfaidís.<br>
   ^ <call>chatSetup usaidtear true</call>
 
   + usaidtear
@@ -398,7 +401,7 @@
   ^ {topic=ceisteach}<call>chatSetup tosu true</call>
 
   + (spleách|spleach)
-  - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
+  - Féachaimid anois ar An Fhoirm Spleách.{topic=spleach}
   ^ <call>chatSetup tosu true</call>
 
   + (ceim 2|céim 2)
@@ -607,7 +610,7 @@
   - {topic=ceisteach}<call>chatSetup tosu nowait</call>
 
   + (spleách|spleach)
-  - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
+  - Féachaimid anois ar An Fhoirm Spleách.{topic=spleach}
   ^ <call>chatSetup tosu true</call>
 
   + (ceim 2|céim 2)

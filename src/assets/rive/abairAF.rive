@@ -659,7 +659,7 @@
   - {topic=ceisteach}<call>chatSetup tosu nowait</call>
 
   + (spleách|spleach)
-  - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
+  - Féachaimid anois ar An Fhoirm Spleách.{topic=spleach}
   ^ <call>chatSetup tosu true</call>
 
   + (ceim 2|céim 2)
@@ -716,7 +716,7 @@
   - {topic=ceisteach}<call>chatSetup tosu nowait</call>
 
   + (spleách|spleach)
-  - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
+  - Féachaimid anois ar An Fhoirm Spleách.{topic=spleach}
   ^ <call>chatSetup tosu</call>
 
   + coibhneasta

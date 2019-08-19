@@ -402,7 +402,7 @@
   - Ansin, an fhoirm cheist. Ceart go leor? {topic=ceisteach}
 
   + (spleách|spleach)
-  - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
+  - Féachaimid anois ar An Fhoirm Spleách.{topic=spleach}
   ^ <call>chatSetup tosu true</call>
 
   + coibhneasta
@@ -661,7 +661,7 @@
   - Ansin, an fhoirm cheist. An bhfuil tú réidh?{topic=ceisteach}
 
   + (spleách|spleach)
-  - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
+  - Féachaimid anois ar An Fhoirm Spleách.{topic=spleach}
   ^ <call>chatSetup tosu nowait</call>
 < topic
 
@@ -726,6 +726,6 @@
   - Ansin, an fhoirm cheist. An bhfuil tú réidh?{topic=ceisteach}
 
   + (spleách|spleach)
-  - Féachaimid anois ar An Fhoirm Spleách/Neamhspleách.{topic=spleach}
+  - Féachaimid anois ar An Fhoirm Spleách.{topic=spleach}
   ^ <call>chatSetup tosu true</call>
 < topic
