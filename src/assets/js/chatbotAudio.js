@@ -13,6 +13,7 @@ var duration;
 var isPlaying = false;
 var thisDialect = "";
 var thisGender = "";
+var isPlaying = false;
 
 //sets up for messages to be edited and urls to be called
 function audio(newReply, id, isUser){
@@ -35,12 +36,24 @@ function audio(newReply, id, isUser){
       testCallAudio(bubbleText, thisId);
     }
     else if(inp != ""){
+      var notAHint = true;
       for(i = 0; i < inp.length; i++){
-        bubbleText = bubbleText.concat(inp[i], ".");
+        if(inp[i].indexOf("teanglann") != -1){
+          notAHint = false;
+          bubbleText = "Mícheart, beagnach ceart ach féach arís air, a " + getName() + ". Hint: teanglann.ie"
+          var newBubble = { text: bubbleText, id: thisId, url: null, isUser: isUser };
+          bubbleObjArr.push(newBubble);
+          testCallAudio(bubbleText, thisId);
+        }
       }
-      var newBubble = { text: bubbleText , id: thisId, url: null, isUser: isUser };
-      bubbleObjArr.push(newBubble);
-      testCallAudio(bubbleText, thisId);
+      if(notAHint){
+        for(i = 0; i < inp.length; i++){
+          bubbleText = bubbleText.concat(inp[i], ".");
+        }
+        var newBubble = { text: bubbleText , id: thisId, url: null, isUser: isUser };
+        bubbleObjArr.push(newBubble);
+        testCallAudio(bubbleText, thisId);
+      }
     }
   }
   else{
@@ -81,10 +94,16 @@ function editMessageForAudio(){
       indexOf4 = currentSentence.indexOf("</i>");
       indexOf5 = currentSentence.indexOf("<br>");
       indexOf6 = currentSentence.indexOf("-");
-      if(indexOf1 != -1 && indexOf2 != -1 && indexOf3 != -1 && indexOf4 != -1){
+      if(indexOf1 != -1){
         inp[i] = inp[i].replace("<b>", "");
-        inp[i] = inp[i].replace("</b>", "");
+      }
+      if(indexOf2 != -1){
         inp[i] = inp[i].replace("<i>", "");
+      }
+      if(indexOf3 != -1){
+        inp[i] = inp[i].replace("</b>", "");
+      }
+      if(indexOf4 != -1){
         inp[i] = inp[i].replace("</i>", "");
       }
       if(indexOf5 != -1){
@@ -95,6 +114,7 @@ function editMessageForAudio(){
       }
     }
   }
+  console.log(inp);
 }
 
 function testCallAudio(testString, id){
@@ -119,6 +139,10 @@ function playAudio(bubble){
   if(bubble.url){
     audioPlayer = new Audio(bubble.url);
     audioPlayer.play();
+    isPlaying = true;
+    audioPlayer.addEventListener("ended", function(){
+      isPlaying = false;
+    });
   }
 }
 

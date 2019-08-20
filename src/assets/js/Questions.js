@@ -71,16 +71,16 @@ var faighQuiz = [
 ];
 
 var abairAimsirChaiteQuestions = [
-  {question: "___________ sí go raibh sé ar fheabhas.", answer: "dúirt"},
-  {question: "___________ Liam go raibh sé tinn.", answer: "dúirt"},
-  {question: "___________ na buachaillí nach raibh éinne eile ann.", answer: "dúirt"},
-  {question: "___________ (sinn) nár chualamar an scéal sin riamh.", answer: "dúramar"},
-  {question: "___________ mé é sin leat cheana.", answer: "dúirt"},
-  {question: "___________ bean liom go ndúirt bean léi.", answer: "dúirt"},
-  {question: "___________ (sinn) ár bpaidreacha ina dhiaidh sin.", answer: "dúramar"},
-  {question: "___________ Síle go raibh an scéal sin fíor.", answer: "dúirt"},
-  {question: "___________ sé go raibh brón air.", answer: "dúirt"},
-  {question: "B’shin é a ___________ mé leat.", answer: "dúirt"}
+  {question: "___________ sí go raibh sé ar fheabhas.", answer: "dúirt", hint1: "dearfach, aimsir chaite"},
+  {question: "___________ Liam go raibh sé tinn.", answer: "dúirt", hint1: "dearfach"},
+  {question: "___________ na buachaillí nach raibh éinne eile ann.", answer: "dúirt", hint1: "dearfach"},
+  {question: "___________ (sinn) nár chualamar an scéal sin riamh.", answer: "dúramar", hint1: "dearfach"},
+  {question: "___________ mé é sin leat cheana.", answer: "dúirt", hint1: "dearfach"},
+  {question: "___________ bean liom go ndúirt bean léi.", answer: "dúirt", hint1: "dearfach"},
+  {question: "___________ (sinn) ár bpaidreacha ina dhiaidh sin.", answer: "dúramar", hint1: "dearfach"},
+  {question: "___________ Síle go raibh an scéal sin fíor.", answer: "dúirt", hint1: "dearfach"},
+  {question: "___________ sé go raibh brón air.", answer: "dúirt", hint1: "dearfach"},
+  {question: "B’shin é a ___________ mé leat.", answer: "dúirt", hint1: "dearfach"}
 ];
 
 var abairAimsirChaiteNi = [
@@ -644,7 +644,16 @@ var faighAFCeisteach = [
 ];
 
 var faighAFSpleach = [
-
+  {question: "Tá a fhios agam ____ ___________ sé an ceann sin ar ais.", answer: "", hint1: "(diúltach)"},
+  {question: "An fíor ____ ___________ breis airgid ar an obair seo?", answer: "", hint1: "(sinn, dearfach)"},
+  {question: "Tá mé cinnte ____ ___________ sí ceann eile go brách? ", answer: "", hint1: "(diultach)"},
+  {question: "Is dócha ____ ___________ tú an rud céanna is a fuair tú anuradh.", answer: "", hint1: "dearfach"},
+  {question: "Is dóigh liom ____ ___________ radharc maith air ón áit seo.", answer: "", hint1: "(sinn, dearfach)"},
+  {question: "Tá gach seans ann  ____ ___________ siad amach mar gheall air.", answer: "", hint1: "(dearfach)"},
+  {question: "Tá mé cinnte éinne  ____ ___________  amach mar gheall ar an gceann sin.", answer: "", hint1: "(diúltach)"},
+  {question: "An dóigh leat ____ ___________ an grúpa sin an chéad duais?", answer: "", hint1: "(dearfach)"},
+  {question: "Caithfidh ____ ___________ciontach iad. Féachann sé an-dubh is bán domsa.", answer: "", hint1: "(briathar saor, dearfach)"},
+  {question: "An dóigh leat ____ ___________sé a mhisneach ar ais go brách?", answer: "", hint1: "(dearfach)"},
 ];
 
 var faighAFCoibhneasta = [
@@ -942,5 +951,104 @@ var tarAFCoibhneasta = [
 ];
 
 var tarAFExtraQuestions = [
+  {question: "", answer: "tiocfaidh", hint1: ""},
+  {question: "", answer: "ní thiocfaidh", hint1: ""},
+  {question: "", answer: "go thiocfaidh", hint1: ""},
+  {question: "", answer: "an dtiocfaidh", hint1: ""},
+  {question: "", answer: "an dtiocfaidh", hint1: ""},
+  {question: "", answer: "tiocfaimid", answer2: "tiocfaidh muid", hint1: ""},
+  {question: "", answer: "an dtiocfaidh", hint1: ""},
+  {question: "", answer: "nach dtiocfaidh", hint1: ""},
+  {question: "", answer: "ní thiocfaimid", answer2: "ní thiocfaidh muid", hint1: ""},
+];
 
+var biACQuestions = [
+  {question: "___________ an scéal ag éirí níos measa in aghaidh an lae.", answer: "bhí", hint1: ""},
+  {question: "___________ ina suí cois trá, bolg le grian, gan chíos, cás ná cathú.", answer: "bhíodar", answer2: "bhí said", hint1: ""},
+  {question: "___________ préachta leis an bhfuacht an mhaidin áirithe sin. (sinn)", answer: "bhíomar", answer2: "bhí muid", hint1: ""},
+  {question: "___________ an diabhal thíos ina bholg. ", answer: "bhí", hint1: ""},
+  {question: "___________ an saol is a mháthair ag faire amach dóibh.", answer: "bhí", hint1: ""},
+  {question: "___________ rud éigin ag dó na geirbe aige ó mhaidin.", answer: "bhí", hint1: ""},
+  {question: "___________ loinnir ina shúile an mhaidin sin. ", answer: "bhí", hint1: ""},
+  {question: "___________ bréan bailithe den scéal ar fad.", answer: "bhíos", answer2: "bhí mé", hint1: ""},
+  {question: "___________ an an t-ádh dearg orm.", answer: "bhí", hint1: ""},
+  {question: "Ní mó ná sásta a ___________ sé.", answer: "bhí", hint1: ""},
+];
+
+var biACNi = [
+  {question: "____ ___________ faic na ngrás le feiceáil san áit.", answer: "ní raibh", hint1: ""},
+  {question: "____ ___________ aon locht agam air.", answer: "ní raibh", hint1: ""},
+  {question: "____ ___________ ar ár gcompord ó thosaigh sé ag caint. (sinn)", answer: "ní rabhamar", answer2: "ní raibh muid", hint1: ""},
+  {question: "____ ___________ in ann an fód a sheasamh rófhada. (siad)", answer: "ní rabhadar", answer2: "ní raibh siad", hint1: ""},
+  {question: "____ ___________ i mo chónaí san áit ach ar feadh seachtaine.", answer: "ní rabhas", answer2: "ní raibh mé", hint1: ""},
+  {question: "____ ___________ aon ní ag cur isteach orainn an lá sin.", answer: "ní raibh", hint1: ""},
+  {question: "____ ___________ sí ar a suaimhneas riamh a fhad a bhí sí ann.", answer: "ní raibh", hint1: ""},
+  {question: "____ ___________ sé ach leathchéad bliain nuair a cailleadh é.", answer: "ní raibh", hint1: ""},
+  {question: "____ ___________ le déanamh ach ár dtoil a chur le toil Dé.", answer: "ní raibh", hint1: ""},
+  {question: "____  ___________ in ann faic a dhéanamh faoin uafás a bhí ag stánadh idir an dá shúil orthu. (siad)", answer: "ní rabhadar", answer2: "ní raibh siad", hint1: ""},
+];
+
+var biACBriathorSaor = [
+  {question: "___________ ag tuar go dtitfeadh praghas na mairteola le fada. (dearfach)", answer: "bhíothas", hint1: ""},
+  {question: "____ ___________ ag súil le toradh maith ar an taighde a bhí ar siúl san áit. (diúltach)", answer: "ní rabhathas", hint1: ""},
+  {question: "___________ den tuairim nach n-éireodh leo an bheart a thabhairt chun críche. (dearfach)", answer: "bhíothas", hint1: ""},
+  {question: "___________ den tuairim gur as a meabhair a bhí sí ag dul. (dearfach)", answer: "bhíothas", hint1: ""},
+  {question: "____ ___________ róchinnte go dtiocfadh sé slán as an timpiste. (diúltach)", answer: "ní rabhathas", hint1: ""},
+  {question: "____ ___________ ar aon tuairim faoi cad ba cheart a dhéanamh. (diúltach)", answer: "ní rabhathas", hint1: ""},
+  {question: "____ ___________ róshásta leis an Rialtas ina dhiaidh sin. (diúltach)", answer: "bhíothas", hint1: ""},
+  {question: "___________ lánsásta go raibh toradh dearfach ar na trialacha. (dearfach)", answer: "bhíothas", hint1: ""},
+  {question: "___________ dóchasach go dtiocfadh deascéal roimh dheireadh an lae. (dearfach)", answer: "bhíothas", hint1: ""},
+  {question: "____ ___________ ag súil le haon rud ní b’fhearr. (diúltach)", answer: "ní rabhathas", hint1: ""},
+];
+
+var biACCeisteach = [
+  {question: "____ ___________ tú ar an gCarraig nó an bhfaca tú féin mo ghrá? (dearfach)", answer: "an raibh", hint1: ""},
+  {question: "____ ___________ faic eile le déanamh agat ach a bheith ag seasamh timpeall? (diúltach)", answer: "nach raibh", hint1: ""},
+  {question: "____ ___________ mórán le rá aici? (dearfach)", answer: "an raibh", hint1: ""},
+  {question: "____ ___________ sásta? Bí cinnte go raibh! (sinn, dearfach)", answer: "an rabhamar", answer2: "an raibh muid", hint1: ""},
+  {question: "____ ___________ aon ní eile ag cur isteach orthu? (dearfach)", answer: "an raibh", hint1: ""},
+  {question: "____ ___________ an-oíche againn! (diúltach)", answer: "nach raibh", hint1: ""},
+  {question: "____ ___________ an t-ádh dearg leo gur tháinig siad slán. (diúltach)", answer: "nach raibh", hint1: ""},
+  {question: "____ ___________ siad thar a bheith buíoch díot? (siad, diúltach)", answer: "nach rabhamar", answer2: "nach raibh muid", hint1: ""},
+  {question: "____ ___________ ag súil le torthaí ní b’fhearr? (briathar saor, dearfach)", answer: "an rabhathas", hint1: ""},
+  {question: "____ ___________ fírinne an scéil ar eolas go maith acu. (diúltach)", answer: "nach raibh", hint1: ""},
+];
+
+var biACSpleach = [
+  {question: "Bhí mé cinnte ____ ___________ sé imithe a chodladh ag an am sin. (dearfach)", answer: "go raibh", hint1: ""},
+  {question: "Dúirt sí liom ____ ___________ sí chun dul ar ais níos mó. (diúltach)", answer: "nach raibh", hint1: ""},
+  {question: "Bí cinnte de ____ ___________ mórán le rá acu ina dhiaidh sin. (diúltach)", answer: "nach raibh", hint1: ""},
+  {question: "Chuala mé ____ ___________ sé ar fónamh le tamall anuas. (dearfach)", answer: "nach raibh", hint1: ""},
+  {question: "Bhí eagla an domhain orainn____ ___________ i mbaol ár mbáite an lá sin. (dearfach)", answer: "go rabhadar", answer2: "go raibh muid", hint1: ""},
+  {question: "Bhí a fhios againn ____ ___________ sásta ach ní raibh aon teacht timpeall air. (siad, diúltach)", answer: "go raibh", hint1: ""},
+  {question: "Dúirt siad ____ ___________ siad chun teacht chugainn ach níor thángadar. (dearfach)", answer: "go raibh", hint1: ""},
+  {question: "Bhí má bhí, ach níor chuala mise ____ ___________. (dearfach)", answer: "go raibh", hint1: ""},
+  {question: "Dúirt sé ____ ___________ar an ngrúpa ab fhearr a bhí aige riamh? (sinn, dearfach)", answer: "go rabhadar", answer2: "go raibh muid", hint1: ""},
+  {question: "Chuala mé ____ ___________siad ann ach ar feadh cúpla lá. (diúltach)", answer: "nach raibh", hint1: ""},
+];
+
+var biACCoibhneasta = [
+  {question: "Chuala mé ____ ___________ le rá aici ag an gcruinniú. ", answer: "a raibh", hint1: ""},
+  {question: "B’shin ____ ___________ le déanamh ach ní dhearna sibh é. ", answer: "a raibh", hint1: ""},
+  {question: "Bhí gach ____ ___________ i láthair sna trithí gáire. ", answer: "a raibh", hint1: ""},
+  {question: "Chonaiceamar ____ ___________ ann agus bhailíomar linn. ", answer: "a raibh", hint1: ""},
+  {question: "B’shin ____ ___________ acu le hithe ar feadh trí lá. ", answer: "a raibh", hint1: ""},
+  {question: "Chuir sé iontas ar gach ____ ___________ i láthair an oíche úd.", answer: "a raibh", hint1: ""},
+  {question: "Bhí gach ____ ___________ múinte ar an gcúrsa ar bharr a teanga aici. ", answer: "a raibh", hint1: ""},
+  {question: "Ghoid siad ____ ___________ d’airgead sa teach ag an sean-bhean. ", answer: "a raibh", hint1: ""},
+  {question: "B’shin  ____ ___________ fágtha sa chuisneoir an mhaidin dar gcionn. ", answer: "a raibh", hint1: ""},
+  {question: "B’shin ____ ___________ le rá aige is gan aon mhíniú eile aige ar an scéal. ", answer: "a raibh", hint1: ""},
+];
+
+var biACExtraQuestions = [
+  {question: "___________ an ghomh uirthi an lá sin gan aon bhréag ná magadh. ", answer: "bhí", hint1: ""},
+  {question: "____ ___________ aon dul as againn ach é a íoc. ", answer: "ní raibh", hint1: ""},
+  {question: "____ ___________aon scéal ná duan uaithi ar feadh an achair. (diúltach) ", answer: "ní raibh", hint1: ""},
+  {question: "____ ___________ in ainm is a bheith ag dul ansin ag tús na bliana? (sinn, diúltach) ", answer: "ní rabhamar", answer2: "ní raibh muid", hint1: ""},
+  {question: "____ ___________ aon rud ag cur isteach ná amach orainn an lá sin. (diúltach)", answer: "ní raibh", hint1: ""},
+  {question: "Bhí ____ ___________ le rá aici suimiúil. ", answer: "a raibh", hint1: ""},
+  {question: "___________ ag súil le rud éigin ní b’fhearr ná sin. (briathar saor, dearfach) ", answer: "bhíothas", hint1: ""},
+  {question: "____ ___________ sibh ábalta é a chríochnú in am? (diúltach)", answer: "an raibh", hint1: ""},
+  {question: "___________ aon chuma ar an rud a rinne siad? (dearfach)", answer: "an raibh", hint1: ""},
+  {question: "Dúirt sí ____ ___________ in áit an-chontúirteach agus go mba cheart dúinn bogadh láithreach. (sinn, dearfach)", answer: "go rabhamar", answer2: "go raibh muid", hint1: ""},
 ];

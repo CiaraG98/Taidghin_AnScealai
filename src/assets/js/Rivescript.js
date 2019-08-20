@@ -66,6 +66,7 @@ var isQuizComplete = false;
 var quiz = false;
 var quizScore = 0;
 var quizProgress = 0;
+var isAQuestion = false;
 
 function next(){
   if(thisDialect != "" && thisGender != "" || thisDialect != "" || thisGender != ""){
@@ -139,7 +140,7 @@ function askName(){
 function getProgress(){
   if(isLevelComplete == true && quiz == false) return "";
   else if(isQuizComplete == true) return "";
-  else return "<br>Scór: " + progress + "<br>";
+  else return "Scór: " + progress + "<br>";
 }
 
 function resetProgress(){
@@ -148,18 +149,44 @@ function resetProgress(){
 }
 
 function getLink(){
-  var buttons = ["<a href=\"https://www.tearma.ie\" target=\"_blank\"><button class='rive-button'>www.tearma.ie</button></a>",
+  /*var buttons = ["<a href=\"https://www.tearma.ie\" target=\"_blank\"><button class='rive-button'>www.tearma.ie</button></a>",
   "<a href=\"https://www.teanglann.ie\" target=\"_blank\"><button class='rive-button'>www.teanglann.ie</button></a>"]
   var links = ["An bhfuil aon fhocail nár thuig tú? Féach sa bhfoclóir ag: <br>" + buttons[1],
     "Úsáid: " + buttons[0] + " chun cabhrú leat munar thuig tú téarma ar leith."];
-  var ran = getRandomIntInclusive(0, links.length - 1);
-  return links[ran];
+  var ran = getRandomIntInclusive(0, links.length - 1);*/
+  console.log("here");
+  var hint3 = currentQuestion.answer;
+  wrongCount = 0;
+  return hint3;
 }
 
 function triailAris(){
-  var rep = ["Féach ar an gceann seo arís, a ", "Beagnach ceart ach féach arís air, a "];
+  console.log(wrongCount);
+  var rep = [", féach ar an gceann seo arís, a ", ", beagnach ceart ach féach arís air, a "];
   var ran = getRandomIntInclusive(0, rep.length - 1);
-  return rep[ran] + getName() + "."
+  var thisHint;
+  if(wrongCount == 2){
+    console.log(wrongCount);
+    thisHint = "<b>Hint:</b> " + currentQuestion.hint1;
+  }
+  else if(wrongCount == 4){
+    var link =   "https://www.teanglann.ie/ga/gram/" + thisVerb;
+    thisHint = "<b>Hint:</b> <a href=\"javascript:void(0)\" onclick=\"openHint()\"><button class='rive-button'>www.teanglann.ie</button></a>"
+  }
+  else if(wrongCount == 6){
+    thisHint = "<i><b>Freagra:</b></i> " + currentQuestion.answer + " ";
+    wrongCount = 0;
+    setTimeout(function(){
+      chatSetup("continue", "true");
+    }, 2500);
+    wrongCount = 0;
+    return "<br><br>" + thisHint;
+  }
+  return rep[ran] + getName() + ". <br><br>" + thisHint;
+}
+
+function openHint(){
+  window.open("https://www.teanglann.ie/ga/gram/" + thisVerb, "_blank")
 }
 
 function nilToCeim(){
@@ -188,6 +215,7 @@ function getCrioch(){
 
 function getRandomQuestion(questions){
   answer2 = "";
+  wrongCount = 0;
   if(isLevelComplete == true && quiz == false){
     console.log("quizd");
     return "";
@@ -204,6 +232,7 @@ function getRandomQuestion(questions){
   }
   console.log(currentQuestion.question + ", " + currentQuestion.answer + " " + answer2);
   var ceist = "Ceist: " + currentQuestion.question;
+  isAQuestion = true;
   return ceist;
 }
 
@@ -217,7 +246,7 @@ function getRandomReply(){
   var reply = "Maith thú, a " + getName() + ". ";
   var reply2 = "An ceart ar fad agat, a " + getName() + ". ";
   var reply3 = "Sin agat é, a " + getName() + ". ";
-  var reply4 = "An mhaith ar fad!"
+  var reply4 = "An mhaith ar fad! "
   var replies = [reply, reply2, reply3, reply4];
   var i = getRandomIntInclusive(0, replies.length-1);
   return replies[i];

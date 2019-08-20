@@ -8,7 +8,12 @@ var holdMessages = false;
 var bubblePlayed = false;
 var played = false;
 var messageDivs = [];
-var testButton;
+var dictPopup;
+var dictTri;
+var dictText;
+var dictImg;
+var thisVerb;
+var dictOn = false;
 var play = false;
 
 //for database....
@@ -39,9 +44,12 @@ function setup(){
   testButton.style.display = "none";
   testButton.setAttribute("id", "testButton");
   clearName();
-  load("abairAC", "start", true);
+  load("abairAC", "start");
   audioPlayer = document.getElementById("botaudio");
   audioCheckbox = document.querySelector(".audioCheckbox");
+  dictPopup = document.querySelector(".dictPopup");
+  dictText = document.querySelector(".dictText");
+  dictTri = document.querySelector(".tri");
 
 
   //if the 'chatbot' button is clicked
@@ -107,6 +115,13 @@ function showContents(){
 
 //loads file chosen by the user
 function load(fileId, start, toPlay){
+  //for dictionary
+  if(fileId.indexOf("quiz") == -1){
+    var length = fileId.length - 2;
+    thisVerb = fileId.substr(0, length);
+    if(thisVerb == "bi") thisVerb = "bí";
+  }
+
   if(toPlay) play = true;
   if(fileId == "start"){
     switchTopic = false;
@@ -183,7 +198,7 @@ function appendMessage(isBot, isUser, text, showButtons){
   speakerImg.setAttribute("id", speakerId);
   speakerImg.src = "assets/speaker.png";
   speakerImg.onclick = function(){
-    manualPlay(speakerImg.id, newMessage.id);
+    if(isPlaying == false) manualPlay(speakerImg.id, newMessage.id);
   }
   newP.appendChild(speakerImg);
 
@@ -192,12 +207,35 @@ function appendMessage(isBot, isUser, text, showButtons){
   pauseImg.src = "assets/pause.png"
   pauseImg.onclick = function(){
     audioPlayer.pause();
+    isPlaying = false;
   }
   newP.appendChild(pauseImg);
+
+  if(isAQuestion){
+    dictImg = document.createElement("img");
+    dictImg.src = "assets/dict.png";
+    dictImg.setAttribute("class", "dictButton");
+    dictImg.onclick = function(){
+      if(dictOn == false){
+        dictPopup.style.display = "flex";
+        dictTri.style.display = "flex";
+        dictText.innerHTML = thisVerb;
+        dictOn = true;
+      }
+      else if(dictOn){
+        dictPopup.style.display = "none";
+        dictTri.style.display = "none";
+        dictOn = false;
+      }
+    }
+    newP.appendChild(dictImg);
+    isAQuestion = false;
+  }
 
   if(showButtons == false){
     speakerImg.style.display = "none";
     pauseImg.style.display = "none";
+    dictImg.style.display = "none";
 }
 
   newMessage.appendChild(newP);
@@ -211,6 +249,7 @@ function chatSetup(text, holdMessages, showButtons){
   var messages = document.querySelector(".messages");
   if(holdMessages == "true" && audioCheckbox.checked == true){
     audioPlayer.addEventListener("ended", function(){
+      isPlaying = false;
       bot.reply("local-user", text).then( (reply) => {
         if(reply != ""){
           //console.log(reply);

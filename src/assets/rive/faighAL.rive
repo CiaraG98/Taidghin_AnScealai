@@ -211,7 +211,7 @@
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
-  * <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue true</call>
+  //* <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue true</call>
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 1</call>
   * <call>checkAnswer <star></call> == false => Mícheart. <call>resetProgress</call><call>triailAris</call><br>
@@ -295,6 +295,9 @@
 
   + (tá|ba mhaith|sea)
   % an bhfuil tú ag iarraidh cleachtadh beag a dhéanamh air seo
+  - <call>chatSetup ceist nowait</call>
+
+  + ceist
   - <call>levelComplete false</call><call>getRandomQuestion 2</call><call>resetProgress</call>
   ^ <call>setAnsweringQuestions true</call>
 
@@ -312,7 +315,7 @@
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
-  * <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue true</call>
+  //* <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue true</call>
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 2</call>
   * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call><call>triailAris</call><br>
@@ -328,7 +331,7 @@
 
   + (tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>setAnsweringQuestions false</call><call>chatSetup ceist true</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceist nowait</call>
 
   + (níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
@@ -388,6 +391,9 @@
 
   + (tá|ba mhaith|sea)
   % an bhfuil tú réidh chun an cleachtadh beag seo a dhéanamh
+  - <call>chatSetup ceist nowait</call>
+
+  + ceist
   - <call>levelComplete false</call><call>getRandomQuestion 3</call><call>setAnsweringQuestions true</call><call>resetProgress</call>
 
   + (níl|níor mhaith)
@@ -396,7 +402,7 @@
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
-  * <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue true</call>
+  //* <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue true</call>
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 3</call>
   * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call><call>triailAris</call><br>
@@ -470,11 +476,14 @@
 
   + (tá|ba mhaith|sea)
   % an bhfuil tú réidh chun cleachtadh a dhéanamh air seo
+  - <call>chatSetup ceist nowait</call>
+
+  + ceist
   - <call>levelComplete false</call><call>getRandomQuestion 4</call><call>setAnsweringQuestions true</call><call>resetProgress</call>
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
-  * <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue true</call>
+  //* <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue true</call>
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 4</call>
   * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call><call>triailAris</call><br>
@@ -554,7 +563,7 @@
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
-  * <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue true</call>
+  //* <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue true</call>
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 5</call>
   * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call><call>triailAris</call><br>
@@ -569,7 +578,7 @@
 
   + (tá|ba mhaith|sea)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>setAnsweringQuestions false</call><call>chatSetup ceist true</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup trial nowait</call>
 
   + (níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
@@ -624,11 +633,14 @@
 
   + (tá|ba mhaith|sea)
   % an bhfuil tú réidh
+  - <call>chatSetup ceist nowait</call>
+
+  + ceist
   - <call>levelComplete false</call><call>getRandomQuestion 6</call><call>setAnsweringQuestions true</call><call>resetProgress</call>
 
   + *
   * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
-  * <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue true</call>
+  //* <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue true</call>
   * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>levelComplete</call><call>getRandomReply</call><call>getProgress</call>
   ^ <call>getRandomQuestion 6</call>
   * <call>checkAnswer <star></call> == false => Mícheart <call>resetProgress</call><call>triailAris</call><br>

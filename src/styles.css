@@ -86,7 +86,7 @@ box-shadow: -1px 5px 32px 10px rgba(0,0,0,0.2);
   box-shadow: 1px 1px 1px 0px #ccc;
 }
 
-.speaker, .pauseButton{
+.speaker, .pauseButton, .dictButton{
   display: block;
   width: 17px;
   height: 17px;
@@ -102,7 +102,15 @@ box-shadow: -1px 5px 32px 10px rgba(0,0,0,0.2);
   height: 19px;
 }
 
-.speaker:hover, .pauseButton:hover{
+.dictButton{
+  display: flex;
+  left: 115px;
+  width: 25px;
+  height: 25px;
+  top: -17px;
+}
+
+.speaker:hover, .pauseButton:hover, .dictButton:hover{
   cursor:pointer;
 }
 
@@ -384,17 +392,6 @@ audio{
   width: 200px;
 }
 
-.tri{
-  display: none;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-left: 20px solid #F9E79F;
-	border-bottom: 10px solid transparent;
-  position: fixed;
-  right: 300px;
-  top: 70px;
-}
 
 .test{
   display: none;
@@ -445,4 +442,30 @@ audio{
 #rive-checkbox{
   position: relative;
   top: 3px;
+}
+
+.dictPopup{
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-family: sans-serif;
+  text-align: center;
+  background: #F7DC6F;
+  width: 220px;
+  height: 150px;
+  margin-top: 350px;
+  right: 320px;
+  border-radius: 8px;
+}
+
+.tri{
+  display: none;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 20px solid #F7DC6F;
+	border-bottom: 10px solid transparent;
+  position: fixed;
+  right: 300px;
+  margin-top: 370px;
 }
