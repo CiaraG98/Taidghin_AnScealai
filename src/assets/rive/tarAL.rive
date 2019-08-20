@@ -540,13 +540,13 @@
   - {topic=coibhneasta}<call>chatSetup tosu nowait</call>
 
   + (chaite|aimsir chaite)
-  - <call>setKeepMessages true</call><call>loadFromChat faighAC chaite</call>
+  - <call>setKeepMessages true</call><call>loadFromChat tarAC chaite</call>
 
   + (fháistineach|fhaistineach|aimsir fháistineach)
-  - <call>setKeepMessages true</call><call>loadFromChat faighAF</call>
+  - <call>setKeepMessages true</call><call>loadFromChat tarAF</call>
 
   + (coinniollach|modh coinniollach)
-  - <call>setKeepMessages true</call><call>loadFromChat faighMC</call>
+  - <call>setKeepMessages true</call><call>loadFromChat tarMC</call>
 
   + (ceim 2|céim 2)
   - {topic=level2}<call>chatSetup startl2 nowait</call>
@@ -595,7 +595,7 @@
 
   + levelcomplete
   - Tá triúr ceart agat i ndiaidh a chéile. \s
-  ^ Tá máistreacht agat anois a <call>getName</call> ar an mbriathar "faigh" san aimsir láithreach. \s
+  ^ Tá máistreacht agat anois a <call>getName</call> ar an mbriathar "tar" san aimsir láithreach. \s
   ^ <call>setAnsweringQuestions false</call><call>setCompletedLevel 3</call>
   ^ {topic=extraquestions}<call>chatSetup tosu true</call>
 

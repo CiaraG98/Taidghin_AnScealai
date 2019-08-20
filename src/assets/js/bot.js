@@ -44,7 +44,7 @@ function setup(){
   testButton.style.display = "none";
   testButton.setAttribute("id", "testButton");
   clearName();
-  load("abairAC", "start");
+  load("biAL", "start", true);
   audioPlayer = document.getElementById("botaudio");
   audioCheckbox = document.querySelector(".audioCheckbox");
   dictPopup = document.querySelector(".dictPopup");

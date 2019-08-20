@@ -140,7 +140,7 @@ function askName(){
 function getProgress(){
   if(isLevelComplete == true && quiz == false) return "";
   else if(isQuizComplete == true) return "";
-  else return "Scór: " + progress + "<br>";
+  else return "Scór: " + progress + ".<br>";
 }
 
 function resetProgress(){

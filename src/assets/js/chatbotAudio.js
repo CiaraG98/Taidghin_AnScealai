@@ -114,7 +114,6 @@ function editMessageForAudio(){
       }
     }
   }
-  console.log(inp);
 }
 
 function testCallAudio(testString, id){

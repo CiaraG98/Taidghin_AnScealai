@@ -74,7 +74,7 @@ chatbotRoute.route('/getAudio/:audio').post(function(req, res){
   if(text){
     var form = {
       Input: text,
-      Locale: "ga_GD",
+      Locale: "ga_CM",
       Format: 'html',
       Speed: '1',
     };

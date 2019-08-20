@@ -1052,3 +1052,71 @@ var biACExtraQuestions = [
   {question: "___________ aon chuma ar an rud a rinne siad? (dearfach)", answer: "an raibh", hint1: ""},
   {question: "Dúirt sí ____ ___________ in áit an-chontúirteach agus go mba cheart dúinn bogadh láithreach. (sinn, dearfach)", answer: "go rabhamar", answer2: "go raibh muid", hint1: ""},
 ];
+
+var biALQuestions = [
+  {question: "___________ san oifig gach maidin ar a naoi a chlog. ", answer: "bím", answer2: "bíonn mé", hint1: ""},
+  {question: "___________ tusa in am i gcónaí. ", answer: "bíonn", hint1: ""},
+  {question: "___________ slua mór ag an bhféile sin gach bliain.", answer: "bíonn", hint1: ""},
+  {question: "___________ ag faire amach dó go rialta. (sinn)", answer: "bímid", answer2: "bíonn muid", hint1: ""},
+  {question: "___________ siad á rá is bíonn siad á rá.", answer: "bíonn", hint1: ""},
+  {question: "___________ sé fud fad na háite i gcónaí.", answer: "bíonn", hint1: ""},
+  {question: "___________ istigh in am gach maidin.", answer: "bímid", answer2: "bíonn muid", hint1: ""},
+  {question: "___________ an-tóir ar thicéid do Chraobh na hÉireann gach bliain.", answer: "bíonn", hint1: ""},
+  {question: "___________ ag fanacht leis ag an doras go rialta. (mé) ", answer: "bíonn", hint1: ""},
+  {question: "___________ sí sásta nuair a fhaigheann sí breith a béil féin.", answer: "bíonn", hint1: ""},
+];
+
+var biALNi = [
+  {question: "____ ___________ féin ag plé leis na cúrsaí sin níos mó. (mé)", answer: "ní bhím", answer2: "ní bhíonn mé", hint1: ""},
+  {question: "____ ___________ sí déanach riamh ar éigean.", answer: "ní bhíonn", hint1: ""},
+  {question: "____ ___________ aon bhrú ag baint leis an obair sin níos mó.", answer: "ní bhíonn", hint1: ""},
+  {question: "____ ___________ ag gearán muna mbíonn cúis an-mhaith againn. (sinn)", answer: "ní bhímid", answer2: "ní bhíonn muid", hint1: ""},
+  {question: "____ ___________ aon chur is cúiteamh faoin gceist níos mó. ", answer: "ní bhíonn", hint1: ""},
+  {question: "____ ___________ mórán le rá acu na laethanta seo.", answer: "ní bhíonn", hint1: ""},
+  {question: "____ ___________ seans agam dul ann ach anois is arís.", answer: "ní bhíonn", hint1: ""},
+  {question: "____ ___________ críochnaithe aon lá go dtí ardtráthnóna. (sinn)", answer: "ní bhímid", answer2: "ní bhíonn muid", hint1: ""},
+  {question: "____ ___________ an traonach le cloisteáil ach i gcúpla ceantar in Éirinn faoin láthair.", answer: "ní bhíonn", hint1: ""},
+  {question: "____ ___________ aon dul amú uirthi sin riamh.", answer: "ní bhíonn", hint1: ""},
+];
+
+var biALCeisteach = [
+  {question: "___________ sé mar seo i gcónaí? (dearfach).", answer: "an mbíonn", hint1: ""},
+  {question: "____ ___________ sí chomh ciúin sin gcónaí? (dearfach)", answer: "an mbíonn", hint1: ""},
+  {question: "_____ ___________ faic eile le rá aige riamh? (dearfach)", answer: "an mbíonn", hint1: ""},
+  {question: "_____ ___________siadsan sona riamh? (dearfach)", answer: "an mbíonn", hint1: ""},
+  {question: "_____ ___________ siad istigh ansin gach dara lá? (diúltach).", answer: "nach mbíonn", hint1: ""},
+  {question: "_____ ___________ á rá sin go minic? (sinn, diúltach).", answer: "nach mbímid", answer2: "nach mbíonn muid", hint1: ""},
+  {question: "____ ___________ sí sin san oifig roimh gach éinne eile ar maidin? (diúltach).", answer: "nach mbíonn", hint1: ""},
+  {question: "____ ___________ ann sách minic? (sinn, diúltach)", answer: "nach mbímid", answer2: "nach mbíonn muid", hint1: ""},
+  {question: "____ ___________ag caint leis go rialta? (mé, diúltach).", answer: "nach mbím", answer2: "nach mbíonn mé", hint1: ""},
+  {question: "____ ___________ na daoine sin sa teach tábhairne gach tráthnóna? (dearfach).", answer: "nach mbíonn", hint1: ""},
+];
+
+var biALSpleach = [
+  {question: "Cloisim ____ ___________ an bia an-mhaith sa bhialann sin. (dearfach)", answer: "go mbíonn", hint1: ""},
+  {question: "Deir siad ____ ___________ aon trioblóid acu leis riamh. (diúltach)", answer: "nach mbíonn", hint1: ""},
+  {question: "Ní dóigh liom ____ ___________ sise anseo ró-mhinic. (dearfach)", answer: "go mbíonn", hint1: ""},
+  {question: "An bhfuil a fhios agat ____ ___________ dochtúir ar fáil dóibh ach uair sa tseachtain? (diúltach)", answer: "nach mbíonn", hint1: ""},
+  {question: "An bhfuil tú a rá liom ____ ___________ sí réidh in am riamh. (diúltach)", answer: "nach mbíonn", hint1: ""},
+  {question: "Ní dóigh liom ____ ___________ seisean sásta le haon rud riamh. (dearfach)", answer: "go mbíonn", hint1: ""},
+  {question: "Ní dóigh liomsa ____ ___________ aon rud fiúntach san iris sin riamh. (dearfach)", answer: "go mbíonn", hint1: ""},
+  {question: "Deirtear liom ____ ___________ fáil air gach maidin Luain. (dearfach)", answer: "nach mbíonn", hint1: ""},
+  {question: "Cloisim ____ ___________dochtúir le fáil ar an oileán níos mó. (diúltach)", answer: "nach mbíonn", hint1: ""},
+  {question: "Ní dóigh liom ____ ___________aon rud maith ar an teilifís ag an deireadh seachtaine níos mó. (dearfach)", answer: "go mbíonn", hint1: ""},
+];
+
+var biALCoibhneasta = [
+];
+
+var biALExtraQuestions = [
+  {question: "___________acu sa teach tábhairne sin gach oíche. (dearfach) ", answer: "bíonn", hint1: ""},
+  {question: "____  ___________ aon rud le déanamh agamsa leo níos mó. (diúltach).", answer: "ní bhíonn", hint1: ""},
+  {question: "___ ___________ aon rud le rá aicisin riamh? (diúltach) ", answer: "nach mbíonn", hint1: ""},
+  {question: "____ ___________ siad ag caint, is ag caint, is ag caint. (dearfach)", answer: "bíonn", hint1: ""},
+  {question: "Tá a fhios agam go maith ____ ___________ siad anseo go rialta. (diúltach) ", answer: "nach mbíonn", hint1: ""},
+  {question: "An dóigh leat _____ ___________ siad ag insint na fírinne? (dearfach)", answer: "go mbíonn", hint1: ""},
+  {question: "___________ blas ar an mbeagán! (dearfach) ", answer: "bíonn", hint1: ""},
+  {question: "___________ ann sách minic? (sinn, dearfach)", answer: "an mbímid", answer2: "an mbíonn muid", hint1: ""},
+  {question: "___________ focal maith le rá aige sin riamh? (dearfach)", answer: "an mbíonn", hint1: ""},
+  {question: "_____ ___________ tusa ag caint léi sin go minic? (diúltach) ", answer: "nach mbíonn", hint1: ""},
+];
