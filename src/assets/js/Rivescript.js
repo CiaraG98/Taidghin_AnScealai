@@ -214,10 +214,9 @@ function getCrioch(){
 }
 
 function getRandomQuestion(questions){
-  answer2 = "";
+    answer2 = "";
   wrongCount = 0;
   if(isLevelComplete == true && quiz == false){
-    console.log("quizd");
     return "";
   }
   if(isQuizComplete == true) return "";

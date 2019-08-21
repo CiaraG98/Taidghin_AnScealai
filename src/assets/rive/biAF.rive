@@ -203,7 +203,8 @@
 
   + (tá|ba mhaith|sea)
   % an bhfuil tú ag iarraidh cleachtadh a dhéanamh air sin
-  - Ceart go leor, a <call>getName</call><call>chatSetup cleachtadh true</call>
+  - Ceart go leor, a <call>getName</call>.
+  ^ <call>chatSetup cleachtadh true</call>
 
   + cleachtadh
   - Bain triail as an gcleachtadh seo:<br>
@@ -273,7 +274,7 @@
   ^ <call>chatSetup roimh true</call>
 
   + roimh
-  - Cuirtear ‘ní’ roimh an mbriathar agus séimhítear an chéad chonsan.
+  - Cuirtear ‘ní’ roimh an mbriathar agus séimhítear an chéad chonsan.\s
   ^ “Ní bheidh”
   ^ <call>chatSetup an-simpli true</call>
 
@@ -405,7 +406,7 @@
   - <call>setAnsweringQuestions false</call>{topic=ceisteach}<call>chatSetup ta nowait</call>
 
   + ceisteach
-  - Ceart go leor, a <call>getName</call>\s
+  - Ceart go leor, a <call>getName</call>.\s
   ^ {topic=ceisteach}<call>chatSetup tosu true</call>
 
   + (spleách|spleach)
@@ -413,7 +414,7 @@
   ^ <call>chatSetup tosu true</call>
 
   + coibhneasta
-  - Ceart go leor, a <call>getName</call>\s
+  - Ceart go leor, a <call>getName</call>.\s
   ^ {topic=coibhneasta}<call>chatSetup tosu nowait</call>
 
   + (ceim 2|céim 2)

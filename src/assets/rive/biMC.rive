@@ -148,7 +148,7 @@
 ^ <button class="rive-button2" onclick="chatSetup('ceim 3')">Céim 3</button>
 
 + (nil|níl|níor mhaith)
-- Ar mhaith leat an briathar ‘faigh’ a dhéanamh: <br>
+- Ar mhaith leat an briathar ‘bí’ a dhéanamh: <br>
 ^ <button class="rive-button" onclick="chatSetup('chaite')">Aimsir Chaite</button><br>
 ^ <button class="rive-button" onclick="chatSetup('laithreach')">Aimsir Laithreach</button><br>
 ^ <button class="rive-button" onclick="chatSetup('fhaistineach')">Aimsir Fháistineach</button><br>
@@ -253,7 +253,7 @@
 
 > topic level2
   + startl2
-  - I gCéim a Dó féachfaimid ar an bhfoim dhiúltach den mbriathar ‘bí’ sa mhodh coinníollach.
+  - I gCéim a Dó féachfaimid ar an bhfoim dhiúltach den mbriathar ‘bí’ sa mhodh coinníollach.\s
   ^ Chun an fhoirm dhiúltach a fháil cuirtear ‘ní’ roimh an mbriathar:
   ^ <call>chatSetup uru true</call>
 
@@ -428,7 +428,7 @@
   ^ <call>chatSetup liom true</call>
 
   + liom
-  -  “An mbeadh sí ábalta teacht isteach an dóigh leat?”
+  -  “An mbeadh sí ábalta teacht isteach an dóigh leat?”<br>
   ^ “Nach mbeadh sé go deas dá dtiocfaidís ar cuairt chugainn?”
   ^ <call>chatSetup cleachtadh true</call>
 
@@ -491,7 +491,7 @@
 
 > topic spleach
   + tosu
-  - Anois féachaimis ar an difríocht idir an fhoirm spleách agus an fhoirm neamhspleách den bhriathar.
+  - Anois féachaimis ar an difríocht idir an fhoirm spleách agus an fhoirm neamhspleách den bhriathar.\s
   ^ Deirtear go bhfuil an briathar neamhspleách má sheasann sé leis féin agus muna bhfuil sé ag brath ar aon fhrása ná ar aon mhír eile: <br>
   ^ <call>chatSetup seasann true</call>
 
@@ -500,7 +500,7 @@
   ^ <call>chatSetup taobh true</call>
 
   + taobh
-  - “Bhí a fhios agam go mbeadh sí déanach.”
+  - “Bhí a fhios agam go mbeadh sí déanach.”<br>
   ^ “Bhí mé ag súil nach mbeadh an scuaine rófhada.”
   ^ <call>chatSetup cleachtadh true</call>
 
@@ -530,7 +530,7 @@
   - <call>setAnsweringQuestions false</call>{topic=extraquestions}<call>chatSetup tosu nowait</call>
 
   + maistreacht
-  - Tá máistreacht agat anois ar an mbriathar "faigh" sa mhodh coinníollach. \s
+  - Tá máistreacht agat anois ar an mbriathar "bí" sa mhodh coinníollach. \s
   ^ {topic=extraquestions}<call>chatSetup tosu true</call>
 
   + briathar saor

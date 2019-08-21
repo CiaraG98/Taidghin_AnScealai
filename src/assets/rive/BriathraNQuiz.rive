@@ -10,7 +10,17 @@
 < object
 
 > object getRandomQuestion javascript
-  return getRandomQuestion(abairQuiz);
+  if(quizVerb == "abair") return getRandomQuestion(abairQuiz);
+  else if(quizVerb == "tar") return getRandomQuestion(tarQuiz);
+  else if(quizVerb == "faigh") return getRandomQuestion(faighQuiz);
+  else if(quizVerb == "bí") return getRandomQuestion(biQuiz);
+  else if(quizVerb == "tabhair") return getRandomQuestion(tabhairQuiz);
+  else if(quizVerb == "clois") return getRandomQuestion(cloisQuiz);
+  else if(quizVerb == "teigh") return getRandomQuestion(teighQuiz);
+  else if(quizVerb == "dean") return getRandomQuestion(deanQuiz);
+  else if(quizVerb == "beir") return getRandomQuestion(beirQuiz);
+  else if(quizVerb == "feic") return getRandomQuestion(feicQuiz);
+  else if(quizVerb == "ith") return getRandomQuestion(ithQuiz);
 < object
 
 > object getRandomReply javascript
@@ -193,13 +203,13 @@
 
 + cleachtadh
 - Clóscríobh “scor” má theastaíonn uait riamh stop a chur leis an tráth na gceist.<br><br>
-^ <call>quiz true</call><call>getRandomQuestion abairQuiz</call><br><call>setAnsweringQuestions true</call><call>resetProgress</call>\s
+^ <call>quiz true</call><call>getRandomQuestion</call><br><call>setAnsweringQuestions true</call><call>resetProgress</call>\s
 
 + *
 * <call>answeringQuestions</call> == false =>  Tá brón orm cad a dúirt tú?
 * <call>getWrongCount</call> > 3 => <call>getLink</call><call>chatSetup continue</call>
 * <call>checkAnswer <star></call> == true =><call>changeProgress +</call><call>quizComplete</call><call>getRandomReply</call><call>getQuizScore</call>
-^ <call>getRandomQuestion abairQuiz</call>
+^ <call>getRandomQuestion</call>
 * <call>checkAnswer <star></call> == false => Mícheart. <call>quizComplete</call><call>triailAris</call><br><call>changeProgress</call>
 ^ <call>getQuizScore</call><br><call>getRandomQuestion abairQuiz</call>
 

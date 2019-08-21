@@ -237,14 +237,14 @@
   ^ <call>setCompletedLevel 1</call>
 
   + continue
-  - Ar mhaith leat leanúint ar aghaidh?
+  - Ar mhaith leat leanúint ar aghaidh leis an cleachtadh?
 
   + (tá|ba mhaith|sea)
-  % ar mhaith leat leanúint ar aghaidh
+  % ar mhaith leat leanúint ar aghaidh leis an cleachtadh
   - <call>setAnsweringQuestions false</call><call>chatSetup ceist nowait</call>
 
   + (níl|níor mhaith)
-  % ar mhaith leat leanúint ar aghaidh
+  % ar mhaith leat leanúint ar aghaidh leis an cleachtadh
   - <call>setAnsweringQuestions false</call><call>chatSetup ceim-2 nowait</call>
 
   + (tá|sea|ba mhaith)

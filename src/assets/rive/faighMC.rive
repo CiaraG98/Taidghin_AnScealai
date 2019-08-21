@@ -356,10 +356,8 @@
   ^ <call>chatSetup eg1 true</call>
 
   + eg1
-  - NEED EXAMPLE<call>chatSetup eg2 true</call>
-
-  + eg2
-  - NEED EXAMPLE<call>chatSetup cleachtadh true</call>
+  - Gheofaí nó Ní bhfaighfí.
+  ^ <call>chatSetup cleachtadh true</call>
 
   + cleachtadh
   - Bain triail as an gcleachtadh seo anois, a <call>getName</call>:<br>

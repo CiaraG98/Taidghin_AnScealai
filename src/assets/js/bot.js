@@ -44,7 +44,7 @@ function setup(){
   testButton.style.display = "none";
   testButton.setAttribute("id", "testButton");
   clearName();
-  load("biAL", "start");
+  load("abairAC", "start", true);
   audioPlayer = document.getElementById("botaudio");
   audioCheckbox = document.querySelector(".audioCheckbox");
   dictPopup = document.querySelector(".dictPopup");
@@ -215,6 +215,7 @@ function appendMessage(isBot, isUser, text, showButtons){
     dictImg = document.createElement("img");
     dictImg.src = "assets/dict.png";
     dictImg.setAttribute("class", "dictButton");
+    dictImg.style.display = "flex";
     dictImg.onclick = function(){
       if(dictOn == false){
         dictPopup.style.display = "flex";
@@ -235,7 +236,6 @@ function appendMessage(isBot, isUser, text, showButtons){
   if(showButtons == false){
     speakerImg.style.display = "none";
     pauseImg.style.display = "none";
-    dictImg.style.display = "none";
 }
 
   newMessage.appendChild(newP);

@@ -222,7 +222,7 @@
 
   + (níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>setAnsweringQuestions false</call><call>chatSetup ceim-2</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceim-2 nowait</call>
 
   + ceim-2
   - Anois an bhfuil tú réidh chun dul ar aghaidh go Céim a Dó?
@@ -623,7 +623,7 @@
   % an bhfuil tú réidh
   - <call>chatSetup ceist nowait</call>
 
-  + ceist 
+  + ceist
   - <call>levelComplete false</call><call>getRandomQuestion 11</call><call>setAnsweringQuestions true</call><call>resetProgress</call>
 
   + *
