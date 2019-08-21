@@ -44,7 +44,7 @@ function setup(){
   testButton.style.display = "none";
   testButton.setAttribute("id", "testButton");
   clearName();
-  load("biAL", "start", true);
+  load("biAL", "start");
   audioPlayer = document.getElementById("botaudio");
   audioCheckbox = document.querySelector(".audioCheckbox");
   dictPopup = document.querySelector(".dictPopup");

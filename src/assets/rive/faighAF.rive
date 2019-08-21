@@ -657,7 +657,7 @@
   - <call>setAnsweringQuestions false</call>{topic=extraquestions}<call>chatSetup tosu nowait</call>
 
   + master
-  - Tá máistreacht agat anois ar an mbriathar “abair” san aimsir fháistineach. \s
+  - Tá máistreacht agat anois ar an mbriathar “faigh” san aimsir fháistineach. \s
   ^ {topic=extraquestions}<call>chatSetup tosu true</call>
 
   + briathar saor
@@ -688,7 +688,7 @@
 
 > topic extraquestions
   + tosu
-  - An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar gach a bhfuil déanta agat leis an mbriathar ‘abair’ san aimsir fháistineach?
+  - An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar gach a bhfuil déanta agat leis an mbriathar ‘faigh’ san aimsir fháistineach?
 
   + (tá|ba mhaith|sea)
   - Déan an cleachtadh seo mar sin, a <call>getName</call>:<br>
@@ -707,7 +707,7 @@
 
   + levelcomplete
   - Tá triúr ceart agat i ndiaidh a chéile. Maith thú, a <call>getName</call>!\s
-  ^ Tá máistreacht agat anois ar an mbriathar “abair” san aimsir fháistineach!\s
+  ^ Tá máistreacht agat anois ar an mbriathar “faigh” san aimsir fháistineach!\s
   ^ <call>getCrioch</call>
   ^ <call>setAnsweringQuestions false</call>
 

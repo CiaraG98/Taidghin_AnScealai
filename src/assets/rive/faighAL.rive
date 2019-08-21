@@ -668,13 +668,13 @@
   - {topic=extraquestions}<call>chatSetup tosu nowait</call>
 
   + (chaite|aimsir chaite)
-  - <call>setKeepMessages true</call><call>loadFromChat abairAC chaite</call>
+  - <call>setKeepMessages true</call><call>loadFromChat faighAC chaite</call>
 
   + (fháistineach|fhaistineach|aimsir fháistineach)
-  - <call>setKeepMessages true</call><call>loadFromChat abairAF</call>
+  - <call>setKeepMessages true</call><call>loadFromChat faighAF</call>
 
   + (coinniollach|modh coinniollach)
-  - <call>setKeepMessages true</call><call>loadFromChat abairMC</call>
+  - <call>setKeepMessages true</call><call>loadFromChat faighMC</call>
 
   + (ceim 2|céim 2)
   - {topic=level2}<call>chatSetup startl2 nowait</call>

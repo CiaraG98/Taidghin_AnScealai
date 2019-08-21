@@ -494,7 +494,7 @@
   - An bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm spleách?
 
   + (tá|ba mhaith|sea)
-  % an bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm /spleách
+  % an bhfuil tú ag iarraidh bogadh ar aghaidh go dtí an fhoirm spleách
   - {topic=spleach}<call>chatSetup tosu nowait</call>
 
   + (níl|níor mhaith)
@@ -654,7 +654,7 @@
   - <call>setAnsweringQuestions false</call>{topic=extraquestions}<call>chatSetup tosu nowait</call>
 
   + master
-  - Tá máistreacht agat anois ar an mbriathar “abair” san aimsir fháistineach. \s
+  - Tá máistreacht agat anois ar an mbriathar “tar” san aimsir fháistineach. \s
   ^ {topic=extraquestions}<call>chatSetup tosu true</call>
 
   + briathar saor
@@ -685,7 +685,7 @@
 
 > topic extraquestions
   + tosu
-  - An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar gach a bhfuil déanta agat leis an mbriathar ‘abair’ san aimsir fháistineach?
+  - An bhfuil tú ag iarraidh cleachtadh a dhéanamh ar gach a bhfuil déanta agat leis an mbriathar ‘tar’ san aimsir fháistineach?
 
   + (níl|níor mhaith)
   - <call>nilToQuiz</call>
@@ -704,7 +704,7 @@
 
   + levelcomplete
   - Tá triúr ceart agat i ndiaidh a chéile. Maith thú, a <call>getName</call>!\s
-  ^ Tá máistreacht agat anois ar an mbriathar “abair” san aimsir fháistineach!\s
+  ^ Tá máistreacht agat anois ar an mbriathar “tar” san aimsir fháistineach!\s
   ^ <call>getCrioch</call>
   ^ <call>setAnsweringQuestions false</call>
 

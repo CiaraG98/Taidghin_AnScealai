@@ -70,6 +70,33 @@ var faighQuiz = [
   {question: "___________ siad bróga nua sa siopa.", answer: "fuair"},
 ];
 
+var tarQuiz = [
+  {question: "___________ sí isteach ach choimeád sí a béal dúnta.", answer: "tháinig", hint1: ""},
+  {question: "_____ __________ ar aon réiteach ar an bhfadhb go fóill. (sinn, diúltach)", answer: "níor thángamar", answer2: "níor tháinig muid", hint1: ""},
+  {question: "Ta a fhios agam___ ___________ siad ar ais ag gearán an lá dar gcionn. (dearfach, aimsir chaite)", answer: "gur tháinig", hint1: ""},
+  {question: "___  ___________ siad ar chorp an fhir a báiteadh riamh. (diúltach) ", answer: "níor tháinig", hint1: ""},
+  {question: "____ ___________ ciall roimh aois. (diúltach, aimsir láithreach)", answer: "ní thagann", hint1: ""},
+  {question: "______ ___________ an sneachta rómhinic in Éirinn. (diúltach, aimsir láithreach) ", answer: "ní thagann", hint1: ""},
+  {question: "Tá a fhios agam ______ ___________ sé timpeall ach anois is arís. (diúltach, aimsir láithreach)", answer: "nach dtagann", hint1: ""},
+  {question: "____ ___________tú abhaile go minic? (dearfach, aimsir láithreach)", answer: "nach dtagann", hint1: ""},
+  {question: "____ ___________ go dtí an phictiúrlann liom? (tú, dearfach)", answer: "an dtiocfá", answer2: "an dtiocfadh tú", hint1: ""},
+  {question: "Ní dóigh liom ____ ___________ sí ar ais anocht.", answer: "go dtiocfaidh", hint1: ""},
+  {question: "Cén t-am ____ ___________ an bus ar maidin? ", answer: "a thagann", hint1: ""},
+  {question: "Seo é an tobar beannaithe ___ ___________ na céadta daoine chuige gach bliain. (dearfadh) ", answer: "a dtagann**", hint1: ""},
+  {question: "___________ _________ ar ais go háit mar seo. Tá sí ró-iarghúlta. (mé, modh coinníollach)", answer: "ní thiocfainn", answer2: "ní thiocfadh mé", hint1: ""},
+  {question: "Bhí a fhios agam ______ ___________ sí linn dá bhfaigheadh sí an seans. (dearfach) ", answer: "go dtiocfadh", hint1: ""},
+  {question: "______ ___________ tú ar ais go dtí mo theachsa níos déanaí? ", answer: "an dtiocfaidh", hint1: ""},
+  {question: "Bhí tuairim mhaith agam ____ ___________aon athrú ar a intinn siúd. (diúltach, modh coinníollach)", answer: "nach dtiocfadh", hint1: ""},
+  {question: "____ ___________ feabhas ar an aimsir anois bheadh linn. ", answer: "dá dtiocfadh", hint1: ""},
+  {question: "___________ sí abhaile gach seachtain is cuma cad é a bhíonn ar siúl aici. ", answer: "tagann", hint1: ""},
+  {question: "_____ ___________ ar ais anois d’fhéadfaimis é seo a chríochnú go luath. (tú, modh coinníollach)", answer: "dá dtiocfá", hint1: ""},
+  {question: "Bhí a fhios agam go maith _____ ___________ i ngiorracht scread asail den áit. (siad)", answer: "nach dtiocfaidís", answer2: "nach dtiocfadh siad", hint1: ""},
+];
+
+var biQuiz = [
+
+];
+
 var abairAimsirChaiteQuestions = [
   {question: "___________ sí go raibh sé ar fheabhas.", answer: "dúirt", hint1: "dearfach, aimsir chaite"},
   {question: "___________ Liam go raibh sé tinn.", answer: "dúirt", hint1: "dearfach"},
@@ -738,6 +765,9 @@ var faighMCSpleach = [
   {question: "Bhí a fhios agam ___ ___________é luath nó mall. (briathar saor, dearfach)", answer: "go bhfaighfí"},
 ];
 
+var faighMCExtraQuestions = [
+];
+
 var tarACQuestions = [
   {question: "___________ sé isteach. Dúirt sé a chuid agus d’imigh sé.", answer: "tháinig"},
   {question: "___________ an bháisteach roimh dheireadh an chluiche.", answer: "tháinig"},
@@ -962,6 +992,10 @@ var tarAFExtraQuestions = [
   {question: "", answer: "ní thiocfaimid", answer2: "ní thiocfaidh muid", hint1: ""},
 ];
 
+var tarMCQuestions = [
+
+];
+
 var biACQuestions = [
   {question: "___________ an scéal ag éirí níos measa in aghaidh an lae.", answer: "bhí", hint1: ""},
   {question: "___________ ina suí cois trá, bolg le grian, gan chíos, cás ná cathú.", answer: "bhíodar", answer2: "bhí said", hint1: ""},
@@ -1119,4 +1153,145 @@ var biALExtraQuestions = [
   {question: "___________ ann sách minic? (sinn, dearfach)", answer: "an mbímid", answer2: "an mbíonn muid", hint1: ""},
   {question: "___________ focal maith le rá aige sin riamh? (dearfach)", answer: "an mbíonn", hint1: ""},
   {question: "_____ ___________ tusa ag caint léi sin go minic? (diúltach) ", answer: "nach mbíonn", hint1: ""},
+];
+
+var biAFQuestions = [
+  {question: "___________ saol an mhadaidh bháin againn amárach.", answer: "beidh", hint1: ""},
+  {question: "___________ oíche go maidin acu.", answer: "beidh", hint1: ""},
+  {question: "___________ gálaí gaoithe ag leathnú soir trasna na tíre anocht.", answer: "beidh", hint1: ""},
+  {question: "___________ an nuacht á craoladh beo ar a sé tráthnóna. ", answer: "beidh", hint1: ""},
+  {question: "___________ an gabhar á róstadh ar Thrá na Cille tráthnóna. ", answer: "beidh", hint1: ""},
+  {question: "___________ gá le hiarracht mhór má táimid chun an beart a dhéanamh.", answer: "beidh", hint1: ""},
+  {question: "___________ mé chugaibh a luaithe agus is féidir liom.", answer: "beidh", hint1: ""},
+  {question: "___________ na sluaite ag tarraingt ar an Ardchathair don gcluiche.", answer: "beidh", hint1: ""},
+  {question: "___________ an saol is a mháthair ann anocht má bhí riamh. ", answer: "beidh", hint1: ""},
+  {question: "___________ ceol go frathacha ag an gcóisir anocht. ", answer: "beidh", hint1: ""},
+];
+
+var biAFNi = [
+  {question: "____ ___________ aon rud le cur isteach ná amach ort anseo.", answer: "ní bheidh", hint1: ""},
+  {question: "____ ___________ deireadh ráite aige go brách.", answer: "ní bheidh", hint1: ""},
+  {question: "____ ___________ aon leisce ort é sin a dhéanamh arís. ", answer: "ní bheidh", hint1: ""},
+  {question: "____ ___________ réidh in am le dul ar an traein sin. (sinn) ", answer: "ní bheidh", hint1: ""},
+  {question: "____ ___________ mé in ann cur suas leis sin rófhada. ", answer: "ní bheidh", hint1: ""},
+  {question: "____ ___________ cíos, cás ná cathú orthu go ceann i bhfad anois. ", answer: "ní bheidh", hint1: ""},
+  {question: "____ ___________ tú ábalta é sin a iompar leat féin.", answer: "ní bheidh", hint1: ""},
+  {question: "____ ___________ mé ábalta an obair ar fad a chríochnú liom féin. ", answer: "ní bheidh", hint1: ""},
+  {question: "____ ___________ fonn ná fiach air siúd maidin amárach. ", answer: "ní bheidh", hint1: ""},
+  {question: "____ ___________ ábalta iad sin a shásamh go brách. (sinn)", answer: "ní bheimid", answer2: "ní bheidh muid", hint1: ""},
+];
+
+var biAFBriathorSaor = [
+];
+
+var biAFCeisteach = [
+  {question: "___ ___________ tú ábalta é sin a dhéanamh leat féin? (dearfach)", answer: "an mbeidh", hint1: ""},
+  {question: "____ ___________ aon duine eile in éineacht leat? (diúltach)", answer: "nach mbeidh", hint1: ""},
+  {question: "____ ___________ ort é sin a dhéanamh ina dhiaidh seo? (dearfach)", answer: "an mbeidh", hint1: ""},
+  {question: "____ ___________ éinne ann chun cabhrú leat? (dearfach)", answer: "an mbeidh", hint1: ""},
+  {question: "____ ___________ sé ceart go leor mar sin anois? (diúltach).", answer: "nach mbeidh", hint1: ""},
+  {question: "____ ___________ laethanta saoire agat faoi cheann seachtaine eile? (diúltach).", answer: "nach mbeidh", hint1: ""},
+  {question: "____ ___________ ábalta é a chríochnú anocht, dar leat? (sinn, dearfach).", answer: "an mbeimid", answer2: "an mbeidh muid", hint1: ""},
+  {question: "____ ___________ tú ar fáil an chéad rud maidin amárach? (dearfach)", answer: "an mbeidh", hint1: ""},
+  {question: "____ ___________ comhluadar maith agat ag an mbainis sin? (diúltach).", answer: "nach mbeidh", hint1: ""},
+  {question: "____ ___________ go leor ama agat chun é a dhéanamh an tseachtain seo chugainn? (diúltach).", answer: "nach mbeidh", hint1: ""},
+];
+
+var biAFSpleach = [
+  {question: "Tá a fhios agam go maith ____ ___________ sé ann. (diúltach)", answer: "nach mbeidh", hint1: ""},
+  {question: "Is dóigh liom ____ ___________ mé críochnaithe leis anocht. (dearfach)", answer: "go mbeidh", hint1: ""},
+  {question: "Tá súil agam ____ ___________ siad ar fad anseo in am. (dearfach) ", answer: "go mbeidh", hint1: ""},
+  {question: "Ceapann sí ____ ___________ ticéid fós ar fáil tráthnóna. (dearfach)", answer: "go mbeidh", hint1: ""},
+  {question: "Ní dóigh liom ____ ___________ mórán daoine i láthair. (dearfach)", answer: "go mbeidh", hint1: ""},
+  {question: "Tá sí ag gealladh  ____ ___________sí ag cur isteach orainn níos mó. (diúltach) ", answer: "nach mbeidh", hint1: ""},
+  {question: "Tuigfidh siad go luath ____ ___________toradh maith ar a gcuid pleananna. (dearfach)", answer: "go mbeidh", hint1: ""},
+  {question: "Tá súil agam ____ ___________ fágtha anseo don oíche. (sinn, diúltach)", answer: "nach mbeimid", answer2: "nach mbeidh muid", hint1: ""},
+  {question: "Tá sí cinnte ____ ___________ gach rud go breá ach níl a fhios agamsa faoi sin. (dearfach)", answer: "go mbeidh", hint1: ""},
+  {question: "Ceaptar ____ ___________aon duine fágtha sa pharóiste lá an chluiche. (diúltach)", answer: "nach mbeidh", hint1: ""},
+];
+
+var biAFCoibhneasta = [
+
+];
+
+var biAFExtraQuestions = [
+  {question: "___________ mé ag súil le freagra uait ar do chaoithiúlacht. (dearfach)", answer: "beidh", hint1: ""},
+  {question: "___________ díomá orthu muna bhfaigheann siad duais éigin. (dearfach)", answer: "beidh", hint1: ""},
+  {question: "____ ___________ aon rud le cur isteach ná amach ort anseo. (diúltach)", answer: "ní bheidh", hint1: ""},
+  {question: "____ ___________ duine ná deoraí san áit sin le linn an gheimhridh. (diúltach)", answer: "ní bheidh", hint1: ""},
+  {question: "____ ___________ fáilte is fiche romhaibh ar fad, a stóir? (diúltach) ", answer: "nach mbeidh", hint1: ""},
+  {question: "______ ___________ ar ais in am don traein má théimid suas ansin? (sinn, dearfach) ", answer: "an mbeimid", answer2: "an mbeidh muid", hint1: ""},
+  {question: "____ ___________ do chuid cairde in éineacht leat? (diúltach)", answer: "an mbeidh", hint1: ""},
+  {question: "Ní dóigh liom ____ ___________ siad in ann teacht tráthnóna. ", answer: "go mbeidh", hint1: ""},
+  {question: "Tá mé lánchinnte ____ ___________ éinne ag cur isteach ort anseo. (diúltach)", answer: "nach mbeidh", hint1: ""},
+  {question: "Má bhuailim isteach chugat ar a sé ____ ___________ tú réidh?", answer: "an mbeidh", hint1: ""},
+];
+
+var biMCQuestions = [
+  {question: "___________ lánsásta leis an méid sin dá bhfaighinn é. (mé) ", answer: "bheinn", hint1: ""},
+  {question: "___________ saol an mhadaidh bháin agat ansin dá mbeadh an aimsir go maith.", answer: "bheadh", hint1: ""},
+  {question: "___________ ciall leis sin ach ní dhéanfaidh siad é. ", answer: "bheadh", hint1: ""},
+  {question: "___________ seans maith agatsa an rás sin a bhuachan.  ", answer: "bheadh", hint1: ""},
+  {question: "___________ sé sin ceart go leor dá mbeadh seirbhís mhaith traenach ann. ", answer: "bheadh", hint1: ""},
+  {question: " ___________ sona sásta dá mbeadh áit cheart acu le fanacht. (siad)", answer: "bheidís", hint1: ""},
+  {question: "___________ slua an-mhór ann murach an droch-aimsir. ", answer: "bheadh", hint1: ""},
+  {question: "___________ go leor le rá aici dá bhfaigheadh sí cead cainte. ", answer: "bheadh", hint1: ""},
+  {question: "___________ an iomarca deacrachtaí ag dul leis sin. Fágfaimid é.", answer: "bheadh", hint1: ""},
+  {question: "___________ ort a lán airgid a chaitheamh chun aon chuma a chur ar an teach sin. ", answer: "bheadh", hint1: ""},
+];
+
+var biMCNi = [
+  {question: "____ ___________ féin sásta rud mar sin a dhéanamh. (mé) ", answer: "ní bheinn", hint1: ""},
+  {question: "____ ___________ ábalta é sin ar fad a chríochnú in aon lá amháin. (mé)", answer: "ní bheinn", hint1: ""},
+  {question: "____ ___________ aon chur ina choinne agamsa. ", answer: "ní bheadh", hint1: ""},
+  {question: "____ ___________ sé sin ceart ná cóir. ", answer: "ní bheadh", hint1: ""},
+  {question: "____ ___________ ar ais in am dá rachaimis isteach ar an oileán. (sinn) ", answer: "ní bheimís", hint1: ""},
+  {question: "____ ___________ aon chiall le rud mar sin.", answer: "ní bheadh", hint1: ""},
+  {question: "____ ___________ ábalta na trialacha sin a dhéanamh gan Ghaeilge mhaith a bheith agat. (tú)", answer: "ní bheifeá", hint1: ""},
+  {question: "____ ___________ Seán ábalta dó sin níos mó. Tá sé róshean. ", answer: "ní bheadh", hint1: ""},
+  {question: "____ ___________ aon seans agamsa dá mbeinn istigh leo sin. ", answer: "ní bheadh", hint1: ""},
+  {question: "____ ___________ a fhios agat. Níl deireadh déanta fós. ", answer: "ní bheadh", hint1: ""},
+];
+
+var biMCBriatharSaor = [
+
+];
+
+var biMCCeisteach = [
+  {question: "___ ___________ aon mhaith ina leithéid de rud dúinne? (dearfach)", answer: "an mbeadh", hint1: ""},
+  {question: "____ ___________ _____ sí sásta dá bhfaigheadh sí an méid sin? (diúltach)", answer: "nach mbeadh", hint1: ""},
+  {question: "____ ___________ sé níos fearr agat é a chaitheamh uait ar fad? (diúltach)", answer: "nach mbeadh", hint1: ""},
+  {question: "____ ___________ sé chomh maith againn é a fhágáil mar atá? (diúltach).", answer: "nach mbeadh", hint1: ""},
+  {question: "____ ___________  sé chomh maith agat an rud ar fad a chaitheamh san aer ag an bpointe seo? (diúltach).", answer: "nach mbeadh", hint1: ""},
+  {question: "____ ___________  níos fearr as gan é? (sinn, dearfach)", answer: "an mbeimís", answer2: "an mbeadh muid", hint1: ""},
+  {question: "____ ___________ aon eolas ag Antoin faoi dá rachaimis chuige? (dearfach).", answer: "an mbeadh", hint1: ""},
+  {question: "____ ___________ sé fós ann murach gur thóg duine éigin é? (diúltach)", answer: "nach mbeadh", hint1: ""},
+  {question: "____ ___________ níos fearr as dá bhfanfaidís anseo? (siad, diúltach).", answer: "nach mbeidís", answer2: "nach mbeadh siad", hint1: ""},
+  {question: "____ ___________ sásta é a dhíol liom ar chéad Euro? (tú, dearfach).", answer: "an mbeifeá", answer2: "an mbeadh tú", hint1: ""},
+];
+
+var biMCSpleach = [
+  {question: "Dúirt siad ____ ___________ sásta é a dhéanamh. (siad, dearfach) ", answer: "go mbeidís", answer2: "go mbeadh siad", hint1: ""},
+  {question: "Chuala mé  ____ ___________ ag teacht go dtí an cluiche Dé Domhnaigh. (siad, diúltach)", answer: "nach mbeidís", answer2: "nach mbeadh siad", hint1: ""},
+  {question: "Ní dóigh liom ____ ___________ sí le haon cheann eile seachas an ceann seo.  ", answer: "go mbeadh", hint1: ""},
+  {question: "Ní raibh mise róchinnte ____ ___________ an madra sásta fanacht leatsa. (dearfach) ", answer: "go mbeadh", hint1: ""},
+  {question: "Chuala mé ____ ___________dianslándáil i bhfeidhm do chuairt an phrionsa. (dearfach)", answer: "go mbeadh", hint1: ""},
+  {question: "An dóigh leat ____ ___________ níos fearr as fanacht leis an gcéad cheann? (sinn, dearfach)", answer: "go mbeimís", answer2: "go mbeadh muid", hint1: ""},
+  {question: "Ba dhóigh leat ____ ___________ ciall cheannaithe aici faoin dtráth seo! (dearfach) ", answer: "go mbeadh", hint1: ""},
+  {question: "Bhí siad den tuairim ____ ___________ gach rud go breá faoi cheann cúpla lá. (dearfach)", answer: "go mbeadh", hint1: ""},
+  {question: "Dúrach ___ ___________ seans acu ach bhuaigh siad i ndeireadh thiar thall. (diúltach)", answer: "nach mbeadh", hint1: ""},
+  {question: "Dúirt sí ___ ___________sí sásta dul ann léi féin. (diúltach)", answer: "nach mbeadh", hint1: ""},
+];
+
+var biMCExtraQuestions = [
+  {question: "___________ sé sin ceart go leor dá mbeinn saor amárach. (dearfach) ", answer: "bheadh", hint1: ""},
+  {question: "____ ___________ marbh faoi seo dá leanfaidís ar aghaidh mar a bhí siad. (siad, dearfach) ", answer: "bheidís", hint1: ""},
+  {question: "____ ___________ a fhios agat. B’fhéidir go dtiocfaidh sí.  (diúltach) ", answer: "ní bheadh", hint1: ""},
+  {question: "____ ___________ seans ag Seán bocht i gcoinne na n-imreoirí proifisiúnta sin. (diúltach) ", answer: "ní bheadh", hint1: ""},
+  {question: "____ ___________sásta géilleadh murach an brú a cuireadh orthu. (siad, diúltach) ", answer: "ní bheidís", answer2: "ní bheadh siad", hint1: ""},
+  {question: "___________ ar mhuin na muice dá dtitfeadh sé amach mar sin. (sinn, dearfach)", answer: "bheimís", hint1: ""},
+  {question: "An dóigh leat ___ ___________ aon mhaitheas i gceann mar sin dúinne? (dearfach) ", answer: "go mbeadh", hint1: ""},
+  {question: "Dúirt siad ____ ___________ lán sásta cabhrú linn. (siad, dearfach)", answer: "go mbeidís", answer2: "go mbeadh siad", hint1: ""},
+  {question: "Dúramar ___ ___________ ábalta cabhrú leo níos mó. (sinn, dearfach)", answer: "nach mbeimís", answer2: "go mbeadh muid", hint1: ""},
+  {question: "___ ___________aon chur ina choinne agatsa dá bhfanfainn seachtain eile anseo? (dearfach)", answer: "an mbeadh", hint1: ""},
 ];
