@@ -44,7 +44,7 @@ function setup(){
   testButton.style.display = "none";
   testButton.setAttribute("id", "testButton");
   clearName();
-  load("abairAC", "start", true);
+  load("start", "start");
   audioPlayer = document.getElementById("botaudio");
   audioCheckbox = document.querySelector(".audioCheckbox");
   dictPopup = document.querySelector(".dictPopup");
@@ -286,10 +286,10 @@ function chatSetup(text, holdMessages, showButtons){
 function chat(){
   //if(holdInput) setTimeout(function(){}, 1200);
   var input = document.getElementById("user_input").value;
+  $("form").on("submit", (event) => {
+    event.preventDefault();
+  });
   if(input != ""){
-    $("form").on("submit", (event) => {
-      event.preventDefault();
-    });
     document.getElementById("user_input").value = "";
     makeMessageObj(false, input);
     appendMessage(false, true, input);

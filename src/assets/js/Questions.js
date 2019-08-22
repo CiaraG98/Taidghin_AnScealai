@@ -1379,3 +1379,167 @@ var biMCExtraQuestions = [
   {question: "Dúramar ___ ___________ ábalta cabhrú leo níos mó. (sinn, dearfach)", answer: "nach mbeimís", answer2: "go mbeadh muid", hint1: ""},
   {question: "___ ___________aon chur ina choinne agatsa dá bhfanfainn seachtain eile anseo? (dearfach)", answer: "an mbeadh", hint1: ""},
 ];
+
+var tabhairACQuestions = [
+  {question: "___________ mé bronntanas deas do Niamh don Nollaig.", answer: "thug", hint1: ""},
+  {question: "___________ sí amach dom mar bhí mé déanach.", answer: "thug", hint1: ""},
+  {question: "___________ seans maith dó ach níor ghlac sé leis. (sinn)", answer: "thugamar", answer2: "thug muid", hint1: ""},
+  {question: "___________ sí stracfhéachaint air ach ní raibh aon suim aici ann. ", answer: "thug", hint1: ""},
+  {question: "___________ sé an leabhar ar iasacht dom. ", answer: "thug", hint1: ""},
+  {question: "___________ aghaidh ar an Róimh ina dhiaidh sin. (sinn)", answer: "thugamar", answer2: "thug muid", hint1: ""},
+  {question: "___________ sí íde na muc is na madraí dúinn. ", answer: "thug", hint1: ""},
+  {question: "___________ tú an ceann sin dom cheana.", answer: "thug", hint1: ""},
+  {question: "___________ bata is bother dóibh mar bhí an teach scriosta acu. (sinn)", answer: "thugamar", answer2: "thug muid", hint1: ""},
+  {question: "___________ aire mhaith don mhadra a fhad is a bhí sé againn.", answer: "thugamar", answer2: "thug muid", hint1: ""},
+];
+
+var tabhairACNi = [
+  {question: "____ ___________ sí aon eolas breise dúinn faoin eachtra.", answer: "níor thug", hint1: ""},
+  {question: "____ ___________ aon aird ar an gclampar a bhí taobh thiar dínn. (sinn)", answer: "níor thugamar", answer2: "níor thug muid", hint1: ""},
+  {question: "____ ___________ mé faoi deara go raibh sé briste go dtí anois.", answer: "níor thug", hint1: ""},
+  {question: "____ ___________ mé faoi deara ansin tú. ", answer: "níor thug", hint1: ""},
+  {question: "____ ___________ siad aon chabhair dúinn lá an ghátair.", answer: "níor thug", hint1: ""},
+  {question: "____ ___________ isteach don mbrú a cuireadh orainn. (sinn)", answer: "níor thugamar", answer2: "níor thug muid", hint1: ""},
+  {question: "____ ___________ aon rud as an ngnách faoi deara an oíche sin. (sinn)", answer: "níor thugamar", answer2: "níor thug muid", hint1: ""},
+  {question: "____ ___________ sí aon litir dom go fóill ar aon nós.", answer: "níor thug", hint1: ""},
+  {question: "____ ___________ siad aon seans dom an aiste a chríochnú.", answer: "níor thug", hint1: ""},
+  {question: "____  ___________ siad aon bhreithmheas ar an obair ar fad a bhí déanta againn. ", answer: "níor thug", hint1: ""},
+];
+
+var tabhairACBriathorSaor = [
+  {question: "___________ ard-mholadh dóibh as an taighde a rinne siad. (dearfach)", answer: "tugadh", hint1: ""},
+  {question: "____ ___________ cluas le héisteacht dúinn ach b’shin a raibh ann. (dearfach)", answer: "tugadh", hint1: ""},
+  {question: "___ ___________ aon fhianaise faoin eachtra os comhair na cúirte. (diúltach)", answer: "níor tugadh", hint1: ""},
+  {question: "___ ___________ aon rud le fios domsa faoin scéal. (diúltach)", answer: "níor tugadh", hint1: ""},
+  {question: "___________ íde na muc is na madraí dúinn ar fad. (dearfadh)", answer: "tugadh", hint1: ""},
+  {question: "___________ beirt os comhair na cúirte mar gheall ar an eachtra . (dearfach)", answer: "tugadh", hint1: ""},
+  {question: "____ ___________ aon suntas don scéal ag an am. (diúltach)", answer: "níor tugadh", hint1: ""},
+  {question: "___________ dúinn ach an chluas bhodhar. (diúltach)", answer: "níor tugadh", hint1: ""},
+  {question: "___________ gach cabhair agus cúnamh dóibh ach ba chuma leo. (dearfach)", answer: "tugadh", hint1: ""},
+  {question: "____ ___________ fios fátha an scéil dúinn an chéad lá. (dearfach)", answer: "tugadh", hint1: ""},
+];
+
+var tabhairACCeisteach = [
+  {question: "____ ___________ tú an leabhar ar ais do Mháire? (dearfach)", answer: "ar thug", hint1: ""},
+  {question: "____ ___________ na torthaí amach inné? (briathar saor, diúltach)", answer: "nár tugadh", hint1: ""},
+  {question: "____ ___________ tusa cabhair di leis an aiste a scríobh sí? (dearfach)", answer: "ar thug", hint1: ""},
+  {question: "____ ___________ aon chabhair duit? (siad, dearfach)", answer: "ar thugadar", answer2: "ar thug siad", hint1: ""},
+  {question: "____ ___________tú a dhóthain bia don madra sin ar maidin? (diúltach)", answer: "nár tugadh", hint1: ""},
+  {question: "____ ___________  na bronntanais amach fós? (briathar saor, diúltach)", answer: "nár tugadh", hint1: ""},
+  {question: "____ ___________ sibh cuairt ar an oileán riamh? (dearfach)", answer: "ar thug", hint1: ""},
+  {question: "____ ___________ praghas ró-ard dó ar an gcarr sin? (sinn, diúltach)", answer: "ar thugamar", answer2: "ar thug muid", hint1: ""},
+  {question: "____ ___________ tú an t-airgead ar ais dó? (dearfach)", answer: "ar thug", hint1: ""},
+  {question: "____ ___________ na Gardaí rabhadh dó sular thóg siad é? (diúltach)", answer: "ar thug", hint1: ""},
+];
+
+var tabhairACSpleach = [
+  {question: "Dúirt sí ____ ___________ sí amach dá hiníon. (diúltach)", answer: "gur thug", hint1: ""},
+  {question: "Mhaígh sé ____ ___________ aon rud le n-ithe dóibh an lá ar fad. (briathar saor, diúltach)", answer: "nár tugadh", hint1: ""},
+  {question: "Bhí a fhios agam ____ ___________ ár ndóthain airde ar an deacracht sin. (sinn, diúltach)", answer: "nár thugamar", answer2: "nár thug muid", hint1: ""},
+  {question: "Mhaígh siad ____ ___________ bia ceart dóibh i rith na seachtaine. (briathar saor, diúltach)", answer: "nár tugadh", hint1: ""},
+  {question: "Ní fíor ____ ___________ aon droch-shampla dóibh. (briathar saor, dearfach)", answer: "gur thug", hint1: ""},
+  {question: "Creidim ____ ___________ cothrom na féinne dóibh go léir. (briathar saor, dearfach)", answer: "gur thug", hint1: ""},
+  {question: "An é ____ ___________ tú an rothar faoi deara? (diúltach)", answer: "nár thug", hint1: ""},
+  {question: "Dúirt siad ____ ___________ aon chuireadh dóibh dul ann. (briathar saor, diúltach)", answer: "nár tugadh", hint1: ""},
+  {question: "Dúramar ____ ___________an múinteoir aon obair bhaile dúinn. (diúltach)", answer: "nár thug", hint1: ""},
+  {question: "Lig sé air ____ ___________fear an phoist an litir dó. (diúltach)", answer: "nár thug", hint1: ""},
+];
+
+var tabhairACCoibhneasta = [
+
+];
+
+var tabhairACExtraQuestions = [
+  {questions: "___________ mé gach a raibh agam dóibh. (dearfach) ", answer: "thug", hint1: ""},
+  {questions: "____ ___________ cuairt ar an áit sin cúpla uair. (sinn, dearfach) ", answer: "thugamar", answer2: "thug muid", hint1: ""},
+  {questions: "____ ___________aon aird ar an madra a bhí ag tafann lasmuigh. (diúltach) ", answer: "níor thugamar", answer2: "níor thug muid", hint1: ""},
+  {questions: "___________ mé cúpla iarracht air ach theip glan orm. (dearfach) ", answer: "thug", hint1: ""},
+  {questions: "___________ gach seans dó ach níor éist sé le héinne. (briathar saor, dearfach)", answer: "tugadh", hint1: ""},
+  {questions: "____ ___________tú an peann ar ais dom? (dearfach) ", answer: "ar thug", hint1: ""},
+  {questions: "____ ___________ go leor seansanna dó cheana? (briathar saor, diúltach) ", answer: "nár tugadh", hint1: ""},
+  {questions: "___ ___________ tú an leabhar ar ais don leabharlann fós? (diúltach) ", answer: "nár thug", hint1: ""},
+  {questions: "Dúirt sí ____ ___________sí isteach don mbrú a cuireadh uirthi. (diúltach)", answer: "nár thug", hint1: ""},
+  {questions: "____ ___________ aon rogha dó agus b’éigean dó é a dhéanamh. (sinn, diúltach)", answer: "níor thugamar", answer2: "níor thug muid", hint1: ""},
+];
+
+var tabhairALQuestions = [
+  {question: "___________ bia do na héin i rith an gheimhridh. (mé) ", answer: "tugaim", answer2: "tugann mé", hint1: ""},
+  {question: "___________ sí togha na haire do na páistí óga. ", answer: "tugann", hint1: ""},
+  {question: "___________ aghaidh ar an bhFleadh Cheoil gach bliain. (sinn)", answer: "tugaimid", answer2: "tugann muid", hint1: ""},
+  {question: "___________ tusa aire mhaith duit féin i gcónaí. ", answer: "tugann", hint1: ""},
+  {question: "___________ an ceol sin ardú croí dom gach uair a chloisim é. ", answer: "tugann", hint1: ""},
+  {question: "___________ cuairt ar mo dheirfiúr sna Stáit Aontaighe ó am go chéile. (mé)", answer: "tugaim", answer2: "tugann mé", hint1: ""},
+  {question: "___________ sí gach rud faoi deara cé go bhfuil sí an-óg fós.", answer: "tugann", hint1: ""},
+  {question: "___________ gach séisiúr a dhraíocht féin leis.", answer: "tugann", hint1: ""},
+  {question: "___________ sí glasraí dúinn óna gairdín féin uaireanta.  ", answer: "tugann", hint1: ""},
+  {question: "___________ cuairt ghearr ghairid ar an áit ó am go chéile. (sinn)", answer: "tugaimid", answer2: "tugann muid", hint1: ""},
+];
+
+var tabhairALNi = [
+  {question: "____ ___________ sé aon aire dó féin. ", answer: "ní thugann", hint1: ""},
+  {question: "____ ___________ milseáin do na páistí riamh. (mé)", answer: "ní thugaim", answer2: "ní thugann mé", hint1: ""},
+  {question: "____ ___________ amach do dhaoine toisc botún a bheith déanta acu. (sinn)", answer: "ní thugaimid", answer2: "ní thugann muid", hint1: ""},
+  {question: "____ ___________ sí a focal ach amháin nuair a bhíonn sí an-chinnte. ", answer: "ní thugann", hint1: ""},
+  {question: "____ ___________ aon aird ar na daoine a bhíonn i gcónaí ag gearán. (sinn) ", answer: "ní thugaimid", answer2: "ní thugann muid", hint1: ""},
+  {question: "____ ___________ an chuach aon aire dá gearcaigh féin. ", answer: "ní thugann", hint1: ""},
+  {question: "____ ___________ an múinteoir aon leid faoi na scrúduithe roimhré.", answer: "ní thugann", hint1: ""},
+  {question: "____ ___________siad ach féar glas do na beithigh sa samhradh. ", answer: "ní thugann", hint1: ""},
+  {question: "____ ___________ isteach do dhaoine drochbhéasacha riamh. (sinn)", answer: "ní thugaimid", answer2: "ní thugann muid", hint1: ""},
+  {question: "____ ___________ an scéal sin aon sásamh intinne domsa.", answer: "ní thugann", hint1: ""},
+];
+
+var tabhairALBriatharSaor = [
+  {question: "___________ duaiseanna amach sa scoil ag deireadh na bliana. (dearfach).", answer: "tugtar", hint1: ""},
+  {question: "____ ___________ aon éisteacht do mhionlaigh sa tír sin. (diúltach)", answer: "ní thugtar", hint1: ""},
+  {question: "_____ ___________ cothrom na féinne do na daltaí ar fad sa scoil. (dearfach)", answer: "tugtar", hint1: ""},
+  {question: "_____ ___________’leibide’ ar dhuine nach bhfuil ciall ná réasún aige. (dearfach)", answer: "tugtar", hint1: ""},
+  {question: "_____ ___________ an oiread sin teifeach isteach sa tír seo. (diúltach).", answer: "ní thugtar", hint1: ""},
+  {question: "_____ ___________ aon ugach do scoláirí a bhíonn fiáin. (diúltach).", answer: "tugtar", hint1: ""},
+  {question: "____ ___________ breith a mbéal féin do mhicléinn ollscoile go minic. (dearfach).", answer: "tugtar", hint1: ""},
+  {question: "____ ___________ aon aird ar an luasteorainn ar an mbóthar contúirteach sin. (diúltach)", answer: "ní thugtar", hint1: ""},
+  {question: "____ ___________scoláireacht don duine is fearr Gaeilge gach bliain. (dearfach).", answer: "tugtar", hint1: ""},
+  {question: "____ ___________ na mílte daoine isteach go Sceilg Mhichíl gach bliain. (dearfach).", answer: "tugtar", hint1: ""},
+];
+
+var tabhairALCeisteach = [
+  {question: "___________ tú aire mhaith don madra? (dearfach).", answer: "an dtugann", hint1: ""},
+  {question: "____ ___________ sé misneach duit nuair a fhéachann tú air? (diúltach)", answer: "nach dtugann", hint1: ""},
+  {question: "_____ ___________ tú bia don gcat fiáin sin gach lá? (dearfach)", answer: "an dtugann", hint1: ""},
+  {question: "_____ ___________sibh cuairt ar an áit go minic? (dearfach)", answer: "an dtugann", hint1: ""},
+  {question: "_____ ___________ an bhean sin isteach riamh? (dearfach).", answer: "an dtugann", hint1: ""},
+  {question: "_____ ___________ tú an difríocht atá eatarthu faoi deara? (diúltach).", answer: "nach dtugann", hint1: ""},
+  {question: "____ ___________ gach aon chabhair agus cúnamh dóibh? (briathar saor, diúltach).", answer: "nach dtugtar", hint1: ""},
+  {question: "____ ___________ sibh aire mhaith dá chéile? (diúltach)", answer: "nach dtugann", hint1: ""},
+  {question: "____ ___________cothrom na féinne do gach duine faoi láthair? (sinn, diúltach).", answer: "nach dtugaimid", answer2: "nach dtugann muid", hint1: ""},
+  {question: "____ ___________ i bhfad an iomarca saoirse do dhéagóirí óga na laethanta seo? (briathar saor, dearfach).", answer: "an dtugann", hint1: ""},
+];
+
+var tabhairALSpleach = [
+  {question: "Deirtear ____ ___________ sí suas an-éasca. (dearfach)", answer: "go dtugann", hint1: ""},
+  {question: "Deir sé ____ ___________ sé isteach don dream sin riamh. (diúltach)", answer: "nach dtugann", hint1: ""},
+  {question: "Deir siad ____ ___________ siad an chluas bhodhar do dhaoine a bhíonn ag gearán de shíor. (dearfach)", answer: "go dtugann", hint1: ""},
+  {question: "Glacaim leis ____ ___________ siad mórán trioblóide dúinn riamh. (diúltach)", answer: "nach dtugtar", hint1: ""},
+  {question: "Cloisim ____ ___________ na torthaí amach go dtí ard-tráthnóna. (briathar saor, diúltach)", answer: "nach dtugann", hint1: ""},
+  {question: "Deirtear liom ____ ___________ mil cosaint duint ar thinneas. (dearfach)", answer: "go dtugann", hint1: ""},
+  {question: "Aithnítear ____ ___________ crios sábhála an-chosaint duit i gcás timpiste. (dearfach)", answer: "go dtugann", hint1: ""},
+  {question: "Deir sí ____ ___________ aon aird ar bhotúin ghramadaí a fhad a bhíonn an téacs intuigthe. (briathar saor, diúltach)", answer: "nach dtugtar", hint1: ""},
+  {question: "Tá a fhios agam ____ ___________ciall ar dhaoine áirithe riamh. (diúltach)", answer: "nach dtugann", hint1: ""},
+  {question: "Tá sé intuigthe ____ ___________siad cabhair do dhaoine óga i gcónaí. (mé, diúltach)", answer: "go dtugann", hint1: ""},
+];
+
+var tabhairALCoibhneasta = [
+
+];
+
+var tabhairALExtraQuestions = [
+  {question: "___________sé ardú croí dom é sin a chloisteáil. (dearfach) ", answer: "tugann", hint1: ""},
+  {question: "___________ sé seo aon fhaoiseamh duit ón bpian? (dearfach).", answer: "an dtugann", hint1: ""},
+  {question: "___ ___________ siadsan na difríochtaí beaga sin faoi deara. (diúltach) ", answer: "ní thugann", hint1: ""},
+  {question: "____ ___________ an duine cróga suas ró-éasca? (diúltach)", answer: "ní thugann", hint1: ""},
+  {question: "An é ____ ___________ tú aon aird ar na rudaí atá timpeall ort? (diúltach) ", answer: "nach dtugann", hint1: ""},
+  {question: "_____ ___________ suas ar deireadh ar an duine nach bhfuil sásta cabhrú leis féin. (briathar saor, dearfach)", answer: "tugtar", hint1: ""},
+  {question: "Deirtear ___________ drochíde do theifigh ar fud an domhain. (briathar saor, dearfach) ", answer: "go dtugtar", hint1: ""},
+  {question: "___ ___________ tú síob isteach dóibh go minic? (dearfach)", answer: "an dtugann", hint1: ""},
+  {question: "___ ___________ sé an dara rogha dom go minic ach é a chaitheamh amach. (diúltach)", answer: "ní thugann", hint1: ""},
+  {question: "Is minic _____ ___________ aon aitheantas don duine ciúin díograiseach. (briathar saor, diúltach) ", answer: "nach dtugtar", hint1: ""},
+];

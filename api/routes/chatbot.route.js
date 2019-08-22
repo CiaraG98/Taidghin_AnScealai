@@ -68,13 +68,13 @@ chatbotRoute.route('/clearLogs/:name').get(function(req, res){
   });
 });
 
-chatbotRoute.route('/getAudio/:audio').post(function(req, res){
-  console.log(req.params.audio);
-  var text = req.params.audio;
-  if(text){
+chatbotRoute.route('/getAudio').post(function(req, res){
+  let bubble = new Models.AudioBubble(req.body);
+  console.log(bubble);
+  if(bubble.text){
     var form = {
-      Input: text,
-      Locale: "ga_CM",
+      Input: bubble.text,
+      Locale: "ga_" + bubble.dialect,
       Format: 'html',
       Speed: '1',
     };

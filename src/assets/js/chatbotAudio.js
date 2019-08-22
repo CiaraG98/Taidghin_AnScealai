@@ -118,8 +118,14 @@ function editMessageForAudio(){
 
 function testCallAudio(testString, id){
   console.log(testString);
-  request.open('POST', 'http://localhost:4000/Chatbot/getAudio/' + testString, true);
-  request.send();
+  var messageBubble = {text: testString, dialect: ""};
+  if(thisDialect == "connemara") messageBubble.dialect = "CM";
+  else if(thisDialect == "donegal") messageBubble.dialect = "GD";
+  else if(thisDialect == "kerry") messageBubble.dialect = "MU";
+
+  request.open('POST', 'http://localhost:4000/Chatbot/getAudio', true);
+  request.setRequestHeader("Content-type", "application/json");
+  request.send(JSON.stringify(messageBubble));
   request.onload = function(){
     //console.log(JSON.parse(this.response).html[0][0]);
     var bubbleUrl =JSON.parse(this.response).audio[0];
@@ -137,7 +143,14 @@ function testCallAudio(testString, id){
 function playAudio(bubble){
   if(bubble.url){
     audioPlayer = new Audio(bubble.url);
-    audioPlayer.play();
+    var playPromise = audioPlayer.play();
+    if(playPromise !== undefined){
+      playPromise.then(_ => {
+
+      }).catch(error => {
+        console.log(error);
+      });
+    }
     isPlaying = true;
     audioPlayer.addEventListener("ended", function(){
       isPlaying = false;
@@ -183,6 +196,12 @@ function checkboxSelect(checkbox, isGender, isDialect){
     }
     else if(checkbox == "female"){
       male.checked = false;
+    }
+  }
+  if(thisGender == "male"){
+    if(thisDialect == "donegal" || thisDialect == "kerry"){
+      male.checked = false;
+      female.checked = true;
     }
   }
 }

@@ -148,25 +148,12 @@ function resetProgress(){
   return "";
 }
 
-function getLink(){
-  /*var buttons = ["<a href=\"https://www.tearma.ie\" target=\"_blank\"><button class='rive-button'>www.tearma.ie</button></a>",
-  "<a href=\"https://www.teanglann.ie\" target=\"_blank\"><button class='rive-button'>www.teanglann.ie</button></a>"]
-  var links = ["An bhfuil aon fhocail nár thuig tú? Féach sa bhfoclóir ag: <br>" + buttons[1],
-    "Úsáid: " + buttons[0] + " chun cabhrú leat munar thuig tú téarma ar leith."];
-  var ran = getRandomIntInclusive(0, links.length - 1);*/
-  console.log("here");
-  var hint3 = currentQuestion.answer;
-  wrongCount = 0;
-  return hint3;
-}
-
 function triailAris(){
   console.log(wrongCount);
   var rep = [", féach ar an gceann seo arís, a ", ", beagnach ceart ach féach arís air, a "];
   var ran = getRandomIntInclusive(0, rep.length - 1);
   var thisHint;
   if(wrongCount == 2){
-    console.log(wrongCount);
     thisHint = "<b>Hint:</b> " + currentQuestion.hint1;
   }
   else if(wrongCount == 4){

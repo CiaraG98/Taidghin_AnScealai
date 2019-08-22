@@ -308,7 +308,7 @@
 
   + (níl|níor mhaith)
   % ar mhaith leat leanúint ar aghaidh
-  - <call>setAnsweringQuestions false</call><call>chatSetup ceim-3 true</call>
+  - <call>setAnsweringQuestions false</call><call>chatSetup ceim-3</call>
 
   + ceim-3
   - An bhfuil tú réidh, a <call>getName</call> chun dul ar aghaidh go Céim a Trí?

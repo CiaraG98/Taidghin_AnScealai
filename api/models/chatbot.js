@@ -44,7 +44,15 @@ let Chatbot = new Schema({
 
 var ChatbotModel = mongoose.model('Chatbot', Chatbot);
 //module.exports = mongoose.model('Chatbot', Chatbot);
+
+let AudioBubble = new Schema({
+  text: { type: String },
+  dialect: { type: String }
+});
+
+var AudioBubbleModel = mongoose.model('AudioBubble', AudioBubble)
 module.exports = {
   Log: LogModel,
-  Chatbot: ChatbotModel
+  Chatbot: ChatbotModel,
+  AudioBubble: AudioBubbleModel
 }
