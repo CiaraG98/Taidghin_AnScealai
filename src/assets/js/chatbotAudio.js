@@ -146,11 +146,11 @@ function playAudio(bubble){
     var playPromise = audioPlayer.play();
     if(playPromise !== undefined){
       playPromise.then(_ => {
-
       }).catch(error => {
         console.log(error);
       });
     }
+    pause = false;
     isPlaying = true;
     audioPlayer.addEventListener("ended", function(){
       isPlaying = false;

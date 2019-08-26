@@ -49,6 +49,7 @@
 > object checkAnswer javascript
   var ans = args[0];
   if(args[1] != null) ans += " " + args[1];
+  if(args[2] != null) ans += " " + args[2];
   console.log("ans: " + ans);
   console.log("current ans: " + currentQuestion.answer);
   if(ans == currentQuestion.answer){
@@ -379,7 +380,7 @@
   ^ <call>getProgress</call>
 
   + levelcomplete
-  - Tá triúr ceart agat i ndiaidh a chéile. Tá céim an mbriathar saor críochnaithe agat. Maith thú, a <call>getName</call>! <call>chatSetup ceisteach</call>
+  - Tá triúr ceart agat i ndiaidh a chéile. Tá céim an mbriathar saor críochnaithe agat. Maith thú, a <call>getName</call>! <call>chatSetup ceisteach true</call>
   ^ <call>setAnsweringQuestions false</call>
 
   + continue
